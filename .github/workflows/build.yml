@@ -28,6 +28,29 @@ jobs:
             ${{ inputs.js == 'true' && '--js' || '' }} \
             ${{ inputs.path_prefix != '' && format('--path-prefix {0}', inputs.path_prefix) || '' }} \
             ${{ inputs.all_paths == 'true' && '--all-paths' || '' }}
+      - name: Write README
+        run: |
+          cat > README.md <<'EOF'
+          # ${{ inputs.name }}-okf
+
+          An **[OKF](https://github.com/GoogleCloudPlatform/knowledge-catalog/blob/main/okf/SPEC.md) knowledge bundle** of [${{ inputs.url }}](${{ inputs.url }}) — ready for agents to read and for you to chat with.
+
+          ```bash
+          pip install okf-kit
+          okf get ${{ inputs.name }}
+          okf chat ${{ inputs.name }} --provider ollama
+          ```
+
+          Or use it straight from this repo (the bundle is in `${{ inputs.name }}/`):
+
+          ```bash
+          okf chat ${{ inputs.name }} --provider ollama
+          okf visualize ${{ inputs.name }}
+          ```
+
+          Built and kept fresh with [okf-kit](https://github.com/vinodborole/okf-kit).
+          Source: <${{ inputs.url }}> — see [NOTICE.md](NOTICE.md) for content licensing.
+          EOF
       - name: Commit bundle
         run: |
           git config user.name okf-bot
