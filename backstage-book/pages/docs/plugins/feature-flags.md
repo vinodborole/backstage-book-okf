@@ -1,0 +1,91 @@
+---
+type: Web Page
+title: Feature Flags | Backstage Software Catalog and Developer Platform
+description: Details the process of defining setting and reading a feature flag.
+resource: https://backstage.io/docs/plugins/feature-flags
+timestamp: '2026-07-06T13:23:17.605783+00:00'
+---
+
+# Feature Flags
+
+This page describes feature flags using the **old frontend system** APIs (`createPlugin` from `@backstage/core-plugin-api` and `createApp` from `@backstage/app-defaults`). For the new frontend system version, see Feature Flags. The `FeatureFlagged` component and `featureFlagsApiRef` work the same way in both systems.
+
+Backstage offers the ability to define feature flags inside a plugin or during application creation. This allows you to restrict parts of your plugin to those individual users who have toggled the feature flag to on.
+
+This page describes the process of defining, setting and reading a feature flag. If you are looking for using feature flags specifically with software templates please see Writing Templates.
+
+## Defining a Feature Flag
+
+### In a plugin
+
+Defining a feature flag in a plugin is done by passing the name of the feature flag into the `featureFlags` array:
+
+```
+import { createPlugin } from '@backstage/core-plugin-api';
+export const examplePlugin = createPlugin({
+  // ...
+  featureFlags: [
+    {
+      name: 'show-example-feature',
+      description: 'Enables the new beta dashboard view',
+    },
+  ],
+  // ...
+});
+```
+Note that the `description` property is optional. If not provided, the default "Registered in {pluginId} plugin" message is shown.
+
+### In the application
+
+Defining a feature flag in the application is done by adding feature flags in `featureFlags` array in the
+`createApp()` function call:
+
+```
+import { createApp } from '@backstage/app-defaults';
+const app = createApp({
+  // ...
+  featureFlags: [
+    {
+      // pluginId is required for feature flags used in plugins.
+      // pluginId can be left blank for a feature flag used in the application and not in plugins.
+      pluginId: '',
+      name: 'tech-radar',
+      description: 'Enables the tech radar plugin',
+    },
+  ],
+  // ...
+});
+```
+## Enabling Feature Flags
+
+Feature flags are defaulted to off and can be updated by individual users in the backstage interface. These are set by navigating to the page under `Settings` > `Feature Flags`.
+
+The user's selection is saved in the user's browser local storage. Once a feature flag is toggled it may be required for a user to refresh the page to see the change.
+
+## FeatureFlagged Component
+
+The easiest way to control content based on the state of a feature flag is to use the FeatureFlagged component.
+
+```
+import { FeatureFlagged } from '@backstage/core-app-api';
+...
+<FeatureFlagged with="show-example-feature">
+  <NewFeatureComponent />
+</FeatureFlagged>
+<FeatureFlagged without="show-example-feature">
+  <PreviousFeatureComponent />
+</FeatureFlagged>
+```
+## Evaluating Feature Flag State
+
+It is also possible to query a feature flag using the FeatureFlags Api.
+
+```
+import { useApi, featureFlagsApiRef } from '@backstage/core-plugin-api';
+const featureFlagsApi = useApi(featureFlagsApiRef);
+const isOn = featureFlagsApi.isActive('show-example-feature');
+```
+
+# Citations
+
+1. Source page: https://backstage.io/docs/plugins/feature-flags

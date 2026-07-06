@@ -1,0 +1,33 @@
+---
+type: Web Page
+title: Harness | Backstage Software Catalog and Developer Platform
+description: Backstage is an open source developer portal framework that centralizes
+  your software catalog, unifies infrastructure tools, and helps teams ship high-quality
+  code faster.
+resource: https://backstage.io/docs/harness/generated-index
+timestamp: '2026-07-06T13:23:17.605783+00:00'
+---
+
+Skip to main content
+Docs
+Plugins
+Reference
+Stable (v1.52.0)
+Next
+Releases
+Blog
+Demos
+Community
+Stable
+Next
+Stable
+Search
+Integrations
+Harness
+Harness
+📄️ Locations
+Integrating source code stored in Harness Code into the Backstage catalog
+
+# Citations
+
+1. Source page: https://backstage.io/docs/harness/generated-index

@@ -1,0 +1,15 @@
+# /pages/docs/next — directory listing
+
+- [configuration/](/pages/docs/next/configuration/index.md)
+- [contribute/](/pages/docs/next/contribute/index.md)
+- [core-features/](/pages/docs/next/core-features/index.md)
+- [faq/](/pages/docs/next/faq/index.md)
+- [features/](/pages/docs/next/features/index.md)
+- [framework/](/pages/docs/next/framework/index.md)
+- [getting-started/](/pages/docs/next/getting-started/index.md)
+- [integrations/](/pages/docs/next/integrations/index.md)
+- [overview/](/pages/docs/next/overview/index.md)
+- [plugins--legacy-/](/pages/docs/next/plugins--legacy-/index.md)
+- [references/](/pages/docs/next/references/index.md)
+- [releases/](/pages/docs/next/releases/index.md)
+- [tutorials/](/pages/docs/next/tutorials/index.md)

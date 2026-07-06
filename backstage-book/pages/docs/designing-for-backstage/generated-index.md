@@ -1,0 +1,15 @@
+---
+type: Web Page
+title: Designing for Backstage | Backstage Software Catalog and Developer Platform
+description: Backstage is an open source developer portal framework that centralizes
+  your software catalog, unifies infrastructure tools, and helps teams ship high-quality
+  code faster.
+resource: https://backstage.io/docs/designing-for-backstage/generated-index
+timestamp: '2026-07-06T13:23:17.605783+00:00'
+---
+
+📄️ DesignDocumentation on Design📄️ Component Design GuidelinesDocumentation on Design📄️ Contributing to StorybookDocumentation on How to Contribute to Storybook📄️ FigmaDocumentation on using Figma to build your own plugins for Backstage
+
+# Citations
+
+1. Source page: https://backstage.io/docs/designing-for-backstage/generated-index
