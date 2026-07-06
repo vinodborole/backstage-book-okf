@@ -7,6 +7,8 @@ on:
       max_depth:  {description: "Max crawl depth", required: true, default: "3"}
       max_pages:  {description: "Max pages", required: true, default: "200"}
       js:         {description: "Render JavaScript (true/false)", required: true, default: "false"}
+      path_prefix: {description: "Only crawl under this path (blank = auto from the URL)", required: false, default: ""}
+      all_paths:   {description: "Crawl the whole host (true/false)", required: false, default: "false"}
 permissions:
   contents: write
 jobs:
@@ -23,7 +25,9 @@ jobs:
         run: |
           okf build "${{ inputs.url }}" -o "${{ inputs.name }}" \
             --max-depth ${{ inputs.max_depth }} --max-pages ${{ inputs.max_pages }} \
-            ${{ inputs.js == 'true' && '--js' || '' }}
+            ${{ inputs.js == 'true' && '--js' || '' }} \
+            ${{ inputs.path_prefix != '' && format('--path-prefix {0}', inputs.path_prefix) || '' }} \
+            ${{ inputs.all_paths == 'true' && '--all-paths' || '' }}
       - name: Commit bundle
         run: |
           git config user.name okf-bot
