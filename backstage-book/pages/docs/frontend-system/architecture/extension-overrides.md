@@ -3,7 +3,7 @@ type: Web Page
 title: Frontend Extension Overrides | Backstage Software Catalog and Developer Platform
 description: Frontend extension overrides
 resource: https://backstage.io/docs/frontend-system/architecture/extension-overrides
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Frontend Extension Overrides
@@ -12,13 +12,13 @@ timestamp: '2026-07-06T13:23:17.605783+00:00'
 
 An important customization point in the frontend system is the ability to override existing extensions. It can be used for anything from slight tweaks to the extension logic, to completely replacing an extension with a custom implementation. While extensions are encouraged to make themselves configurable, there are many situations where you need to override an extension to achieve the desired behavior. The ability to override extensions should be kept in mind when building plugins, and can be a powerful tool to allow for deeper customizations without the need to re-implement large parts of the plugin.
 
-In general, most features should have a good level of customization built into them, so that users do not have to leverage extension overrides to achieve common goals. A well written feature often has configuration settings, or uses extension inputs for extensibility where applicable. An example of this is the search plugin, which allows you to provide result renderers as inputs rather than replacing the result page wholesale just to tweak how results are shown. Adopters should take advantage of those when possible in order to reduce the need and size of extension overrides.
+In general, most features should have a good level of customization built into them, so that users do not have to leverage extension overrides to achieve common goals. A well written feature often has [configuration](/docs/conf/) settings, or uses extension inputs for extensibility where applicable. An example of this is the search plugin, which allows you to provide result renderers as inputs rather than replacing the result page wholesale just to tweak how results are shown. Adopters should take advantage of those when possible in order to reduce the need and size of extension overrides.
 
 Extension overrides can also replace or remove existing `if` predicates. This applies both to direct extension overrides through `.override(...)` and to plugin-level overrides through `plugin.withOverrides(...)`. Frontend modules can use the same extension override mechanism to adjust or clear the condition for an overridden extension.
 
 ## Overriding an extension
 
-Every extension created with `createExtension` comes with an `override` method, including those created from an extension blueprint. The `override` method **creates a new extension**, it does not mutate the existing extension. This new extension in created in such a way that if it is installed adjacent to the existing extension, it will take precedence and override the existing extension. While the `override` method does create new extension instances, it is not intended to be used as a way to create multiple new extensions from a base template, for that use-case you will want to use an extension blueprint instead.
+Every extension created with `createExtension` comes with an `override` method, including those created from an [extension blueprint](/docs/frontend-system/architecture/extension-blueprints). The `override` method **creates a new extension**, it does not mutate the existing extension. This new extension in created in such a way that if it is installed adjacent to the existing extension, it will take precedence and override the existing extension. While the `override` method does create new extension instances, it is not intended to be used as a way to create multiple new extensions from a base template, for that use-case you will want to use an [extension blueprint](/docs/frontend-system/architecture/extension-blueprints) instead.
 
 The following is an example of calling the `.override(...)` method on an extension:
 
@@ -29,7 +29,7 @@ const myOverrideExtension = myExtension.override({
   },
 });
 ```
-This override is a no-op, it does not change the behavior of the extension, but simply forwards the outputs from the original extension factory. If you are familiar with extension blueprints, you will recognize this factory override pattern where we get access to the original factory function. In fact the only difference is that we do not need to pass any parameters to the original factory. The first parameter is now instead the optional factory context overrides, more on that as we dive into each override pattern in the following sections.
+This override is a no-op, it does not change the behavior of the extension, but simply forwards the outputs from the original extension factory. If you are familiar with [extension blueprints](/docs/frontend-system/architecture/extension-blueprints), you will recognize this factory override pattern where we get access to the original factory function. In fact the only difference is that we do not need to pass any parameters to the original factory. The first parameter is now instead the optional factory context overrides, more on that as we dive into each override pattern in the following sections.
 
 ## Overriding original factory outputs
 
@@ -64,7 +64,7 @@ const myOverrideExtension = myExtension.override({
   },
 });
 ```
-Just as extension factories can be declared as a generator function, so can the override factory. Using a generator function, the first example above can be written as follows:
+Just as [extension factories can be declared as a generator function](/docs/frontend-system/architecture/extensions#extension-factory-as-a-generator-function), so can the override factory. Using a generator function, the first example above can be written as follows:
 
 ```
 const myOverrideExtension = myExtension.override({
@@ -78,7 +78,7 @@ Note the `yield*` expression, which forwards all values from the provided iterab
 
 ## Overriding blueprint parameters
 
-If you are overriding an extension that was originally created from an extension blueprint, you are able to override the parameters that were originally provided for the blueprint. This can be done directly as an option to `.override`, or when calling the original factory in the override factory. The provided parameter overrides will be merged with the existing parameters that where provided when creating the extension from the blueprint.
+If you are overriding an extension that was originally created from an [extension blueprint](/docs/frontend-system/architecture/extension-blueprints), you are able to override the parameters that were originally provided for the blueprint. This can be done directly as an option to `.override`, or when calling the original factory in the override factory. The provided parameter overrides will be merged with the existing parameters that where provided when creating the extension from the blueprint.
 
 For example, consider the following extension created from the `PageBlueprint`:
 
@@ -281,7 +281,7 @@ const overrideExtension = exampleExtension.override({
 ```
 ## Installing override extension in an app
 
-To install extension overrides in a Backstage app you should use `plugin.withOverrides` whenever you are overriding or adding extensions for a plugin. See the section on overriding a plugin for more information.
+To install extension overrides in a Backstage app you should use `plugin.withOverrides` whenever you are overriding or adding extensions for a plugin. See the section on [overriding a plugin](/docs/frontend-system/architecture/plugins#overriding-a-plugin) for more information.
 
 Note that while using either of these options you don't necessarily need to use the extension `.override(...)` method to create the overrides. You can also create new extensions with `createExtension` or a blueprint that are either completely net-new extensions, or override an existing extension by using the same `kind`, `namespace` and `name` to produce the same extension ID.
 

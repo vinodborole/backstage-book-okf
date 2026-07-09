@@ -4,7 +4,7 @@ title: 'ADR011: Plugin Package Structure | Backstage Software Catalog and Develo
   Platform'
 description: Architecture Decision Record (ADR) for Plugin Package Structure
 resource: https://backstage.io/docs/architecture-decisions/adrs-adr011
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # ADR011: Plugin Package Structure
@@ -19,11 +19,13 @@ backend plugin called `x-backend` (where `x` is the plugin name, like `catalog`
 or `techdocs`). There is a need for sharing code between the frontend and
 backend of a plugin, between backend plugins, or components and hooks between
 different frontend plugins
-(some examples).
+([some examples](https://github.com/backstage/backstage/issues/3655#issuecomment-758166746)).
 This results in emerging plugin packages with shared code, like
 `packages/catalog-client` or `packages/techdocs-common`.
 
-There is a common phrase in software development: Naming things is hard
+There is a common phrase in software development:
+
+[Naming things is hard](https://martinfowler.com/bliki/TwoHardThings.html)
 
 To keep the contributed plugins consistent, this Architecture Decision Record provides rules for naming plugin packages.
 
@@ -45,7 +47,8 @@ example `catalog` or `techdocs`):
 
 We prefix the package names with `@backstage/plugin-`.
 
-This structure is based on a suggestion in issue #3655.
+This structure is based on a
+[suggestion in issue #3655](https://github.com/backstage/backstage/issues/3655#issuecomment-758166746).
 
 ## Consequences
 
@@ -65,7 +68,7 @@ The limited set of rules might not be sufficient in the future. If additional pa
 If possible, we will add tools, such as lint rules, to help enforce the package names and dependencies between them or CLI commands to generate these packages.
 
 The distinction between core packages and plugins helps us to setup
-CODEOWNERS
+[CODEOWNERS](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners)
 in the repository. We can set the code owners for the `packages/` folder to the
 core team and create additional rules (like `plugins/x*`) for plugin
 maintainers.

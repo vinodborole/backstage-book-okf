@@ -3,14 +3,18 @@ type: Web Page
 title: Backstage Software Catalog | Backstage Software Catalog and Developer Platform
 description: The Backstage Software Catalog
 resource: https://backstage.io/docs/features/software-catalog
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Backstage Software Catalog
 
 ## What is a Software Catalog?
 
-The Backstage Software Catalog is a centralized system that keeps track of ownership and metadata for all the software in your ecosystem (services, websites, libraries, data pipelines, etc). The catalog is built around the concept of metadata YAML files stored together with the code, which are then harvested and visualized in Backstage.
+The Backstage Software Catalog is a centralized system that keeps track of
+ownership and metadata for all the software in your ecosystem (services,
+websites, libraries, data pipelines, etc). The catalog is built around the
+concept of [metadata YAML files](/docs/features/software-catalog/descriptor-format) stored together with the
+code, which are then harvested and visualized in Backstage.
 
 ## How it works
 
@@ -24,18 +28,21 @@ More specifically, the Software Catalog enables two main use-cases:
 ## Getting Started
 
 The Software Catalog is available to browse at `/catalog`. If you've followed
-Getting Started with Backstage, you should be able to
+[Getting Started with Backstage](/docs/getting-started/), you should be able to
 browse the catalog at `http://localhost:3000`.
 
 ## Adding components to the catalog
 
-The source of truth for the components in your software catalog are metadata YAML files stored in source control (GitHub, GitHub Enterprise, GitLab, ...). Repositories can include one or multiple metadata files. Usually the metadata file is located in the repository root. This is not a formal requirement & metadata files can be placed anywhere in the repository.
+The source of truth for the components in your software catalog are [metadata YAML files](/docs/features/software-catalog/descriptor-format) stored in source control (GitHub, GitHub
+Enterprise, GitLab, ...). Repositories can include one or multiple metadata
+files. Usually the metadata file is located in the repository root. This is not
+a formal requirement & metadata files can be placed anywhere in the repository.
 
 There are 3 ways to add components to the catalog:
 
 - Manually register components
 - Creating new components through Backstage
-- Integrating with an external source
+- Integrating with an [external source](/docs/features/software-catalog/external-integrations)
 
 ### Manually register components
 
@@ -48,17 +55,21 @@ Backstage expects the full URL to the YAML in your source control. Example:
 https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/components/artist-lookup-component.yaml
 ```
 *More examples can be found
-here.*
+ here.*
 
 It is important to note that any kind of software can be registered in Backstage. Even if the software is not maintained by your company (SaaS offering, for example) it is still useful to create components for tracking ownership.
 
 ### Creating new components through Backstage
 
-All software created through the Backstage Software Templates are automatically registered in the catalog.
+All software created through the
+[Backstage Software Templates](/docs/features/software-templates/) are automatically
+registered in the catalog.
 
 ### Static catalog configuration
 
-In addition to manually registering components, it is also possible to register components through static configuration. For example, the above example can be added using the following configuration:
+In addition to manually registering components, it is also possible to register
+components through [static configuration](/docs/conf/). For example, the
+above example can be added using the following configuration:
 
 ```
 catalog:
@@ -66,7 +77,8 @@ catalog:
     - type: url
       target: https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/components/artist-lookup-component.yaml
 ```
-More information about catalog configuration can be found here.
+More information about catalog configuration can be found
+[here](/docs/features/software-catalog/configuration).
 
 ### Updating component metadata
 
@@ -90,13 +102,15 @@ For easy and quick access to components you visit frequently, Backstage supports
 
 The software catalog is a great way to organize the infrastructure tools you use to manage the software. This is how Backstage creates one developer portal for all your tools. Rather than asking teams to jump between different infrastructure user interfaces (and incurring additional cognitive overhead each time they make a context switch), most of these tools can be organized around the entities in the catalog.
 
-Your Backstage developer portal can be customized by incorporating existing open source plugins, or by building your own.
+Your Backstage developer portal can be customized by incorporating
+[existing open source plugins](https://github.com/backstage/backstage/tree/master/plugins),
+or by [building your own](/docs/plugins/).
 
 ## Unprocessed Entities
 
 Sometimes entities fail to process correctly. The **Unprocessed Entities** feature helps Backstage admins find and diagnose these entities to understand the state of the catalog.
 
-To use this feature, check out the documentation for the catalog-unprocessed-entities plugin and its backend module.
+To use this feature, check out the documentation for the [catalog-unprocessed-entities plugin](https://github.com/backstage/backstage/tree/master/plugins/catalog-unprocessed-entities) and its [backend module](https://github.com/backstage/backstage/tree/master/plugins/catalog-backend-module-unprocessed).
 
 # Citations
 

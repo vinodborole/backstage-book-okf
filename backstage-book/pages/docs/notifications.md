@@ -3,12 +3,15 @@ type: Web Page
 title: Getting Started | Backstage Software Catalog and Developer Platform
 description: How to get started with the notifications and signals
 resource: https://backstage.io/docs/notifications
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Getting Started
 
-This documentation is written for the new frontend system, which is the default in new Backstage apps. If your Backstage app still uses the old frontend system, read the old frontend system version of this guide instead.
+This documentation is written for the new frontend system, which is the default
+in new Backstage apps. If your Backstage app still uses the old frontend system,
+read the [old frontend system version of this guide](/docs/notifications/index--old)
+instead.
 
 The Backstage Notifications System provides a way for plugins and external services to send notifications to Backstage users. These notifications are displayed in the dedicated page of the Backstage frontend UI or by frontend plugins per specific scenarios. Additionally, notifications can be sent to external channels (like email) via "processors" implemented within plugins.
 
@@ -16,7 +19,7 @@ Notifications can be optionally extended with the signals plugin, which provides
 
 ### Upgrade to the latest version of Backstage
 
-To ensure your version of Backstage has all the latest notifications and signals related functionality, it's important to upgrade to the latest version. The Backstage upgrade helper is a great tool to help ensure that you've made all the necessary changes during the upgrade!
+To ensure your version of Backstage has all the latest notifications and signals related functionality, it's important to upgrade to the latest version. The [Backstage upgrade helper](https://backstage.github.io/upgrade-helper/) is a great tool to help ensure that you've made all the necessary changes during the upgrade!
 
 ## About notifications
 
@@ -36,7 +39,7 @@ Example of use-cases:
 
 ## Installation
 
-As of the `1.42.0` release of Backstage, Notifications and Signals are installed as part of the default `@backstage/create-app` instance which means you won't need to follow the installation steps outlined here. The only exception to this is adding the Notifications sidebar item and optionally Notifications tab to User Settings.
+As of the `1.42.0` release of Backstage, Notifications and Signals are installed as part of the default `@backstage/create-app` instance which means you won't need to follow the installation steps outlined here. The only exception to this is adding the [Notifications sidebar item](#add-notifications-sidebar-item) and optionally [Notifications tab to User Settings](#user-specific-notification-settings).
 
 The following sections will walk you through the installation of the various parts of the Backstage Notification System.
 
@@ -61,7 +64,7 @@ First we need to add the frontend package:
 ```
 yarn --cwd packages/app add @backstage/plugin-notifications
 ```
-Once installed, the notifications plugin is automatically available in your app through the default feature discovery. It provides a notifications page at `/notifications` and the notifications API. For more details and alternative installation methods, see installing plugins.
+Once installed, the notifications plugin is automatically available in your app through the default feature discovery. It provides a notifications page at `/notifications` and the notifications API. For more details and alternative installation methods, see [installing plugins](/docs/frontend-system/building-apps/installing-plugins).
 
 ### Add Notifications Sidebar Item
 
@@ -215,7 +218,7 @@ If the retention is set to false, notifications will not be automatically delete
 
 ## Scaffolder Action
 
-As of the `1.42.0` release of Backstage, the Notifications Scaffolder action is installed as part of the default `@backstage/create-app` instance which means you won't need to follow the installations steps outlined here. Feel free to skip to the Basic Example.
+As of the `1.42.0` release of Backstage, the Notifications Scaffolder action is installed as part of the default `@backstage/create-app` instance which means you won't need to follow the installations steps outlined here. Feel free to skip to the [Basic Example](#basic-example).
 
 There is also a Scaffolder action that you can use to send a notification as part of your Software Template.
 
@@ -254,7 +257,7 @@ The example above would send a notification to the Guest user (`user:default/gue
 
 ## Additional info
 
-An example of a backend plugin sending notifications can be found in the `@backstage/plugin-scaffolder-backend-module-notifications` package.
+An example of a backend plugin sending notifications can be found in the [ @backstage/plugin-scaffolder-backend-module-notifications package](https://github.com/backstage/backstage/tree/master/plugins/scaffolder-backend-module-notifications).
 
 Sources of the notifications and signals plugins:
 

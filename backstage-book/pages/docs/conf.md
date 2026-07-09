@@ -4,7 +4,7 @@ title: Static Configuration in Backstage | Backstage Software Catalog and Develo
   Platform
 description: Documentation on Static Configuration in Backstage
 resource: https://backstage.io/docs/conf
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Static Configuration in Backstage
@@ -29,7 +29,7 @@ Loading order of these files is as follows:
 
 Other sets of files can by loaded by passing `--config <path>` flags.
 Read more about the configuration loading order in the
-Configuration Files section.
+[Configuration Files](/docs/conf/writing#configuration-files) section.
 
 The configuration files themselves contain plain YAML, but with support for
 loading in data and secrets from various sources using for example
@@ -45,7 +45,7 @@ The configuration is shared between the frontend and backend, meaning that
 values that are common between the two only need to be defined once. Such as the
 `backend.baseUrl`.
 
-For more details, see Writing Configuration.
+For more details, see [Writing Configuration](/docs/conf/writing).
 
 ## Configuration Schema
 
@@ -59,19 +59,23 @@ the backend.
 You can validate your configuration against the schema using
 `backstage-cli config:check`, and define a schema for your own plugin either
 using JSON Schema or TypeScript. For more information, see
-Defining Configuration.
+[Defining Configuration](/docs/conf/defining).
 
 ## Reading Configuration
 
-As a plugin developer, you likely end up wanting to define configuration that you want users of your plugin to supply, as well as reading that configuration in frontend and backend plugins. For more details, see Reading Configuration and Defining Configuration.
+As a plugin developer, you likely end up wanting to define configuration that
+you want users of your plugin to supply, as well as reading that configuration
+in frontend and backend plugins. For more details, see
+[Reading Configuration](/docs/conf/reading) and
+[Defining Configuration](/docs/conf/defining).
 
 ## Further Reading
 
 More details are provided in dedicated sections of the documentation.
 
-- Reading Configuration: How to read configuration in your plugin.
-- Writing Configuration: How to write configuration for your Backstage deployment.
-- Defining Configuration: How to define a configuration schema for users of your plugin or package.
+- [Reading Configuration](/docs/conf/reading): How to read configuration in your plugin.
+- [Writing Configuration](/docs/conf/writing): How to write configuration for your Backstage deployment.
+- [Defining Configuration](/docs/conf/defining): How to define a configuration schema for users of your plugin or package.
 
 # Citations
 

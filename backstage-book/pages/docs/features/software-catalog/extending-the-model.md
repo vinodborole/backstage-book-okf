@@ -3,19 +3,22 @@ type: Web Page
 title: Extending the model | Backstage Software Catalog and Developer Platform
 description: Documentation on extending the catalog model
 resource: https://backstage.io/docs/features/software-catalog/extending-the-model
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Extending the model
 
-The Backstage catalog entity data model is based on the Kubernetes objects format, and borrows a lot of its semantics as well. This page describes those semantics at a higher level and how to extend them to fit your organization.
+The Backstage catalog [entity data model](/docs/features/software-catalog/descriptor-format) is based on the
+[Kubernetes objects format](https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/),
+and borrows a lot of its semantics as well. This page describes those semantics
+at a higher level and how to extend them to fit your organization.
 
 Backstage comes with a number of catalog concepts out of the box:
 
 - There are a number of builtin versioned *kinds*, such as`Component`,`User`etc. These encapsulate the high level concept of an entity, and define the schema for its entity definition data.
 - An entity has both a *metadata*object and a*spec*object at the root.
 - Each kind may or may not have a *type*. For example, there are several well known types of component, such as`service`and`website`. These clarify the more detailed nature of the entity, and may affect what features are exposed in the interface.
-- Entities may have a number of *annotations*on them. These can be added either by humans into the descriptor files, or added by automated processes when the entity is ingested into the catalog.
+- Entities may have a number of [annotations](/docs/features/software-catalog/well-known-annotations)
 - Entities may have a number of *labels*on them.
 - Entities may have a number of *relations*, expressing how they relate to each other in different ways.
 
@@ -36,14 +39,14 @@ Example intents:
 The `backstage.io` `apiVersion` space is reserved for use by the Backstage
 maintainers. Please do not change or add versions within that space.
 
-If you add an `apiVersion`
+If you add an [ apiVersion](/docs/features/software-catalog/descriptor-format#apiversion-and-kind-required)
 space of your own, you are effectively branching out from the underlying kind
-and making your own. An entity kind is identified by the `apiVersion` + `kind` pair,
+and making your own. An entity kind is identified by the 
+
+`apiVersion` + `kind` pair,
 so even though the resulting entity may be similar to the core one, there will
 be no guarantees that plugins will be able to parse or understand its data. See
-below about adding a new kind.
-
-## Adding a New Kind
+below about adding a new kind.## Adding a New Kind
 
 Example intents:
 
@@ -53,7 +56,12 @@ Example intents:
 
 `apiVersion`space and use that instead of`backstage.io`."
 
-A kind is an overarching family, or an idea if you will, of entities that also share a schema. Backstage comes with a number of builtin ones that we believe are useful for a large variety of needs that one may want to model in Backstage. The primary ambition is to map things to these kinds, but sometimes you may want or need to extend beyond them.
+A [kind](/docs/features/software-catalog/descriptor-format#apiversion-and-kind-required) is an overarching
+family, or an idea if you will, of entities that also share a schema. Backstage
+comes with a number of builtin ones that we believe are useful for a large
+variety of needs that one may want to model in Backstage. The primary ambition
+is to map things to these kinds, but sometimes you may want or need to extend
+beyond them.
 
 Introducing a new `apiVersion` is basically the same as adding a new kind. Bear in
 mind that most plugins will be compiled against the builtin
@@ -97,7 +105,10 @@ component types now include ML models, apps, data pipelines and many more.
 
 It might be tempting to put software that doesn't fit into any of the existing types into an Other catch-all type. There are a few reasons why we advise against this; firstly, we have found that it is preferred to match the conceptual model that your engineers have when describing your software. Secondly, Backstage helps your engineers manage their software by integrating the infrastructure tooling through plugins. Different plugins are used for managing different types of components.
 
-For example, the Lighthouse plugin only makes sense for Websites. The more specific you can be in how you model your software, the easier it is to provide plugins that are contextual.
+For example, the
+[Lighthouse plugin](https://github.com/backstage/community-plugins/tree/main/workspaces/lighthouse/plugins/lighthouse)
+only makes sense for Websites. The more specific you can be in how you model
+your software, the easier it is to provide plugins that are contextual.
 
 Adding a new type takes relatively little effort and carries little risk. Any type value is accepted by the catalog backend, but plugins may have to be updated if you want particular behaviors attached to that new type.
 
@@ -219,7 +230,12 @@ Example intents:
 
 "We have an alerting system that automatically monitors service health, and there's this integration key that binds the service to an alerts pool. We want to be able to show the ongoing alerts for our services in Backstage so it'd be nice to attach that integration key to the entity somehow."
 
-Annotations are mainly intended to be consumed by plugins, for feature detection or linking into external systems. Sometimes they are added by humans, but often they are automatically generated at ingestion time by processors. There is a set of well-known annotations, but you are free to add additional ones. This carries no risk or impact to other systems as long as you abide by the following naming rules.
+Annotations are mainly intended to be consumed by plugins, for feature detection
+or linking into external systems. Sometimes they are added by humans, but often
+they are automatically generated at ingestion time by processors. There is a set
+of [well-known annotations](/docs/features/software-catalog/well-known-annotations), but you are free to add
+additional ones. This carries no risk or impact to other systems as long as you
+abide by the following naming rules.
 
 - The `backstage.io`annotation prefix is reserved for use by the Backstage maintainers. Reach out to us if you feel that you would like to make an addition to that prefix.
 - Annotations that pertain to a well known third party system should ideally be
@@ -269,7 +285,12 @@ originated them - the one that was subject to processing when the relation was
 emitted. Relations may be dangling (referencing something that does not actually
 exist by that name in the catalog), and callers need to be aware of that.
 
-There is a set of well-known relations, but you are free to emit your own as well. You cannot change the fact that they are directed and have a source and target that have to be an entity reference, but you can invent your own types. You do not have to make any changes to the catalog backend in order to accept new relation types.
+There is a set of [well-known relations](/docs/features/software-catalog/well-known-relations), but you are
+free to emit your own as well. You cannot change the fact that they are directed
+and have a source and target that have to be an
+[entity reference](/docs/features/software-catalog/references), but you can invent your own types. You do not
+have to make any changes to the catalog backend in order to accept new relation
+types.
 
 At the time of writing this, we do not have any namespacing/prefixing scheme for
 relation types. The type is also not validated to contain only some particular
@@ -326,7 +347,11 @@ organization may prefix with `my-org.net/`, and `pagerduty.com/active-alerts`
 could be a sensible complete status item type for that particular external
 system.
 
-The mechanics for how to emit custom statuses is not in place yet, so if this is of interest to you, you might consider contacting the maintainers on Discord or my making a GitHub issue describing your use case. This issue also contains more context.
+The mechanics for how to emit custom statuses is not in place yet, so if this is
+of interest to you, you might consider contacting the maintainers on Discord or
+my making a GitHub issue describing your use case.
+[This issue](https://github.com/backstage/backstage/issues/2292) also contains
+more context.
 
 ## Referencing different environments with the model
 
@@ -380,13 +405,22 @@ such as `plugins/scaffolder-common`, and rename the folder and file contents to
 the desired name. This example uses *foobar* as the plugin name so the plugin
 will be named *foobar-common*.
 
-Once you have a common package in place you can start adding your own entity definitions. For the exact details on how to do that we defer to getting inspired by the existing scaffolder-common package. But in short you will need to declare a TypeScript type and a JSONSchema for the new entity kind.
+Once you have a common package in place you can start adding your own entity
+definitions. For the exact details on how to do that we defer to getting
+inspired by the existing
+[scaffolder-common](https://github.com/backstage/backstage/tree/master/plugins/scaffolder-common/src/index.ts)
+package. But in short you will need to declare a TypeScript type and a
+JSONSchema for the new entity kind.
 
 ### Building a custom processor for the entity
 
-The next step is to create a custom processor for your new entity kind. This will be used within the catalog to make sure that it's able to ingest and validate entities of our new kind. Just like with the definition package, you can find inspiration in for example the existing ScaffolderEntitiesProcessor.
+The next step is to create a custom processor for your new entity kind. This
+will be used within the catalog to make sure that it's able to ingest and
+validate entities of our new kind. Just like with the definition package, you
+can find inspiration in for example the existing
+[ScaffolderEntitiesProcessor](https://github.com/backstage/backstage/tree/master/plugins/catalog-backend-module-scaffolder-entity-model/src/processor/ScaffolderEntitiesProcessor.ts).
 
-The custom processor should be created as a separate module for the catalog plugin. For information on how to set that up, see the plugin docs. Use `yarn new` and select `backend-module` instead to create a module. For our case, the module ID will be `foobar` and the plugin ID will be `catalog`.
+The custom processor should be created as a separate module for the catalog plugin. For information on how to set that up, see the [plugin docs](/docs/plugins/backend-plugin#creating-a-backend-plugin). Use `yarn new` and select `backend-module` instead to create a module. For our case, the module ID will be `foobar` and the plugin ID will be `catalog`.
 
 We also provide a high-level example of what a catalog process for a custom entity might look like:
 
@@ -478,7 +512,7 @@ backend.add(import('@internal/plugin-catalog-backend-module-foobar'));
 ```
 #### Legacy Backend
 
-Look through the legacy documentation.
+Look through the [legacy documentation](/docs/features/software-catalog/extending-the-model--old).
 
 # Citations
 

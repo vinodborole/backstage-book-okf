@@ -5,7 +5,7 @@ title: Descriptor Format of Catalog Entities | Backstage Software Catalog and De
 description: Documentation on Descriptor Format of Catalog Entities which describes
   the default data shape and semantics of catalog entities
 resource: https://backstage.io/docs/features/software-catalog/descriptor-format
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Descriptor Format of Catalog Entities
@@ -19,20 +19,20 @@ we recommend that you name them `catalog-info.yaml`.
 
 ## Contents
 
-- Overall Shape Of An Entity
-- Common to All Kinds: The Envelope
-- Common to All Kinds: The Metadata
-- Common to All Kinds: Relations
-- Common to All Kinds: Status
-- Kind: Component
-- Kind: Template
-- Kind: API
-- Kind: Group
-- Kind: User
-- Kind: Resource
-- Kind: System
-- Kind: Domain
-- Kind: Location
+- [Overall Shape Of An Entity](#overall-shape-of-an-entity)
+- [Common to All Kinds: The Envelope](#common-to-all-kinds-the-envelope)
+- [Common to All Kinds: The Metadata](#common-to-all-kinds-the-metadata)
+- [Common to All Kinds: Relations](#common-to-all-kinds-relations)
+- [Common to All Kinds: Status](#common-to-all-kinds-status)
+- [Kind: Component](#kind-component)
+- [Kind: Template](#kind-template)
+- [Kind: API](#kind-api)
+- [Kind: Group](#kind-group)
+- [Kind: User](#kind-user)
+- [Kind: Resource](#kind-resource)
+- [Kind: System](#kind-system)
+- [Kind: Domain](#kind-domain)
+- [Kind: Location](#kind-location)
 
 ## Overall Shape Of An Entity
 
@@ -161,13 +161,13 @@ The root envelope object has the following structure.
 `apiVersion` and `kind` [required]
 
 The `kind` is the high level entity type being described.
-ADR005 describes
+[ADR005](/docs/architecture-decisions/adrs-adr005) describes
 a number of core kinds that plugins can know of and understand, but an
 organization using Backstage is free to also add entities of other kinds to the
 catalog.
 
 The perhaps most central kind of entity, that the catalog focuses on in the
-initial phase, is `Component` (see below).
+initial phase, is `Component` ([see below](#kind-component)).
 
 The `apiVersion` is the version of specification format for that particular
 entity that the specification is made against. The version is used for being
@@ -204,7 +204,7 @@ described below.
 
 In addition to these, you may add any number of other fields directly under
 `metadata`, but be aware that general plugins and tools may not be able to
-understand their semantics. See Extending the model
+understand their semantics. See [Extending the model](/docs/features/software-catalog/extending-the-model)
 for more information.
 
 `name` [required]
@@ -246,7 +246,7 @@ catalog-info definition YAML files, you often refer to other entities by name.
 When they are in a different namespace, you need to use the syntax
 `<namespace>/<name>`, while if they are in the default namespace you can omit
 that part as a shorthand. Therefore it's practical to use the default namespace
-for simplicity until it's necessary to use supplemental ones. See the references article for more information.
+for simplicity until it's necessary to use supplemental ones. See [the references article](/docs/features/software-catalog/references) for more information.
 
 `uid` [output]
 
@@ -259,7 +259,9 @@ unregistering and re-registering the exact same file will result in a different
 `uid` value even though everything else is the same. Therefore there is very
 little, if any, reason to read or use this field externally.
 
-If you want to refer to an entity by some form of an identifier, you should always use string-form entity reference instead.
+If you want to refer to an entity by some form of an identifier, you should
+always use [string-form entity reference](/docs/features/software-catalog/references#string-references)
+instead.
 
 `title` [optional]
 
@@ -274,7 +276,7 @@ can be confused with the name of another entity, or where two entities share a
 title.
 
 Note that this is only for display purposes, and may be ignored by some parts of
-the code. Entity references still always make use of the `name`
+the code. [Entity references](/docs/features/software-catalog/references) still always make use of the `name`
 property for example, not the title.
 
 `description` [optional]
@@ -283,7 +285,9 @@ A human readable description of the entity, to be shown in Backstage. Should be 
 
 `labels` [optional]
 
-Labels are optional key/value pairs of that are attached to the entity, and their use is identical to Kubernetes object labels.
+Labels are optional key/value pairs of that are attached to the entity, and
+their use is identical to
+[Kubernetes object labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/).
 
 Their main purpose is for references to other entities, and for information that is in one way or another classifying for the current entity. They are often used as values in queries or filters.
 
@@ -300,7 +304,9 @@ Values are strings that follow the same restrictions as `name` above.
 
 `annotations` [optional]
 
-An object with arbitrary non-identifying metadata attached to the entity, identical in use to Kubernetes object annotations.
+An object with arbitrary non-identifying metadata attached to the entity,
+identical in use to
+[Kubernetes object annotations](https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/).
 
 Their purpose is mainly, but not limited, to reference into external systems. This could for example be a reference to the git ref the entity was ingested from, to monitoring and logging systems, to PagerDuty schedules, etc. Users may add these to descriptor YAML files, but in addition to this automated systems may also add annotations, either during ingestion into the catalog, or at a later time.
 
@@ -315,7 +321,8 @@ The `backstage.io/` prefix is reserved for use by Backstage core components.
 
 Values can be of any length, but are limited to being strings.
 
-There is a list of well-known annotations, but anybody is free to add more annotations as they see fit.
+There is a list of [well-known annotations](/docs/features/software-catalog/well-known-annotations), but
+anybody is free to add more annotations as they see fit.
 
 `tags` [optional]
 
@@ -351,7 +358,7 @@ Fields of a link are:
 The `icon` field value is meant to be a semantic key that will map to a
 specific icon that may be provided by an icon library (e.g. `material-ui`
 icons). These keys should be a sequence of `[a-z0-9A-Z]`, possibly separated by
-one of `[-_.]`. Backstage may support some basic icons out of the box such as those defined in app-defaults, but the
+one of `[-_.]`. Backstage may support some basic icons out of the box such as those [defined in app-defaults](https://github.com/backstage/backstage/blob/master/packages/app-defaults/src/defaults/icons.tsx), but the
 Backstage integrator will ultimately be left to provide the appropriate icon
 component mappings. A generic fallback icon would be provided if a mapping
 cannot be resolved.
@@ -362,7 +369,7 @@ The semantics of the `type` field are undefined. The adopter is free to define t
 
 The `relations` root field is a read-only list of relations, between the current
 entity and other entities, described in the
-well-known relations section. Relations are commonly
+[well-known relations section](/docs/features/software-catalog/well-known-relations). Relations are commonly
 two-way, so that there's a pair of relation types each describing one direction
 of the relation.
 
@@ -387,7 +394,7 @@ The fields of a relation are:
 
 | Field | Type | Description | 
 |---|---|---|
-| `targetRef` | String | A full entity reference to the other end of the relation. | 
+| `targetRef` | String | A full [entity reference](/docs/features/software-catalog/references)to the other end of the relation. | 
 | `type` | String | The type of relation FROM a source entity TO the target entity. | 
 | `metadata` | Object | Reserved for future use. | 
 
@@ -401,13 +408,14 @@ at all - it could be taken from a CODEOWNERS file nearby instead for example.
 Also, the `spec.owner` is on a shortened form and may have semantics associated
 with it (such as the default kind being `Group` if not specified).
 
-See the well-known relations section for a list of well-known / common relations and their semantics.
+See the [well-known relations section](/docs/features/software-catalog/well-known-relations) for a list of
+well-known / common relations and their semantics.
 
 ## Common to All Kinds: Status
 
 The `status` root object is a read-only set of statuses, pertaining to the
 current state or health of the entity, described in the
-well-known statuses section.
+[well-known statuses section](/docs/features/software-catalog/well-known-statuses).
 
 Currently, the only defined field is the `items` array. Each of its items
 contains a specific data structure that describes some aspect of the state of
@@ -459,7 +467,8 @@ Instead, catalog processors analyze the entity descriptor data and its
 surroundings, and deduce status entries that are then attached onto the entity
 as read from the catalog.
 
-See the well-known statuses section for a list of well-known / common status types.
+See the [well-known statuses section](/docs/features/software-catalog/well-known-statuses) for a list of
+well-known / common status types.
 
 ## Kind: Component
 
@@ -492,7 +501,8 @@ spec:
   providesApis:
     - artist-api
 ```
-In addition to the common envelope metadata shape, this kind has the following structure.
+In addition to the [common envelope metadata](#common-to-all-kinds-the-metadata)
+shape, this kind has the following structure.
 
 `apiVersion` and `kind` [required]
 
@@ -524,69 +534,69 @@ The current set of well-known and common values for this field is:
 
 `spec.owner` [required]
 
-An entity reference to the owner of the
+An [entity reference](/docs/features/software-catalog/references#string-references) to the owner of the
 component, e.g. `artist-relations-team`. This field is required.
 
 In Backstage, the owner of a component is the singular entity (commonly a team) that bears ultimate responsibility for the component, and has the authority and capability to develop and maintain it. They will be the point of contact if something goes wrong, or if features are to be requested. The main purpose of this field is for display purposes in Backstage, so that people looking at catalog items can get an understanding of to whom this component belongs. It is not to be used by automated processes to for example assign authorization in runtime systems. There may be others that also develop or otherwise touch the component, but there will always be one ultimate owner.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `Group`(default),`User` | Same as this entity, typically `default` | `ownedBy`, and reverse`ownerOf` | 
+| (default),`Group``User` | Same as this entity, typically `default` | `ownedBy`, and reverse`ownerOf` | 
 
 `spec.system` [optional]
 
-An entity reference to the system that the
+An [entity reference](/docs/features/software-catalog/references#string-references) to the system that the
 component belongs to, e.g. `artist-engagement-portal`. This field is optional.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `System`(default) | Same as this entity, typically `default` | `partOf`, and reverse`hasPart` | 
+| (default)`System` | Same as this entity, typically `default` | `partOf`, and reverse`hasPart` | 
 
 `spec.subcomponentOf` [optional]
 
-An entity reference to another component of
+An [entity reference](/docs/features/software-catalog/references#string-references) to another component of
 which the component is a part, e.g. `spotify-ios-app`. This field is optional.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `Component`(default) | Same as this entity, typically `default` | `partOf`, and reverse`hasPart` | 
+| (default)`Component` | Same as this entity, typically `default` | `partOf`, and reverse`hasPart` | 
 
 `spec.providesApis` [optional]
 
-An array of entity references to the APIs
+An array of [entity references](/docs/features/software-catalog/references#string-references) to the APIs
 that are provided by the component, e.g. `artist-api`. This field is optional.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `API`(default) | Same as this entity, typically `default` | `providesApi`, and reverse`apiProvidedBy` | 
+| (default)`API` | Same as this entity, typically `default` | `providesApi`, and reverse`apiProvidedBy` | 
 
 `spec.consumesApis` [optional]
 
-An array of entity references to the APIs
+An array of [entity references](/docs/features/software-catalog/references#string-references) to the APIs
 that are consumed by the component, e.g. `artist-api`. This field is optional.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `API`(default) | Same as this entity, typically `default` | `consumesApi`, and reverse`apiConsumedBy` | 
+| (default)`API` | Same as this entity, typically `default` | `consumesApi`, and reverse`apiConsumedBy` | 
 
 `spec.dependsOn` [optional]
 
-An array of entity references to the
+An array of [entity references](/docs/features/software-catalog/references#string-references) to the
 components and resources that the component depends on, e.g. `artists-db`. This
 field is optional.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
 | `Component` | Same as this entity, typically `default` | `dependsOn`, and reverse`dependencyOf` | 
 | `Resource` | Same as this entity, typically `default` | `dependsOn`, and reverse`dependencyOf` | 
 
 `spec.dependencyOf` [optional]
 
-An array of entity references to the
+An array of [entity references](/docs/features/software-catalog/references#string-references) to the
 components and resources that the component is a dependency of, e.g. `artist-web-lookup`.
 This field is optional.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
 | `Component` | Same as this entity, typically `default` | `dependencyOf`, and reverse`dependsOn` | 
 | `Resource` | Same as this entity, typically `default` | `dependencyOf`, and reverse`dependsOn` | 
@@ -669,7 +679,8 @@ spec:
         repoContentsUrl: {{ steps['publish'].output.repoContentsUrl }}
         catalogInfoPath: '/catalog-info.yaml'
 ```
-In addition to the common envelope metadata shape, this kind has the following structure.
+In addition to the [common envelope metadata](#common-to-all-kinds-the-metadata)
+shape, this kind has the following structure.
 
 `apiVersion` and `kind` [required]
 
@@ -696,28 +707,28 @@ of the Scaffolder plugin.
 
 The type of component created by the template, e.g. `website`. This is used for
 filtering templates, and should ideally match the Component
-spec.type created by the template.
+[spec.type](#spectype-required) created by the template.
 
 `spec.parameters` [required]
 
 You can find out more about the `parameters` key
-here
+[here](/docs/features/software-templates/writing-templates)
 
 `spec.steps` [required]
 
 You can find out more about the `steps` key
-here
+[here](/docs/features/software-templates/writing-templates)
 
 `spec.owner` [optional]
 
-An entity reference to the owner of the
+An [entity reference](/docs/features/software-catalog/references#string-references) to the owner of the
 template, e.g. `artist-relations-team`. This field is required.
 
 In Backstage, the owner of a Template is the singular entity (commonly a team) that bears ultimate responsibility for the Template, and has the authority and capability to develop and maintain it. They will be the point of contact if something goes wrong, or if features are to be requested. The main purpose of this field is for display purposes in Backstage, so that people looking at catalog items can get an understanding of to whom this Template belongs. It is not to be used by automated processes to for example assign authorization in runtime systems. There may be others that also develop or otherwise touch the Template, but there will always be one ultimate owner.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `Group`(default),`User` | Same as this entity, typically `default` | `ownedBy`, and reverse`ownerOf` | 
+| (default),`Group``User` | Same as this entity, typically `default` | `ownedBy`, and reverse`ownerOf` | 
 
 ## Kind: API
 
@@ -728,7 +739,11 @@ Describes the following entity kind:
 | `apiVersion` | `backstage.io/v1alpha1` | 
 | `kind` | `API` | 
 
-An API describes an interface that can be exposed by a component. The API can be defined in different formats, like OpenAPI, AsyncAPI, GraphQL, gRPC, or other formats.
+An API describes an interface that can be exposed by a component. The API can be
+defined in different formats, like [OpenAPI](https://swagger.io/specification/),
+[AsyncAPI](https://www.asyncapi.com/docs/reference/specification/latest),
+[GraphQL](https://graphql.org/learn/schema/),
+[gRPC](https://developers.google.com/protocol-buffers), or other formats.
 
 Descriptor files for this kind may look as follows.
 
@@ -758,7 +773,8 @@ spec:
           summary: List all artists
     ...
 ```
-In addition to the common envelope metadata shape, this kind has the following structure.
+In addition to the [common envelope metadata](#common-to-all-kinds-the-metadata)
+shape, this kind has the following structure.
 
 `apiVersion` and `kind` [required]
 
@@ -773,10 +789,10 @@ The software catalog accepts any type value, but an organization should take gre
 
 The current set of well-known and common values for this field is:
 
-- `openapi`- An API definition in YAML or JSON format based on the OpenAPI version 2 or version 3 spec.
-- `asyncapi`- An API definition based on the AsyncAPI version 2 or version 3 spec.
-- `graphql`- An API definition based on GraphQL schemas for consuming GraphQL based APIs.
-- `grpc`- An API definition based on Protocol Buffers to use with gRPC.
+- `openapi`- An API definition in YAML or JSON format based on the- [OpenAPI](https://swagger.io/specification/)version 2 or version 3 spec.
+- `asyncapi`- An API definition based on the- [AsyncAPI](https://www.asyncapi.com/docs/reference/specification/latest)version 2 or version 3 spec.
+- `graphql`- An API definition based on- [GraphQL schemas](https://spec.graphql.org/)for consuming- [GraphQL](https://graphql.org/)based APIs.
+- `grpc`- An API definition based on- [Protocol Buffers](https://developers.google.com/protocol-buffers)to use with- [gRPC](https://grpc.io/).
 
 `spec.lifecycle` [required]
 
@@ -792,23 +808,23 @@ The current set of well-known and common values for this field is:
 
 `spec.owner` [required]
 
-An entity reference to the owner of the
+An [entity reference](/docs/features/software-catalog/references#string-references) to the owner of the
 component, e.g. `artist-relations-team`. This field is required.
 
 In Backstage, the owner of an API is the singular entity (commonly a team) that bears ultimate responsibility for the API, and has the authority and capability to develop and maintain it. They will be the point of contact if something goes wrong, or if features are to be requested. The main purpose of this field is for display purposes in Backstage, so that people looking at catalog items can get an understanding of to whom this API belongs. It is not to be used by automated processes to for example assign authorization in runtime systems. There may be others that also develop or otherwise touch the API, but there will always be one ultimate owner.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `Group`(default),`User` | Same as this entity, typically `default` | `ownedBy`, and reverse`ownerOf` | 
+| (default),`Group``User` | Same as this entity, typically `default` | `ownedBy`, and reverse`ownerOf` | 
 
 `spec.system` [optional]
 
-An entity reference to the system that the
+An [entity reference](/docs/features/software-catalog/references#string-references) to the system that the
 API belongs to, e.g. `artist-engagement-portal`. This field is optional.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `System`(default) | Same as this entity, typically `default` | `partOf`, and reverse`hasPart` | 
+| (default)`System` | Same as this entity, typically `default` | `partOf`, and reverse`hasPart` | 
 
 `spec.definition` [required]
 
@@ -817,9 +833,9 @@ field is required.
 
 **Note:** Be sure to specify the API base URL of your API within the `spec.definition`. If this is not provided, some widgets (such as OpenAPI) will fallback to the base URL of the Backstage instance. Below are some examples of specifying API base URL for different formats:
 
-- OpenAPI 3.x - use the `server`field
-- OpenAPI 2.0 (Swagger) — use `host`,`basePath`, and`schemes`
-- AsyncAPI - use the `server`field
+- [OpenAPI 3.x - use the](https://swagger.io/docs/specification/v3_0/api-host-and-base-path/#:~:text=All%20API%20endpoints%20are%20relative,.com%2Fv1%2Fusers%20.&text=In%20OpenAPI%203.0%2C%20you%20use,base%20URLs%20for%20your%20API.)- `server`field
+- [OpenAPI 2.0 (Swagger) — use](https://swagger.io/docs/specification/v2_0/api-host-and-base-path/)- `host`,- `basePath`, and- `schemes`
+- [AsyncAPI - use the](https://www.asyncapi.com/docs/concepts/asyncapi-document/structure#servers-field)- `server`field
 
 ## Kind: Group
 
@@ -832,7 +848,7 @@ Describes the following entity kind:
 
 A group describes an organizational entity, such as for example a team, a
 business unit, or a loose collection of people in an interest group. Members of
-these groups are modeled in the catalog as kind `User`.
+these groups are modeled in the catalog as kind [ User](#kind-user).
 
 Descriptor files for this kind may look as follows.
 
@@ -852,7 +868,8 @@ spec:
   children: [backstage, other]
   members: [jdoe]
 ```
-In addition to the common envelope metadata shape, this kind has the following structure.
+In addition to the [common envelope metadata](#common-to-all-kinds-the-metadata)
+shape, this kind has the following structure.
 
 `apiVersion` and `kind` [required]
 
@@ -887,11 +904,12 @@ The fields of a profile are:
 
 The immediate parent group in the hierarchy, if any. Not all groups must have a parent; the catalog supports multi-root hierarchies. Groups may however not have more than one parent.
 
-This field is an entity reference.
+This field is an
+[entity reference](https://backstage.io/docs/features/software-catalog/references).
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `Group`(default) | Same as this entity, typically `default` | `childOf`, and reverse`parentOf` | 
+| (default)`Group` | Same as this entity, typically `default` | `childOf`, and reverse`parentOf` | 
 
 `spec.children` [required]
 
@@ -900,21 +918,23 @@ points to this group). The list must be present, but may be empty if there are
 no child groups. The items are not guaranteed to be ordered in any particular
 way.
 
-The entries of this array are entity references.
+The entries of this array are
+[entity references](https://backstage.io/docs/features/software-catalog/references).
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `Group`(default) | Same as this entity, typically `default` | `parentOf`, and reverse`childOf` | 
+| (default)`Group` | Same as this entity, typically `default` | `parentOf`, and reverse`childOf` | 
 
 `spec.members` [optional]
 
 The users that are direct members of this group. The items are not guaranteed to be ordered in any particular way.
 
-The entries of this array are entity references.
+The entries of this array are
+[entity references](https://backstage.io/docs/features/software-catalog/references).
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `User`(default) | Same as this entity, typically `default` | `hasMember`, and reverse`memberOf` | 
+| (default)`User` | Same as this entity, typically `default` | `hasMember`, and reverse`memberOf` | 
 
 ## Kind: User
 
@@ -926,9 +946,11 @@ Describes the following entity kind:
 | `kind` | `User` | 
 
 A user describes a person, such as an employee, a contractor, or similar. Users
-belong to `Group` entities in the catalog.
+belong to [ Group](#kind-group) entities in the catalog.
 
-These catalog user entries are connected to the way that authentication within the Backstage ecosystem works. See the auth section of the docs for a discussion of these concepts.
+These catalog user entries are connected to the way that authentication within
+the Backstage ecosystem works. See the [auth](https://backstage.io/docs/auth)
+section of the docs for a discussion of these concepts.
 
 Descriptor files for this kind may look as follows.
 
@@ -944,7 +966,8 @@ spec:
     picture: https://example.com/staff/jenny-with-party-hat.jpeg
   memberOf: [team-b, employees]
 ```
-In addition to the common envelope metadata shape, this kind has the following structure.
+In addition to the [common envelope metadata](#common-to-all-kinds-the-metadata)
+shape, this kind has the following structure.
 
 `apiVersion` and `kind` [required]
 
@@ -966,11 +989,12 @@ The fields of a profile are:
 
 The list of groups that the user is a direct member of (i.e., no transitive memberships are listed here). The list must be present, but may be empty if the user is not member of any groups. The items are not guaranteed to be ordered in any particular way.
 
-The entries of this array are entity references.
+The entries of this array are
+[entity references](https://backstage.io/docs/features/software-catalog/references).
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `Group`(default) | Same as this entity, typically `default` | `memberOf`, and reverse`hasMember` | 
+| (default)`Group` | Same as this entity, typically `default` | `memberOf`, and reverse`hasMember` | 
 
 ## Kind: Resource
 
@@ -996,7 +1020,8 @@ spec:
   owner: artist-relations-team
   system: artist-engagement-portal
 ```
-In addition to the common envelope metadata shape, this kind has the following structure.
+In addition to the [common envelope metadata](#common-to-all-kinds-the-metadata)
+shape, this kind has the following structure.
 
 `apiVersion` and `kind` [required]
 
@@ -1004,14 +1029,14 @@ Exactly equal to `backstage.io/v1alpha1` and `Resource`, respectively.
 
 `spec.owner` [required]
 
-An entity reference to the owner of the
+An [entity reference](/docs/features/software-catalog/references#string-references) to the owner of the
 resource, e.g. `artist-relations-team`. This field is required.
 
 In Backstage, the owner of a resource is the singular entity (commonly a team) that bears ultimate responsibility for the resource, and has the authority and capability to develop and maintain it. They will be the point of contact if something goes wrong, or if features are to be requested. The main purpose of this field is for display purposes in Backstage, so that people looking at catalog items can get an understanding of to whom this resource belongs. It is not to be used by automated processes to for example assign authorization in runtime systems. There may be others that also manage or otherwise touch the resource, but there will always be one ultimate owner.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `Group`(default),`User` | Same as this entity, typically `default` | `ownedBy`, and reverse`ownerOf` | 
+| (default),`Group``User` | Same as this entity, typically `default` | `ownedBy`, and reverse`ownerOf` | 
 
 `spec.type` [required]
 
@@ -1028,31 +1053,31 @@ Some common values for this field could be:
 
 `spec.system` [optional]
 
-An entity reference to the system that the
+An [entity reference](/docs/features/software-catalog/references#string-references) to the system that the
 resource belongs to, e.g. `artist-engagement-portal`. This field is optional.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `System`(default) | Same as this entity, typically `default` | `partOf`, and reverse`hasPart` | 
+| (default)`System` | Same as this entity, typically `default` | `partOf`, and reverse`hasPart` | 
 
 `spec.dependsOn` [optional]
 
-An array of entity references to the
+An array of [entity references](/docs/features/software-catalog/references#string-references) to the
 components and resources that the resource depends on, e.g. `artist-lookup`.
 This field is optional.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
 | `Component` | Same as this entity, typically `default` | `dependsOn`, and reverse`dependencyOf` | 
 | `Resource` | Same as this entity, typically `default` | `dependsOn`, and reverse`dependencyOf` | 
 
 `spec.dependencyOf` [optional]
 
-An array of entity references to the
+An array of [entity references](/docs/features/software-catalog/references#string-references) to the
 components and resources that the resource is a dependency of, e.g. `artist-lookup`.
 This field is optional.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
 | `Component` | Same as this entity, typically `default` | `dependencyOf`, and reverse`dependsOn` | 
 | `Resource` | Same as this entity, typically `default` | `dependencyOf`, and reverse`dependsOn` | 
@@ -1080,7 +1105,8 @@ spec:
   owner: artist-relations-team
   domain: artists
 ```
-In addition to the common envelope metadata shape, this kind has the following structure.
+In addition to the [common envelope metadata](#common-to-all-kinds-the-metadata)
+shape, this kind has the following structure.
 
 `apiVersion` and `kind` [required]
 
@@ -1088,23 +1114,23 @@ Exactly equal to `backstage.io/v1alpha1` and `System`, respectively.
 
 `spec.owner` [required]
 
-An entity reference to the owner of the
+An [entity reference](/docs/features/software-catalog/references#string-references) to the owner of the
 system, e.g. `artist-relations-team`. This field is required.
 
 In Backstage, the owner of a system is the singular entity (commonly a team) that bears ultimate responsibility for the system, and has the authority and capability to develop and maintain it. They will be the point of contact if something goes wrong, or if features are to be requested. The main purpose of this field is for display purposes in Backstage, so that people looking at catalog items can get an understanding of to whom this system belongs. It is not to be used by automated processes to for example assign authorization in runtime systems. There may be others that also develop or otherwise touch the system, but there will always be one ultimate owner.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `Group`(default),`User` | Same as this entity, typically `default` | `ownedBy`, and reverse`ownerOf` | 
+| (default),`Group``User` | Same as this entity, typically `default` | `ownedBy`, and reverse`ownerOf` | 
 
 `spec.domain` [optional]
 
-An entity reference to the domain that the
+An [entity reference](/docs/features/software-catalog/references#string-references) to the domain that the
 system belongs to, e.g. `artists`. This field is optional.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `Domain`(default) | Same as this entity, typically `default` | `partOf`, and reverse`hasPart` | 
+| (default)`Domain` | Same as this entity, typically `default` | `partOf`, and reverse`hasPart` | 
 
 `spec.type` [optional]
 
@@ -1139,7 +1165,8 @@ spec:
   owner: artist-relations-team
   subdomainOf: audio-domain
 ```
-In addition to the common envelope metadata shape, this kind has the following structure.
+In addition to the [common envelope metadata](#common-to-all-kinds-the-metadata)
+shape, this kind has the following structure.
 
 `apiVersion` and `kind` [required]
 
@@ -1147,23 +1174,23 @@ Exactly equal to `backstage.io/v1alpha1` and `Domain`, respectively.
 
 `spec.owner` [required]
 
-An entity reference to the owner of the
+An [entity reference](/docs/features/software-catalog/references#string-references) to the owner of the
 domain, e.g. `artist-relations-team`. This field is required.
 
 In Backstage, the owner of a domain is the singular entity (commonly a team) that bears ultimate responsibility for the domain, and has the authority and capability to develop and maintain it. They will be the point of contact if something goes wrong, or if features are to be requested. The main purpose of this field is for display purposes in Backstage, so that people looking at catalog items can get an understanding of to whom this domain belongs. It is not to be used by automated processes to for example assign authorization in runtime systems. There may be others that also develop or otherwise touch the domain, but there will always be one ultimate owner.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `Group`(default),`User` | Same as this entity, typically `default` | `ownedBy`, and reverse`ownerOf` | 
+| (default),`Group``User` | Same as this entity, typically `default` | `ownedBy`, and reverse`ownerOf` | 
 
 `spec.subdomainOf` [optional]
 
-An entity reference to another domain of
+An [entity reference](/docs/features/software-catalog/references#string-references) to another domain of
 which the domain is a part, e.g. `audio`. This field is optional.
 
-| `kind` | Default `namespace` | Generated relation type | 
+| `kind` | Default `namespace` | Generated [relation](/docs/features/software-catalog/well-known-relations)type | 
 |---|---|---|
-| `Domain`(default) | Same as this entity, typically `default` | `partOf`, and reverse`hasPart` | 
+| (default)`Domain` | Same as this entity, typically `default` | `partOf`, and reverse`hasPart` | 
 
 `spec.type` [optional]
 
@@ -1199,7 +1226,8 @@ spec:
     - http://github.com/myorg/myproject/org-data-dump/catalog-info-staff.yaml
     - http://github.com/myorg/myproject/org-data-dump/catalog-info-consultants.yaml
 ```
-In addition to the common envelope metadata shape, this kind has the following structure.
+In addition to the [common envelope metadata](#common-to-all-kinds-the-metadata)
+shape, this kind has the following structure.
 
 `apiVersion` and `kind` [required]
 

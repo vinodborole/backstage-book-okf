@@ -3,12 +3,12 @@ type: Web Page
 title: Backend Services | Backstage Software Catalog and Developer Platform
 description: Services for backend plugins
 resource: https://backstage.io/docs/backend-system/architecture/services
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Backend Services
 
-Backend services provide shared functionality available to all backend plugins and modules. They are made available through service references that embed a type that represents the service interface, similar to how Utility APIs work in the Backstage frontend system. To use a service in your plugin or module you request an implementation of that service using the service reference.
+Backend services provide shared functionality available to all backend plugins and modules. They are made available through service references that embed a type that represents the service interface, similar to how [Utility APIs](/docs/api/utility-apis) work in the Backstage frontend system. To use a service in your plugin or module you request an implementation of that service using the service reference.
 
 The system surrounding services exists to provide a level of indirection between the service interfaces and their implementation. It is an implementation of dependency injection, where each backend instance is the dependency injection container. The implementation for each service is provided by a service factory, which encapsulates the logic for how each service instance is created.
 
@@ -36,7 +36,7 @@ export const fooServiceRef = createServiceRef<FooService>({
 ```
 The `fooServiceRef` that we create above should be exported, and can then be used to declare a dependency on the `FooService` interface and receive an implementation of it at runtime.
 
-When creating a service reference you need to give it an ID. This ID needs to be globally unique, and should generally be of the format `'<pluginId>.<serviceName>'`. For more naming patterns surrounding services, see the naming patterns page.
+When creating a service reference you need to give it an ID. This ID needs to be globally unique, and should generally be of the format `'<pluginId>.<serviceName>'`. For more naming patterns surrounding services, see the [naming patterns](/docs/backend-system/architecture/naming-patterns#services) page.
 
 A note on naming: the frontend and backend systems intentionally use the separate names "APIs" and "Services" for concepts that are quite similar. This is to avoid confusion between the two, both in documentation and discussion, but also in code. While the two systems are quite similar, they are not identical, and they can't be used interchangeably.
 
@@ -86,7 +86,7 @@ The backend system provides a number of core service definitions that both help 
 
 The service references for all core services are exported via their own `coreServices` object, available from the `@backstage/backend-plugin-api` package. For example, the logging service is accessible via `coreServices.logger`.
 
-You can read more about what core services there are and how to use them in the core services section.
+You can read more about what core services there are and how to use them in the [core services](/docs/backend-system/core-services/index) section.
 
 ## Service Scope
 
@@ -132,7 +132,7 @@ export const loggerServiceFactory = createServiceFactory({
 ```
 ## Root Context for Service Factories
 
-Some services may benefit from having a context that is shared across all instances of a service. This of course only applies to plugin scoped services, as root scoped services only ever have a single instance. The root context could for example be used for sharing a common connection pool for database access, generated secrets for development, or any other kind of shared facility. Note that you should not use this to share state between plugins in production, as that would be a violation of the plugin isolation rule.
+Some services may benefit from having a context that is shared across all instances of a service. This of course only applies to plugin scoped services, as root scoped services only ever have a single instance. The root context could for example be used for sharing a common connection pool for database access, generated secrets for development, or any other kind of shared facility. Note that you should not use this to share state between plugins in production, as that would be a violation of the [plugin isolation rule](/docs/backend-system/architecture/plugins#rules-of-plugins).
 
 The root context is defined as part of the service factory by passing the `createRootContext` option:
 

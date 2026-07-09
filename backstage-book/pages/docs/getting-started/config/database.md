@@ -3,7 +3,7 @@ type: Web Page
 title: Database | Backstage Software Catalog and Developer Platform
 description: How to set up PostgreSQL for your Backstage instance.
 resource: https://backstage.io/docs/getting-started/config/database
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Database
@@ -12,7 +12,7 @@ Audience: Admins
 
 ## Summary
 
-This guide walks through how to set up a PostgreSQL database to host your Backstage data. It assumes you've already have a scaffolded Backstage app from following the Creating your Backstage App guide.
+This guide walks through how to set up a PostgreSQL database to host your Backstage data. It assumes you've already have a scaffolded Backstage app from following the [Creating your Backstage App](/docs/getting-started/) guide.
 
 By the end of this tutorial, you will have a working PostgreSQL database hooked up to your Backstage install.
 
@@ -20,18 +20,19 @@ By the end of this tutorial, you will have a working PostgreSQL database hooked 
 
 This guide assumes a basic understanding of working on a Linux based operating system and have some experience with the terminal, specifically, these commands: `apt-get`, `psql`, `yarn`.
 
-- Access to a Linux-based operating system, such as Linux, MacOS or Windows Subsystem for Linux
+- Access to a Linux-based operating system, such as Linux, MacOS or
+[Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/)
 - An account with elevated rights to install prerequisites on your operating system
 - If the database is not hosted on the same server as the Backstage app, the
 PostgreSQL port needs to be accessible (the default is `5432`or`5433`)
 
 ## 1. Install and Configure PostgreSQL
 
-If you've already installed PostgreSQL and created a schema and user, you can skip to Step 2.
+If you've already installed PostgreSQL and created a schema and user, you can skip to [Step 2](#2-configuring-backstage-pg-client).
 
 Let's install PostgreSQL and get it set up for our Backstage app. First, we'll need to actually install the SQL server.
 
-The command below is for Linux. If you're not on Linux or having issues with package managers, check out how to install PostgreSQL to help you get sorted.
+The command below is for Linux. If you're not on Linux or having issues with package managers, check out [how to install PostgreSQL](https://www.postgresql.org/download/) to help you get sorted.
 
 ```
 sudo apt-get install postgresql
@@ -83,7 +84,7 @@ The `${...}` syntax denotes environment variables, specifically,
 
 When filling these out, you have 2 choices,
 
-- Use environment variables when you launch Backstage, either using an environment variable injector like `dotenv-cli`or`env-cmd`or loading the variables directly with`EXPORT POSTGRES_...=...`.
+- Use environment variables when you launch Backstage, either using an environment variable injector like `dotenv-cli``env-cmd``EXPORT POSTGRES_...=...`.
 - Replacing the entire `${POSTGRES_...}`string with the value you identified earlier. This is the less secure option, but worth doing if you don't have much experience with environment variables.
 
 If you opt for the second option of replacing the entire string, take care to not commit your `app-config.yaml` to source control. It may contain passwords that you don't want leaked.
@@ -108,7 +109,7 @@ The credential type is automatically inferred based on the fields you provide:
 - `clientSecret`
  
 - Managed Identity Credential is used when only `clientId`is provided. This enables user-assigned managed identity.
-- Default Azure Credential is used when no credential fields are provided. Default Azure Credential supports many credential types, choosing one based on the runtime environment.
+- Default Azure Credential is used when no credential fields are provided. Default Azure Credential supports [many credential types](https://learn.microsoft.com/azure/developer/javascript/sdk/authentication/credential-chains#use-defaultazurecredential-for-flexibility), choosing one based on the runtime environment.
 
 #### Token Renewal
 
@@ -144,7 +145,7 @@ backend:
 
 Remove `password` from the connection configuration and set `type` to `cloudsql`.
 
-Under the hood, this implements Automatic IAM Database Authentication.
+Under the hood, this implements [Automatic IAM Database Authentication](https://github.com/GoogleCloudPlatform/cloud-sql-nodejs-connector?tab=readme-ov-file#automatic-iam-database-authentication).
 
 For an IAM user account, set `user` to the user's email address. For a service account, set `user` to the service account's email without the .gserviceaccount.com domain suffix.
 
@@ -175,7 +176,7 @@ You may not want to install Postgres locally, the following sections outline alt
 
 You can run Postgres in a Docker container, this is great for local development or getting a Backstage POC up and running quickly, here's how:
 
-First we need to pull down the container image, we'll use Postgres 18, check out the Postgres Version Policy to learn which versions are supported.
+First we need to pull down the container image, we'll use Postgres 18, check out the [Postgres Version Policy](/docs/overview/versioning-policy#postgresql-releases) to learn which versions are supported.
 
 ```
 docker pull postgres:18-trixie
@@ -208,16 +209,16 @@ Then you would just run `docker compose -f docker-compose.local.yaml up` to star
 
 ## Next Steps
 
-We recommend you read Setting up authentication next.
+We recommend you read [Setting up authentication](/docs/getting-started/config/authentication) next.
 
 ## Further Reading
 
 If you want to read more about the database configuration, here are some helpful links:
 
-- Configuring Plugin Databases
-- Manual Knex Rollback
-- Read more about Knex, the database wrapper that we use.
-- Install `pgAdmin`4, a helpful tool for querying your database.
+- [Configuring Plugin Databases](/docs/tutorials/configuring-plugin-databases#privileges)
+- [Manual Knex Rollback](/docs/tutorials/manual-knex-rollback)
+- [Read more about Knex](http://knexjs.org/), the database wrapper that we use.
+- [Install](https://www.pgadmin.org/), a helpful tool for querying your database.- `pgAdmin`4
 
 # Citations
 

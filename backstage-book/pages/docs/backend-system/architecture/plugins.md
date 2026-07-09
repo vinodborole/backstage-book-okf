@@ -3,7 +3,7 @@ type: Web Page
 title: Backend Plugins | Backstage Software Catalog and Developer Platform
 description: Backend plugins
 resource: https://backstage.io/docs/backend-system/architecture/plugins
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Backend Plugins
@@ -12,7 +12,7 @@ Plugins provide the actual base features of a Backstage backend. Each plugin ope
 
 ## Defining a Plugin
 
-Plugins are created using the `createBackendPlugin` function, and should typically be exported from a plugin package. All plugins must have an ID and a `register` method, where the ID matches the plugin ID in the package name, without the `-backend` suffix. See also the dedicated section about proper naming patterns.
+Plugins are created using the `createBackendPlugin` function, and should typically be exported from a plugin package. All plugins must have an ID and a `register` method, where the ID matches the plugin ID in the package name, without the `-backend` suffix. See also the [dedicated section](/docs/backend-system/architecture/naming-patterns) about proper naming patterns.
 
 ```
 // plugins/example-backend/src/plugin.ts
@@ -34,7 +34,7 @@ export const examplePlugin = createBackendPlugin({
   },
 });
 ```
-The `env` object passed to the `register` callback contains different methods that declare the external surface of the plugin. The `env.registerInit` method is used to register an initialization function that is run when the backend starts up. The `deps` argument is used to declare service dependencies, and the `init` callback is passed an object with the resolved dependencies. In this case, we declare a dependency on the logger service, which is one of the core services available to all Backstage backend plugins. For a full list of core services as well as documentation for each services, see the core services section. Plugins can of course also depend on services exported by other libraries.
+The `env` object passed to the `register` callback contains different methods that declare the external surface of the plugin. The `env.registerInit` method is used to register an initialization function that is run when the backend starts up. The `deps` argument is used to declare service dependencies, and the `init` callback is passed an object with the resolved dependencies. In this case, we declare a dependency on the logger service, which is one of the core services available to all Backstage backend plugins. For a full list of core services as well as documentation for each services, see the [core services section](/docs/backend-system/core-services/index). Plugins can of course also depend on services exported by other libraries.
 
 The `createBackendPlugin` return value is exported as `examplePlugin`, which is a factory function used to create the actual plugin instance. For example, to install the plugin in your backend instance, you would do the following:
 
@@ -53,13 +53,13 @@ This allows you to install the plugin in your backend instance by just referenci
 ```
 backend.add(import('backstage-plugin-example-backend'));
 ```
-To make your plugins customizable you should generally prefer to use static configuration. By convention plugins should place their configuration under a top-level configuration key that matches the plugin ID. For example, our example plugin might be configured as follows:
+To make your plugins customizable you should generally prefer to use [static configuration](/docs/conf/defining). By convention plugins should place their configuration under a top-level configuration key that matches the plugin ID. For example, our example plugin might be configured as follows:
 
 ```
 example:
   message: Welcome to the example plugin
 ```
-For situations where static configuration is too limiting, you can instead register extension points for your plugin. Extension Points are covered in the next section.
+For situations where static configuration is too limiting, you can instead register extension points for your plugin. Extension Points are covered in the [next section](/docs/backend-system/architecture/extension-points).
 
 ## Rules of Plugins
 
@@ -73,7 +73,7 @@ Plugins must always be designed to be horizontally scalable. This means that you
 
 ### Isolated
 
-Plugins must never communicate with each other directly through code, they may only communicate over the network. Plugins that wish to expose an external interface for other plugins and modules to use are recommended to do so through a node-library package. The library should export an API client service to make calls to your plugin, or similar construct.
+Plugins must never communicate with each other directly through code, they may only communicate over the network. Plugins that wish to expose an external interface for other plugins and modules to use are recommended to do so through a [node-library](/docs/tooling/cli/build-system#package-roles) package. The library should export an API client service to make calls to your plugin, or similar construct.
 
 # Citations
 

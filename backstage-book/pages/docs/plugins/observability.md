@@ -3,31 +3,34 @@ type: Web Page
 title: Observability | Backstage Software Catalog and Developer Platform
 description: Adding Observability to Your Plugin
 resource: https://backstage.io/docs/plugins/observability
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Observability
 
-This section is part of the legacy plugins documentation. For new backend system logging, see the Logger and Root Logger core service documentation. For health checks, see Root Health.
+This section is part of the legacy plugins documentation. For new backend system logging, see the [Logger](/docs/backend-system/core-services/logger) and [Root Logger](/docs/backend-system/core-services/root-logger) core service documentation. For health checks, see [Root Health](/docs/backend-system/core-services/root-health).
 
 This article briefly describes the observability options that are available to a Backstage integrator.
 
 ## Datadog RUM Events
 
-See how to install Datadog Events in your app here.
+See how to install Datadog Events in your app
+[here](/docs/integrations/datadog-rum/installation).
 
 ## Logging
 
 ### New Backend
 
 The backend supplies a central logging service,
-`rootLogger`, as well as a plugin
-based logger, `logger` from `coreServices`.
+[ rootLogger](/docs/backend-system/core-services/root-logger), as well as a plugin
+based logger, 
+
+[from](/docs/backend-system/core-services/logger)
+
+`logger``coreServices`.
 To add additional granularity to your logs, you can create children from the plugin
 based logger, using the `.child()` method and provide it with JSON data. For example,
-if you wanted to log items for a specific span in your plugin, you could do
-
-```
+if you wanted to log items for a specific span in your plugin, you could do```
 export function createRouter({ logger }) {
   const router = Router();
   router.post('/task/:taskId/queue', (req, res) => {
@@ -44,11 +47,11 @@ export function createRouter({ logger }) {
 ```
 You can also add additional metadata to all logs for your Backstage instance by
 overriding the `rootLogger` implementation, you can see an example in
-the `rootLogger` docs.
+[the  rootLogger docs](/docs/backend-system/core-services/root-logger#configuring-the-service).
 
 ### Old Backend
 
-The backend supplies a central winston
+The backend supplies a central [winston](https://github.com/winstonjs/winston)
 root logger that plugins are expected to use for their logging needs. In the
 default production setup, it emits structured JSON logs on stdout, with a field
 `"service": "backstage"` and also tagged on a per-plugin basis. Plugins that
@@ -75,7 +78,8 @@ The new backend provides a `RootHealthService` which implements
 `/.backstage/health/v1/readiness` and `/.backstage/health/v1/liveness` endpoints
 to provide health checks for the entire backend instance.
 
-You can read more about this new service and how to customize it in the Root Health Service documentation.
+You can read more about this new service and how to customize it in the
+[Root Health Service documentation](/docs/backend-system/core-services/root-health).
 
 ### New Backend (pre 1.29.0)
 
@@ -107,7 +111,7 @@ const healthCheck = createBackendPlugin({
 ### Old Backend
 
 The example old backend in the Backstage repository
-supplies
+[supplies](https://github.com/backstage/backstage/blob/bc18571b7a742863a770b2a54e785d6bbef7e184/packages/backend/src/index.ts#L99)
 a very basic health check endpoint on the `/healthcheck` route. You may add such
 a handler to your backend as well, and supply your own logic to it that fits
 your particular health checking needs.

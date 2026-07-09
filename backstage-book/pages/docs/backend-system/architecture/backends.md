@@ -3,7 +3,7 @@ type: Web Page
 title: Backend Instances | Backstage Software Catalog and Developer Platform
 description: Backend instances
 resource: https://backstage.io/docs/backend-system/architecture/backends
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Backend Instances
@@ -26,9 +26,9 @@ backend.add(scaffolderPlugin);
 // Start up the backend
 backend.start();
 ```
-We call `createBackend` to create a new backend instance, which is responsible for wiring together all of the features that we provide to the app. It also provides default implementations of all core services for use in plugins. No real work is done at the point of creating the backend though, it's all deferred to the `backend.start()` call.
+We call `createBackend` to create a new backend instance, which is responsible for wiring together all of the features that we provide to the app. It also provides default implementations of all [core services](/docs/backend-system/core-services/index) for use in plugins. No real work is done at the point of creating the backend though, it's all deferred to the `backend.start()` call.
 
-To add any feature to a backend instance you use the `.add(...)` method. Features are either plugins, modules, or service factories. You can read more about building plugins and modules in the building plugins and modules docs, as well as how to install services factories in the building backends docs.
+To add any feature to a backend instance you use the `.add(...)` method. Features are either plugins, modules, or service factories. You can read more about building plugins and modules in the [building plugins and modules docs](/docs/backend-system/building-plugins-and-modules/index), as well as how to install services factories in the [building backends docs](/docs/backend-system/building-backends/index).
 
 Once you have added all desired features we call the `.start()` method. This causes the backend to start up and initialize all features. When starting up the backend will validate all features to make sure that there are no conflicts. For example making sure that there are no circular dependencies.
 

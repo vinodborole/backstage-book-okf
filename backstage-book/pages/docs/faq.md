@@ -3,18 +3,18 @@ type: Web Page
 title: Overview | Backstage Software Catalog and Developer Platform
 description: FAQ Overview
 resource: https://backstage.io/docs/faq
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Overview
 
 This section contains answers to frequently asked questions about Backstage.
 
-### Product FAQ
+[Product FAQ](/docs/faq/product)
 
 Questions related to product and design.
 
-### Technical FAQ
+[Technical FAQ](/docs/faq/technical)
 
 General technical questions about Backstage.
 

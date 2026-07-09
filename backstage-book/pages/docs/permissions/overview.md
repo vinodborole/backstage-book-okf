@@ -3,12 +3,12 @@ type: Web Page
 title: Overview | Backstage Software Catalog and Developer Platform
 description: A high level overview of the Backstage permission framework
 resource: https://backstage.io/docs/permissions/overview
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Overview
 
-The previous section covered the various *authentication* methods of Backstage, but Backstage can also *authorize* specific data, APIs, or interface actions - meaning that Backstage has the ability to enforce rules about what type of access is allowed for a given user of a system.
+[The previous section](/docs/auth/) covered the various *authentication* methods of Backstage, but Backstage can also *authorize* specific data, APIs, or interface actions - meaning that Backstage has the ability to enforce rules about what type of access is allowed for a given user of a system.
 
 By default, Backstage endpoints are not protected, and all actions are available to anyone. However, configuring which users can access which resources and actions is a common need for many organizations. The permission framework allows integrators to achieve this through the use of granular permissioning for those resources and actions.
 
@@ -42,9 +42,9 @@ The user is either granted access or an error is shown. The plugin is responsibl
 
 ## How do I get started?
 
-See the "getting started" permission documentation for Backstage integrators.
+See the "[getting started](/docs/permissions/getting-started)" permission documentation for Backstage integrators.
 
-If you are a plugin author, see the permission documentation for plugin authors on how to integrate permissions into your plugin.
+If you are a plugin author, see the permission [documentation for plugin authors](/docs/permissions/plugin-authors/01-setup) on how to integrate permissions into your plugin.
 
 # Citations
 

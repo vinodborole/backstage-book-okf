@@ -3,14 +3,14 @@ type: Web Page
 title: Backstage Threat Model | Backstage Software Catalog and Developer Platform
 description: A document describing the threat model for Backstage.
 resource: https://backstage.io/docs/next/overview/threat-model
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Backstage Threat Model
 
 The threat model outlines key security considerations of Backstage for operators, developers and security researchers. This is a living document and will evolve and be expanded alongside the Backstage project as relevant.
 
-See Security Policy and Advisories in the Backstage GitHub repository for details on reporting security vulnerabilities and advisories on fixed security flaws.
+See [Security Policy and Advisories](https://github.com/backstage/backstage/security) in the Backstage GitHub repository for details on reporting security vulnerabilities and advisories on fixed security flaws.
 
 ## Trust Model
 
@@ -26,19 +26,20 @@ An **external user** is a user that does not belong to the other three groups, f
 
 ## Operator Responsibilities
 
-This section assumes that you are using the backend system and at least Backstage release version 1.24. Before that Backstage did not come with built-in protection against unauthorized access and you were required to deploy it in a protected environment.
+This section assumes that you are using the
+[backend system](/docs/next/backend-system/) and at least Backstage release [version 1.24](/docs/next/releases/v1.24.0). Before that Backstage did not come with built-in protection against unauthorized access and you were required to deploy it in a protected environment.
 
 Backstage is primarily designed to be deployed in a protected environment rather than being exposed to the public internet. From a confidentiality and integrity perspective, Backstage is designed to protect against unauthorized access to data and to ensure that data is not tampered with. However, Backstage does not provide more than rudimentary protection against denial of service attacks, and it is the responsibility of the operator to ensure that the Backstage deployment is protected against such attacks. A common and recommended way to protect a Backstage deployment from unauthorized access is to deploy it behind an authenticating proxy such as AWS’s ALB, GCP’s IAP, or Cloudflare Access.
 
-Users that are signed in to Backstage generally have full access to all information and actions. If more fine-grained control is required, the permissions system should be enabled and configured to restrict access as necessary.
+Users that are signed in to Backstage generally have full access to all information and actions. If more fine-grained control is required, the [permissions system](/docs/next/permissions/overview) should be enabled and configured to restrict access as necessary.
 
 An operator is responsible for protecting the integrity of configuration files as it may otherwise be possible to introduce vulnerable configurations, as well as the confidentiality of configured secrets related to Backstage as these typically include authentication details to third party systems.
 
 The operator is ultimately responsible for auditing usage of internal and external plugins as these run on the host system and have access to configuration and secrets. When installing plugins from sources like NPM, you should vet these in the same way that you would vet any other package installed from that source.
 
-The operator is also responsible for maintaining the resolved NPM dependencies of their Backstage project. This involves ensuring that `yarn.lock` receives updated versions of packages that have vulnerabilities, when those fixed versions are in range of what the Backstage packages request in their respective `package.json` files. This is commonly done by employing automated tooling such as Dependabot, Snyk, and/or Renovate on your own repository. When fixed versions exist that are *not* in range of what Backstage packages request, or when larger operations such as switching out an entire dependency for another one is required, maintainers collaborate with contributors to try to address those dependency declarations in the main project as soon as possible.
+The operator is also responsible for maintaining the resolved NPM dependencies of their Backstage project. This involves ensuring that `yarn.lock` receives updated versions of packages that have vulnerabilities, when those fixed versions are in range of what the Backstage packages request in their respective `package.json` files. This is commonly done by employing automated tooling such as [Dependabot](https://dependabot.com/), [Snyk](https://snyk.io/), and/or [Renovate](https://docs.renovatebot.com/) on your own repository. When fixed versions exist that are *not* in range of what Backstage packages request, or when larger operations such as switching out an entire dependency for another one is required, maintainers collaborate with contributors to try to address those dependency declarations in the main project as soon as possible.
 
-The built-in protection against unauthorized access does not by default include protection of the frontend bundle. The frontend bundle includes all the code of your frontend plugins and code in minified form, as well as any other frontend resources like images, fonts, etc. If this is a concern, you can use the experimental public entry point to create two separate frontend builds, where authenticated users only have access to the full one.
+The built-in protection against unauthorized access does not by default include protection of the frontend bundle. The frontend bundle includes all the code of your frontend plugins and code in minified form, as well as any other frontend resources like images, fonts, etc. If this is a concern, you can use the [experimental public entry point](https://backstage.io/docs/tutorials/enable-public-entry/) to create two separate frontend builds, where authenticated users only have access to the full one.
 
 ## Common Backend Configuration
 
@@ -54,9 +55,9 @@ Note that the `UrlReaderService` system operates with a service context and is n
 
 Backstage provides authentication of users through the `auth` plugin, which primarily acts as an authorization server for different OAuth 2.0 provider integrations. These integrations can both serve the purpose of signing users into Backstage, as well as providing delegated access to external resources, and are all subject to the common concerns of implementing secure OAuth 2.0 authorization servers. All auth provider integrations are disabled by default, and need to be enabled through configuration in order to be used. For each Backstage installation it is recommended to only enable the minimal set of providers that are in use by that instance.
 
-In order to use an auth provider to sign in users into Backstage, it needs to be configured with a sign-in resolver. The sign-in resolver is a sensitive part of configuring Backstage and it is important that it always resolves user identities correctly, and rejects unauthorized users. There are a number of built-in sign-in resolvers that can simplify configuration, or you can implement your own custom sign-in resolver in code, either way it is very important that these resolvers map user identities correctly. You should **always use the minimum number of sign-in resolvers necessary** to avoid risk of account hijacking.
+In order to use an auth provider to sign in users into Backstage, it needs to be configured with a [sign-in resolver](https://backstage.io/docs/auth/identity-resolver). The sign-in resolver is a sensitive part of configuring Backstage and it is important that it always resolves user identities correctly, and rejects unauthorized users. There are a number of built-in sign-in resolvers that can simplify configuration, or you can implement your own custom sign-in resolver in code, either way it is very important that these resolvers map user identities correctly. You should **always use the minimum number of sign-in resolvers necessary** to avoid risk of account hijacking.
 
-Backstage also supports authentication through an authenticating reverse proxy such as AWS ALB, where the user identity is read from the incoming proxied decorated request. The following proxy auth providers verify the signature of incoming requests, and are therefore safe to deploy with direct access by users: `awsAlb`, `cfAccess`, and `gcpIap`. Providers like `oauth2Proxy` do not verify the incoming request and can therefore be spoofed by a malicious internal user to supply the `auth` backend with forged identity information. It’s therefore highly recommended to restrict access to the `oauth2Proxy` endpoints, or use a different provider.
+Backstage also supports authentication through an authenticating reverse proxy such as [AWS ALB](https://aws.amazon.com/elasticloadbalancing/application-load-balancer/), where the user identity is read from the incoming proxied decorated request. The following proxy auth providers verify the signature of incoming requests, and are therefore safe to deploy with direct access by users: `awsAlb`, `cfAccess`, and `gcpIap`. Providers like `oauth2Proxy` do not verify the incoming request and can therefore be spoofed by a malicious internal user to supply the `auth` backend with forged identity information. It’s therefore highly recommended to restrict access to the `oauth2Proxy` endpoints, or use a different provider.
 
 As part of signing in with a sign-in resolver, a Backstage Token is issued containing the resolved user identity. The tokens are asymmetrically signed JSON Web Tokens, with the public keys available to any service that wishes to verify a token. The signing keys are rotated continuously and are unique to each installation of Backstage, meaning that Backstage Tokens are not shared across installations. The token contains claims for the user identity and ownership information, which can be used to determine what Backstage resources are owned by that user or group. It is important that this token can not be forged outside of the `auth` plugin, with the exception of other plugins deployed in the same backend service or sharing the same database. For a high-security deployment, the `auth` backend should therefore be deployed in a separate service with its own database.
 
@@ -70,15 +71,15 @@ When forwarding a user identity in a call across backend plugins only the limite
 
 ## Catalog
 
-Operators should configure catalog rules to limit the allowed entity kinds that users can define. In general it is best to restrict definition of User, Group, and Template entities so that internal users cannot register additional ones. Template entities define actions that are executed on the backend hosts, and while the goal is for these actions to be secure regardless of input, it is still a more sensitive context and it is recommended that you protect it with additional checks. It is very important to not allow registration of User and Group entities if you ingest and rely on these as organizational data in your catalog. Doing so could otherwise open up for the ability to impersonate users and confuse group membership information. You should always ingest organizational data using a statically configured catalog location or an entity provider reading from a trusted source. The entities emitted directly by an entity provider are always trusted and rules are not applied to them, but any entities produced further down the chain are still subject to the rules.
+Operators should configure [catalog rules](https://backstage.io/docs/features/software-catalog/configuration#catalog-rules) to limit the allowed entity kinds that users can define. In general it is best to restrict definition of User, Group, and Template entities so that internal users cannot register additional ones. Template entities define actions that are executed on the backend hosts, and while the goal is for these actions to be secure regardless of input, it is still a more sensitive context and it is recommended that you protect it with additional checks. It is very important to not allow registration of User and Group entities if you ingest and rely on these as organizational data in your catalog. Doing so could otherwise open up for the ability to impersonate users and confuse group membership information. You should always ingest organizational data using a statically configured catalog location or an entity provider reading from a trusted source. The entities emitted directly by an entity provider are always trusted and rules are not applied to them, but any entities produced further down the chain are still subject to the rules.
 
 The Catalog does not aim to protect against resource exhaustion attacks in its default setup. If you need to prevent your internal users from being able to register large amounts of entities, then it is recommended to disable entity registration and use a different approach for discovering entities. One way to mitigate any resource exhaustion attacks is to only allow the catalog to read from trusted SCM sources that have an audit trail. Catalog currently lacks limits for entity hierarchy depth and entity size, which we hope to address in the future.
 
-By default all internal users are allowed to create and delete entities. If this does not fit your organization's needs it is recommended to enable and configure the permission system to restrict these operations.
+By default all internal users are allowed to create and delete entities. If this does not fit your organization's needs it is recommended to enable and configure the [permission](https://backstage.io/docs/permissions/overview) system to restrict these operations.
 
 ## Scaffolder
 
-By default, Scaffolding jobs execute directly on the host machine, including any actions defined in the template. Because the Scaffolder templates are considered a more sensitive area it is recommended to control access to create and update templates to trusted parties. Template execution is intended to be secure regardless of input, but we still recommend this additional layer of protection. The string templating is executed in a node VM sandbox to mitigate the possibility of remote code execution attacks.
+By default, Scaffolding jobs execute directly on the host machine, including any actions defined in the template. Because the Scaffolder templates are considered a more sensitive area it is recommended to control access to create and update templates to trusted parties. Template execution is intended to be secure regardless of input, but we still recommend this additional layer of protection. The string templating is executed in a [node VM sandbox](https://github.com/laverdet/isolated-vm) to mitigate the possibility of remote code execution attacks.
 
 The Scaffolder often has elevated permissions to for example create repositories in a GitHub organization. The operator should therefore be cautious of Scaffolder Templates that for example delete or update existing resources as the user input is typically user defined and can therefore delete or modify resources maliciously or by mistake.
 
@@ -86,7 +87,7 @@ One strategy that allows you to reduce the access that the Scaffolder service ha
 
 The operator should audit installed scaffolding actions just like any other plugin package. It is also important to verify that installed actions fall in line with your own security requirements, as some actions might be intended for more relaxed environments.
 
-By default all internal users are allowed to execute templates in the scaffolder. If this does not fit your organization's needs it is recommended to enable and configure the permission system to restrict these operations.
+By default all internal users are allowed to execute templates in the scaffolder. If this does not fit your organization's needs it is recommended to enable and configure the [permission](https://backstage.io/docs/permissions/overview) system to restrict these operations.
 
 ## TechDocs
 

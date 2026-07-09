@@ -3,7 +3,7 @@ type: Web Page
 title: Roadmap | Backstage Software Catalog and Developer Platform
 description: Roadmap of Backstage
 resource: https://backstage.io/docs/overview/roadmap
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Roadmap
@@ -18,7 +18,11 @@ The initiatives listed below are planned for release within the next half-year, 
 
 ### New Frontend System - Ready for Adoption
 
-The new frontend system still needs more work, and the next milestone is to improve it to the point where there is enough confidence in the design to start encouraging adoption in the community. You can follow along with this work in the meta issue. This milestone also includes reaching and executing rollout phase 2.
+The [new frontend system](/docs/frontend-system/) still needs more work, and
+the next milestone is to improve it to the point where there is enough
+confidence in the design to start encouraging adoption in the community. You can
+follow along with this work in the [meta issue](https://github.com/backstage/backstage/issues/19545).
+This milestone also includes reaching and executing [rollout phase 2](https://github.com/backstage/backstage/issues/19545#issuecomment-1766069146).
 
 Once the initial milestone is reached, the goal is to also build out broader support for the new frontend system in the core plugins.
 
@@ -36,9 +40,13 @@ As we evolve Backstage, we want you to contribute actively in the journey to def
 
 A roadmap is only useful if it captures real needs. If you have success stories, feedback, or ideas, we want to hear from you! If you plan to work (or are already working) on a new or existing feature, please let us know, so that we can update the roadmap accordingly. We are also happy to share knowledge and context that will help your feature land successfully.
 
-You can also head over to the CONTRIBUTING guidelines to get started.
+You can also head over to the
+[CONTRIBUTING](https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md)
+guidelines to get started.
 
-If you have specific questions about the roadmap, please create an issue, ping us on Discord, or book time with the Spotify team.
+If you have specific questions about the roadmap, please create an
+[issue](https://github.com/backstage/backstage/issues/new/choose), ping us on
+[Discord](https://discord.gg/backstage-687207715902193673), or [book time](https://spoti.fi/backstageofficehours) with the Spotify team.
 
 # Citations
 

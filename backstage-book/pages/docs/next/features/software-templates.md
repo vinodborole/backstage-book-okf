@@ -4,7 +4,7 @@ title: Backstage Software Templates | Backstage Software Catalog and Developer P
 description: The Software Templates part of Backstage is a tool that can help you
   create Components inside Backstage
 resource: https://backstage.io/docs/next/features/software-templates
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Backstage Software Templates
@@ -13,11 +13,11 @@ The Software Templates part of Backstage is a tool that can help you create Comp
 
 When creating custom scaffolder actions, **use camelCase for action IDs** instead of kebab-case. Action IDs with dashes (like `fetch-component-id`) will cause template expressions like `${{ steps.fetch-component-id.output.componentId }}` to return `NaN` because the dashes are evaluated as subtraction operators in JavaScript expressions.
 
-See the Writing Custom Actions guide for more details.
+See the [Writing Custom Actions guide](/docs/next/features/software-templates/writing-custom-actions#naming-conventions) for more details.
 
 ## Prerequisites
 
-These docs assume you have already gone over the Backstage Getting Started section and you are able to run Backstage locally or it has been deployed somewhere.
+These docs assume you have already gone over the [Backstage Getting Started](/docs/next/getting-started/) section and you are able to run Backstage locally or it has been deployed somewhere.
 
 ## Getting Started
 
@@ -86,7 +86,7 @@ In the event of a failed template execution, the "Start Over" option can be used
 
 ## Want to see it in action?
 
-The Backstage Demo Site has a template you are able to run, which is where the screenshots in this document were taken from!
+The [Backstage Demo Site](https://demo.backstage.io/create) has a template you are able to run, which is where the screenshots in this document were taken from!
 
 # Citations
 

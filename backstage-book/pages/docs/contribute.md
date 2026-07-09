@@ -4,7 +4,7 @@ title: Contributors | Backstage Software Catalog and Developer Platform
 description: Documentation on how to get set up for doing development on the Backstage
   repository
 resource: https://backstage.io/docs/contribute
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Contributors
@@ -15,7 +15,7 @@ Therefore, we want to create a strong community of contributors — all working 
 
 Contributions are welcome, and they are greatly appreciated! Every little bit helps, and credit will always be given. ❤️
 
-To get you started, we've put together a Contributors Guide in the Backstage GitHub repo that has all the information you need.
+To get you started, we've put together a [Contributors Guide in the Backstage GitHub repo](https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md) that has all the information you need.
 
 # Citations
 

@@ -3,7 +3,7 @@ type: Web Page
 title: Non-technical FAQ | Backstage Software Catalog and Developer Platform
 description: Questions related to product and design.
 resource: https://backstage.io/docs/faq/product
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Non-technical FAQ
@@ -14,23 +14,44 @@ Yes, Backstage is just a framework for building your own developer portal. We ha
 
 ### Is Backstage a monitoring platform?
 
-No, but it can be! Backstage is designed to be a developer portal for all your infrastructure tooling, services, and documentation. So, it's not a monitoring platform — but that doesn't mean you can't integrate a monitoring tool into Backstage by writing a plugin.
+No, but it can be! Backstage is designed to be a developer portal for all your
+infrastructure tooling, services, and documentation. So, it's not a monitoring
+platform — but that doesn't mean you can't integrate a monitoring tool into
+Backstage by writing [a plugin](/docs/faq/technical#what-is-a-plugin-in-backstage).
 
 ### How is Backstage licensed?
 
-Backstage was released as open source software by Spotify and is licensed under Apache License, Version 2.0.
+Backstage was released as open source software by Spotify and is licensed under
+[Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 ### Why did we open source Backstage?
 
-We hope to see Backstage become the infrastructure standard everywhere. When we saw how much Backstage improved developer experience and productivity internally, we wanted to share those gains. After all, if Backstage can create order in an engineering environment as open and diverse as ours, then we're pretty sure it can create order (and boost productivity) anywhere. To learn more, read our blog post, "What the heck is Backstage anyway?"
+We hope to see Backstage become the infrastructure standard everywhere. When we
+saw how much Backstage improved developer experience and productivity
+internally, we wanted to share those gains. After all, if Backstage can create
+order in an engineering environment as open and diverse as ours, then we're
+pretty sure it can create order (and boost productivity) anywhere. To learn
+more, read our blog post,
+"[What the heck is Backstage anyway?](https://backstage.io/blog/2020/03/18/what-is-backstage)"
 
 ### Will Spotify's internal plugins be open sourced, too?
 
-Yes, we've already started releasing open source versions of some of the plugins we use here, and we'll continue to do so. Plugins are the building blocks of functionality in Backstage. We have over 120 plugins inside Spotify — many of those are specialized for our use, so will remain internal and proprietary to us. But we estimate that about a third of our existing plugins make good open source candidates. (And we'll probably end up writing some brand new ones, too.)
+Yes, we've already started releasing open source versions of some of the plugins
+we use here, and we'll continue to do so.
+[Plugins](/docs/faq/technical#what-is-a-plugin-in-backstage) are the building blocks of
+functionality in Backstage. We have over 120 plugins inside Spotify — many of
+those are specialized for our use, so will remain internal and proprietary to
+us. But we estimate that about a third of our existing plugins make good open
+source candidates. (And we'll probably end up writing some brand new ones, too.)
 
 ### What's the roadmap for Backstage?
 
-We envision three phases, which you can learn about in our project roadmap. Even though the open source version of Backstage is relatively new compared to our internal version, we have already begun work on various aspects of all three phases. Looking at the milestones for active issues will also give you a sense of our progress.
+We envision three phases, which you can learn about in
+[our project roadmap](/docs/overview/roadmap). Even though the open source version
+of Backstage is relatively new compared to our internal version, we have already
+begun work on various aspects of all three phases. Looking at the
+[milestones for active issues](https://github.com/backstage/backstage/milestones)
+will also give you a sense of our progress.
 
 ### My company doesn't have thousands of developers or services. Is using Backstage excessive for our needs?
 

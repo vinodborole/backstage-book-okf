@@ -3,7 +3,7 @@ type: Web Page
 title: System Model | Backstage Software Catalog and Developer Platform
 description: Documentation on System Model
 resource: https://backstage.io/docs/features/software-catalog/system-model
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # System Model
@@ -11,7 +11,7 @@ timestamp: '2026-07-06T13:23:17.605783+00:00'
 We believe that a strong shared understanding and terminology around software and resources leads to a better Backstage experience.
 
 *This description originates from
-this RFC. Note that some of
+ this RFC. Note that some of
 the concepts are not yet supported in Backstage.*
 
 ## Core Entities
@@ -84,7 +84,8 @@ A location is a marker that references other places to look for catalog data.
 
 ### Type
 
-The type field in the system has no set meaning. It is up to the user to assign their own types and use them as desired, such as for link validation or creating custom UI components. Some common pre-defined types are depicted in the ecosystem modeling diagram.
+The type field in the system has no set meaning. It is up to the user to assign their own types and use them as desired, such as for link validation or creating custom UI components. Some common pre-defined types are depicted in the
+[ecosystem modeling diagram](#ecosystem-modeling).
 
 ### Template
 

@@ -3,7 +3,7 @@ type: Web Page
 title: Configuring Plugin Databases | Backstage Software Catalog and Developer Platform
 description: Guide on how to configure Backstage databases.
 resource: https://backstage.io/docs/tutorials/configuring-plugin-databases
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Configuring Plugin Databases
@@ -16,7 +16,11 @@ names follow the `backstage_plugin_<pluginId>` pattern, e.g.
 use cases where you have multiple deployments running on a shared database
 instance or cluster.
 
-With infrastructure defined as code or data (Terraform, AWS CloudFormation, etc.), you may have database credentials which lack permissions to create new databases or you do not have control over the database names. In these instances, you can set the database connection configuration on a per plugin basis.
+With infrastructure defined as code or data (Terraform, AWS CloudFormation,
+etc.), you may have database credentials which lack permissions to create new
+databases or you do not have control over the database names. In these
+instances, you can set the database connection configuration on a
+[per plugin basis](#connection-configuration-per-plugin).
 
 Backstage supports all of these use cases with the `DatabaseManager` provided by
 `@backstage/backend-common`. We will now cover how to use and configure
@@ -167,9 +171,9 @@ The mechanisms in this guide should help you tackle different database deploymen
 
 If you want to read more about the database configuration, here are some helpful links:
 
-- Manual Knex Rollback
-- Read more about Knex, the database wrapper that we use.
-- Install `pgAdmin`4, a helpful tool for querying your database.
+- [Manual Knex Rollback](/docs/tutorials/manual-knex-rollback)
+- [Read more about Knex](http://knexjs.org/), the database wrapper that we use.
+- [Install](https://www.pgadmin.org/), a helpful tool for querying your database.- `pgAdmin`4
 
 # Citations
 

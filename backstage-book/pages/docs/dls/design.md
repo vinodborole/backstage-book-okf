@@ -3,7 +3,7 @@ type: Web Page
 title: Design | Backstage Software Catalog and Developer Platform
 description: Documentation on Design
 resource: https://backstage.io/docs/dls/design
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Design
@@ -22,7 +22,7 @@ Backstage Open Source is a newly launched endeavor, and we’re excited to scale
 The Backstage Design Team is small but mighty, and we truly cherish the amazing
 opportunity we have to work with the Backstage Open Source community! Have an
 idea? A component request? Feel free to communicate with us via
-Discord (*#design* channel). Collaboration trumps
+[Discord](https://discord.gg/backstage-687207715902193673) (*#design* channel). Collaboration trumps
 individual speed, and we want to work with you to make Backstage work for all of
 our users.
 
@@ -30,16 +30,18 @@ our users.
 
 There are a lot of exciting things coming up and we want to keep you in the
 loop! Keep an eye on our
-Milestones in GitHub to see
+[Milestones in GitHub](https://github.com/backstage/backstage/milestones) to see
 where we're headed and review the
-open design issues,
+[open design issues](https://github.com/backstage/backstage/issues?q=is%3Aopen+is%3Aissue+label%3Adesign),
 to see if you can help. We'll also be posting updates in the *#design* channel
-on Discord. Not only that, we want to keep you
+on [Discord](https://discord.gg/backstage-687207715902193673). Not only that, we want to keep you
 informed on the decisions we've made and why we've made them.
 
 ## 🛠 Our Practice
 
-The chart below details how we work. We have a Figma workspace for Backstage Open Source, and we plan on referencing Figma documents to share specs and prototypes with the community.
+The chart below details how we work. We have a
+[Figma workspace for Backstage Open Source](/docs/dls/figma), and we plan on
+referencing Figma documents to share specs and prototypes with the community.
 
 ### Creating a New Design Component
 
@@ -57,7 +59,11 @@ The chart below details how we work. We have a Figma workspace for Backstage Ope
 |---|---|---|---|
 | External or internal contributors make a pull request for their entity on backstage/backstage GitHub for review. | Platform designers and devs review the entity and submit feedback or approval on backstage/backstage GitHub. | External or internal contributors make the changes, pull request is approved and the entity is merged. It’s live on Backstage! 🎉 | If the entity happens to be or include a UX component, it’s added to Backstage Storybook as well. | 
 
-The following diagram shows the relationship between the Backstage Design System and our foundation, which comprises of Material UI that is shaped by user experience and user interface decisions made by our Backstage Design Team. Also note, we encourage you to take the core experience we’ve crafted and add custom theming to better represent your organization!
+The following diagram shows the relationship between the Backstage Design System
+and our foundation, which comprises of [Material UI](https://material-ui.com/)
+that is shaped by user experience and user interface decisions made by our
+Backstage Design Team. Also note, we encourage you to take the core experience
+we’ve crafted and add custom theming to better represent your organization!
 
 ## ✅ Our Priorities
 
@@ -73,12 +79,21 @@ This is the universal user experience that is shared amongst all Backstage users
 
 ### Pick up an issue!
 
-In the beginning, most of our issues will be centered around creating universal components for our Backstage Design System and adding them to our Storybook so plugin developers can reference them. We’ll also be creating issues that are focused on building up our core Backstage user experience. We’ll be labeling our issues in GitHub with ‘design’ and/or ‘storybook’ - so feel free to browse and tackle the tasks that interest you. If you have any questions regarding an issue, you can ask them in the comments section of the issue or on Discord. We absolutely adore our external contributors and will send you virtual semlas for your contributions!
+In the beginning, most of our issues will be centered around creating universal
+components for our Backstage Design System and adding them to our Storybook so
+plugin developers can reference them. We’ll also be creating issues that are
+focused on building up our core Backstage user experience. We’ll be labeling our
+issues in GitHub with ‘design’ and/or ‘storybook’ - so feel free to browse and
+tackle the tasks that interest you. If you have any questions regarding an
+issue, you can ask them in the comments section of the issue or on
+[Discord](https://discord.gg/backstage-687207715902193673). We absolutely adore our external
+contributors and will send you virtual
+[semlas](https://en.wikipedia.org/wiki/Semla) for your contributions!
 
 ### Request a component
 
 Create an issue (label it design and assign it to katz95) or send us a message
-on Discord (*#design* channel) with details of
+on [Discord](https://discord.gg/backstage-687207715902193673) (*#design* channel) with details of
 what the component is and its relevant use cases. Your request will be reviewed
 by our design team and you should hear back from us within 1-2 business days.
 We’ll get back to you and let you know whether your requested component will get
@@ -86,18 +101,20 @@ picked up by our team as something to be added to our design system.
 
 ## ✏️ Resources
 
-**Storybook** - where you can view our
+** Storybook** - where you can view our
 components. If you’d like to help build up our design system, you can also add
 components we’ve designed to the Storybook as well.
 
-**Figma** - we're stoked to be using Figma
+** Figma** - we're stoked to be using Figma
 Community to share our design assets. You can duplicate our UI Kit and design
 your own plugin for Backstage.
 
-**Discord** - all design questions should be
-directed to the *#design* channel.
+** Discord** - all design questions should be
+directed to the 
 
-**Customizing Your App's UI** -
+*#design*channel.
+
+** Customizing Your App's UI** -
 How to customize the look and feel of your Backstage instance by extending the
 theme.
 
@@ -105,7 +122,14 @@ theme.
 
 ### Contributions from designers
 
-Are you a designer at an organisation that’s implementing Backstage? A designer who’s fascinated by the developer productivity problem space? A designer who’s curious about open source design? We’d love for you to contribute. Behind the scenes, we’re setting up a few foundational elements to make sure that contributing to Backstage as a designer is easy. From styling guidelines to UX principles to Figma documents, we’ll make sure you’re equipped to chip in on this project. We’re excited to work with you! In the meantime, we’d love to hear from you on Discord.
+Are you a designer at an organisation that’s implementing Backstage? A designer
+who’s fascinated by the developer productivity problem space? A designer who’s
+curious about open source design? We’d love for you to contribute. Behind the
+scenes, we’re setting up a few foundational elements to make sure that
+contributing to Backstage as a designer is easy. From styling guidelines to UX
+principles to Figma documents, we’ll make sure you’re equipped to chip in on
+this project. We’re excited to work with you! In the meantime, we’d love to hear
+from you on [Discord](https://discord.gg/backstage-687207715902193673).
 
 # Citations
 

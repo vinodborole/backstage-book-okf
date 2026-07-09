@@ -3,12 +3,12 @@ type: Web Page
 title: Frontend Extensions | Backstage Software Catalog and Developer Platform
 description: Frontend extensions
 resource: https://backstage.io/docs/frontend-system/architecture/extensions
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Frontend Extensions
 
-As mentioned in the previous section, Backstage apps are built up from a tree of extensions. This section will go into more detail about what extensions are, how to create and use them, and how to create your own extensibility patterns.
+As mentioned in the [previous section](/docs/frontend-system/architecture/app), Backstage apps are built up from a tree of extensions. This section will go into more detail about what extensions are, how to create and use them, and how to create your own extensibility patterns.
 
 ## Extension Structure
 
@@ -18,7 +18,7 @@ Each extensions has a number of different properties that define how it behaves 
 
 The ID of an extension is used to uniquely identity it, and it should ideally be unique across the entire Backstage ecosystem. For each frontend app instance there can only be a single extension for any given ID. Installing multiple extensions with the same ID will either result in an error or one of the extensions will override the others. The ID is also used to reference the extensions from other extensions, in configuration, and in other places such as developer tools and analytics.
 
-When creating an extension you do not provide the ID directly. Instead, you indirectly or directly provide the kind, namespace, and name parts that make up the ID. The kind is always provided by the extension blueprint, the only exception is if you use `createExtension` directly. Any extension that is provided by a plugin will by default have its namespace set to the plugin ID, so you generally only need to provide an explicit namespace if you want to override an existing extension. The name is also optional, and primarily used to distinguish between multiple extensions of the same kind and namespace. If a plugin doesn't need to distinguish between different extensions of the same kind, the name can be omitted.
+When creating an extension you do not provide the ID directly. Instead, you indirectly or directly provide the kind, namespace, and name parts that make up the ID. The kind is always provided by the [extension blueprint](/docs/frontend-system/architecture/extension-blueprints), the only exception is if you use [ createExtension](#creating-an-extension) directly. Any extension that is provided by a plugin will by default have its namespace set to the plugin ID, so you generally only need to provide an explicit namespace if you want to override an existing extension. The name is also optional, and primarily used to distinguish between multiple extensions of the same kind and namespace. If a plugin doesn't need to distinguish between different extensions of the same kind, the name can be omitted.
 
 The extension ID will be constructed using the pattern `[<kind>:][<namespace>][/][<name>]`, where the separating `/` is only present if both a namespace and name are defined.
 
@@ -75,7 +75,9 @@ const guardedCard = CardBlueprint.make({
 ```
 Conditions are evaluated when the app tree is prepared, not continuously while the app is running. If the underlying feature flags or permissions change, the app needs to be prepared again in order for the extension tree to change, which in practice typically means reloading the app.
 
-If a plugin or module also provides an `if` predicate, it is combined with the extension-level predicate using logical `AND`. See the plugin `if` option and frontend modules sections for more details.
+If a plugin or module also provides an `if` predicate, it is combined with the extension-level predicate using logical `AND`. See the [plugin  if option](/docs/frontend-system/architecture/plugins#if-option) and 
+
+[frontend modules](/docs/frontend-system/architecture/extension-overrides#creating-a-frontend-module)sections for more details.
 
 ### Configuration & configuration schema
 
@@ -105,7 +107,7 @@ const extension = createExtension({
   },
 });
 ```
-Note that while the `createExtension` function is public API and used in many places, it is not typically what you use when building plugins and features. Instead there are many extension blueprints exported by both the core APIs and plugins that make it easier to create extensions for more specific usages.
+Note that while the `createExtension` function is public API and used in many places, it is not typically what you use when building plugins and features. Instead there are many [extension blueprints](/docs/frontend-system/architecture/extension-blueprints) exported by both the core APIs and plugins that make it easier to create extensions for more specific usages.
 
 ## Extension data
 
@@ -157,7 +159,7 @@ const extension = createExtension({
 
 We provide default `coreExtensionData`, which provides commonly used `ExtensionDataRef`s - e.g. for `React.JSX.Element` and `RouteRef`. They can be used when creating your own extension. For example, the React Element extension data that we defined above is already provided as `coreExtensionData.reactElement`.
 
-For a full list and explanations of all types of core extension data, see the core extension data reference.
+For a full list and explanations of all types of core extension data, see the [core extension data reference](/docs/frontend-system/building-plugins/built-in-data-refs).
 
 ### Optional extension data
 
@@ -265,9 +267,9 @@ In addition to being able to access data passed through the input, you also have
 ```
 ## Extension configuration
 
-With the `app-config.yaml` there is already the option to pass configuration to plugins or the app to e.g. define the `baseURL` of your app. For extensions this concept would be limiting as an extension can be independent of the plugin & initiated several times. Therefore we created a possibility to configure each extension individually through config. The extension config schema is created using any schema library that implements the Standard Schema interface with JSON Schema support, such as `zod` v4 (`zod@^4.0.0`). In addition to TypeScript type checking, the schema also provides runtime validation and coercion. If we continue with the example of the `navigationExtension` and now want it to contain a configurable title, we could make it available like the following:
+With the `app-config.yaml` there is already the option to pass configuration to plugins or the app to e.g. define the `baseURL` of your app. For extensions this concept would be limiting as an extension can be independent of the plugin & initiated several times. Therefore we created a possibility to configure each extension individually through config. The extension config schema is created using any schema library that implements the [Standard Schema](https://github.com/standard-schema/standard-schema) interface with JSON Schema support, such as [ zod](https://zod.dev/) v4 (
 
-```
+`zod@^4.0.0`). In addition to TypeScript type checking, the schema also provides runtime validation and coercion. If we continue with the example of the `navigationExtension` and now want it to contain a configurable title, we could make it available like the following:```
 import { z } from 'zod';
 const navigationExtension = createExtension({
   // ...
@@ -361,11 +363,11 @@ const routableExtension = createExtension({
 
 If you need to make extensions available in multiple locations throughout your app, use a Utility API that collects the extensions and allows multiple parent extensions to consume them. This pattern provides better separation of concerns and makes data flow more explicit.
 
-See the Sharing Extensions Across Multiple Locations guide for a complete explanation of this pattern with detailed examples.
+See the [Sharing Extensions Across Multiple Locations](/docs/frontend-system/architecture/sharing-extensions) guide for a complete explanation of this pattern with detailed examples.
 
 ## Relative attachment points
 
-When creating an extension or an extension blueprint you can specify an attachment point that is relative to the current plugin. This is particularly useful for groups of blueprints that are part of a common hierarchy, with extensions from one blueprint attaching to extensions from the other blueprint. For example, the following pair of extension definitions could be installed multiple times in different plugins, each creating their own hierarchy:
+When creating an extension or an [extension blueprint](/docs/frontend-system/architecture/extension-blueprints) you can specify an attachment point that is relative to the current plugin. This is particularly useful for groups of blueprints that are part of a common hierarchy, with extensions from one blueprint attaching to extensions from the other blueprint. For example, the following pair of extension definitions could be installed multiple times in different plugins, each creating their own hierarchy:
 
 ```
 // Parent extension with a fixed attachment point

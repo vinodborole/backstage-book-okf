@@ -3,12 +3,12 @@ type: Web Page
 title: Composability System | Backstage Software Catalog and Developer Platform
 description: Documentation for the Backstage plugin composability APIs.
 resource: https://backstage.io/docs/plugins/composability
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Composability System
 
-This page describes the composability system for the **old frontend system**, including `createRoutableExtension`, `createComponentExtension`, `RouteRef`, `ExternalRouteRef`, and component data. For the new frontend system, see Extensions, Extension Blueprints, and Routes.
+This page describes the composability system for the **old frontend system**, including `createRoutableExtension`, `createComponentExtension`, `RouteRef`, `ExternalRouteRef`, and component data. For the new frontend system, see [Extensions](/docs/frontend-system/architecture/extensions), [Extension Blueprints](/docs/frontend-system/architecture/extension-blueprints), and [Routes](/docs/frontend-system/architecture/routes).
 
 ## Summary
 
@@ -290,7 +290,7 @@ You can also use static configuration to bind routes, removing the need to make
 changes to the app code. It does however mean that you won't get type safety
 when binding routes and compile-time validation of the bindings. Static
 configuration of route bindings is done under the `app.routes.bindings` key in
-`app-config.yaml`. It works the same way as route bindings in the new frontend system,
+`app-config.yaml`. It works the same way as [route bindings in the new frontend system](/docs/frontend-system/architecture/routes#binding-external-route-references),
 for example:
 
 ```
@@ -302,7 +302,7 @@ app:
 ### Default Targets for External Route References
 
 Following the `1.28` release of Backstage you can now define default targets for
-external route references. They work the same way as default targets in the new frontend system,
+external route references. They work the same way as [default targets in the new frontend system](/docs/frontend-system/architecture/routes#default-targets-for-external-route-references),
 for example:
 
 ```

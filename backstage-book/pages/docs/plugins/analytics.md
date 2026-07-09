@@ -3,12 +3,12 @@ type: Web Page
 title: Plugin Analytics | Backstage Software Catalog and Developer Platform
 description: Measuring usage of your Backstage instance.
 resource: https://backstage.io/docs/plugins/analytics
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Plugin Analytics
 
-This section is part of the legacy plugins documentation. For the new frontend system version, see Plugin Analytics. The concepts and events described here apply to both the old and new frontend systems.
+This section is part of the legacy plugins documentation. For the new frontend system version, see [Plugin Analytics](/docs/frontend-system/building-plugins/analytics). The concepts and events described here apply to both the old and new frontend systems.
 
 Setting up, maintaining, and iterating on an instance of Backstage can be a large investment. To help measure return on this investment, Backstage comes with an event-based Analytics API that grants app integrators the flexibility to collect and analyze Backstage usage in the analytics tool of their choice, while providing plugin developers a standard interface for instrumenting key user interactions.
 
@@ -22,17 +22,22 @@ This composition of events aims to allow analysis at different levels of detail,
 
 ## Supported Analytics Tools
 
-While all that's needed to consume and forward these events to an analytics tool is a concrete implementation of AnalyticsApi, common integrations are packaged and provided as plugins. Find your analytics tool of choice below.
+While all that's needed to consume and forward these events to an analytics tool
+is a concrete implementation of [AnalyticsApi](https://backstage.io/api/stable/types/_backstage_core-plugin-api.index.AnalyticsApi.html), common
+integrations are packaged and provided as plugins. Find your analytics tool of
+choice below.
 
 | Analytics Tool | Support Status | 
 |---|---|
-| Google Analytics 4 | Yes ✅ | 
-| New Relic Browser | Community ✅ | 
-| Matomo | Community ✅ | 
-| Quantum Metric | Community ✅ | 
-| Generic HTTP | Community ✅ | 
+| [Google Analytics 4](https://github.com/backstage/community-plugins/blob/main/workspaces/analytics/plugins/analytics-module-ga4/README.md) | Yes ✅ | 
+| [New Relic Browser](https://github.com/backstage/community-plugins/blob/main/workspaces/analytics/plugins/analytics-module-newrelic-browser/README.md) | Community ✅ | 
+| [Matomo](https://github.com/backstage/community-plugins/blob/main/workspaces/analytics/plugins/analytics-module-matomo/README.md) | Community ✅ | 
+| [Quantum Metric](https://github.com/quantummetric/analytics-module-qm/blob/main/README.md) | Community ✅ | 
+| [Generic HTTP](https://github.com/pfeifferj/backstage-plugin-analytics-generic/blob/main/README.md) | Community ✅ | 
 
-To suggest an integration, please open an issue for the analytics tool your organization uses. Or jump to Writing Integrations to learn how to contribute the integration yourself!
+To suggest an integration, please [open an issue](https://github.com/backstage/backstage/issues/new?assignees=&labels=plugin&template=plugin_template.md&title=%5BAnalytics+Module%5D+THE+ANALYTICS+TOOL+TO+INTEGRATE) for the analytics
+tool your organization uses. Or jump to [Writing Integrations](#writing-integrations) to
+learn how to contribute the integration yourself!
 
 ## Key Events
 
@@ -47,7 +52,9 @@ The following table summarizes events that, depending on the plugins you have in
 | `discover` | The title of the search result that was clicked on | The `value`is the result rank. A`to`attribute is also provided. | 
 | `not-found` | The path of the resource that resulted in a not found page | Fired by at least TechDocs. | 
 
-If there is an event you'd like to see captured, please open an issue describing the event you want to see and the questions it would help you answer. Or jump to Capturing Events to learn how to contribute the instrumentation yourself!
+If there is an event you'd like to see captured, please [open an issue](https://github.com/backstage/backstage/issues/new?assignees=&labels=enhancement&template=feature_template.md&title=%5BAnalytics%20Event%5D:%20THE+EVENT+TO+CAPTURE) describing the event you want to see and the questions it
+would help you answer. Or jump to [Capturing Events](#capturing-events) to learn how
+to contribute the instrumentation yourself!
 
 *OSS plugin maintainers: feel free to document your events in the table above.*
 

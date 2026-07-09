@@ -4,12 +4,12 @@ title: Backend Plugin Extension Points | Backstage Software Catalog and Develope
   Platform
 description: Extension points of backend plugins
 resource: https://backstage.io/docs/backend-system/architecture/extension-points
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Backend Plugin Extension Points
 
-While plugins are able to use static configuration for lightweight forms of customization, you can quickly hit a limit where you need something more powerful to allow users to extend your plugin. For this purpose, the backend system provides a mechanism for plugins to provide extension points, which can be used to expose deeper customizations for your plugin. Extension points are used by modules, which are installed in the backend adjacent to plugins. Modules are covered more in-depth in the next section.
+While plugins are able to use static configuration for lightweight forms of customization, you can quickly hit a limit where you need something more powerful to allow users to extend your plugin. For this purpose, the backend system provides a mechanism for plugins to provide extension points, which can be used to expose deeper customizations for your plugin. Extension points are used by modules, which are installed in the backend adjacent to plugins. Modules are covered more in-depth in the [next section](/docs/backend-system/architecture/modules).
 
 Extension points are quite similar to services, in that they both encapsulate an interface in a reference object. The key difference is that extension points are registered and provided by plugins themselves, and do not have any factory associated with them. Extension points for a given plugin are also only accessible to modules that extend that same plugin.
 

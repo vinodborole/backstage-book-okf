@@ -3,12 +3,12 @@ type: Web Page
 title: Plugin Modules | Backstage Software Catalog and Developer Platform
 description: Modules for backend plugins
 resource: https://backstage.io/docs/backend-system/architecture/modules
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Plugin Modules
 
-Backend modules are used to extend plugins or sometimes other modules with additional features or change existing behavior. They must always be installed in the same backend instance as the plugin that they extend, and may only extend a single plugin. Modules interact with their target plugin using the extension points registered by the plugin, while also being able to depend on the services of that plugin.
+Backend modules are used to extend [plugins](/docs/backend-system/architecture/plugins) or sometimes other modules with additional features or change existing behavior. They must always be installed in the same backend instance as the plugin that they extend, and may only extend a single plugin. Modules interact with their target plugin using the [extension points](/docs/backend-system/architecture/extension-points) registered by the plugin, while also being able to depend on the [services](/docs/backend-system/architecture/services) of that plugin.
 
 Both modules and plugins register an `init` method that is called during startup. In order to ensure that modules have registered all their extensions before the plugin starts up, all modules for each plugin are completely initialized before the plugin itself is initialized. In practice this means that all promises returned by each `init` method of the modules need to resolve before the plugin `init` method is called. This also means that it is not possible to further interact with the extension points once the `init` method has resolved.
 

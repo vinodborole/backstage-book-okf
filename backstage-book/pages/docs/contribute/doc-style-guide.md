@@ -3,20 +3,23 @@ type: Web Page
 title: Documentation Style Guide | Backstage Software Catalog and Developer Platform
 description: Writing style guidelines for Backstage documentation
 resource: https://backstage.io/docs/contribute/doc-style-guide
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Documentation Style Guide
 
 This page gives writing style guidelines for the Backstage documentation. These are guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
 
-For additional information on contributing to the docs, see the Contributors Guide.
+For additional information on contributing to the docs, see the
+[Contributors Guide](https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md#documentation-guidelines).
 
 ## Language
 
 Backstage documentation uses U.S. English spelling and grammar.
 
-The documentation site is built with Docusaurus and uses standard Markdown with some Docusaurus-specific features like admonitions.
+The documentation site is built with [Docusaurus](https://docusaurus.io/) and
+uses standard Markdown with some Docusaurus-specific features like
+[admonitions](https://docusaurus.io/docs/markdown-features/admonitions).
 
 ## Tone
 
@@ -114,7 +117,7 @@ for TypeScript, `yaml` for YAML configuration, `shell` for shell commands,
 ## Admonitions
 
 Backstage documentation uses
-Docusaurus admonitions
+[Docusaurus admonitions](https://docusaurus.io/docs/markdown-features/admonitions)
 for callouts. Use `:::note`, `:::tip`, `:::caution`, and `:::danger` as
 appropriate.
 
@@ -183,7 +186,7 @@ Use a single newline to separate block-level content like headings, lists, image
 
 | Do | Don't | 
 |---|---|
-| Write hyperlinks with descriptive text. For example: See Getting Started for details. | Use ambiguous link text. For example: See here for details. | 
+| Write hyperlinks with descriptive text. For example: See [Getting Started](/docs/getting-started/)for details. | Use ambiguous link text. For example: See [here](/docs/getting-started/)for details. | 
 | Write Markdown-style links: `[link text](./index.md)`. | Write HTML-style links or create links that open in new tabs. | 
 
 ### Lists

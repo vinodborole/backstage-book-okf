@@ -3,14 +3,14 @@ type: Web Page
 title: Keeping Backstage Updated | Backstage Software Catalog and Developer Platform
 description: How to keep your Backstage App updated
 resource: https://backstage.io/docs/getting-started/keeping-backstage-updated
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Keeping Backstage Updated
 
 Audience: Developers and Admins
 
-To better understand the concepts in this section, it's recommended to have an understanding of Monorepos, Semantic Versioning and CHANGELOGs.
+To better understand the concepts in this section, it's recommended to have an understanding of [Monorepos](https://semaphoreci.com/blog/what-is-monorepo), [Semantic Versioning](https://semver.org) and [CHANGELOGs](https://keepachangelog.com).
 
 ## Summary
 
@@ -23,7 +23,7 @@ starting point that's meant to be evolved.
 
 The Backstage CLI has a command to bump all `@backstage` packages and
 dependencies you're using to the latest versions:
-versions:bump.
+[versions:bump](/docs/tooling/cli/commands#versionsbump).
 
 ```
 yarn backstage-cli versions:bump
@@ -31,7 +31,7 @@ yarn backstage-cli versions:bump
 The reason for bumping all `@backstage` packages at once is to maintain the
 dependencies that they have between each other.
 
-To make the version bump process even easier and more streamlined we highly recommend using the Backstage yarn plugin
+To make the version bump process even easier and more streamlined we highly recommend using the [Backstage yarn plugin](#managing-package-versions-with-the-backstage-yarn-plugin)
 
 By default the bump command will upgrade `@backstage` packages to the latest `main` release line which is released monthly. For those in a hurry that want to track the `next` release line which releases weekly can do so using the `--release next` option.
 
@@ -61,10 +61,10 @@ template updates.
 
 For this reason, any changes made to the template are documented along with
 upgrade instructions in the
-changelog
+[changelog](https://github.com/backstage/backstage/blob/master/packages/create-app/CHANGELOG.md)
 of the `@backstage/create-app` package. We recommend peeking at this changelog
 for any applicable updates when upgrading packages. As an alternative, the
-Backstage Upgrade Helper provides
+[Backstage Upgrade Helper](https://backstage.github.io/upgrade-helper/) provides
 a consolidated view of all the changes between two versions of Backstage. You
 can find the current version of your Backstage installation in `backstage.json`.
 
@@ -108,7 +108,7 @@ migrate dependencies across the monorepo to use it.
 ## More information on dependency mismatches
 
 Backstage is structured as a monorepo with
-Yarn workspaces. This means
+[Yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/). This means
 the `app` and `backend` packages, as well as any custom plugins you've added,
 are separate packages with their own `package.json` and dependencies.
 
@@ -132,10 +132,10 @@ down the number of duplicate packages.
 
 ## Proxy
 
-The Backstage CLI respects the standard `HTTP_PROXY`, `HTTPS_PROXY`, and `NO_PROXY` environment variables when `NODE_USE_ENV_PROXY=1` is set. See the corporate proxy guide for full details.
+The Backstage CLI respects the standard `HTTP_PROXY`, `HTTPS_PROXY`, and `NO_PROXY` environment variables when `NODE_USE_ENV_PROXY=1` is set. See the [corporate proxy guide](/docs/tutorials/corporate-proxy) for full details.
 
-Additionally, yarn needs a proxy too (sometimes), when in environments with restricted internet access. It uses different settings than the other modules. If you decide to use the backstage yarn plugin mentioned above, you will need to set additional proxy values.
-If you will always need proxy settings in all environments and situations, you can add `httpProxy` and `httpsProxy` values to the yarnrc.yml file. If some environments need it (say a developer workstation) but other environments do not (perhaps a CI build server running on AWS), then you may not want to update the yarnrc.yml file but just set environment variables `YARN_HTTP_PROXY` and `YARN_HTTPS_PROXY` in the environments/situations where you need to proxy.
+Additionally, yarn needs a proxy too (sometimes), when in environments with restricted internet access. It uses different settings than the other modules. If you decide to use the backstage yarn plugin [mentioned above](#managing-package-versions-with-the-backstage-yarn-plugin), you will need to set additional proxy values.
+If you will always need proxy settings in all environments and situations, you can add `httpProxy` and `httpsProxy` values to [the yarnrc.yml file](https://yarnpkg.com/configuration/yarnrc). If some environments need it (say a developer workstation) but other environments do not (perhaps a CI build server running on AWS), then you may not want to update the yarnrc.yml file but just set environment variables `YARN_HTTP_PROXY` and `YARN_HTTPS_PROXY` in the environments/situations where you need to proxy.
 
 **If you plan to use the backstage yarn plugin, you will need these extra yarn proxy settings to both install the plugin and run the  versions:bump command**. If you do not plan to use the backstage yarn plugin, it seems like the proxy settings alone are sufficient.
 
@@ -151,7 +151,7 @@ export YARN_HTTPS_PROXY=${HTTPS_PROXY}                        # optional
 ```
 ## Rollback migrations
 
-In some cases you could need to downgrade Backstage instance due to some problem or maybe because you are using a test environment to validate the new version of Backstage. You can check the Manual Rollback using Knex guide to know how to rollback migrations using Knex.
+In some cases you could need to downgrade Backstage instance due to some problem or maybe because you are using a test environment to validate the new version of Backstage. You can check the [Manual Rollback using Knex](/docs/tutorials/manual-knex-rollback) guide to know how to rollback migrations using Knex.
 
 # Citations
 

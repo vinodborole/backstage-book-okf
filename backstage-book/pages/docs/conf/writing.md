@@ -4,7 +4,7 @@ title: Writing Backstage Configuration Files | Backstage Software Catalog and De
   Platform
 description: Documentation on Writing Backstage Configuration Files
 resource: https://backstage.io/docs/conf/writing
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Writing Backstage Configuration Files
@@ -128,7 +128,8 @@ variable.
 ```
 $env: MY_SECRET
 ```
-Note however, that it's often more convenient to use environment variable substitution instead.
+Note however, that it's often more convenient to use
+[environment variable substitution](#environment-variable-substitution) instead.
 
 ### File Includes
 

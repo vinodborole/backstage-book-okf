@@ -3,7 +3,7 @@ type: Web Page
 title: Frontend Routes | Backstage Software Catalog and Developer Platform
 description: Frontend routes
 resource: https://backstage.io/docs/frontend-system/architecture/routes
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Frontend Routes
@@ -59,7 +59,7 @@ export default createFrontendPlugin({
 ```
 In the example above we associated the `indexRouteRef` with the `catalogIndexPage` extension and provided both the route ref and page via the Catalog plugin. So, when this plugin is installed in the app, the index page will become associated with the newly created `RouteRef`, making it possible to use the route ref to navigate the page extension.
 
-It may seem unclear why we configure the `routes` option when creating a plugin as the route has already been passed to the extension. We do that to make it possible for other plugins to route to our page, which is explained in detail in the binding routes section.
+It may seem unclear why we configure the `routes` option when creating a plugin as the route has already been passed to the extension. We do that to make it possible for other plugins to route to our page, which is explained in detail in the [binding routes](#binding-external-route-references) section.
 
 ### Defining References with Path Parameters
 
@@ -74,7 +74,7 @@ export const detailsRouteRef = createRouteRef({
 ```
 ### Using a Route Reference
 
-Route references can be used to link to page in the same plugin, or to pages in different plugins. In this section we will cover the first scenario. If you are interested in linking to a page of a different plugin, please go to the external routes section below.
+Route references can be used to link to page in the same plugin, or to pages in different plugins. In this section we will cover the first scenario. If you are interested in linking to a page of a different plugin, please go to the [external routes](#external-route-references) section below.
 
 Suppose we are creating a plugin that renders a Catalog index page with a link to a "Foo" component details page. Here is the code for the index page:
 
@@ -349,7 +349,7 @@ export default createFrontendPlugin({
 ```
 ## Route Aliases - Overriding Routed Extensions in Modules
 
-It is possible to override extensions of a plugin using a module. In some cases the extension you're overriding may require a route reference. You could import the plugin instance and access the it via the `routes` property, but this creates a direct dependency on the plugin and risks leading to package duplication issues that would also break the route reference.
+It is possible to [override extensions of a plugin using a module](/docs/frontend-system/architecture/extension-overrides#creating-a-frontend-module). In some cases the extension you're overriding may require a route reference. You could import the plugin instance and access the it via the `routes` property, but this creates a direct dependency on the plugin and risks leading to package duplication issues that would also break the route reference.
 
 Instead of accessing the route reference directly, you can create a new route reference that acts as an alias for the original one from the plugin. For example, you can override the catalog index page with a custom one like this:
 

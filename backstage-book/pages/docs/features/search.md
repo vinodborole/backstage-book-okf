@@ -4,7 +4,7 @@ title: Search Documentation | Backstage Software Catalog and Developer Platform
 description: Backstage Search lets you find the right information you are looking
   for in the Backstage ecosystem.
 resource: https://backstage.io/docs/features/search
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Backstage Search
@@ -20,11 +20,11 @@ Backstage Search lets you find the right information you are looking for in the 
 - A search that lets you create composable search page experiences.
 - A search that lets you customize the look and feel of each search result.
 
-See the more detailed architecture and tech stack.
+See the more detailed [architecture](/docs/features/search/architecture) and [tech stack](/docs/features/search/architecture#tech-stack).
 
 ## Project roadmap
 
-No current plans. Check Backstage issues labeled `search`
+No current plans. Check [Backstage issues labeled  search](https://github.com/backstage/backstage/issues?q=is%3Aopen+is%3Aissue+label%3Asearch)
 for community-led ideas and initiatives.
 
 ## Supported
@@ -36,26 +36,28 @@ The following sections show the plugins and search engines currently supported b
 | Plugin | Support Status | 
 |---|---|
 | Software Catalog | ✅ | 
-| TechDocs | ✅ | 
-| Stack Overflow | ✅ | 
+| [TechDocs](/docs/features/search/how-to-guides#how-to-customize-fields-in-the-software-catalog-or-techdocs-index) | ✅ | 
+| [Stack Overflow](https://github.com/backstage/backstage/blob/master/plugins/search-backend-module-stack-overflow-collator/README.md#index-stack-overflow-questions-to-search) | ✅ | 
 
 ### Search engines
 
-See Backstage Search Architecture to get an overview of how the search engines are used.
+See [Backstage Search Architecture](/docs/features/search/architecture) to get an overview of how
+the search engines are used.
 
 | Search Engines | Support Status | 
 |---|---|
-| Elasticsearch/OpenSearch | ✅ | 
-| Lunr | ✅ | 
-| Postgres | Community ✅ | 
+| [Elasticsearch/OpenSearch](/docs/features/search/search-engines#elasticsearch) | ✅ | 
+| [Lunr](/docs/features/search/search-engines#lunr) | ✅ | 
+| [Postgres](/docs/features/search/search-engines#postgres) | Community ✅ | 
 
-Reach out to us if you want to chat about support for more plugin integrations and search engines.
+[Reach out to us](#get-involved) if you want to chat about support for more plugin integrations and
+search engines.
 
 ## Get involved
 
 For any questions, feedback, or to help move search forward, reach out to us in
 the **#search** channel of our
-Discord chatroom.
+[Discord chatroom](https://github.com/backstage/backstage#community).
 
 # Citations
 

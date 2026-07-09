@@ -5,20 +5,24 @@ title: Well-known Status fields of Catalog Entities | Backstage Software Catalog
 description: Lists a number of well known entity statuses, that have defined semantics.
   They can be attached to catalog entities and consumed by plugins as needed.
 resource: https://backstage.io/docs/features/software-catalog/well-known-statuses
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Well-known Status fields of Catalog Entities
 
-This section lists well known entity statuses, that have defined semantics. They can be attached to catalog entities and consumed by plugins as needed.
+This section lists well known
+[entity statuses](/docs/features/software-catalog/descriptor-format#common-to-all-kinds-status), that have
+defined semantics. They can be attached to catalog entities and consumed by
+plugins as needed.
 
-If you are looking to extend the statuses, see Extending the model.
+If you are looking to extend the statuses, see
+[Extending the model](/docs/features/software-catalog/extending-the-model).
 
 ## Common Fields
 
 The `status` object of an entity is currently left unrestricted, except for the
 `items` field. Its structure is defined in the
-descriptor format section.
+[descriptor format](/docs/features/software-catalog/descriptor-format#common-to-all-kinds-status) section.
 
 We reserve the right to extend this model in the future. This status is in active development and its format will change unexpectedly. Do not consume it in your own code until such a time that this documentation has been updated.
 

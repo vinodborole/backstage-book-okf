@@ -3,22 +3,22 @@ type: Web Page
 title: New Backend System | Backstage Software Catalog and Developer Platform
 description: Details of the new backend system
 resource: https://backstage.io/docs/plugins/new-backend-system
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # New Backend System
 
-This section is part of the legacy plugins documentation. The canonical documentation for the backend system has moved to the Backend System section, which includes more detailed and up-to-date guides for building plugins and modules, architecture, and core services.
+This section is part of the legacy plugins documentation. The canonical documentation for the backend system has moved to the [Backend System](/docs/backend-system/) section, which includes more detailed and up-to-date guides for [building plugins and modules](/docs/backend-system/building-plugins-and-modules/index), [architecture](/docs/backend-system/architecture/index), and [core services](/docs/backend-system/core-services/index).
 
 ## Status
 
 The new backend system is released and ready for production use, and many plugins and modules have already been migrated. We recommend all plugins and deployments to migrate to the new system.
 
-You can find an example backend setup in the backend package.
+You can find an example backend setup in [the backend package](https://github.com/backstage/backstage/tree/master/packages/backend).
 
 ## Overview
 
-The new Backstage backend system was built to help make it simpler to install backend plugins and to keep projects up to date. It also changed the foundation to one that makes it a lot easier to evolve plugins and the system itself with minimal disruption or cause for breaking changes. You can read more about the reasoning in the original RFC.
+The new Backstage backend system was built to help make it simpler to install backend plugins and to keep projects up to date. It also changed the foundation to one that makes it a lot easier to evolve plugins and the system itself with minimal disruption or cause for breaking changes. You can read more about the reasoning in the [original RFC](https://github.com/backstage/backstage/issues/11611).
 
 One of the goals of the new system was to reduce the code needed for setting up a Backstage backend and installing plugins. This is an example of how you create, add features, and start up your backend in the new system:
 
@@ -178,7 +178,7 @@ Extension points are registered by a plugin and extended by modules.
 
 ## Backend Services
 
-The default backend provides several core services out of the box which includes access to configuration, logging, databases and more.
+The default backend provides several [core services](https://github.com/backstage/backstage/blob/master/packages/backend-plugin-api/src/services/definitions/coreServices.ts) out of the box which includes access to configuration, logging, databases and more.
 Service dependencies are declared using their `ServiceRef`s in the `deps` section of the plugin or module, and the implementations are then forwarded to the `init` method of the plugin or module.
 
 ### Service References
@@ -273,7 +273,7 @@ describe('My plugin tests', () => {
 ```
 ## Package structure
 
-A detailed explanation of the package architecture can be found in the Backstage Architecture Overview. The most important packages to consider for this system are `backend`, `plugin-<pluginId>-backend`, `plugin-<pluginId>-node`, and `plugin-<pluginId>-backend-module-<moduleId>`.
+A detailed explanation of the package architecture can be found in the [Backstage Architecture Overview](/docs/overview/architecture-overview#package-architecture). The most important packages to consider for this system are `backend`, `plugin-<pluginId>-backend`, `plugin-<pluginId>-node`, and `plugin-<pluginId>-backend-module-<moduleId>`.
 
 - `plugin-<pluginId>-backend`houses the implementation of the plugins themselves.
 - `plugin-<pluginId>-node`houses the extension points and any other utilities that modules or other plugins might need.

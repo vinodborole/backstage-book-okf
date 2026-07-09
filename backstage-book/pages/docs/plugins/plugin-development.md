@@ -3,12 +3,12 @@ type: Web Page
 title: Plugin Development | Backstage Software Catalog and Developer Platform
 description: Documentation on Plugin Development
 resource: https://backstage.io/docs/plugins/plugin-development
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Plugin Development
 
-This page covers plugin development patterns for the **old frontend system**, including `createPlugin`, `createRoutableExtension`, and `RouteRef` from `@backstage/core-plugin-api`. For the new frontend system equivalents, see Building Frontend Plugins and Routes.
+This page covers plugin development patterns for the **old frontend system**, including `createPlugin`, `createRoutableExtension`, and `RouteRef` from `@backstage/core-plugin-api`. For the new frontend system equivalents, see [Building Frontend Plugins](/docs/frontend-system/building-plugins/index) and [Routes](/docs/frontend-system/architecture/routes).
 
 Backstage plugins provide features to a Backstage App.
 
@@ -18,7 +18,7 @@ Each plugin is treated as a self-contained web app and can include almost any ty
 
 - Consider writing plugins in `TypeScript`.
 - Plan the directory structure of your plugin so that it becomes easy to manage.
-- Prefer using the Backstage components, otherwise go with Material UI.
+- Prefer using the [Backstage components](https://backstage.io/storybook), otherwise go with[Material UI](https://material-ui.com/).
 - Check out the shared Backstage APIs before building a new one.
 
 ## Plugin concepts / API

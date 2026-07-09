@@ -6,12 +6,15 @@ description: Documentation that lists a number of well known Annotations, that h
   defined semantics. They can be attached to catalog entities and consumed by plugins
   as needed.
 resource: https://backstage.io/docs/features/software-catalog/well-known-annotations
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Well-known Annotations on Catalog Entities
 
-This section lists a number of well known annotations, that have defined semantics. They can be attached to catalog entities and consumed by plugins as needed.
+This section lists a number of well known
+[annotations](/docs/features/software-catalog/descriptor-format#annotations-optional), that have defined
+semantics. They can be attached to catalog entities and consumed by plugins as
+needed.
 
 ## Annotations
 
@@ -118,7 +121,9 @@ metadata:
     backstage.io/techdocs-entity: component:default/example
     backstage.io/techdocs-entity-path: /path/to/this/component
 ```
-The value of this annotation informs of the path to this component's TechDocs within an external entity that owns the TechDocs. In conjunction with backstage.io/techdocs-entity this allows for deep linking into the TechDocs of another entity, not just linking to the root of another entity's TechDocs.
+The value of this annotation informs of the path to this component's TechDocs within an external entity that owns the TechDocs.
+In conjunction with [backstage.io/techdocs-entity](#backstageiotechdocs-entity) this allows for deep linking into the TechDocs of
+another entity, not just linking to the root of another entity's TechDocs.
 
 ### backstage.io/view-url, backstage.io/edit-url
 
@@ -189,7 +194,7 @@ metadata:
     github.com/project-slug: backstage/backstage
 ```
 The value of this annotation is the so-called slug that identifies a repository on
-GitHub (either the public one, or a private GitHub
+[GitHub](https://github.com) (either the public one, or a private GitHub
 Enterprise installation) that is related to this entity. It is on the format
 `<organization or owner>/<repository>`, and is the same as can be seen in the URL location
 bar of the browser when viewing that repository.
@@ -205,12 +210,13 @@ metadata:
     github.com/team-slug: backstage/maintainers
 ```
 The value of this annotation is the so-called slug that identifies a team on
-GitHub (either the public one, or a private GitHub
+[GitHub](https://github.com) (either the public one, or a private GitHub
 Enterprise installation) that is related to this entity. It is on the format
 `<organization>/<team>`, and is the same as can be seen in the URL location bar
 of the browser when viewing that team.
 
-This annotation can be used on a Group entity to note that it originated from that team on GitHub.
+This annotation can be used on a [Group entity](/docs/features/software-catalog/descriptor-format#kind-group)
+to note that it originated from that team on GitHub.
 
 ### github.com/user-login
 
@@ -221,12 +227,13 @@ metadata:
     github.com/user-login: freben
 ```
 The value of this annotation is the so-called login that identifies a user on
-GitHub (either the public one, or a private GitHub
+[GitHub](https://github.com) (either the public one, or a private GitHub
 Enterprise installation) that is related to this entity. It is on the format
 `<username>`, and is the same as can be seen in the URL location bar of the
 browser when viewing that user.
 
-This annotation can be used on a User entity to note that it originated from that user on GitHub.
+This annotation can be used on a [User entity](/docs/features/software-catalog/descriptor-format#kind-user)
+to note that it originated from that user on GitHub.
 
 ### github.com/user-id
 
@@ -236,9 +243,12 @@ metadata:
   annotations:
     github.com/user-id: '123456'
 ```
-The value of this annotation is the numeric user ID that identifies a user on GitHub (either the public one, or a private GitHub Enterprise installation) that is related to this entity. Unlike the username, which can be changed by the user, the user ID is immutable.
+The value of this annotation is the numeric user ID that identifies a user on
+[GitHub](https://github.com) (either the public one, or a private GitHub
+Enterprise installation) that is related to this entity. Unlike the username,
+which can be changed by the user, the user ID is immutable.
 
-This annotation can be used on a User entity
+This annotation can be used on a [User entity](/docs/features/software-catalog/descriptor-format#kind-user)
 to note that it originated from that user on GitHub. It enables the
 `userIdMatchingUserEntityAnnotation` sign-in resolver to match users by their
 GitHub user ID during authentication.
@@ -252,13 +262,13 @@ metadata:
     gitlab.com/user-id: '123456'
 ```
 The value of this annotation is the numeric user ID that identifies a user on
-GitLab (either the public one, or a private GitLab
+[GitLab](https://gitlab.com) (either the public one, or a private GitLab
 installation) that is related to this entity. For self-hosted GitLab instances,
 the annotation key will be `{integration-host}/user-id` where
 `{integration-host}` is the hostname of your GitLab instance. Unlike the
 username, which can be changed, the user ID is immutable.
 
-This annotation can be used on a User entity
+This annotation can be used on a [User entity](/docs/features/software-catalog/descriptor-format#kind-user)
 to note that it originated from that user on GitLab. It enables the
 `userIdMatchingUserEntityAnnotation` sign-in resolver to match users by their
 GitLab user ID during authentication.
@@ -288,7 +298,8 @@ metadata:
 ```
 The value of this annotation is the periskop project name for the given entity.
 
-Specifying this annotation will enable Periskop related features in Backstage for that entity if the periskop plugin is installed.
+Specifying this annotation will enable [Periskop](https://periskop.io/) related features in Backstage for
+that entity if the periskop plugin is installed.
 
 ### sentry.io/project-slug
 
@@ -299,7 +310,7 @@ metadata:
     sentry.io/project-slug: backstage/pump-station
 ```
 The value of this annotation is the so-called slug (or alternatively, the ID) of
-a Sentry project within your organization. The value can
+a [Sentry](https://sentry.io) project within your organization. The value can
 be the format of `[organization]/[project-slug]` or just `[project-slug]`. When
 the organization slug is omitted the `app-config.yaml` will be used as a
 fallback (`sentry.organization`).
@@ -315,7 +326,7 @@ metadata:
     rollbar.com/project-slug: backstage/pump-station
 ```
 The value of this annotation is the so-called slug (or alternatively, the ID) of
-a Rollbar project within your organization. The value can
+a [Rollbar](https://rollbar.com) project within your organization. The value can
 be the format of `[organization]/[project-slug]` or just `[project-slug]`. When
 the organization slug is omitted the `app-config.yaml` will be used as a
 fallback (`rollbar.organization` followed by `organization.name`).
@@ -331,7 +342,7 @@ metadata:
     circleci.com/project-slug: github/spotify/pump-station
 ```
 The value of this annotation is the so-called slug (or alternatively, the ID) of
-a CircleCI project within your organization. The value
+a [CircleCI](https://circleci.com/) project within your organization. The value
 can be the format of `[source-control-manager]/[organization]/[project-slug]` or
 just `[organization]/[project-slug]`. When the `[source-control-manager]` slug
 is omitted, `bitbucket` will be used as a fallback.
@@ -373,7 +384,9 @@ metadata:
   annotations:
     sonarqube.org/project-key: pump-station
 ```
-The value of this annotation is the project key of a SonarQube or SonarCloud project within your organization.
+The value of this annotation is the project key of a
+[SonarQube](https://sonarqube.org) or [SonarCloud](https://sonarcloud.io)
+project within your organization.
 
 Specifying this annotation may enable SonarQube related features in Backstage for that entity.
 
@@ -408,11 +421,15 @@ The following annotations are deprecated, and only listed here to aid in migrati
 
 ### backstage.io/github-actions-id
 
-This annotation was used for a while to enable the GitHub Actions feature. This is now instead using the github.com/project-slug annotation, with the same value format.
+This annotation was used for a while to enable the GitHub Actions feature. This
+is now instead using the [github.com/project-slug](#githubcomproject-slug)
+annotation, with the same value format.
 
 ### backstage.io/definition-at-location
 
-This annotation allowed to load the API definition from another location. Use substitution instead.
+This annotation allowed to load the API definition from another location. Use
+[substitution](/docs/features/software-catalog/descriptor-format#substitutions-in-the-descriptor-format)
+instead.
 
 ### jenkins.io/github-folder
 

@@ -3,7 +3,7 @@ type: Web Page
 title: Standalone Installation | Backstage Software Catalog and Developer Platform
 description: How to create and run a Standalone Backstage.
 resource: https://backstage.io/docs/getting-started
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Standalone Installation
@@ -16,7 +16,7 @@ This guide walks through how to create your own Backstage customizable app. This
 
 By the end of this guide, you will have a standalone Backstage installation running locally with an in-memory `SQLite` database and demo content. To be clear, this is not a production-ready installation, and it does not contain information specific to your organization until you set up integrations with your specific data sources!
 
-If you are planning to contribute a new feature or bug fix to the Backstage project, we advise you to follow the Contributors guide instead to do a repository-based installation.
+If you are planning to contribute a new feature or bug fix to the Backstage project, we advise you to follow the [Contributors](https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md#get-started) guide instead to do a repository-based installation.
 
 The instructions make use of `npx`. `npx` is a tool that comes preinstalled with Node.js and lets you run commands straight from `npm` or other registries.
 
@@ -37,12 +37,12 @@ app
     ├── app
     └── backend
 ```
-- **app-config.yaml**: Main configuration file for the app. See Configuration for more information.
-- **catalog-info.yaml**: Catalog Entities descriptors. See Descriptor Format of Catalog Entities to get started.
+- **app-config.yaml**: Main configuration file for the app. See- [Configuration](https://backstage.io/docs/conf/)for more information.
+- **catalog-info.yaml**: Catalog Entities descriptors. See- [Descriptor Format of Catalog Entities](https://backstage.io/docs/features/software-catalog/descriptor-format)to get started.
 - **package.json**: Root package.json for the project.- *Note: Be sure that you don't add any npm dependencies here as they probably should be installed in the intended workspace rather than in the root.*
 - **packages/**: Yarn workspaces, everything here is going to be a separate package, managed by Yarn.
 - **packages/app/**: A fully functioning Backstage frontend app that acts as a good starting point for you to get to know Backstage.
-- **packages/backend/**: We include a backend that helps power features such as Authentication, Software Catalog, Software Templates and TechDocs amongst other things.
+- **packages/backend/**: We include a backend that helps power features such as- [Authentication](https://backstage.io/docs/auth/),- [Software Catalog](https://backstage.io/docs/features/software-catalog/),- [Software Templates](https://backstage.io/docs/features/software-templates/)and- [TechDocs](https://backstage.io/docs/features/techdocs/)amongst other things.
 
 ## Prerequisites
 
@@ -50,28 +50,27 @@ This guide also assumes a basic understanding of working on a Linux based operat
 
 - A minimum of 20 GB disk space to run the standalone Backstage application with demo data. NOTE: As you add more modules and plugins to an installation, the disk space requirements will increase, accordingly.
 - A minimum of 6 GB memory.
-- Access to a Unix-based operating system, such as Linux, macOS or Windows Subsystem for Linux. The Linux version must support the required Node.js version.
+- Access to a Unix-based operating system, such as Linux, macOS or
+[Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/). The Linux version must support the required Node.js version.
 - A GNU-like build environment available at the command line.
 For example, on Debian/Ubuntu you will want to have the `make`and`build-essential`packages installed. On macOS, you will want to run`xcode-select --install`to get the XCode command line build tooling in place.
 - An account with elevated rights to install the dependencies
 - `curl`or- `wget`installed
-- Node.js Active LTS Release installed using one of these
-methods:
-- Using `nvm`(recommended)- Installing nvm
-- Install and change Node version with nvm
+- Node.js [Active LTS Release](/docs/overview/versioning-policy#nodejs-releases)installed using one of these methods:- Using `nvm`(recommended)- [Installing nvm](https://github.com/nvm-sh/nvm#install--update-script)
+- [Install and change Node version with nvm](https://nodejs.org/en/download/package-manager/#nvm)
 - Node 22 or 24 are recommended, these can be installed using `nvm install 22`or`nvm install 24`
  
-- Binary Download
-- Package manager
-- Using NodeSource packages
+- [Binary Download](https://nodejs.org/en/download/)
+- [Package manager](https://nodejs.org/en/download/package-manager/)
+- [Using NodeSource packages](https://github.com/nodesource/distributions/blob/master/README.md)
  
 - Using 
-- Install the `isolated-vm`module, following their requirements section.
-- `yarn`Installation- Backstage currently uses Yarn 4.4.1, once you've ran `corepack enable`you'll want to then run`yarn set version 4.4.1`
+- Install the `isolated-vm`module, following their[requirements section](https://github.com/laverdet/isolated-vm#requirements).
+- `yarn`- [Installation](https://yarnpkg.com/getting-started/install)- Backstage currently uses Yarn 4.4.1, once you've ran `corepack enable`you'll want to then run`yarn set version 4.4.1`
  
 - Backstage currently uses Yarn 4.4.1, once you've ran 
-- `docker`installation
-- `git`installation
+- `docker`- [installation](https://docs.docker.com/engine/install/)
+- `git`- [installation](https://github.com/git-guides/install-git)
 - If the system is not directly accessible over your network the following ports need to be opened: 3000, 7007. This is quite uncommon, unless you're installing in a container, VM or remote system.
 
 ## Creating and running a Backstage application
@@ -140,7 +139,7 @@ When you see the message `Rspack compiled successfully`, you can navigate direct
 
 ## Next steps
 
-Choose the correct next steps for your user role, if you're likely to be deploying and managing a Backstage instance for your organization, look through the Admin section. If you're likely to be developing on/for Backstage, take a look through the Developer section.
+Choose the correct next steps for your user role, if you're likely to be deploying and managing a Backstage instance for your organization, look through the [Admin](#admin) section. If you're likely to be developing on/for Backstage, take a look through the [Developer](#developer) section.
 
 ### Admin
 
@@ -151,7 +150,11 @@ Choose the correct next steps for your user role, if you're likely to be deployi
 
 - Using your Backstage instance
 
-Share your experiences, comments, or suggestions with us: on discord, file issues for any feature or plugin suggestions
+Share your experiences, comments, or suggestions with us:
+[on discord](https://discord.gg/backstage-687207715902193673), file issues for any
+[feature](https://github.com/backstage/backstage/issues/new?labels=help+wanted&template=feature_template.md)
+or
+[plugin suggestions](https://github.com/backstage/community-plugins/issues/new/choose)
 
 # Citations
 

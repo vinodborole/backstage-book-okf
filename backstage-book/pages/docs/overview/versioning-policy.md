@@ -3,12 +3,16 @@ type: Web Page
 title: Release & Versioning Policy | Backstage Software Catalog and Developer Platform
 description: The process and policy for releasing and versioning Backstage
 resource: https://backstage.io/docs/overview/versioning-policy
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Release & Versioning Policy
 
-The Backstage project is comprised of a set of software components that together form the Backstage platform. These components are both plugins as well as core platform libraries and tools. Each component is distributed as a collection of packages, which in the end is what you end up consuming as an adopter of Backstage.
+The Backstage project is comprised of a set of software components that together
+form the Backstage platform. These components are both plugins as well as core
+platform libraries and tools. Each component is distributed as a collection of
+[packages](https://en.wikipedia.org/wiki/Npm_(software)), which in the end is
+what you end up consuming as an adopter of Backstage.
 
 The number of Backstage packages that build up an application can be quite large, in the order of hundreds, with just the core platform packages being counted in the dozen. This creates a challenge for the integrators of a Backstage project, as there are a lot of moving parts and pieces to keep up to date.
 
@@ -23,12 +27,15 @@ The Backstage project is structured around two different release lines, a primar
 Release cadence: Monthly, specifically on the Tuesday before the third Wednesday of each month. The first release took place in March 2022.
 
 The main release line is versioned with a major, minor and patch version but
-does **not** adhere to semver. The version format is
+does **not** adhere to [semver](https://semver.org). The version format is
 `<major>.<minor>.<patch>`, for example `1.3.0`.
 
 An increment of the major version denotes a significant improvement or change to the Backstage platform. It may come with a large new set of features, or a switch in the product direction. These will be few and far between, and do not have any set cadence. Policy-wise they are no different than a minor release.
 
-Each regularly scheduled release will bring an increment to the minor version, as long as it is not a major release. Each new minor version can contain new functionality, breaking changes, and bug fixes, according the versioning policy.
+Each regularly scheduled release will bring an increment to the minor version,
+as long as it is not a major release. Each new minor version can contain new
+functionality, breaking changes, and bug fixes, according the
+[versioning policy](#release-versioning-policy).
 
 Patch versions will only be released to address critical bug fixes. They are not bound to the regular cadence and are instead released whenever needed.
 
@@ -49,7 +56,9 @@ The following versioning policy applies to the main-line releases only.
 
 ### Skew Policy
 
-In order for Backstage to function properly the following versioning rules must be followed. The rules are referring to the Package Architecture.
+In order for Backstage to function properly the following versioning rules must
+be followed. The rules are referring to the
+[Package Architecture](https://backstage.io/docs/overview/architecture-overview#package-architecture).
 
 - The versions of all packages for each of the "App Core" groups must be from the same Backstage release.
 - For each frontend and backend setup, the "App Core" packages must be ahead of or on the same Backstage release as the "Plugin Core" packages, including transitive dependencies of all installed plugins and modules.
@@ -61,7 +70,7 @@ It is allowed and often expected that the "Plugin Core" and "Library" packages a
 
 ## Package Versioning Policy
 
-Every individual package is versioned according to semver.
+Every individual package is versioned according to [semver](https://semver.org).
 This versioning is completely decoupled from the Backstage release versioning,
 meaning you might for example have `@backstage/core-plugin-api` version `3.1.4`
 be part of the `1.12` Backstage release.
@@ -75,7 +84,7 @@ The following versioning policy applies to all packages:
 
 For packages at version `1.0.0` or above, the following policy also applies:
 
-- All exports are marked with a release stage.
+- All exports are marked with a [release stage](#release-stages).
 - Breaking changes to stable exports include a deprecation phase if possible. The deprecation must have been released for at least one mainline release before it can be removed.
 - The release of breaking changes document a clear upgrade path in the changelog, both when deprecations are introduced and when they are removed.
 - Breaking changes to `@alpha`or`@beta`exports must result in at least a minor version bump, and may be done without a deprecation period.
@@ -100,7 +109,7 @@ framework. This includes any dependency that is provided by the
 ### Release Stages
 
 The release stages(`@alpha`, `@beta` `@public`) refers to the
-TSDoc documentation tag of the export, and are also
+[TSDoc](https://tsdoc.org/) documentation tag of the export, and are also
 visible in the API report of each package.
 
 Backstage uses three stages to indicate the stability for each individual package export.
@@ -111,7 +120,9 @@ Backstage uses three stages to indicate the stability for each individual packag
 
 ## Node.js Releases
 
-The Backstage project uses Node.js for both its development tooling and backend runtime. In order for expectations to be clear we use the following schedule for determining the Node.js releases that we support:
+The Backstage project uses [Node.js](https://nodejs.org/) for both its development
+tooling and backend runtime. In order for expectations to be clear we use the
+following schedule for determining the [Node.js releases](https://nodejs.org/en/about/previous-releases) that we support:
 
 - At any given point in time we support exactly two adjacent even-numbered releases of Node.js, for example v12 and v14.
 - Once a new Node.js release becomes *Active LTS*we switch to support that release and the previous one. The switch is not immediate but done as soon as possible. You can find the Node.js version supported by each release in the`engines`field in the root`package.json`of a new app.
@@ -126,19 +137,19 @@ Based on the above Backstage supports Node.js 22 and 24 as of the `1.46.0` relea
 
 ## TypeScript Releases
 
-The Backstage project uses TypeScript for type checking within the project, as well as external APIs and documentation. It is important to have a clear policy for which TypeScript versions we support, since we want to be able to adopt new TypeScript features, but at the same time not break existing projects that are using older versions.
+The Backstage project uses [TypeScript](https://www.typescriptlang.org/) for type checking within the project, as well as external APIs and documentation. It is important to have a clear policy for which TypeScript versions we support, since we want to be able to adopt new TypeScript features, but at the same time not break existing projects that are using older versions.
 
 The TypeScript release cadence is roughly every three months. An important aspect of the TypeScript versioning is that it does not follow semver. In particular, there is no differentiation between major and minor versions, both of them are breaking. One way to think about it is to merge the two, for example version 4.7 can be considered major version 47, 5.0 is 50, and so on. Within these releases there can be a number of patch releases, which do follow semver.
 
 Our policy is to support the last 3 TypeScript versions, for example 4.8, 4.9, and 5.0. Converted to time, this means that we typically support the TypeScript version from the last six to nine months, depending on where in the TypeScript release window we are. This policy applies as a snapshot at the time of any given Backstage release, new TypeScript releases only apply to the following Backstage main-line release, not to the current one.
 
-For anyone maintaining their own Backstage project, this means that you should strive to bump to the latest TypeScript version at least every 6 months, or you may encounter breakages as you upgrade Backstage packages. If you encounter any issues in doing so, please file an issue in the main Backstage repository, as per this policy we should always support the latest version. In order to ensure that we do not start using new TypeScript features too early, the Backstage project itself uses the version at the beginning of the currently supported window, in the above example that would be version 4.8.
+For anyone maintaining their own Backstage project, this means that you should strive to bump to the latest TypeScript version at least every 6 months, or you may encounter breakages as you upgrade Backstage packages. If you encounter any issues in doing so, please [file an issue in the main Backstage repository](https://github.com/backstage/backstage/issues/new/choose), as per this policy we should always support the latest version. In order to ensure that we do not start using new TypeScript features too early, the Backstage project itself uses the version at the beginning of the currently supported window, in the above example that would be version 4.8.
 
 ## PostgreSQL Releases
 
 The Backstage project recommends and supports using PostgreSQL for persistent storage.
 
-The PostgreSQL versioning policy is to release a new major version every year with new features which is then supported for 5 years after its initial release.
+The PostgreSQL [versioning policy](https://www.postgresql.org/support/versioning/) is to release a new major version every year with new features which is then supported for 5 years after its initial release.
 
 Our policy mirrors the PostgreSQL versioning policy - we will support the last 5 major versions. We will also test the newest and oldest versions in that range. For example, if the range we support is currently 14 to 18, then we would only test 14 and 18 explicitly.
 

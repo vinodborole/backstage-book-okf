@@ -4,7 +4,7 @@ title: The Life of an Entity | Backstage Software Catalog and Developer Platform
 description: The life cycle of entities, from being introduced into the catalog, through
   processing, to being removed again
 resource: https://backstage.io/docs/features/software-catalog/life-of-an-entity
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # The Life of an Entity
@@ -13,7 +13,14 @@ This document gives a high level overview of the catalog backend, and the techni
 
 ## Key Concepts
 
-The catalog forms a hub of sorts, where entities are ingested from various authoritative sources and held in a database, subject to automated processing, and then presented through an API for quick and easy access by Backstage and others. The most common source is YAML files on a standard format, living in version control systems near the source code of systems that they describe. Those files are registered with the catalog and maintained by the respective owners. The catalog makes sure to keep itself up to date with changes to those files.
+The catalog forms a hub of sorts, where entities are ingested from various
+authoritative sources and held in a database, subject to automated processing,
+and then presented through an API for quick and easy access by Backstage and
+others. The most common source is [YAML files](/docs/features/software-catalog/descriptor-format) on a
+standard format, living in version control systems near the source code of
+systems that they describe. Those files are registered with the catalog and
+maintained by the respective owners. The catalog makes sure to keep itself up to
+date with changes to those files.
 
 The main extension points where developers can customize the catalog are:
 
@@ -138,7 +145,12 @@ Errors during the ingestion and processing of entities can happen in a variety o
 
 There are two main ways that these errors are surfaced.
 
-First, the catalog backend will emit events using the events backend plugin. You can subscribe to the events. The events should contain sufficient information for a reader to find the causes for errors. See the configuration documentation for how to subscribe and log these error events. Since these events are typically not easily found by end users, this can mainly be a useful tool for Backstage operators who want to debug problems either with statically registered entities that are under their control, or to help end users find problems.
+First, the catalog backend will emit events using the [events backend plugin](https://github.com/backstage/backstage/tree/master/plugins/events-node). You can subscribe to the events. The events should contain
+sufficient information for a reader to find the causes for errors. See the [configuration documentation](/docs/features/software-catalog/configuration#subscribing-to-catalog-errors) for how to subscribe and log these error events.
+Since these events are typically not easily found by end users, this can mainly be a useful
+tool for Backstage operators who want to debug problems either with statically
+registered entities that are under their control, or to help end users find
+problems.
 
 Prior to Backstage version v1.26.0 and
 
@@ -191,7 +203,13 @@ Entity providers - not processors - are subject to *eager* deletion of entities,
 which may trigger the implicit deletion of more than just the entity you thought
 you were deleting. This concept is explained here.
 
-Recall that all entity providers manage a private "bucket" of entities, as described in the External integrations article. They can perform some operations on those entities, including additions, updates, and deletions. Entity additions/updates are subject to the regular processing loops, which means that bucket entities may end up forming roots of an entire graph of entities that are emitted by those processors as they recursively work they way through the bucket contents and its descendants.
+Recall that all entity providers manage a private "bucket" of entities, as
+described in the [External integrations](/docs/features/software-catalog/external-integrations) article. They
+can perform some operations on those entities, including additions, updates, and
+deletions. Entity additions/updates are subject to the regular processing loops,
+which means that bucket entities may end up forming roots of an entire graph of
+entities that are emitted by those processors as they recursively work they way
+through the bucket contents and its descendants.
 
 When a provider issues a deletion of an entity in its bucket, that entity as
 well as *the entire tree of entities processed out of it*, if any, are

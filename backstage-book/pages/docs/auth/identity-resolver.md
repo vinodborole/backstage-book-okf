@@ -4,7 +4,7 @@ title: Sign-in Identities and Resolvers | Backstage Software Catalog and Develop
   Platform
 description: An introduction to Backstage user identities and sign-in resolvers
 resource: https://backstage.io/docs/auth/identity-resolver
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Sign-in Identities and Resolvers
@@ -16,16 +16,21 @@ If you want to use an auth provider to sign in users, you need to explicitly con
 ## Quick Start
 
 Backstage projects created with `npx @backstage/create-app` come configured with
-a guest auth provider. This
+a [guest auth provider](https://backstage.io/docs/auth/guest/provider). This
 provider makes all users share a single "guest" identity. This is useful for
 testing purposes and quickly getting started locally, but is not safe for use in
 production and that particular provider will refuse to work there.
 
-Because of this, one of the early things you want to do when standing up your Backstage instance is to choose a production ready auth provider. See the auth overview page for a full list of providers and how to install and configure them.
+Because of this, one of the early things you want to do when standing up your
+Backstage instance is to choose a production ready auth provider. See [the auth overview page](/docs/auth/) for a full list of providers and how to install and
+configure them.
 
 ## Backstage User Identity
 
-A user identity within Backstage is built up from two main pieces of information: a user entity reference, and a set of ownership references. When a user signs in, a Backstage token is generated which is then used to identify the user within the Backstage ecosystem.
+A user identity within Backstage is built up from two main pieces of
+information: a user [entity reference](/docs/features/software-catalog/references), and a set of ownership
+references. When a user signs in, a Backstage token is generated which is then
+used to identify the user within the Backstage ecosystem.
 
 The user entity reference should uniquely identify the logged in user in Backstage. It is encouraged that a matching user entity also exists within the Software Catalog, but it is not required. If the user entity exists in the catalog it can be used to store additional data about the user. There may even be some plugins that require this for them to be able to function.
 
@@ -69,7 +74,8 @@ Note that while it possible to configure multiple auth providers to be used for 
 
 Most auth providers come with a set of builtin sign in providers that you can choose from. They target the most common use cases, and if they fit your needs, you can pick one or more of them without having to write any code at all. You still have to make a choice - as mentioned above, even if there are a set of builtins, none of them are selected by default.
 
-You set up builtin sign in resolvers using your app-config, next to the respective provider's configuration. Here's an example for GitHub:
+You set up builtin sign in resolvers using [your app-config](/docs/conf/),
+next to the respective provider's configuration. Here's an example for GitHub:
 
 ```
 auth:
@@ -112,7 +118,10 @@ auth:
 ```
 ### Building Custom Resolvers
 
-If the builtins don't work for you, you can also provide a completely custom sign-in resolver, through code. If you follow the installation instructions of one of the available providers, you will likely have added a dependency to your backend along with a line of code and some configuration.
+If the builtins don't work for you, you can also provide a completely custom
+sign-in resolver, through code. If you follow the installation instructions of
+[one of the available providers](/docs/auth/), you will likely have added a
+dependency to your backend along with a line of code and some configuration.
 
 Using GitHub as an example, this is the relevant parts of the backend code:
 
@@ -179,7 +188,7 @@ backend.add(import('@backstage/plugin-auth-backend'));
 backend.add(import('@backstage/plugin-auth-backend-module-github-provider'));
 backend.add(customAuth);
 ```
-Check out the naming patterns article for what rules
+Check out [the naming patterns article](/docs/backend-system/architecture/naming-patterns) for what rules
 apply regarding how to form valid IDs. In this example we also put the module
 declaration directly in `packages/backend/src/index.ts` but that's just for
 simplicity. You can place it anywhere you like, including in other packages, and
@@ -221,7 +230,7 @@ async signInResolver(info, ctx) {
 ```
 If you throw an error in the sign in resolver function, the sign in attempt is immediately rejected, and the error details are presented in the user interface.
 
-The `ctx` context has several useful functions
+The `ctx` context [has several useful functions](https://backstage.io/api/stable/types/_backstage_plugin-auth-node.AuthResolverContext.html)
 for issuing tokens in various ways.
 
 ### Custom Ownership Resolution
@@ -398,7 +407,7 @@ This error can be caused by the following:
 
 The second common error is: "Failed to sign-in, unable to resolve user identity". Here is what this looks like for the GitHub Auth provider:
 
-This error is caused by the Sign-In Resolver you configured being unable to find a matching User in the Catalog. To fix this you need to import User, and Group, data from some source of truth for this data at your Organization. To do this you can use one of the existing Org Data providers like the ones for Entra ID (Azure AD/MS Graph), GitHub, GitLab, etc. or if none of those fit your needs you can create a Custom Entity Provider.
+This error is caused by the Sign-In Resolver you configured being unable to find a matching User in the Catalog. To fix this you need to import User, and Group, data from some source of truth for this data at your Organization. To do this you can use one of the existing Org Data providers like the ones for [Entra ID (Azure AD/MS Graph)](/docs/integrations/azure/org), [GitHub](/docs/integrations/github/org), [GitLab](/docs/integrations/gitlab/org), etc. or if none of those fit your needs you can create a [Custom Entity Provider](/docs/features/software-catalog/external-integrations#custom-entity-providers).
 
 # Citations
 

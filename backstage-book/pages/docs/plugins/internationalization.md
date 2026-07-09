@@ -3,16 +3,16 @@ type: Web Page
 title: Internationalization | Backstage Software Catalog and Developer Platform
 description: Documentation on adding internationalization to plugins and apps
 resource: https://backstage.io/docs/plugins/internationalization
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Internationalization
 
-This section is part of the legacy plugins documentation. For the new frontend system version, see Internationalization. The i18n APIs (`createTranslationRef`, `useTranslationRef`) work the same way in both the old and new frontend systems.
+This section is part of the legacy plugins documentation. For the new frontend system version, see [Internationalization](/docs/frontend-system/building-plugins/internationalization). The i18n APIs (`createTranslationRef`, `useTranslationRef`) work the same way in both the old and new frontend systems.
 
 ## Overview
 
-The Backstage core function provides internationalization for plugins and apps. The underlying library is `i18next` with some additional Backstage typescript magic for type safety with keys.
+The Backstage core function provides internationalization for plugins and apps. The underlying library is [ i18next](https://www.i18next.com/) with some additional Backstage typescript magic for type safety with keys.
 
 ## For a plugin developer
 
@@ -125,7 +125,7 @@ export const myPluginTranslationRef = createTranslationRef({
 ```
 #### Plurals
 
-The `i18next` library, which is used as the underlying implementation, has built-in support for pluralization. You can use this feature as is described in the documentation.
+The `i18next` library, which is used as the underlying implementation, has built-in support for pluralization. You can use this feature as is described in [the documentation](https://www.i18next.com/translation-function/plurals).
 
 We encourage you to use this feature and avoid creating different key prefixes for pluralized content. For example:
 
@@ -377,7 +377,7 @@ The exported JSON files are standard key-value pairs compatible with most extern
 - Download the translated files back into the translations directory
 - Run `translations import`to regenerate the wiring code
 
-For full command reference, see the CLI commands documentation.
+For full command reference, see the [CLI commands documentation](/docs/tooling/cli/commands#translations-export).
 
 # Citations
 

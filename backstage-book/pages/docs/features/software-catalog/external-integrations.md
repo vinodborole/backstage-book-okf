@@ -3,13 +3,13 @@ type: Web Page
 title: External integrations | Backstage Software Catalog and Developer Platform
 description: Documentation on External integrations to integrate systems with Backstage
 resource: https://backstage.io/docs/features/software-catalog/external-integrations
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # External integrations
 
 Backstage natively supports importing catalog data through the use of
-entity descriptor YAML files. However, companies that
+[entity descriptor YAML files](/docs/features/software-catalog/descriptor-format). However, companies that
 already have an existing system for keeping track of software and its owners can
 leverage those systems by integrating them with Backstage. This article shows
 the two common ways of doing that integration: by adding a custom catalog
@@ -17,9 +17,17 @@ the two common ways of doing that integration: by adding a custom catalog
 
 ## Background
 
-The catalog has a frontend plugin part, that communicates via a service API to the backend plugin part. The backend continuously ingests data from the sources you specify, to store them in its database. The details of how this works is detailed in The Life of an Entity. Reading that article first is recommended.
+The catalog has a frontend plugin part, that communicates via a service API to
+the backend plugin part. The backend continuously ingests data from the sources
+you specify, to store them in its database. The details of how this works is
+detailed in [The Life of an Entity](/docs/features/software-catalog/life-of-an-entity). Reading that article
+first is recommended.
 
-There are two main options for how to ingest data into the catalog: making a custom entity provider, or making a custom processor. They both have strengths and drawbacks, but the former would usually be preferred. Both options are presented in a dedicated subsection below.
+There are two main options for how to ingest data into the catalog: making a
+[custom entity provider](#custom-entity-providers), or making a
+[custom processor](#custom-processors). They both have strengths and drawbacks,
+but the former would usually be preferred. Both options are presented in a
+dedicated subsection below.
 
 ## Custom Entity Providers
 
@@ -38,7 +46,7 @@ Some defining traits of entity providers:
 
 The recommended way of instantiating the catalog backend classes is to use the `CatalogBuilder`.
 We will create a new
-`EntityProvider`
+[ EntityProvider](https://github.com/backstage/backstage/blob/master/plugins/catalog-node/src/api/provider.ts)
 subclass that can be added to this catalog builder.
 
 Let's make a simple provider that can refresh a set of entities based on a remote store. The provider part of the interface is actually tiny - you only have to supply a (unique) name, and accept a connection from the environment through which you can issue writes. The rest is up to the individual provider implementation.
@@ -126,7 +134,7 @@ This class demonstrates several important concepts, some of which are optional. 
 - At this point the provider contract is already complete. But the class needs
 to do some actual work too! In this particular example, we chose to make a
 `run`method that has to be called each time that you want to issue a sync with the`frobs`service. Let's repeat that - this is only an example implementation; some providers may be written in entirely different ways, such as for example subscribing to pubsub events and only reacting to those, or any number of other solutions. The only point is - external stimuli happen somehow, which somehow get translated to calls on the`connection`to persist the outcome of that. This example issues a`fetch`to the right service and issues a full refresh of its entity bucket based on that.
-- The method translates the foreign data model to the native `Entity`form, as expected by the catalog. The`Entity`must include the`backstage.io/managed-by-location`and`backstage.io/managed-by-origin-location annotations`; otherwise, it will not appear in the Catalog and will generate warning logs. The Well-known Annotations documentation has guidance on what values to use for these.
+- The method translates the foreign data model to the native `Entity`form, as expected by the catalog. The`Entity`must include the`backstage.io/managed-by-location`and`backstage.io/managed-by-origin-location annotations`; otherwise, it will not appear in the Catalog and will generate warning logs. The[Well-known Annotations](/docs/features/software-catalog/well-known-annotations#backstageiomanaged-by-location)documentation has guidance on what values to use for these.
 - Finally, we issue a "mutation" to the catalog. This persists the entities in
 our own bucket, along with an optional `locationKey`that's used for conflict checks. But this is a bigger topic - mutations warrant their own explanatory section below.
 
@@ -263,7 +271,7 @@ catalog:
         frequency: { hours: 1 }
         timeout: { minutes: 50 }
 ```
-This approach will also allow you to customize the schedule per environment. You can also add a schema to your config.
+This approach will also allow you to customize the schedule per environment. You can also [add a schema to your config](/docs/conf/defining).
 
 #### New Backend
 
@@ -330,7 +338,7 @@ If you have a 3rd party entity provider such as an internal HR system that you w
 
 We can create an entity provider to read entities that are based off that provider.
 
-We create a basic entity provider as shown above. In the example below we might want to extract our users from an HR system, I am assuming the HR system already has the slackUserId to get that information please see the Slack Api.
+We create a basic entity provider as shown above. In the example below we might want to extract our users from an HR system, I am assuming the HR system already has the slackUserId to get that information please see the [Slack Api](https://api.slack.com/methods).
 
 ```
 import {
@@ -495,7 +503,7 @@ If you start up the backend now, it will start to periodically say that it could
 
 The recommended way of instantiating the catalog backend classes is to use the `CatalogBuilder`.
 We will create a new
-`CatalogProcessor`
+[ CatalogProcessor](https://github.com/backstage/backstage/blob/master/plugins/catalog-node/src/api/processor.ts)
 subclass that can be added to this catalog builder.
 
 It is up to you where you put the code for this new processor class. For quick
@@ -841,7 +849,7 @@ backend.start();
 
 For large data sources that may not fit into memory but support pagination, the Incremental Entity Provider offers an efficient way to ingest data incrementally, handling deletions and updates seamlessly while minimizing memory usage.
 
-You can find more details about why it was created and its requirements.
+You can find more details about [why it was created](https://github.com/backstage/backstage/tree/master/plugins/catalog-backend-module-incremental-ingestion#why-did-we-create-it) and its [requirements](https://github.com/backstage/backstage/tree/master/plugins/catalog-backend-module-incremental-ingestion#requirements).
 
 ### Installation
 
@@ -867,7 +875,7 @@ To create an Incremental Entity Provider, you need to know how to retrieve a sin
 - **next:**Fetches a specific page of entities, moving the cursor forward.
 - **around:**Handles setup and tear-down, wrapping the process that iterates through multiple pages.
 
-For more information on compatibility, refer to the requirements.
+For more information on compatibility, refer to the [requirements](https://github.com/backstage/backstage/tree/master/plugins/catalog-backend-module-incremental-ingestion#requirements).
 
 In this tutorial, we'll implement an Incremental Entity Provider that interacts with an imaginary API to fetch a list of imaginary services.
 
@@ -1011,7 +1019,7 @@ Now that you have your new Incremental Entity Provider, we can connect it to the
 
 ### Installing the Incremental Entity Provider
 
-We'll assume you followed the Installation instructions. Now create a module inside `packages/backend/src/extensions/catalogCustomIncrementalIngestion.ts`.
+We'll assume you followed the [Installation](#installation) instructions. Now create a module inside `packages/backend/src/extensions/catalogCustomIncrementalIngestion.ts`.
 
 ```
 import {
@@ -1084,7 +1092,7 @@ backend.add(
 backend.add(catalogModuleCustomIncrementalIngestionProvider);
 backend.start();
 ```
-For a deep dive into the technical details of the Incremental Entity Provider, see the README.
+For a deep dive into the technical details of the Incremental Entity Provider, see [the README](https://github.com/backstage/backstage/tree/master/plugins/catalog-backend-module-incremental-ingestion).
 
 # Citations
 

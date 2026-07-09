@@ -4,12 +4,16 @@ title: Defining Configuration for your Plugin | Backstage Software Catalog and D
   Platform
 description: Documentation on Defining Configuration for your Plugin
 resource: https://backstage.io/docs/conf/defining
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Defining Configuration for your Plugin
 
-Configuration in Backstage is organized via a configuration schema, which in turn is defined using a superset of JSON Schema Draft-07. Each plugin or package within a Backstage app can contribute to the schema, which during validation is stitched together into a single schema.
+Configuration in Backstage is organized via a configuration schema, which in
+turn is defined using a superset of
+[JSON Schema Draft-07](https://json-schema.org/specification-links.html#draft-7).
+Each plugin or package within a Backstage app can contribute to the schema,
+which during validation is stitched together into a single schema.
 
 ## Schema Collection and Definition
 

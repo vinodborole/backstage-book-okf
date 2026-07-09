@@ -4,10 +4,13 @@ title: Enabling a public entry point | Backstage Software Catalog and Developer 
 description: A guide for how to experiment with public and protected Backstage app
   bundles
 resource: https://backstage.io/docs/tutorials/enable-public-entry
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
-This documentation is written for the new frontend system, which is the default in new Backstage apps. If your Backstage app still uses the old frontend system, read the old frontend system version of this guide instead.
+This documentation is written for the new frontend system, which is the default
+in new Backstage apps. If your Backstage app still uses the old frontend system,
+read the [old frontend system version of this guide](/docs/tutorials/enable-public-entry--old)
+instead.
 
 # Enable Public Entry (Experimental)
 
@@ -48,7 +51,7 @@ Let's verify that everything is working locally. From your project root folder, 
  # starting the backend api
  yarn start-backend
 - 
-Visit http://localhost:7007 to see the public app and validate that the *index.html*response only contains a minimal application.noteRegular app serving will always serve protected apps without authenticating. 
+Visit [http://localhost:7007](http://localhost:7007)to see the public app and validate that the*index.html*response only contains a minimal application.noteRegular app serving will always serve protected apps without authenticating. 
 - 
 Finally, as soon as you log in, you will be redirected to the main app home page (inspect the page and see that the protected bundle was served from the app backend after the redirect). 
 

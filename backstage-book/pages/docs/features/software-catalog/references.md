@@ -3,14 +3,24 @@ type: Web Page
 title: Entity References | Backstage Software Catalog and Developer Platform
 description: How to express references between entities
 resource: https://backstage.io/docs/features/software-catalog/references
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Entity References
 
-Entities commonly have a need to reference other entities. For example, a Component entity may want to declare who its owner is by mentioning a Group or User entity, and a User entity may want to declare what Group entities it is a member of. This article describes how to write those references in your yaml entity declaration files.
+Entities commonly have a need to reference other entities. For example, a
+[Component](/docs/features/software-catalog/descriptor-format#kind-component) entity may want to declare who
+its owner is by mentioning a Group or User entity, and a User entity may want to
+declare what Group entities it is a member of. This article describes how to
+write those references in your yaml entity declaration files.
 
-Each entity in the catalog is uniquely identified by the triplet of its kind, namespace, and name. But that's a lot to type out manually, and in a lot of circumstances, both the kind and the namespace are fixed, or possible to deduce, or could have sane default values. So in order to help the writer, the catalog has a few tricks up its sleeve.
+Each entity in the catalog is uniquely identified by the triplet of its
+[kind](/docs/features/software-catalog/descriptor-format#apiversion-and-kind-required),
+[namespace](/docs/features/software-catalog/descriptor-format#namespace-optional), and
+[name](/docs/features/software-catalog/descriptor-format#name-required). But that's a lot to type out
+manually, and in a lot of circumstances, both the kind and the namespace are
+fixed, or possible to deduce, or could have sane default values. So in order to
+help the writer, the catalog has a few tricks up its sleeve.
 
 Each reference can be expressed in one of two ways: as a compact string, or as a compound reference structure.
 
@@ -31,7 +41,7 @@ The name is always required. Depending on the context, you may be able to leave 
 Entity ref strings are frequently passed between systems as identifiers of
 entities. In those cases the refs should always be complete (have all three
 parts). The sender should ensure that the refs are always lowercased in an
-`en-US` locale, preferably by using the `stringifyEntityRef` function
+`en-US` locale, preferably by using [the  stringifyEntityRef function](https://backstage.io/api/stable/functions/_backstage_catalog-model.index.stringifyEntityRef.html)
 which does this automatically. The receiver should treat incoming refs case
 insensitively to avoid problems with senders who do not obey this rule.
 

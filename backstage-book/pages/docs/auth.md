@@ -3,36 +3,37 @@ type: Web Page
 title: Authentication in Backstage | Backstage Software Catalog and Developer Platform
 description: Introduction to authentication in Backstage
 resource: https://backstage.io/docs/auth
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Authentication in Backstage
 
-This documentation is written for the new frontend system. If you are on the old frontend system you may want to read its own article instead.
+This documentation is written for [the new frontend system](/docs/frontend-system/). If you are on the old frontend system you may want to read [its own article](/docs/auth/index--old) instead.
 
 The authentication system in Backstage serves two distinct purposes: sign-in and identification of users, as well as delegating access to third-party resources. It is possible to configure Backstage to have any number of authentication providers, but only one of these will typically be used for sign-in, with the rest being used to provide access to external resources.
 
-Identity management and the Sign-In page in Backstage will only block external access when using the new backend system, without setting `backend.auth.dangerouslyDisableDefaultAuthPolicy` in configuration. Even so, the frontend bundle is not protected from external access, protecting it requires the use of the experimental public entry point. You can learn more about this in the Threat Model.
+Identity management and the Sign-In page in Backstage will only block external access when using the new backend system, without setting `backend.auth.dangerouslyDisableDefaultAuthPolicy` in configuration. Even so, the frontend bundle is not protected from external access, protecting it requires the use of the [experimental public entry point](https://backstage.io/docs/tutorials/enable-public-entry/). You can learn more about this in the [Threat Model](/docs/overview/threat-model#operator-responsibilities).
 
 ## Built-in Authentication Providers
 
 Backstage comes with many common authentication providers in the core library:
 
-- Auth0
-- Atlassian
-- Azure
-- Azure Easy Auth
-- Bitbucket
-- Bitbucket Server
-- Cloudflare Access
-- GitHub
-- GitLab
-- Google IAP
-- Okta
-- OAuth 2 Custom Proxy
-- OneLogin
-- OpenShift
-- VMware Cloud
+- [Auth0](/docs/auth/auth0/provider)
+- [Atlassian](/docs/auth/atlassian/provider)
+- [Azure](/docs/auth/microsoft/provider)
+- [Azure Easy Auth](/docs/auth/microsoft/easy-auth)
+- [Bitbucket](/docs/auth/bitbucket/provider)
+- [Bitbucket Server](/docs/auth/bitbucketServer/provider)
+- [Cloudflare Access](/docs/auth/cloudflare/provider)
+- [GitHub](/docs/auth/github/provider)
+- [GitLab](/docs/auth/gitlab/provider)
+- [Google](/docs/auth/google/provider)
+- [Google IAP](/docs/auth/google/gcp-iap-auth)
+- [Okta](/docs/auth/okta/provider)
+- [OAuth 2 Custom Proxy](/docs/auth/oauth2-proxy/provider)
+- [OneLogin](/docs/auth/onelogin/provider)
+- [OpenShift](/docs/auth/openshift/provider)
+- [VMware Cloud](/docs/auth/vmware-cloud/provider)
 
 These built-in providers handle the authentication flow for a particular service, including required scopes, callbacks, etc. These providers are each added to a Backstage app in a similar way.
 
@@ -55,7 +56,7 @@ The `providers` key may have several authentication providers if multiple authen
 
 ## Sign-In Configuration
 
-Using an authentication provider for sign-in is something you need to configure both in the frontend app as well as the `auth` backend plugin. For information on how to configure the backend app, see Sign-in Identities and Resolvers. The rest of this section will focus on how to configure sign-in for the frontend app.
+Using an authentication provider for sign-in is something you need to configure both in the frontend app as well as the `auth` backend plugin. For information on how to configure the backend app, see [Sign-in Identities and Resolvers](/docs/auth/identity-resolver). The rest of this section will focus on how to configure sign-in for the frontend app.
 
 Sign-in is configured by providing a custom `SignInPage` app component. It will be rendered before any other routes in the app and is responsible for providing the identity of the current user. The `SignInPage` can render any number of pages and components, or just blank space with logic running in the background. In the end, however, it must provide a valid Backstage user identity through the `onSignInSuccess` callback prop, at which point the rest of the app is rendered.
 
@@ -199,7 +200,7 @@ export default createApp({
 ```
 ## Sign-In with Proxy Providers
 
-Some auth providers are so-called "proxy" providers, meaning they're meant to be used behind an authentication proxy. Examples of these are Amazon Application Load Balancer, Azure EasyAuth, Cloudflare Access, Google Identity-Aware Proxy and OAuth2 Proxy.
+Some auth providers are so-called "proxy" providers, meaning they're meant to be used behind an authentication proxy. Examples of these are [Amazon Application Load Balancer](https://github.com/backstage/backstage/blob/master/contrib/docs/tutorials/aws-alb-aad-oidc-auth.md), [Azure EasyAuth](/docs/auth/microsoft/easy-auth), [Cloudflare Access](/docs/auth/cloudflare/provider), [Google Identity-Aware Proxy](/docs/auth/google/gcp-iap-auth) and [OAuth2 Proxy](/docs/auth/oauth2-proxy/provider).
 
 When using a proxy provider, you'll end up wanting to use a different sign-in page, as there is no need for further user interaction once you've signed in towards the proxy. All the sign-in page needs to do is call the `/refresh` endpoint of the auth providers to get the existing session, which is exactly what the `ProxiedSignInPage` does. The only thing you need to do to configure the `ProxiedSignInPage` is to pass the ID of the provider like this:
 
@@ -309,19 +310,19 @@ A common pattern for talking to third-party services in Backstage is user-to-ser
 
 By relying on user-to-server calls, we keep the coupling between the frontend and backend low and provide a much lower barrier for plugins to make use of third party services. This is in comparison to, for example, a session-based system where access tokens are stored server-side. Such a solution would require a much deeper coupling between the auth backend plugin, its session storage, and other backend plugins or separate services. A goal of Backstage is to make it as easy as possible to create new plugins, and an auth solution based on user-to-server OAuth helps in that regard.
 
-The method with which frontend plugins request access to third-party services is through Utility APIs for each service provider. These are all suffixed with `*AuthApiRef`, for example `githubAuthApiRef`. For a full list of providers, see the @backstage/core-plugin-api reference.
+The method with which frontend plugins request access to third-party services is through [Utility APIs](/docs/api/utility-apis) for each service provider. These are all suffixed with `*AuthApiRef`, for example `githubAuthApiRef`. For a full list of providers, see the [@backstage/core-plugin-api](https://backstage.io/api/stable/modules/_backstage_core-plugin-api.index.html#alertapiref) reference.
 
 ## Custom Authentication Provider
 
 There are generic authentication providers for OAuth2 and SAML. These can reduce the amount of code needed to implement a custom authentication provider that adheres to these standards.
 
-Backstage uses Passport under the hood, which has a wide library of authentication strategies for different providers. See Add authentication provider for details on adding a new Passport-supported authentication method.
+Backstage uses [Passport](http://www.passportjs.org/) under the hood, which has a wide library of authentication strategies for different providers. See [Add authentication provider](/docs/auth/add-auth-provider) for details on adding a new Passport-supported authentication method.
 
 ## Custom ScmAuthApi Implementation
 
 The default `ScmAuthApi` provides integrations for `github`, `gitlab`, `azure` (Azure DevOps), `bitbucketServer` and `bitbucketCloud` and is created and registered automatically for you by the New Frontend System.
 
-If you require only a subset of these integrations, then you will need a custom implementation of the `ScmAuthApi`. It is an API used to authenticate different SCM systems generically, based on what resource is being accessed, and is used for example, by the Scaffolder (Software Templates) and Catalog Import plugins.
+If you require only a subset of these integrations, then you will need a custom implementation of the [ ScmAuthApi](https://backstage.io/api/stable/interfaces/_backstage_integration-react.ScmAuthApi.html). It is an API used to authenticate different SCM systems generically, based on what resource is being accessed, and is used for example, by the Scaffolder (Software Templates) and Catalog Import plugins.
 
 The first step is to remove the code that creates the default providers.
 

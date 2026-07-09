@@ -4,12 +4,12 @@ title: Transitioning to the New JSX Transform | Backstage Software Catalog and D
   Platform
 description: A guide to migrating your project to the New JSX Transform
 resource: https://backstage.io/docs/tutorials/jsx-transform-migration
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Transitioning to the New JSX Transform
 
-Backstage core libraries currently support React 18. We are actively evaluating the upgrade to React 19, which introduces significant changes, including making the New JSX Transform mandatory.
+Backstage core libraries currently support React 18. We are actively evaluating the upgrade to React 19, which introduces significant changes, including making the [New JSX Transform](https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html) mandatory.
 
 ## What this means for you
 
@@ -38,7 +38,7 @@ If you must preserve the default React import for compatibility reasons, you can
 ```
 import { default as React } from 'react';
 ```
-To streamline this process, consider using an automated codemod.
+To streamline this process, consider using an [automated codemod](https://app.codemod.com/registry/jsx-new-transform).
 
 ### Updating Configuration Files
 

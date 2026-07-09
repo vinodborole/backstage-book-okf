@@ -3,7 +3,7 @@ type: Web Page
 title: Deprecations | Backstage Software Catalog and Developer Platform
 description: A list of active and past deprecations
 resource: https://backstage.io/docs/api/deprecations
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Deprecations
@@ -154,7 +154,7 @@ update the settings route in `packages/app/src/App.tsx` to pass the
 `acmeAuthApiRef` to the `UserSettingsPage`. This replaces all existing provider
 items, so you might want to add back any of the default ones that you are using
 from the
-DefaultProviderSettings.
+[DefaultProviderSettings](https://github.com/backstage/backstage/blob/a3ec122170e0205fd3f9c307b98b1c5e4f55bf5f/plugins/user-settings/src/components/AuthProviders/DefaultProviderSettings.tsx#L35).
 
 ```
 <Route

@@ -3,7 +3,7 @@ type: Web Page
 title: Catalog Configuration | Backstage Software Catalog and Developer Platform
 description: Documentation on Software Catalog Configuration
 resource: https://backstage.io/docs/features/software-catalog/configuration
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Catalog Configuration
@@ -19,7 +19,7 @@ it, and validating it. These processors are configured under the
 
 The simplest configuration for the catalog, as shown in the default
 `@backstage/create-app` template, is to declaratively add locations pointing to
-YAML files with static configuration.
+YAML files with [static configuration](/docs/conf/).
 
 Locations are added to the catalog under the `catalog.locations` key:
 
@@ -31,10 +31,10 @@ catalog:
 ```
 The `url` type locations are handled by a standard processor included with the
 catalog (`UrlReaderProcessor`), so no processor configuration is needed. This
-processor *does however* need an integration to
+processor *does however* need an [integration](/docs/integrations/) to
 understand how to retrieve a given URL. For the example above, you would need to
-configure the GitHub integration to
-read files from github.com.
+configure the [GitHub integration](/docs/integrations/github/locations) to
+read files from [github.com](https://github.com/).
 
 The locations added through static configuration cannot be removed through the catalog locations API. To remove these locations, you must remove them from the configuration.
 
@@ -48,7 +48,7 @@ action is logged for further investigation.
 ### Local File (`type: file`) Configurations
 
 In addition to url locations, you can use the `file` location type to bring in content from the local file system. You should only use this for local development, test setups, and example data, not for production data.
-You are also not able to use placeholders in them like `$text`, `$json` or `$yaml`. You can however reference other files relative to the current file. See the full catalog example data set here for an extensive example.
+You are also not able to use placeholders in them like `$text`, `$json` or `$yaml`. You can however reference other files relative to the current file. See the full [catalog example data set here](https://github.com/backstage/backstage/tree/master/packages/catalog-model/examples) for an extensive example.
 
 Here is an example pulling in the `all.yaml` file from the examples folder. Note the use of `../../` to go up two levels from the current execution path of the backend. This is typically `packages/backend/`.
 
@@ -72,18 +72,19 @@ catalog:
 
 Integrations may simply provide a mechanism to handle `url` location type for an
 external provider or they may also include additional processors out of the
-box, such as the GitHub discovery
+box, such as the GitHub [discovery](/docs/integrations/github/discovery)
 processor that scans a GitHub organization for
-entity descriptor files.
+[entity descriptor files](/docs/features/software-catalog/descriptor-format).
 
-Check the integrations documentation to see what is offered by each integration.
+Check the [integrations](/docs/integrations/) documentation to see what
+is offered by each integration.
 
 ### Custom Processors
 
 To ingest entities from an existing system already tracking software, you can
 also write a *custom processor* to convert between the existing system and
 Backstage's descriptor format. This is documented in
-External Integrations.
+[External Integrations](/docs/features/software-catalog/external-integrations).
 
 ### Processor configuration
 
@@ -148,9 +149,9 @@ catalog:
 ## Readonly mode
 
 Processors provide a good way to automate the ingestion of entities when combined
-with Static Location Configuration or a
+with [Static Location Configuration](#static-location-configuration) or a
 discovery processor like
-GitHub Discovery. To enforce the usage of
+[GitHub Discovery](/docs/integrations/github/discovery). To enforce the usage of
 processors to locate entities we can configure the catalog into `readonly` mode.
 This configuration disables registering and deleting locations with the catalog APIs.
 
@@ -161,13 +162,17 @@ catalog:
 
 Note that any plugin relying on the catalog API for creating, updating, and deleting entities will not work in this mode.
 
-Deleting an entity by UUID, `DELETE /entities/by-uid/:uid`, is allowed when using this mode. It may be rediscovered as noted in explicit deletion.
+Deleting an entity by UUID, `DELETE /entities/by-uid/:uid`, is allowed when using this mode. It may be rediscovered as noted in [explicit deletion](/docs/features/software-catalog/life-of-an-entity#explicit-deletion).
 
-A common use case for this configuration is when organizations have a remote source that should be mirrored into Backstage. To make Backstage a mirror of this remote source, users cannot also register new entities with e.g. the catalog-import plugin.
+A common use case for this configuration is when organizations have a remote
+source that should be mirrored into Backstage. To make Backstage a mirror of
+this remote source, users cannot also register new entities with e.g. the
+[catalog-import](https://github.com/backstage/backstage/tree/master/plugins/catalog-import)
+plugin.
 
 ## Automatic removal of orphaned entities
 
-Entities can become orphaned through multiple means, such as when a catalog-info YAML file is moved from one place to another in the version control system without updating the registration in the catalog. The default behavior is to automatically remove orphaned entities. You can read more about orphaned entities here.
+Entities can become orphaned through multiple means, such as when a catalog-info YAML file is moved from one place to another in the version control system without updating the registration in the catalog. The default behavior is to automatically remove orphaned entities. You can read more about orphaned entities [here](/docs/features/software-catalog/life-of-an-entity#orphaning).
 
 However, if you wish to keep orphaned entities, you can use the following configuration, and automatic cleanup will be disabled.
 
@@ -189,7 +194,7 @@ If you have had providers installed in the past that ingested entities into the 
 
 ## Processing Interval
 
-The processing loop is
+The [processing loop](/docs/features/software-catalog/life-of-an-entity#processing) is
 responsible for running your registered processors on all entities, on a certain
 interval. That interval can be configured with the `processingInterval`
 app-config parameter.
@@ -210,7 +215,8 @@ Setting this value too low risks exhausting rate limits on external systems that
 
 ## Stitching strategy
 
-Stitching finalizes the entity. It can be run in two modes:
+[Stitching](/docs/features/software-catalog/life-of-an-entity#stitching) finalizes the entity. It can be run in
+two modes:
 
 - `immediate`- performs stitching in-band immediately when needed
 - `deferred`- performs the stitching asynchronously
@@ -239,7 +245,7 @@ catalog:
 ```
 ## Subscribing to Catalog Errors
 
-Catalog errors are published to the events plugin: `@backstage/plugin-events-node`. You can subscribe to events and respond to errors, for example you may wish to log them.
+Catalog errors are published to the [events plugin](https://github.com/backstage/backstage/tree/master/plugins/events-node): `@backstage/plugin-events-node`. You can subscribe to events and respond to errors, for example you may wish to log them.
 
 The first step is to add the events backend plugin to your Backstage application. Navigate to your Backstage application directory and add the plugin package.
 

@@ -4,7 +4,7 @@ title: Validate your OpenAPI spec against test data | Backstage Software Catalog
   Developer Platform
 description: Documentation on how to use the `repo schema openapi test` command.
 resource: https://backstage.io/docs/openapi/test-case-validation
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Validate your OpenAPI spec against test data
@@ -47,7 +47,7 @@ it('should return the right value', () => {
   expect(response.body).toEqual(entity);
 });
 ```
-Additionally, for more advanced use cases, you can run `yarn optic capture {PATH_TO_OPENAPI_FILE} --update interactive` and go through the prompts on the screen. Under the hood, the test validation + updating is done by Optic, a great project around supporting OpenAPI specs and development. You can find additional options here.
+Additionally, for more advanced use cases, you can run `yarn optic capture {PATH_TO_OPENAPI_FILE} --update interactive` and go through the prompts on the screen. Under the hood, the test validation + updating is done by [Optic](https://github.com/opticdev/optic), a great project around supporting OpenAPI specs and development. You can find additional options [here](https://www.useoptic.com/docs/verify-openapi).
 
 # Citations
 

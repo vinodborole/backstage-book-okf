@@ -3,12 +3,12 @@ type: Web Page
 title: Structure of a Plugin | Backstage Software Catalog and Developer Platform
 description: Details about structure of a plugin
 resource: https://backstage.io/docs/plugins/structure-of-a-plugin
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-07-09T12:16:50.465553+00:00'
 ---
 
 # Structure of a Plugin
 
-This page describes the structure of a plugin for the **old frontend system**. For the new frontend system, see Building Frontend Plugins. The general folder structure is similar, but the plugin wiring in `plugin.ts` differs significantly.
+This page describes the structure of a plugin for the **old frontend system**. For the new frontend system, see [Building Frontend Plugins](/docs/frontend-system/building-plugins/index). The general folder structure is similar, but the plugin wiring in `plugin.ts` differs significantly.
 
 Nice, you have a new plugin! We'll soon see how we can develop it into doing great things. But first off, let's look at what we get out of the box.
 
@@ -81,8 +81,10 @@ export const ExamplePage = examplePlugin.provide(
 ```
 This is where the plugin is created and where it creates and exports extensions
 that can be imported and used in the app. See reference docs for
-`createPlugin` or introduction to
-the new Composability System.
+[ createPlugin](https://backstage.io/api/stable/functions/_backstage_core-plugin-api.index.createPlugin.html) or introduction to
+the new 
+
+[Composability System](/docs/plugins/composability).
 
 ## Components
 
@@ -106,7 +108,12 @@ Luckily both of these steps happen automatically when you create a plugin with t
 
 ## Talking to the outside world
 
-If your plugin needs to communicate with services outside the Backstage environment you will probably face challenges like CORS policies and/or backend-side authorization. To smooth this process out you can use proxy - either the one you already have (like Nginx, HAProxy, etc.) or the proxy-backend plugin that we provide for the Backstage backend. Read more
+If your plugin needs to communicate with services outside the Backstage
+environment you will probably face challenges like CORS policies and/or
+backend-side authorization. To smooth this process out you can use proxy -
+either the one you already have (like Nginx, HAProxy, etc.) or the proxy-backend
+plugin that we provide for the Backstage backend.
+[Read more](https://github.com/backstage/backstage/blob/master/plugins/proxy-backend/README.md)
 
 # Citations
 
