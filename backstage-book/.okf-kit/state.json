@@ -2,7 +2,7 @@
   "generator": "okf-kit",
   "okf_version": "0.1",
   "root_url": "https://backstage.io/docs",
-  "updated_at": "2026-07-09T12:16:50.673603+00:00",
+  "updated_at": "2026-07-13T09:27:18.381876+00:00",
   "config": {
     "max_depth": 3,
     "max_pages": 200,
@@ -3416,9 +3416,9 @@
     ]
   ],
   "last_sync": {
-    "synced_at": "2026-07-09T12:16:50.548269+00:00",
+    "synced_at": "2026-07-13T09:27:18.257388+00:00",
     "added": 0,
-    "changed": 137,
+    "changed": 0,
     "removed": 0,
     "pages": 200
   }
