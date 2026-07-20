@@ -1,6 +1,7 @@
 # /pages/docs/features — directory listing
 
 - [software-catalog/](/pages/docs/features/software-catalog/index.md)
+- [software-templates/](/pages/docs/features/software-templates/index.md)
 - [techdocs/](/pages/docs/features/techdocs/index.md)
 - [Kubernetes | Backstage Software Catalog and Developer Platform](/pages/docs/features/kubernetes.md)
 - [Search Documentation | Backstage Software Catalog and Developer Platform](/pages/docs/features/search.md)

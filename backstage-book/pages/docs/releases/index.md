@@ -49,6 +49,7 @@
 - [v1.50.0 | Backstage Software Catalog and Developer Platform](/pages/docs/releases/v1.50.md)
 - [v1.51.0 | Backstage Software Catalog and Developer Platform](/pages/docs/releases/v1.51.md)
 - [v1.52.0 | Backstage Software Catalog and Developer Platform](/pages/docs/releases/v1.52.md)
+- [v1.53.0 | Backstage Software Catalog and Developer Platform](/pages/docs/releases/v1.53.md)
 - [v1.6.0 | Backstage Software Catalog and Developer Platform](/pages/docs/releases/v1.6.md)
 - [v1.7.0 | Backstage Software Catalog and Developer Platform](/pages/docs/releases/v1.7.md)
 - [v1.8.0 | Backstage Software Catalog and Developer Platform](/pages/docs/releases/v1.8.md)

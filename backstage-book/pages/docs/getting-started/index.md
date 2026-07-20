@@ -1,5 +1,16 @@
 # /pages/docs/getting-started — directory listing
 
 - [config/](/pages/docs/getting-started/config/index.md)
+- [Configuring App with plugins | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/configure-app-with-plugins.md)
+- [Create a Component | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/create-a-component.md)
+- [Filtering the Catalog | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/filter-catalog.md)
 - [Getting Started | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/generated-index.md)
+- [Backstage homepage - Setup and Customization | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/homepage.md)
 - [Keeping Backstage Updated | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/keeping-backstage-updated.md)
+- [Logging into Backstage | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/logging-in.md)
+- [Registering a Component | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/register-a-component.md)
+- [Unregistering and deleting a component | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/unregister-delete-component.md)
+- [Update a Component | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/update-a-component.md)
+- [Viewing what you own | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/view-what-you-own.md)
+- [Viewing the Catalog | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/viewing-catalog.md)
+- [Viewing entity relationships | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/viewing-entity-relationships.md)
