@@ -66,6 +66,7 @@
 - [Contributors | Backstage Software Catalog and Developer Platform](/pages/docs/contribute.md)
 - [Deploying Backstage | Backstage Software Catalog and Developer Platform](/pages/docs/deployment.md)
 - [Overview | Backstage Software Catalog and Developer Platform](/pages/docs/faq.md)
+- [Standalone Installation | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started.md)
 - [Integrations | Backstage Software Catalog and Developer Platform](/pages/docs/integrations.md)
 - [Getting Started | Backstage Software Catalog and Developer Platform](/pages/docs/notifications.md)
 - [Introduction to Plugins (Legacy) | Backstage Software Catalog and Developer Platform](/pages/docs/plugins.md)
