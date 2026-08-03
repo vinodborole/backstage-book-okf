@@ -3,7 +3,7 @@ type: Web Page
 title: New Backend System | Backstage Software Catalog and Developer Platform
 description: Details of the new backend system
 resource: https://backstage.io/docs/plugins/new-backend-system
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # New Backend System
@@ -129,8 +129,8 @@ backend.add(examplePlugin({ silent: true }));
 
 Some facts about modules
 
-- A Module is able to extend a plugin with additional functionality using the `ExtensionPoint`s registered by the plugin.
-- A module can only extend one plugin but can interact with multiple `ExtensionPoint`s registered by that plugin.
+- A Module is able to extend a plugin with additional functionality using the `ExtensionPoint` s registered by the plugin.
+- A module can only extend one plugin but can interact with multiple `ExtensionPoint` s registered by that plugin.
 - A module is always initialized before the plugin it extends.
 
 A module depends on the `ExtensionPoint`s exported by the target plugin's library package, for example `@backstage/plugin-catalog-node`, and does not directly declare a dependency on the plugin package itself.
@@ -275,10 +275,10 @@ describe('My plugin tests', () => {
 
 A detailed explanation of the package architecture can be found in the [Backstage Architecture Overview](/docs/overview/architecture-overview#package-architecture). The most important packages to consider for this system are `backend`, `plugin-<pluginId>-backend`, `plugin-<pluginId>-node`, and `plugin-<pluginId>-backend-module-<moduleId>`.
 
-- `plugin-<pluginId>-backend`houses the implementation of the plugins themselves.
-- `plugin-<pluginId>-node`houses the extension points and any other utilities that modules or other plugins might need.
-- `plugin-<pluginId>-backend-module-<moduleId>`houses the modules that extend the plugins via the extension points.
-- `backend`is the backend itself that wires everything together to something that you can deploy.
+- `plugin-<pluginId>-backend` houses the implementation of the plugins themselves.
+- `plugin-<pluginId>-node` houses the extension points and any other utilities that modules or other plugins might need.
+- `plugin-<pluginId>-backend-module-<moduleId>` houses the modules that extend the plugins via the extension points.
+- `backend` is the backend itself that wires everything together to something that you can deploy.
 
 # Citations
 

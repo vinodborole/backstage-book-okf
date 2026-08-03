@@ -3,7 +3,7 @@ type: Web Page
 title: Authentication in Backstage | Backstage Software Catalog and Developer Platform
 description: Introduction to authentication in Backstage
 resource: https://backstage.io/docs/auth
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Authentication in Backstage
@@ -12,28 +12,11 @@ This documentation is written for [the new frontend system](/docs/frontend-syste
 
 The authentication system in Backstage serves two distinct purposes: sign-in and identification of users, as well as delegating access to third-party resources. It is possible to configure Backstage to have any number of authentication providers, but only one of these will typically be used for sign-in, with the rest being used to provide access to external resources.
 
-Identity management and the Sign-In page in Backstage will only block external access when using the new backend system, without setting `backend.auth.dangerouslyDisableDefaultAuthPolicy` in configuration. Even so, the frontend bundle is not protected from external access, protecting it requires the use of the [experimental public entry point](https://backstage.io/docs/tutorials/enable-public-entry/). You can learn more about this in the [Threat Model](/docs/overview/threat-model#operator-responsibilities).
+Identity management and the Sign-In page in Backstage will only block external access when using the new backend system, without setting `backend.auth.dangerouslyDisableDefaultAuthPolicy` in configuration. Even so, the frontend bundle is not protected from external access, protecting it requires the use of the [experimental public entry point](/docs/tutorials/enable-public-entry). You can learn more about this in the [Threat Model](/docs/overview/threat-model#operator-responsibilities).
 
 ## Built-in Authentication Providers
 
 Backstage comes with many common authentication providers in the core library:
-
-- [Auth0](/docs/auth/auth0/provider)
-- [Atlassian](/docs/auth/atlassian/provider)
-- [Azure](/docs/auth/microsoft/provider)
-- [Azure Easy Auth](/docs/auth/microsoft/easy-auth)
-- [Bitbucket](/docs/auth/bitbucket/provider)
-- [Bitbucket Server](/docs/auth/bitbucketServer/provider)
-- [Cloudflare Access](/docs/auth/cloudflare/provider)
-- [GitHub](/docs/auth/github/provider)
-- [GitLab](/docs/auth/gitlab/provider)
-- [Google](/docs/auth/google/provider)
-- [Google IAP](/docs/auth/google/gcp-iap-auth)
-- [Okta](/docs/auth/okta/provider)
-- [OAuth 2 Custom Proxy](/docs/auth/oauth2-proxy/provider)
-- [OneLogin](/docs/auth/onelogin/provider)
-- [OpenShift](/docs/auth/openshift/provider)
-- [VMware Cloud](/docs/auth/vmware-cloud/provider)
 
 These built-in providers handle the authentication flow for a particular service, including required scopes, callbacks, etc. These providers are each added to a Backstage app in a similar way.
 
@@ -322,7 +305,7 @@ Backstage uses [Passport](http://www.passportjs.org/) under the hood, which has 
 
 The default `ScmAuthApi` provides integrations for `github`, `gitlab`, `azure` (Azure DevOps), `bitbucketServer` and `bitbucketCloud` and is created and registered automatically for you by the New Frontend System.
 
-If you require only a subset of these integrations, then you will need a custom implementation of the [ ScmAuthApi](https://backstage.io/api/stable/interfaces/_backstage_integration-react.ScmAuthApi.html). It is an API used to authenticate different SCM systems generically, based on what resource is being accessed, and is used for example, by the Scaffolder (Software Templates) and Catalog Import plugins.
+If you require only a subset of these integrations, then you will need a custom implementation of the [`ScmAuthApi`](https://backstage.io/api/stable/interfaces/_backstage_integration-react.ScmAuthApi.html). It is an API used to authenticate different SCM systems generically, based on what resource is being accessed, and is used for example, by the Scaffolder (Software Templates) and Catalog Import plugins.
 
 The first step is to remove the code that creates the default providers.
 

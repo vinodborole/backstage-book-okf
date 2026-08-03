@@ -3,7 +3,7 @@ type: Web Page
 title: Database | Backstage Software Catalog and Developer Platform
 description: How to set up PostgreSQL for your Backstage instance.
 resource: https://backstage.io/docs/getting-started/config/database
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Database
@@ -24,7 +24,7 @@ This guide assumes a basic understanding of working on a Linux based operating s
 [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/)
 - An account with elevated rights to install prerequisites on your operating system
 - If the database is not hosted on the same server as the Backstage app, the
-PostgreSQL port needs to be accessible (the default is `5432`or`5433`)
+PostgreSQL port needs to be accessible (the default is `5432` or`5433` )
 
 ## 1. Install and Configure PostgreSQL
 
@@ -77,15 +77,15 @@ backend:
 ```
 The `${...}` syntax denotes environment variables, specifically,
 
-- `POSTGRES_HOST`- The URL/IP to access your PostgreSQL database at. If you've installed PostgreSQL locally, this will likely be 127.0.0.1.
-- `POSTGRES_PORT`- The port to access your PostgreSQL database on. If you've installed PostgreSQL locally, this will be- `5432`or- `5433`.
-- `POSTGRES_USER`- The user from the SQL command above,- `postgres`.
-- `POSTGRES_PASSWORD`- The password you set in the SQL command above.
+1. `POSTGRES_HOST` - The URL/IP to access your PostgreSQL database at. If you've installed PostgreSQL locally, this will likely be 127.0.0.1.
+2. `POSTGRES_PORT` - The port to access your PostgreSQL database on. If you've installed PostgreSQL locally, this will be`5432` or`5433` .
+3. `POSTGRES_USER` - The user from the SQL command above,`postgres` .
+4. `POSTGRES_PASSWORD` - The password you set in the SQL command above.
 
 When filling these out, you have 2 choices,
 
-- Use environment variables when you launch Backstage, either using an environment variable injector like `dotenv-cli``env-cmd``EXPORT POSTGRES_...=...`.
-- Replacing the entire `${POSTGRES_...}`string with the value you identified earlier. This is the less secure option, but worth doing if you don't have much experience with environment variables.
+1. Use environment variables when you launch Backstage, either using an environment variable injector like [`dotenv-cli`](https://www.npmjs.com/package/dotenv-cli) or[`env-cmd`](https://www.npmjs.com/package/env-cmd) or loading the variables directly with`EXPORT POSTGRES_...=...` .
+2. Replacing the entire `${POSTGRES_...}` string with the value you identified earlier. This is the less secure option, but worth doing if you don't have much experience with environment variables.
 
 If you opt for the second option of replacing the entire string, take care to not commit your `app-config.yaml` to source control. It may contain passwords that you don't want leaked.
 
@@ -104,12 +104,11 @@ Optionally set `tokenCredential` with the following properties. If no credential
 The credential type is automatically inferred based on the fields you provide:
 
 - Client Secret Credential is used when all three are provided:
-- `tenantId`
-- `clientId`
-- `clientSecret`
- 
-- Managed Identity Credential is used when only `clientId`is provided. This enables user-assigned managed identity.
-- Default Azure Credential is used when no credential fields are provided. Default Azure Credential supports [many credential types](https://learn.microsoft.com/azure/developer/javascript/sdk/authentication/credential-chains#use-defaultazurecredential-for-flexibility), choosing one based on the runtime environment.
+  - `tenantId`
+  - `clientId`
+  - `clientSecret`
+- Managed Identity Credential is used when only `clientId` is provided. This enables user-assigned managed identity.
+- Default Azure Credential is used when no credential fields are provided. Default Azure Credential supports [many credential types](https://learn.microsoft.com/azure/developer/javascript/sdk/authentication/credential-chains#use-defaultazurecredential-for-flexibility) , choosing one based on the runtime environment.
 
 #### Token Renewal
 
@@ -217,8 +216,8 @@ If you want to read more about the database configuration, here are some helpful
 
 - [Configuring Plugin Databases](/docs/tutorials/configuring-plugin-databases#privileges)
 - [Manual Knex Rollback](/docs/tutorials/manual-knex-rollback)
-- [Read more about Knex](http://knexjs.org/), the database wrapper that we use.
-- [Install](https://www.pgadmin.org/), a helpful tool for querying your database.- `pgAdmin`4
+- [Read more about Knex](http://knexjs.org/) , the database wrapper that we use.
+- [Install `pgAdmin` 4](https://www.pgadmin.org/) , a helpful tool for querying your database.
 
 # Citations
 

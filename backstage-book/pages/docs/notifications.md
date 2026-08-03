@@ -3,7 +3,7 @@ type: Web Page
 title: Getting Started | Backstage Software Catalog and Developer Platform
 description: How to get started with the notifications and signals
 resource: https://backstage.io/docs/notifications
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Getting Started
@@ -27,8 +27,8 @@ Notifications are messages sent to either individual users or groups. They are n
 
 There are two basic types of notifications:
 
-- **Broadcast**: Messages sent to all users of Backstage.
-- **Entity**: Messages delivered to specific listed entities, such as Users or Groups.
+- **Broadcast** : Messages sent to all users of Backstage.
+- **Entity** : Messages delivered to specific listed entities, such as Users or Groups.
 
 Example of use-cases:
 
@@ -257,7 +257,7 @@ The example above would send a notification to the Guest user (`user:default/gue
 
 ## Additional info
 
-An example of a backend plugin sending notifications can be found in the [ @backstage/plugin-scaffolder-backend-module-notifications package](https://github.com/backstage/backstage/tree/master/plugins/scaffolder-backend-module-notifications).
+An example of a backend plugin sending notifications can be found in the [`@backstage/plugin-scaffolder-backend-module-notifications` package](https://github.com/backstage/backstage/tree/master/plugins/scaffolder-backend-module-notifications).
 
 Sources of the notifications and signals plugins:
 

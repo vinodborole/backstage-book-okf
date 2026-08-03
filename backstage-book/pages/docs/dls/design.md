@@ -3,7 +3,7 @@ type: Web Page
 title: Design | Backstage Software Catalog and Developer Platform
 description: Documentation on Design
 resource: https://backstage.io/docs/dls/design
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Design
@@ -47,7 +47,7 @@ referencing Figma documents to share specs and prototypes with the community.
 
 | Step 1 | Step 2 | Step 3 | Step 4 | Step 5 | Step 6 | 
 |---|---|---|---|---|---|
-| Platform design team submits an issue to backstage/backstage GitHubwith a potential component. | Backstage community offers feedback or approval on backstage/backstage GitHub. | Platform design team adjusts accordingly (as they see fit) and update the Figma DLS document. | Designed component is added to backstage/backstage GitHubas an issue. | External or internal Backstage open source contributors build the component. | External or internal contributors add the component to the Backstage Storybook. 🎉 | 
+| Platform design team submits an issue to **backstage/backstage GitHub** with a potential component. | Backstage community offers feedback or approval on **backstage/backstage GitHub** . | Platform design team adjusts accordingly (as they see fit) and update the Figma DLS document. | Designed component is added to **backstage/backstage GitHub** as an issue. | External or internal Backstage open source contributors build the component. | External or internal contributors add the component to the **Backstage Storybook** . 🎉 | 
 
 ### Building for Backstage
 
@@ -101,20 +101,18 @@ picked up by our team as something to be added to our design system.
 
 ## ✏️ Resources
 
-** Storybook** - where you can view our
+**[Storybook](http://backstage.io/storybook)** - where you can view our
 components. If you’d like to help build up our design system, you can also add
 components we’ve designed to the Storybook as well.
 
-** Figma** - we're stoked to be using Figma
+**[Figma](https://www.figma.com/@backstage)** - we're stoked to be using Figma
 Community to share our design assets. You can duplicate our UI Kit and design
 your own plugin for Backstage.
 
-** Discord** - all design questions should be
-directed to the 
+**[Discord](https://discord.gg/backstage-687207715902193673)** - all design questions should be
+directed to the *#design* channel.
 
-*#design*channel.
-
-** Customizing Your App's UI** -
+**[Customizing Your App's UI](https://backstage.io/docs/conf/user-interface)** -
 How to customize the look and feel of your Backstage instance by extending the
 theme.
 

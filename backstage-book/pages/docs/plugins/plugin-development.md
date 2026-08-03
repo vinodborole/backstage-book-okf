@@ -3,7 +3,7 @@ type: Web Page
 title: Plugin Development | Backstage Software Catalog and Developer Platform
 description: Documentation on Plugin Development
 resource: https://backstage.io/docs/plugins/plugin-development
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Plugin Development
@@ -16,9 +16,10 @@ Each plugin is treated as a self-contained web app and can include almost any ty
 
 ## Developing guidelines
 
-- Consider writing plugins in `TypeScript`.
+- Consider writing plugins in `TypeScript` .
 - Plan the directory structure of your plugin so that it becomes easy to manage.
-- Prefer using the [Backstage components](https://backstage.io/storybook), otherwise go with[Material UI](https://material-ui.com/).
+- Prefer using the [Backstage components](https://backstage.io/storybook) ,
+otherwise go with[Material UI](https://material-ui.com/) .
 - Check out the shared Backstage APIs before building a new one.
 
 ## Plugin concepts / API

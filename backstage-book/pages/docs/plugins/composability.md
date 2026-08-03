@@ -3,7 +3,7 @@ type: Web Page
 title: Composability System | Backstage Software Catalog and Developer Platform
 description: Documentation for the Backstage plugin composability APIs.
 resource: https://backstage.io/docs/plugins/composability
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Composability System
@@ -171,12 +171,12 @@ There are a couple of naming patterns to adhere to as you build plugins, which h
 
 | Description | Pattern | Examples | 
 |---|---|---|
-| Top-level Pages | `*Page` | `CatalogIndexPage`,`SettingsPage`,`LighthousePage` | 
-| Entity Tab Content | `Entity*Content` | `EntityJenkinsContent`,`EntityKubernetesContent` | 
-| Entity Overview Card | `Entity*Card` | `EntitySentryCard`,`EntityPagerDutyCard` | 
-| Entity Conditional | `is*Available` | `isPagerDutyAvailable`,`isJenkinsAvailable` | 
-| Plugin Instance | `*Plugin` | `jenkinsPlugin`,`catalogPlugin` | 
-| Utility API Reference | `*ApiRef` | `configApiRef`,`catalogApiRef` | 
+| Top-level Pages | `*Page` | `CatalogIndexPage` ,`SettingsPage` ,`LighthousePage` | 
+| Entity Tab Content | `Entity*Content` | `EntityJenkinsContent` ,`EntityKubernetesContent` | 
+| Entity Overview Card | `Entity*Card` | `EntitySentryCard` ,`EntityPagerDutyCard` | 
+| Entity Conditional | `is*Available` | `isPagerDutyAvailable` ,`isJenkinsAvailable` | 
+| Plugin Instance | `*Plugin` | `jenkinsPlugin` ,`catalogPlugin` | 
+| Utility API Reference | `*ApiRef` | `configApiRef` ,`catalogApiRef` | 
 
 ### Routing System
 
@@ -462,11 +462,12 @@ applications to the new composability system described above.
 
 There are a couple of high-level steps to porting an existing plugin to the new composability system:
 
-- Remove usage of `router.addRoute`or`router.registerRoute`within`createPlugin`, and export the page components as routable extensions instead.
-- Switch any `Router`export to instead be a routable extension.
+- Remove usage of `router.addRoute` or`router.registerRoute` within`createPlugin` , and export the page components as routable extensions instead.
+- Switch any `Router` export to instead be a routable extension.
 - Change any plain component exports, such as catalog overview cards, to be component extensions.
-- Stop exporting `RouteRef`s and instead pass them to`createPlugin`.
-- Stop accepting `RouteRef`s as props or importing them from other plugins, instead create an`ExternalRouteRef`as a replacement, and pass it to`createPlugin.`
+- Stop exporting `RouteRef` s and instead pass them to`createPlugin` .
+- Stop accepting `RouteRef` s as props or importing them from other plugins,
+instead create an`ExternalRouteRef` as a replacement, and pass it to`createPlugin.`
 - Rename any other exported symbols according to the naming pattern table below.
 
 Note that removing the existing exports and configuration is a breaking change in any plugin. If backwards compatibility is needed the existing code be deprecated while making the new additions, to then be removed at a later point.
@@ -477,11 +478,11 @@ Many export naming patterns have been changed to avoid import aliases and to cla
 
 | Description | Existing Pattern | New Pattern | Examples | 
 |---|---|---|---|
-| Top-level Pages | `Router` | `\*Page` | `CatalogIndexPage`,`SettingsPage`,`LighthousePage` | 
-| Entity Tab Content | `Router` | `Entity\*Content` | `EntityJenkinsContent`,`EntityKubernetesContent` | 
-| Entity Overview Card | `\*Card` | `Entity\*Card` | `EntitySentryCard`,`EntityPagerDutyCard` | 
-| Entity Conditional | `isPluginApplicableToEntity` | `is\*Available` | `isPagerDutyAvailable`,`isJenkinsAvailable` | 
-| Plugin Instance | `plugin` | `\*Plugin` | `jenkinsPlugin`,`catalogPlugin` |
+| Top-level Pages | `Router` | `\*Page` | `CatalogIndexPage` ,`SettingsPage` ,`LighthousePage` | 
+| Entity Tab Content | `Router` | `Entity\*Content` | `EntityJenkinsContent` ,`EntityKubernetesContent` | 
+| Entity Overview Card | `\*Card` | `Entity\*Card` | `EntitySentryCard` ,`EntityPagerDutyCard` | 
+| Entity Conditional | `isPluginApplicableToEntity` | `is\*Available` | `isPagerDutyAvailable` ,`isJenkinsAvailable` | 
+| Plugin Instance | `plugin` | `\*Plugin` | `jenkinsPlugin` ,`catalogPlugin` |
 
 # Citations
 

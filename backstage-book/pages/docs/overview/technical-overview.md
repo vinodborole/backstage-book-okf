@@ -3,7 +3,7 @@ type: Web Page
 title: Technical overview | Backstage Software Catalog and Developer Platform
 description: Technical overview of Backstage
 resource: https://backstage.io/docs/overview/technical-overview
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Technical overview
@@ -20,10 +20,10 @@ Backstage is now a [CNCF incubation project](https://backstage.io/blog/2022/03/1
 
 ## Benefits
 
-- For *engineering managers*, it allows you to maintain standards and best practices across the organization, and can help you manage your whole tech ecosystem, from migrations to test certification.
-- For *end users*(developers), it makes it fast and simple to build software components in a standardized way, and it provides a central place to manage all projects and documentation.
-- For *platform engineers*, it enables extensibility and scalability by letting you easily integrate new tools and services (via plugins), as well as extending the functionality of existing ones.
-- For *everyone*, it is a single, consistent experience that ties all of your infrastructure tooling, resources, standards, owners, contributors, and administrators together in one place.
+- For *engineering managers* , it allows you to maintain standards and best practices across the organization, and can help you manage your whole tech ecosystem, from migrations to test certification.
+- For *end users* (developers), it makes it fast and simple to build software components in a standardized way, and it provides a central place to manage all projects and documentation.
+- For *platform engineers* , it enables extensibility and scalability by letting you easily integrate new tools and services (via plugins), as well as extending the functionality of existing ones.
+- For *everyone* , it is a single, consistent experience that ties all of your infrastructure tooling, resources, standards, owners, contributors, and administrators together in one place.
 
 If you have question or want support, please join our [Discord server](https://discord.gg/backstage-687207715902193673).
 
@@ -31,14 +31,14 @@ If you have question or want support, please join our [Discord server](https://d
 
 Backstage includes the following set of core features:
 
-- [Authentication and Identity](/docs/auth/)- Sign-in and identification of users, and delegating access to third-party resources, using built-in authentication providers.
-- [Kubernetes](/docs/features/kubernetes/)- A tool that allows developers to check the health of their services whether it is on a local host or in production.
-- [Notifications](/docs/notifications/)- Provides a means for plugins and external services to send messages to either individual users or groups.
-- [Permissions](/docs/permissions/overview)- Ability to enforce rules concerning the type of access a user is given to specific data, APIs, or interface actions.
-- [Search](https://backstage.io/docs/features/search/)- Search for information in the Backstage ecosystem. You can customize the look and feel of each search result and use your own search engine.
-- [Software Catalog](/docs/features/software-catalog/)- A centralized system that contains metadata for all your software, such as services, websites, libraries, ML models, data pipelines, and so on. It can also contain metadata for the physical or virtual infrastructure needed to operate a piece of software. The software catalog can be viewed and searched through a UI.
-- [Software Templates](/docs/features/software-templates/)- A tool to help you create components inside Backstage. A template can load skeletons of code, include some variables, and then publish the template to a location, such as GitHub.
-- [TechDocs](https://backstage.io/docs/features/techdocs/)- A docs-like-code solution built into Backstage. Documentation is written in Markdown files which lives together with the code.
+- [Authentication and Identity](/docs/auth/) - Sign-in and identification of users, and delegating access to third-party resources, using built-in authentication providers.
+- [Kubernetes](/docs/features/kubernetes/) - A tool that allows developers to check the health of their services whether it is on a local host or in production.
+- [Notifications](/docs/notifications/) - Provides a means for plugins and external services to send messages to either individual users or groups.
+- [Permissions](/docs/permissions/overview) - Ability to enforce rules concerning the type of access a user is given to specific data, APIs, or interface actions.
+- [Search](https://backstage.io/docs/features/search/) - Search for information in the Backstage ecosystem. You can customize the look and feel of each search result and use your own search engine.
+- [Software Catalog](/docs/features/software-catalog/) - A centralized system that contains metadata for all your software, such as services, websites, libraries, ML models, data pipelines, and so on. It can also contain metadata for the physical or virtual infrastructure needed to operate a piece of software. The software catalog can be viewed and searched through a UI.
+- [Software Templates](/docs/features/software-templates/) - A tool to help you create components inside Backstage. A template can load skeletons of code, include some variables, and then publish the template to a location, such as GitHub.
+- [TechDocs](https://backstage.io/docs/features/techdocs/) - A docs-like-code solution built into Backstage. Documentation is written in Markdown files which lives together with the code.
 
 ## Plugin Architecture Overview
 
@@ -54,21 +54,21 @@ Many of the features available in Backstage are provided by plugins. For example
 
 ## Software Catalog System Model
 
-The system model behind the software catalog is based on [ entities](/docs/references/glossary#entity) and it models two main types:
+The system model behind the software catalog is based on [*entities*](/docs/references/glossary#entity) and it models two main types:
 
 - Core Entities
 - Organizational Entities
 
 `Core Entities` include:
 
-- `Components`- Individual pieces of software that can be tracked in source control and can implement APIs for other components to consume.
-- `APIs`- Implemented by components and form the boundaries between different components. The API can be either public, restricted, or private.
-- `Resources`- The physical or virtual infrastructure needed to operate a component.
+- `Components` - Individual pieces of software that can be tracked in source control and can implement APIs for other components to consume.
+- `APIs` - Implemented by components and form the boundaries between different components. The API can be either public, restricted, or private.
+- `Resources` - The physical or virtual infrastructure needed to operate a component.
 
 `Organizational Entities` include:
 
-- `User`- A person, such as an employee, contractor, or similar.
-- `Group`- An organizational entity, such as a team, business unit, and so on.
+- `User` - A person, such as an employee, contractor, or similar.
+- `Group` - An organizational entity, such as a team, business unit, and so on.
 
 When you have a large catalogue of components, APIs, and resources, it can be difficult to understand how they work together. Ecosystem modeling allows you to organize a large catalog of core entities into:
 
@@ -77,9 +77,9 @@ When you have a large catalogue of components, APIs, and resources, it can be di
 
 There are three additional items that can be part of the system model:
 
-- `Location`- A marker that references other places to look for catalog data.
-- `Type`- It has no set meaning. You can assign your own types and use them as desired.
-- `Template`- Describes both the parameters that are rendered in the frontend part of the scaffolding wizard, and the steps that are executed when scaffolding that component.
+- `Location` - A marker that references other places to look for catalog data.
+- `Type` - It has no set meaning. You can assign your own types and use them as desired.
+- `Template` - Describes both the parameters that are rendered in the frontend part of the scaffolding wizard, and the steps that are executed when scaffolding that component.
 
 The following diagram illustrates an example of ecosystem modeling, and provides sample relationships between a domain, system, core entities, and organization entities.
 

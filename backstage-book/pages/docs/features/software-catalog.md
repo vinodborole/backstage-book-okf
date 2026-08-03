@@ -3,7 +3,7 @@ type: Web Page
 title: Backstage Software Catalog | Backstage Software Catalog and Developer Platform
 description: The Backstage Software Catalog
 resource: https://backstage.io/docs/features/software-catalog
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Backstage Software Catalog
@@ -22,8 +22,8 @@ Backstage and the Backstage Software Catalog make it easy for one team to manage
 
 More specifically, the Software Catalog enables two main use-cases:
 
-- Helping teams manage and maintain the software they own. Teams get a uniform view of all their software; services, libraries, websites, ML models — you name it, Backstage knows all about it.
-- Makes all the software in your company, and who owns it, discoverable. No more orphan software hiding in the dark corners of your software ecosystem.
+1. Helping teams manage and maintain the software they own. Teams get a uniform view of all their software; services, libraries, websites, ML models — you name it, Backstage knows all about it.
+2. Makes all the software in your company, and who owns it, discoverable. No more orphan software hiding in the dark corners of your software ecosystem.
 
 ## Getting Started
 
@@ -40,9 +40,9 @@ a formal requirement & metadata files can be placed anywhere in the repository.
 
 There are 3 ways to add components to the catalog:
 
-- Manually register components
-- Creating new components through Backstage
-- Integrating with an [external source](/docs/features/software-catalog/external-integrations)
+1. Manually register components
+2. Creating new components through Backstage
+3. Integrating with an [external source](/docs/features/software-catalog/external-integrations)
 
 ### Manually register components
 
@@ -55,7 +55,7 @@ Backstage expects the full URL to the YAML in your source control. Example:
 https://github.com/backstage/backstage/blob/master/packages/catalog-model/examples/components/artist-lookup-component.yaml
 ```
 *More examples can be found
- here.*
+[here](https://github.com/backstage/backstage/tree/master/packages/catalog-model/examples).*
 
 It is important to note that any kind of software can be registered in Backstage. Even if the software is not maintained by your company (SaaS offering, for example) it is still useful to create components for tracking ownership.
 

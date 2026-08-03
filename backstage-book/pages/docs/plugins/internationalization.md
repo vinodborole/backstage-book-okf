@@ -3,7 +3,7 @@ type: Web Page
 title: Internationalization | Backstage Software Catalog and Developer Platform
 description: Documentation on adding internationalization to plugins and apps
 resource: https://backstage.io/docs/plugins/internationalization
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Internationalization
@@ -12,7 +12,7 @@ This section is part of the legacy plugins documentation. For the new frontend s
 
 ## Overview
 
-The Backstage core function provides internationalization for plugins and apps. The underlying library is [ i18next](https://www.i18next.com/) with some additional Backstage typescript magic for type safety with keys.
+The Backstage core function provides internationalization for plugins and apps. The underlying library is [`i18next`](https://www.i18next.com/) with some additional Backstage typescript magic for type safety with keys.
 
 ## For a plugin developer
 
@@ -372,10 +372,10 @@ The pattern is stored in the manifest, so the `import` command automatically use
 
 The exported JSON files are standard key-value pairs compatible with most external translation systems. A typical workflow looks like:
 
-- Run `translations export`to generate the source English files
-- Upload the `.en.json`files to your translation system
-- Download the translated files back into the translations directory
-- Run `translations import`to regenerate the wiring code
+1. Run `translations export` to generate the source English files
+2. Upload the `.en.json` files to your translation system
+3. Download the translated files back into the translations directory
+4. Run `translations import` to regenerate the wiring code
 
 For full command reference, see the [CLI commands documentation](/docs/tooling/cli/commands#translations-export).
 

@@ -3,7 +3,7 @@ type: Web Page
 title: Overview | Backstage Software Catalog and Developer Platform
 description: Overview of the Backstage CLI
 resource: https://backstage.io/docs/tooling/cli/overview
-timestamp: '2026-07-20T08:58:01.906190+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Overview
@@ -18,7 +18,7 @@ minimal. As a part of accomplishing this goal, Backstage provides its own build
 system and tooling, delivered primarily through the
 `@backstage/cli`[package](/docs/references/glossary#package). When
 creating an app using
-[ @backstage/create-app](https://www.npmjs.com/package/@backstage/create-app),
+[`@backstage/create-app`](https://www.npmjs.com/package/@backstage/create-app),
 you receive a project that's already prepared with a typical setup and package
 scripts for executing the most common commands.
 

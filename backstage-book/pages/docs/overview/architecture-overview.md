@@ -3,7 +3,7 @@ type: Web Page
 title: Architecture overview | Backstage Software Catalog and Developer Platform
 description: Documentation on Architecture overview
 resource: https://backstage.io/docs/overview/architecture-overview
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Architecture overview
@@ -22,8 +22,8 @@ The following diagram shows a high level view of the overall architecture of Bac
 
 There are 3 main components in this architecture:
 
-- The [frontend](#frontend-building-blocks)includes the core Backstage[UI](#user-interface)which is an[extension](#extensions)that interacts directly with the user to present the information from the integrated core feature plugins, and other plugins added by a user.
-- The [backend](#backend-building-blocks)includes the backend plugins,[core services](https://backstage.io/docs/backend-system/core-services/index), and other services. This is the server-side part of Backstage that is responsible for wiring things together. You can deploy more than one backend, and more than one backend container, depending on your need to scale and isolate individual features.
+- The [frontend](#frontend-building-blocks) includes the core Backstage[UI](#user-interface) which is an[extension](#extensions) that interacts directly with the user to present the information from the integrated core feature plugins, and other plugins added by a user.
+- The [backend](#backend-building-blocks) includes the backend plugins,[core services](https://backstage.io/docs/backend-system/core-services/index) , and other services. This is the server-side part of Backstage that is responsible for wiring things together. You can deploy more than one backend, and more than one backend container, depending on your need to scale and isolate individual features.
 - Databases host your Backstage data.
 
 ## Frontend building blocks
@@ -50,11 +50,11 @@ Plugins provide the actual features inside an app. The size of a plugin can rang
 
 Backstage includes the following set of core plugins:
 
-- [Software Catalog](/docs/features/software-catalog/)- A centralized system that contains metadata for all your software, such as services, websites, libraries, ML models, data pipelines, and so on. It can also contain metadata for the physical or virtual infrastructure needed to operate a piece of software. The software catalog can be viewed and searched through a UI.
-- [Software Templates](/docs/features/software-templates/)- A tool to help you create components inside Backstage. A template can load skeletons of code, include some variables, and then publish the template to a location, such as GitHub.
-- [TechDocs](https://backstage.io/docs/features/techdocs/)- A docs-like-code solution built into Backstage. Documentation is written in Markdown files which lives together with the code.
-- [Kubernetes](/docs/features/kubernetes/)- A tool that allows developers to check the health of their services whether it is on a local host or in production.
-- [Search](https://backstage.io/docs/features/search/)- Search for information in the Backstage ecosystem. You can customize the look and feel of each search result and use your own search engine.
+- [Software Catalog](/docs/features/software-catalog/) - A centralized system that contains metadata for all your software, such as services, websites, libraries, ML models, data pipelines, and so on. It can also contain metadata for the physical or virtual infrastructure needed to operate a piece of software. The software catalog can be viewed and searched through a UI.
+- [Software Templates](/docs/features/software-templates/) - A tool to help you create components inside Backstage. A template can load skeletons of code, include some variables, and then publish the template to a location, such as GitHub.
+- [TechDocs](https://backstage.io/docs/features/techdocs/) - A docs-like-code solution built into Backstage. Documentation is written in Markdown files which lives together with the code.
+- [Kubernetes](/docs/features/kubernetes/) - A tool that allows developers to check the health of their services whether it is on a local host or in production.
+- [Search](https://backstage.io/docs/features/search/) - Search for information in the Backstage ecosystem. You can customize the look and feel of each search result and use your own search engine.
 
 [Plugin architecture](#plugin-architecture) provides greater detail about the architecture of the plugins themselves.
 
@@ -131,7 +131,7 @@ Standalone plugins run entirely in the browser. [The Tech Radar plugin](https://
 
 The architecture of the Tech Radar installed into a Backstage app is very simple. You just need to add Tech Radar as a frontend plugin into your app, as shown in the following diagram.
 
-NOTE:
+**NOTE:**
 
 The following diagram does not show the detailed contents of the frontend and backend containers in order to highlight the changes that pertain to the addition of the specified plugin.
 
@@ -148,8 +148,7 @@ The Lighthouse plugin is added to the frontend. The lighthouse-audit-service con
 ```
 docker run spotify/lighthouse-audit-service:latest
 ```
-
-NOTE:
+**NOTE:**
 
 The following diagram does not show the detailed contents of the frontend and backend, in order to highlight the changes that pertain to the addition of the specified plugin.
 
@@ -163,7 +162,8 @@ The CircleCI plugin is an example of a third-party backend plugin. CircleCI is a
 
 Requests going to CircleCI from the user's browser are passed through a proxy service that Backstage provides. Without this, the requests would be blocked by Cross Origin Resource Sharing policies which prevent a browser page served at [https://example.com](https://example.com) from serving resources hosted at [https://circleci.com](https://circleci.com).
 
-NOTE:The following diagram does not show the detailed contents of the frontend and backend, in order to highlight the changes that pertain to the addition of the specified plugin.
+**NOTE:**
+The following diagram does not show the detailed contents of the frontend and backend, in order to highlight the changes that pertain to the addition of the specified plugin.
 
 ## Package Architecture
 
@@ -248,7 +248,7 @@ backend:
 
 #### Minimal configuration
 
-- defaults, no `authentication`, expects cache named`cache`and host`127.0.0.1:11222`)
+- defaults, no `authentication` , expects cache named`cache` and host`127.0.0.1:11222` )
 
 ```
 backend:
@@ -257,8 +257,8 @@ backend:
 ```
 #### Extended configuration
 
-- Unlike Redis, Infinispan will **not**create the cache for you. It's expected you've configured the cache in your infinispan server prior to configuration here.
-- A full list of configuration items are available: [https://docs.jboss.org/infinispan/hotrod-clients/javascript/1.0/apidocs/module-infinispan.html](https://docs.jboss.org/infinispan/hotrod-clients/javascript/1.0/apidocs/module-infinispan.html)including support for backup clusters.
+- Unlike Redis, Infinispan will **not** create the cache for you. It's expected you've configured the cache in your infinispan server prior to configuration here.
+- A full list of configuration items are available: [https://docs.jboss.org/infinispan/hotrod-clients/javascript/1.0/apidocs/module-infinispan.html](https://docs.jboss.org/infinispan/hotrod-clients/javascript/1.0/apidocs/module-infinispan.html) including support for backup clusters.
 
 ```
 backend:

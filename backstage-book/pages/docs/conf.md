@@ -4,7 +4,7 @@ title: Static Configuration in Backstage | Backstage Software Catalog and Develo
   Platform
 description: Documentation on Static Configuration in Backstage
 resource: https://backstage.io/docs/conf
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Static Configuration in Backstage
@@ -17,15 +17,23 @@ Backstage ships with a flexible configuration system that provides a simple way 
 
 Configuration is stored in YAML files where the defaults are `app-config.yaml`
 and `app-config.local.yaml` for local overrides. Additionally, it is possible
-to define environment based configuration files with `BACKSTAGE_ENV`
-environment variable, which will load `app-config.<BACKSTAGE_ENV>.yaml`.
+to define environment-based configuration files with the `BACKSTAGE_ENV`
+environment variable.
 
-Loading order of these files is as follows:
+`BACKSTAGE_ENV` accepts either a single value or comma-separated values for
+stacking multiple environments. For example,
+`BACKSTAGE_ENV=e2e-test,production` loads:
 
-- `app-config.yaml`
-- `app-config.<BACKSTAGE_ENV>.yaml`
-- `app-config.local.yaml`
-- `app-config.<BACKSTAGE_ENV>.local.yaml`
+1. `app-config.yaml`
+2. `app-config.e2e-test.yaml`
+3. `app-config.production.yaml`
+4. `app-config.local.yaml`
+5. `app-config.e2e-test.local.yaml`
+6. `app-config.production.local.yaml`
+
+All non-local environment files are loaded before any local files, so local
+overrides always take priority. Within each group, environments are ordered
+left-to-right as specified. The base `app-config.yaml` is required by default, while the other files are optional and only loaded if they exist.
 
 Other sets of files can by loaded by passing `--config <path>` flags.
 Read more about the configuration loading order in the
@@ -73,9 +81,12 @@ in frontend and backend plugins. For more details, see
 
 More details are provided in dedicated sections of the documentation.
 
-- [Reading Configuration](/docs/conf/reading): How to read configuration in your plugin.
-- [Writing Configuration](/docs/conf/writing): How to write configuration for your Backstage deployment.
-- [Defining Configuration](/docs/conf/defining): How to define a configuration schema for users of your plugin or package.
+- [Reading Configuration](/docs/conf/reading) : How to read configuration in your
+plugin.
+- [Writing Configuration](/docs/conf/writing) : How to write configuration for your
+Backstage deployment.
+- [Defining Configuration](/docs/conf/defining) : How to define a configuration schema
+for users of your plugin or package.
 
 # Citations
 

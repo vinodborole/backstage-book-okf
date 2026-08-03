@@ -3,7 +3,7 @@ type: Web Page
 title: Structure of a Plugin | Backstage Software Catalog and Developer Platform
 description: Details about structure of a plugin
 resource: https://backstage.io/docs/plugins/structure-of-a-plugin
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Structure of a Plugin
@@ -81,10 +81,8 @@ export const ExamplePage = examplePlugin.provide(
 ```
 This is where the plugin is created and where it creates and exports extensions
 that can be imported and used in the app. See reference docs for
-[ createPlugin](https://backstage.io/api/stable/functions/_backstage_core-plugin-api.index.createPlugin.html) or introduction to
-the new 
-
-[Composability System](/docs/plugins/composability).
+[`createPlugin`](https://backstage.io/api/stable/functions/_backstage_core-plugin-api.index.createPlugin.html) or introduction to
+the new [Composability System](/docs/plugins/composability).
 
 ## Components
 
@@ -100,9 +98,9 @@ You may tweak these components, rename them and/or replace them completely.
 
 There are two things needed for a Backstage app to start making use of a plugin.
 
-- Add plugin as dependency in `app/package.json`
-- Import and use one or more plugin extensions, for example in
-`app/src/App.tsx`.
+1. Add plugin as dependency in `app/package.json`
+2. Import and use one or more plugin extensions, for example in
+`app/src/App.tsx` .
 
 Luckily both of these steps happen automatically when you create a plugin with the Backstage CLI.
 

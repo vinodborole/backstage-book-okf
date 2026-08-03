@@ -3,7 +3,7 @@ type: Web Page
 title: Backstage Project Structure | Backstage Software Catalog and Developer Platform
 description: Introduction to files and folders in the Backstage Project repository
 resource: https://backstage.io/docs/contribute/project-structure
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Backstage Project Structure
@@ -15,25 +15,38 @@ Backstage is a complex project, and the GitHub repository contains many differen
 In the project root, there are a set of files and folders which are not part of the project as such, and may or may not be familiar to someone looking through the code.
 
 - 
-`.changeset/`[changesets](https://github.com/atlassian/changesets)and will be removed at every new release. They are essentially building-blocks of a CHANGELOG.
+[`.changeset/`](https://github.com/backstage/backstage/tree/master/.changeset) -
+This folder contains files outlining which changes occurred in the project
+since the last release. These files are added manually, but managed by[changesets](https://github.com/atlassian/changesets) and will be removed at
+every new release. They are essentially building-blocks of a CHANGELOG.
 - 
-`.github/`[vale](https://github.com/backstage/backstage/tree/master/.github/vale)sub-folder which is used for a markdown spellchecker.
+[`.github/`](https://github.com/backstage/backstage/tree/master/.github) -
+Standard GitHub folder. It contains - amongst other things - our workflow
+definitions and templates. Worth noting is the[vale](https://github.com/backstage/backstage/tree/master/.github/vale) sub-folder which is used for a markdown spellchecker.
 - 
-`.yarn/``yarn`implementation. This allows us to have better control over our`yarn.lock`file and hopefully avoid problems due to yarn versioning differences.
+[`.yarn/`](https://github.com/backstage/backstage/tree/master/.yarn) -
+Backstage ships with its own`yarn` implementation. This allows us to have
+better control over our`yarn.lock` file and hopefully avoid problems due to
+yarn versioning differences.
 - 
-`contrib/`
+[`contrib/`](https://github.com/backstage/backstage/tree/master/contrib) -
+Collection of examples or resources contributed by the community. We really
+appreciate contributions in here and encourage them being kept up to date.
 - 
-`docs/`[https://backstage.io/docs](https://backstage.io/docs). Just keep in mind that changes to the`sidebars.ts`
+[`docs/`](https://github.com/backstage/backstage/tree/master/docs) - This is
+where we keep all of our documentation Markdown files. These end up on[https://backstage.io/docs](https://backstage.io/docs) . Just keep in mind that changes to the[`sidebars.ts`](https://github.com/backstage/backstage/blob/master/microsite/sidebars.ts) file may be needed as sections are added/removed.
 - 
-`.editorconfig`[EditorConfig.org](https://editorconfig.org/).
+[`.editorconfig`](https://github.com/backstage/backstage/tree/master/.editorconfig) -
+A configuration file used by most common code editors. Learn more at[EditorConfig.org](https://editorconfig.org/) .
 - 
-`.imgbotconfig`[bot](https://imgbot.net/)which helps reduce image sizes.
+[`.imgbotconfig`](https://github.com/backstage/backstage/tree/master/.imgbotconfig) -
+Configuration for a[bot](https://imgbot.net/) which helps reduce image sizes.
 
 ## Monorepo packages
 
 Every folder in both `packages/` and `plugins/` is within our monorepo setup, as
 defined in
-[ package.json](https://github.com/backstage/backstage/blob/master/package.json):
+[`package.json`](https://github.com/backstage/backstage/blob/master/package.json):
 
 ```
   "workspaces": [
@@ -43,57 +56,107 @@ defined in
 ```
 Let's look at them individually.
 
-`packages/`
+### `packages/`
 
 These are all the packages that we use within the project. [Plugins](#plugins)
 are separated out into their own folder, see further down.
 
 - 
-`app/`
+[`app/`](https://github.com/backstage/backstage/tree/master/packages/app) -
+This is our take on how an App could look like, bringing together a set of
+packages and plugins into a working Backstage App. This is not a published
+package, and the main goals are to provide a demo of what an App could look
+like and to enable local development.
 - 
-`backend/``app`*and*a`backend`package. The`backend`uses plugins to construct a working backend that the frontend (`app`) can use.
+[`backend/`](https://github.com/backstage/backstage/tree/master/packages/backend) -
+Every standalone Backstage project will have both an`app`*and* a`backend` package. The`backend` uses plugins to construct a working backend that the
+frontend (`app` ) can use.
 - 
-`backend-app-api/`
+[`backend-app-api/`](https://github.com/backstage/backstage/tree/master/packages/backend-app-api) -
+This package contains the central wiring for how to make Backstage backends.
 - 
-`backend-plugin-api/`
+[`backend-plugin-api/`](https://github.com/backstage/backstage/tree/master/packages/backend-plugin-api) -
+This package contains the core APIs that are used to make Backstage backend features such as plugins and modules.
 - 
-`catalog-client``@backstage/plugin-catalog`in combination with`useApi`and the`catalogApiRef`.
+[`catalog-client`](https://github.com/backstage/backstage/tree/master/packages/catalog-client) -
+An isomorphic client to interact with the Software Catalog. Backend plugins
+can use the package directly. Frontend plugins can use the client by using`@backstage/plugin-catalog` in combination with`useApi` and the`catalogApiRef` .
 - 
-`catalog-model/`[Entity](https://backstage.io/docs/features/software-catalog/references#docsNav), as well as validation and other logic related to it. This package can be used in both the frontend and the backend.
+[`catalog-model/`](https://github.com/backstage/backstage/tree/master/packages/catalog-model) -
+You can consider this to be a library for working with the catalog of sorts.
+It contains the definition of an[Entity](https://backstage.io/docs/features/software-catalog/references#docsNav) ,
+as well as validation and other logic related to it. This package can be used
+in both the frontend and the backend.
 - 
-`cli/``cli`is used to build, serve, diff, create plugins and more. In the early days of this project, we started out with calling tools directly - such as`eslint`- through`package.json`. But as it was tricky to have a good development experience around that when we change named tooling, we opted for wrapping those in our own CLI. That way everything looks the same in`package.json`. Much like[react-scripts](https://github.com/facebook/create-react-app/tree/master/packages/react-scripts).
+[`cli/`](https://github.com/backstage/backstage/tree/master/packages/cli) -
+One of the biggest packages in our project, the`cli` is used to build, serve,
+diff, create plugins and more. In the early days of this project, we started
+out with calling tools directly - such as`eslint` - through`package.json` .
+But as it was tricky to have a good development experience around that when we
+change named tooling, we opted for wrapping those in our own CLI. That way
+everything looks the same in`package.json` . Much like[react-scripts](https://github.com/facebook/create-react-app/tree/master/packages/react-scripts) .
 - 
-`cli-common/`[CLI](https://github.com/backstage/backstage/tree/master/packages/cli). We also want as few dependencies as possible to reduce download time when running the CLI which is another reason this is a separate package.
+[`cli-common/`](https://github.com/backstage/backstage/tree/master/packages/cli-common) -
+This package mainly handles path resolving. It is a separate package to reduce
+bugs in[CLI](https://github.com/backstage/backstage/tree/master/packages/cli) . We
+also want as few dependencies as possible to reduce download time when running
+the CLI which is another reason this is a separate package.
 - 
-`config/`[app-config.yaml](https://github.com/backstage/backstage/blob/master/app-config.yaml)is an example of an config object.
+[`config/`](https://github.com/backstage/backstage/tree/master/packages/config) -
+The way we read configuration data. This package can take a bunch of config
+objects and merge them together.[app-config.yaml](https://github.com/backstage/backstage/blob/master/app-config.yaml) is an example of an config object.
 - 
-`config-loader/``config`and`config-loader`into two different packages.
+[`config-loader/`](https://github.com/backstage/backstage/tree/master/packages/config-loader) -
+This package is used to read config objects. It does not know how to merge,
+but only reads files and passes them on to the config. As this part is only
+used by the backend, we chose to separate`config` and`config-loader` into
+two different packages.
 - 
-`core-app-api/`
+[`core-app-api/`](https://github.com/backstage/backstage/tree/master/packages/core-app-api) -
+This package contains the core APIs that are used to wire together Backstage
+apps.
 - 
-`core-components/`[plugin examples](https://backstage.io/storybook/?path=/story/plugins-examples--plugin-with-data).
+[`core-components/`](https://github.com/backstage/backstage/tree/master/packages/core-components) -
+This package contains our visual React components, some of which you can find
+in[plugin examples](https://backstage.io/storybook/?path=/story/plugins-examples--plugin-with-data) .
 - 
-`core-plugin-api/`
+[`core-plugin-api/`](https://github.com/backstage/backstage/tree/master/packages/core-plugin-api) -
+This package contains the core APIs that are used to build Backstage plugins.
 - 
-`create-app/`[template](https://github.com/backstage/backstage/tree/master/packages/create-app/templates/default-app).
+[`create-app/`](https://github.com/backstage/backstage/tree/master/packages/create-app) -
+An CLI to specifically scaffold a new Backstage App. It does so by using a[template](https://github.com/backstage/backstage/tree/master/packages/create-app/templates/default-app) .
 - 
-`dev-utils/`
+[`dev-utils/`](https://github.com/backstage/backstage/tree/master/packages/dev-utils) -
+Helps you setup a plugin for isolated development so that it can be served
+separately. This is for plugins using the legacy frontend system.
 - 
-`frontend-dev-utils/``createDevApp`helper for setting up a minimal development app in a plugin's`dev/`entry point.
+[`frontend-dev-utils/`](https://github.com/backstage/backstage/tree/master/packages/frontend-dev-utils) -
+Utilities for developing frontend plugins using the new frontend system. Provides the`createDevApp` helper for setting up a minimal development app in a plugin's`dev/` entry point.
 - 
-`e2e-test/`
+[`e2e-test/`](https://github.com/backstage/backstage/tree/master/packages/e2e-test) -
+Another CLI that can be run to try out what would happen if you build all the
+packages, publish them, create a new app, and then run them. CI uses this for
+e2e-tests.
 - 
-`integration/`
+[`integration/`](https://github.com/backstage/backstage/tree/master/packages/integration) -
+Common functionalities of integrations like GitHub, GitLab, etc.
 - 
-`.storybook/`[Backstage Storybook](https://backstage.io/storybook).
+[`.storybook/`](https://github.com/backstage/backstage/tree/master/.storybook) -
+This folder contains the Storybook configuration which helps visualize our
+reusable React components. Stories are scanned from packages and plugins across
+the monorepo, and are published in the[Backstage Storybook](https://backstage.io/storybook) .
 - 
-`techdocs-node/`[techdocs-backend](https://github.com/backstage/backstage/tree/master/plugins/techdocs-backend)plugin and[techdocs-cli](https://github.com/backstage/backstage/tree/master/packages/techdocs-cli).
+[`techdocs-node/`](https://github.com/backstage/backstage/tree/master/plugins/techdocs-node) -
+Common node.js functionalities for TechDocs, to be shared between[techdocs-backend](https://github.com/backstage/backstage/tree/master/plugins/techdocs-backend) plugin and[techdocs-cli](https://github.com/backstage/backstage/tree/master/packages/techdocs-cli) .
 - 
-`test-utils/`
+[`test-utils/`](https://github.com/backstage/backstage/tree/master/packages/test-utils) -
+This package contains general purpose testing facilities for testing a
+Backstage App or its plugins.
 - 
-`theme/`
+[`theme/`](https://github.com/backstage/backstage/tree/master/packages/theme) -
+Holds the Backstage Theme.
 
-`plugins/`
+### `plugins/`
 
 Most of the functionality of a Backstage App comes from plugins. Even core
 features can be plugins, take the
@@ -108,26 +171,33 @@ One reason for splitting a plugin is because of its dependencies. Another reason
 
 Take a look at our [Plugin Directory](https://backstage.io/plugins) or browse
 through the
-[ plugins/](https://github.com/backstage/backstage/tree/master/plugins) folder.
+[`plugins/`](https://github.com/backstage/backstage/tree/master/plugins) folder.
 
 ## Packages outside of the monorepo
 
 For convenience we include packages in our project that are not part of our monorepo setup.
 
-- `microsite/`- [Docusaurus](https://docusaurus.io/). This folder is not part of the monorepo due to dependency reasons. Look at the- [microsite README](https://github.com/backstage/backstage/blob/master/microsite/README.md)for instructions on how to run it locally.
+- [`microsite/`](https://github.com/backstage/backstage/blob/master/microsite) -
+This folder contains the source code for backstage.io. It is built with[Docusaurus](https://docusaurus.io/) . This folder is not part of the monorepo
+due to dependency reasons. Look at the[microsite README](https://github.com/backstage/backstage/blob/master/microsite/README.md) for instructions on how to run it locally.
 
 ## Root files specifically used by the `app`
 
 These files are kept in the root of the project mostly by historical reasons. Some of these files may be subject to be moved out of the root sometime in the future.
 
 - 
-`.npmrc`
+[`.npmrc`](https://github.com/backstage/backstage/tree/master/.npmrc) - It's
+common for companies to have their own npm registry, and this file makes sure
+that this folder always uses the public registry.
 - 
-`.yarnrc.yml`
+[`.yarnrc.yml`](https://github.com/backstage/backstage/tree/master/.yarnrc.yml) -
+Enforces "our" version of Yarn.
 - 
-`app-config.yaml`
+[`app-config.yaml`](https://github.com/backstage/backstage/tree/master/app-config.yaml) -
+Configuration for the app, both frontend and backend.
 - 
-`catalog-info.yaml`
+[`catalog-info.yaml`](https://github.com/backstage/backstage/tree/master/catalog-info.yaml) -
+Description of Backstage in the Backstage Entity format.
 
 # Citations
 

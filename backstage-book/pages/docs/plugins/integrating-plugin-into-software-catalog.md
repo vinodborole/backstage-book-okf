@@ -4,7 +4,7 @@ title: Integrate into the Software Catalog | Backstage Software Catalog and Deve
   Platform
 description: How to integrate a plugin into software catalog
 resource: https://backstage.io/docs/plugins/integrating-plugin-into-software-catalog
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Integrate into the Software Catalog
@@ -15,9 +15,9 @@ This is an advanced use case and currently is an experimental feature. Expect AP
 
 ## Steps
 
-- [Create a plugin](#create-a-plugin)
-- [Reading entities from within your plugin](#reading-entities-from-within-your-plugin)
-- [Import your plugin and embed in the entities page](#import-your-plugin-and-embed-in-the-entities-page)
+1. [Create a plugin](#create-a-plugin)
+2. [Reading entities from within your plugin](#reading-entities-from-within-your-plugin)
+3. [Import your plugin and embed in the entities page](#import-your-plugin-and-embed-in-the-entities-page)
 
 ### Create a plugin
 
@@ -36,7 +36,7 @@ Creating the plugin...
 ### Reading entities from within your plugin
 
 You can access the currently selected entity using the backstage api
-[ useEntity](https://backstage.io/api/stable/functions/_backstage_plugin-catalog-react.index.useEntity.html). For example,
+[`useEntity`](https://backstage.io/api/stable/functions/_backstage_plugin-catalog-react.index.useEntity.html). For example,
 
 ```
 import { useEntity } from '@backstage/plugin-catalog-react';
@@ -46,7 +46,7 @@ export const MyPluginEntityContent = () => {
 };
 ```
 Internally `useEntity` makes use of
-[react  Contexts](https://18.react.dev/learn/passing-data-deeply-with-context). The entity context is
+[react `Contexts`](https://18.react.dev/learn/passing-data-deeply-with-context). The entity context is
 provided by the entity page into which your plugin will be embedded.
 
 ### Import your plugin and embed in the entities page

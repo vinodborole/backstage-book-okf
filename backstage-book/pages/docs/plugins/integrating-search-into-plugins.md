@@ -4,7 +4,7 @@ title: Integrating Search into a plugin | Backstage Software Catalog and Develop
   Platform
 description: How to integrate Search into a Backstage plugin
 resource: https://backstage.io/docs/plugins/integrating-search-into-plugins
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Integrating Search into a plugin
@@ -19,26 +19,22 @@ On this page, you'll find concepts and tutorials for leveraging the Backstage Se
 
 ### Create a collator
 
-Knowing what a
-
-[collator](/docs/features/search/concepts#collators)is will help you as you build it out.
+Knowing what a [collator](/docs/features/search/concepts#collators) is will help you as you build it out.
 
 Imagine you have a plugin that is responsible for storing FAQ snippets in a database. You want other engineers to be able to easily find your questions and answers. So that means you want them to be indexed by the search platform. Lets say the FAQ snippets can be viewed at a URL like `backstage.example.biz/faq-snippets`.
 
 The search platform provides an interface (`DocumentCollatorFactory` from package `@backstage/plugin-search-common`) that allows you to do exactly that. It works by registering each of your entries as a "document" that later represents one search result each.
 
-You can always look at a working example, e.g.
-
-[StackOverflowQuestionsCollatorFactory](https://github.com/backstage/backstage/blob/master/plugins/search-backend-module-stack-overflow-collator/src/collators/StackOverflowQuestionsCollatorFactory.ts), if you are unsure or want to follow best practices.
+You can always look at a working example, e.g. [StackOverflowQuestionsCollatorFactory](https://github.com/backstage/backstage/blob/master/plugins/search-backend-module-stack-overflow-collator/src/collators/StackOverflowQuestionsCollatorFactory.ts), if you are unsure or want to follow best practices.
 
 #### 1. Create a collator module package
 
 In order to add an FAQ collator to the Backstage index registry we have to create a [plugin module](https://backstage.io/docs/backend-system/building-plugins-and-modules/index#modules), and the best way to do this is to create it in a separate package, e.g., `plugins/search-backend-module-faq-snippets-collator`, using the `yarn new` command:
 
-- Access your Backstage project root directory and run `yarn new`;
-- When asked about what do you want to create, please select `backend-module`and hit enter;
-- Input `search`as the plugin ID and`faq-snippets-collator`as the module ID;
-- A `search-backend-module-faq-snippets-collator`folder should have been created in your project's "plugins" directory.
+1. Access your Backstage project root directory and run `yarn new` ;
+2. When asked about what do you want to create, please select `backend-module` and hit enter;
+3. Input `search` as the plugin ID and`faq-snippets-collator` as the module ID;
+4. A `search-backend-module-faq-snippets-collator` folder should have been created in your project's "plugins" directory.
 
 #### 2. Install the collator dependencies
 
@@ -217,7 +213,7 @@ backend.start();
 ```
 #### 8. Testing the collator code
 
-To verify your implementation works as expected make sure to add tests for it. For your convenience, there is the [ TestPipeline](https://backstage.io/api/stable/classes/_backstage_plugin-search-backend-node.index.TestPipeline.html) utility that emulates a pipeline into which you can integrate your custom collator.
+To verify your implementation works as expected make sure to add tests for it. For your convenience, there is the [`TestPipeline`](https://backstage.io/api/stable/classes/_backstage_plugin-search-backend-node.index.TestPipeline.html) utility that emulates a pipeline into which you can integrate your custom collator.
 
 Look at [DefaultTechDocsCollatorFactory test](https://github.com/backstage/backstage/blob/de294ce5c410c9eb56da6870a1fab795268f60e3/plugins/techdocs-backend/src/search/DefaultTechDocsCollatorFactory.test.ts), for an example.
 
@@ -255,20 +251,31 @@ are contextually related to something else on the page.
 
 Knowing these high-level concepts will help you as you craft your in-plugin search experience.
 
-- All search experiences must be wrapped in a `<SearchContextProvider>`, which is provided by`@backstage/plugin-search-react`. This context keeps track of state necessary to perform search queries and display any results. As inputs to the query are updated (e.g. a`term`or`filter`values), the updated query is executed and`results`are refreshed. Check out the[SearchContextValue](https://backstage.io/api/stable/types/_backstage_plugin-search-react.index.SearchContextValue.html)for details.
+- All search experiences must be wrapped in a `<SearchContextProvider>` , which
+is provided by`@backstage/plugin-search-react` . This context keeps track
+of state necessary to perform search queries and display any results. As
+inputs to the query are updated (e.g. a`term` or`filter` values), the
+updated query is executed and`results` are refreshed. Check out the[SearchContextValue](https://backstage.io/api/stable/types/_backstage_plugin-search-react.index.SearchContextValue.html) for details.
 - The aforementioned state can be modified and/or consumed via the
-`useSearch()`hook, also exported by`@backstage/plugin-search-react`.
+`useSearch()` hook, also exported by`@backstage/plugin-search-react` .
 - For more literal search experiences, reusable components are available
 to import and compose into a cohesive experience in your plugin (e.g.
-`<SearchBar />`or`<SearchFilter.Checkbox />`). You can see all such components in[Backstage's storybook](https://backstage.io/storybook/?path=/story/plugins-search-searchbar--default).
+`<SearchBar />` or`<SearchFilter.Checkbox />` ). You can see all such
+components in[Backstage's storybook](https://backstage.io/storybook/?path=/story/plugins-search-searchbar--default) .
 
 ### Search Experience Tutorials
 
 The following tutorials make use of packages and plugins that you may not yet have as dependencies for your plugin; be sure to add them before you use them!
 
-- `@backstage/plugin-search-react`
-- `@backstage/plugin-search`
-- `@backstage/core-components`
+- [`@backstage/plugin-search-react`](https://www.npmjs.com/package/@backstage/plugin-search-react) - A
+package containing components, hooks, and types that are shared across all
+frontend plugins, including plugins like yours!
+- [`@backstage/plugin-search`](https://www.npmjs.com/package/@backstage/plugin-search) - The
+main search plugin, used by app integrators to compose global search
+experiences.
+- [`@backstage/core-components`](https://www.npmjs.com/package/@backstage/core-components) - A
+package containing generic components useful for a variety of experiences
+built in Backstage.
 
 #### Improved "404" page experience
 
@@ -466,15 +473,11 @@ The optional use of the `<HighlightedSearchResultText>` component makes it possi
 
 **Note on Analytics**: In order for app integrators to track and improve search experiences across Backstage, it's important for them to understand when and what users search for, as well as what they click on after searching. When providing a custom result component, it's your responsibility as a plugin developer to instrument it according to search analytics conventions. In particular:
 
-- You must use the `analytics.captureEvent`method, from the`useAnalytics()`hook (detailed[plugin analytics docs are here](/docs/plugins/analytics)).
-- You must ensure that the action of the event, representing a click on a search result item, is `discover`, and the subject is the`title`of the clicked result. In addition, the`to`attribute should be set to the result's`location`, and the`value`of the event must be set to the`rank`(passed in as a prop).
-- You must ensure that the aforementioned `captureEvent`method is called when a user clicks the link; you should further ensure that the`noTrack`prop is added to the link (which disables default link click tracking, in favor of this custom instrumentation).
+- You must use the `analytics.captureEvent` method, from the`useAnalytics()` hook (detailed[plugin analytics docs are here](/docs/plugins/analytics) ).
+- You must ensure that the action of the event, representing a click on a search result item, is `discover` , and the subject is the`title` of the clicked result. In addition, the`to` attribute should be set to the result's`location` , and the`value` of the event must be set to the`rank` (passed in as a prop).
+- You must ensure that the aforementioned `captureEvent` method is called when a user clicks the link; you should further ensure that the`noTrack` prop is added to the link (which disables default link click tracking, in favor of this custom instrumentation).
 
-For other examples and inspiration on custom result list items, check out the [ <StackOverflowSearchResultListItem>](https://github.com/backstage/backstage/blob/c981e83/plugins/stack-overflow/src/search/StackOverflowSearchResultListItem/StackOverflowSearchResultListItem.tsx) or 
-
-[components.](https://github.com/backstage/backstage/blob/c981e83/plugins/catalog/src/components/CatalogSearchResultListItem/CatalogSearchResultListItem.tsx)
-
-`<CatalogSearchResultListItem>`
+For other examples and inspiration on custom result list items, check out the [`<StackOverflowSearchResultListItem>`](https://github.com/backstage/backstage/blob/c981e83/plugins/stack-overflow/src/search/StackOverflowSearchResultListItem/StackOverflowSearchResultListItem.tsx) or [`<CatalogSearchResultListItem>`](https://github.com/backstage/backstage/blob/c981e83/plugins/catalog/src/components/CatalogSearchResultListItem/CatalogSearchResultListItem.tsx) components.
 
 # Citations
 

@@ -5,7 +5,7 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/integrations/generated-index
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 ## 📄️ Overview
@@ -20,9 +20,13 @@ Configuring Backstage to read or publish data with external providers using inte
 
 2 items
 
-## 🗃️ Azure
+## 🗃️ Azure DevOps
 
-3 items
+2 items
+
+## 🗃️ Microsoft Entra ID
+
+1 item
 
 ## 🗃️ Bitbucket Cloud
 

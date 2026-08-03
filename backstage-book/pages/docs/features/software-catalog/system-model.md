@@ -3,7 +3,7 @@ type: Web Page
 title: System Model | Backstage Software Catalog and Developer Platform
 description: Documentation on System Model
 resource: https://backstage.io/docs/features/software-catalog/system-model
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # System Model
@@ -11,7 +11,7 @@ timestamp: '2026-07-09T12:16:50.465553+00:00'
 We believe that a strong shared understanding and terminology around software and resources leads to a better Backstage experience.
 
 *This description originates from
- this RFC. Note that some of
+[this RFC](https://github.com/backstage/backstage/issues/390). Note that some of
 the concepts are not yet supported in Backstage.*
 
 ## Core Entities
@@ -19,11 +19,12 @@ the concepts are not yet supported in Backstage.*
 We model software in the Backstage catalogue using these three core entities (further explained below):
 
 - 
-**Components**are individual pieces of software
+**Components** are individual pieces of software
 - 
-**APIs**are the boundaries between different components
+**APIs** are the boundaries between different components
 - 
-**Resources**are physical or virtual infrastructure needed to operate a component
+**Resources** are physical or virtual infrastructure needed to operate a
+component
 
 ### Component
 
@@ -57,8 +58,9 @@ A group describes an organizational entity, such as for example a team, a busine
 
 A large catalogue of components, APIs and resources can be highly granular and hard to understand as a whole. It might thus be convenient to further categorize these entities using the following (optional) concepts:
 
-- **Systems**are a collection of entities that cooperate to perform some function
-- **Domains**relate entities and systems to part of the business
+- **Systems** are a collection of entities that cooperate to perform some
+function
+- **Domains** relate entities and systems to part of the business
 
 ### System
 

@@ -3,7 +3,7 @@ type: Web Page
 title: Authentication | Backstage Software Catalog and Developer Platform
 description: How to setup authentication for your Backstage app
 resource: https://backstage.io/docs/getting-started/config/authentication
-timestamp: '2026-07-20T08:58:01.906190+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Authentication
@@ -147,18 +147,20 @@ The recommended approach for adding Users, and Groups, into your Catalog is to u
 
 For the sake of this guide we'll simply step you through adding a User to the `org.yaml` file that is included when you create a new Backstage instance. Let's do that:
 
-- 
-First open the `/examples/org.yaml`file in your text editor of choice
-- 
-At the bottom we'll add the following YAML: `---`
- apiVersion: backstage.io/v1alpha1
- kind: User
- metadata:
- name: YOUR GITHUB USERNAME
- spec:
- memberOf: [guests]
-- 
-Now make sure to replace the text "YOUR GITHUB USERNAME" with your actual GitHub User name. 
+1. 
+First open the `/examples/org.yaml` file in your text editor of choice
+2. 
+At the bottom we'll add the following YAML: ```
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: YOUR GITHUB USERNAME
+spec:
+  memberOf: [guests]
+```
+3. 
+Now make sure to replace the text "YOUR GITHUB USERNAME" with your actual GitHub User name.
 
 Let's restart Backstage from the terminal once more, by stopping it with `Ctrl+C`, and starting it with `yarn start`. You should now be able to log into Backstage and see items in your Catalog.
 

@@ -3,7 +3,7 @@ type: Web Page
 title: Standalone Installation | Backstage Software Catalog and Developer Platform
 description: How to create and run a Standalone Backstage.
 resource: https://backstage.io/docs/getting-started
-timestamp: '2026-07-27T09:52:05.827726+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Standalone Installation
@@ -37,12 +37,16 @@ app
     ├── app
     └── backend
 ```
-- **app-config.yaml**: Main configuration file for the app. See- [Configuration](https://backstage.io/docs/conf/)for more information.
-- **catalog-info.yaml**: Catalog Entities descriptors. See- [Descriptor Format of Catalog Entities](https://backstage.io/docs/features/software-catalog/descriptor-format)to get started.
-- **package.json**: Root package.json for the project.- *Note: Be sure that you don't add any npm dependencies here as they probably should be installed in the intended workspace rather than in the root.*
-- **packages/**: Yarn workspaces, everything here is going to be a separate package, managed by Yarn.
-- **packages/app/**: A fully functioning Backstage frontend app that acts as a good starting point for you to get to know Backstage.
-- **packages/backend/**: We include a backend that helps power features such as- [Authentication](https://backstage.io/docs/auth/),- [Software Catalog](https://backstage.io/docs/features/software-catalog/),- [Software Templates](https://backstage.io/docs/features/software-templates/)and- [TechDocs](https://backstage.io/docs/features/techdocs/)amongst other things.
+- **app-config.yaml** : Main configuration file for the app. See[Configuration](https://backstage.io/docs/conf/) for more information.
+- **catalog-info.yaml** : Catalog Entities descriptors. See[Descriptor Format of Catalog Entities](https://backstage.io/docs/features/software-catalog/descriptor-format) to get started.
+- **package.json** : Root package.json for the project.*Note: Be sure that you
+don't add any npm dependencies here as they probably should be installed in
+the intended workspace rather than in the root.*
+- **packages/** : Yarn workspaces, everything here is going
+to be a separate package, managed by Yarn.
+- **packages/app/** : A fully functioning Backstage frontend app that acts as a
+good starting point for you to get to know Backstage.
+- **packages/backend/** : We include a backend that helps power features such as[Authentication](https://backstage.io/docs/auth/) ,[Software Catalog](https://backstage.io/docs/features/software-catalog/) ,[Software Templates](https://backstage.io/docs/features/software-templates/) and[TechDocs](https://backstage.io/docs/features/techdocs/) amongst other things.
 
 ## Prerequisites
 
@@ -51,26 +55,27 @@ This guide also assumes a basic understanding of working on a Linux based operat
 - A minimum of 20 GB disk space to run the standalone Backstage application with demo data. NOTE: As you add more modules and plugins to an installation, the disk space requirements will increase, accordingly.
 - A minimum of 6 GB memory.
 - Access to a Unix-based operating system, such as Linux, macOS or
-[Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/). The Linux version must support the required Node.js version.
+[Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/) . The Linux version must support the required Node.js version.
 - A GNU-like build environment available at the command line.
-For example, on Debian/Ubuntu you will want to have the `make`and`build-essential`packages installed. On macOS, you will want to run`xcode-select --install`to get the XCode command line build tooling in place.
+For example, on Debian/Ubuntu you will want to have the `make` and`build-essential` packages installed.
+On macOS, you will want to run`xcode-select --install` to get the XCode command line build tooling in place.
 - An account with elevated rights to install the dependencies
-- `curl`or- `wget`installed
-- Node.js [Active LTS Release](/docs/overview/versioning-policy#nodejs-releases)installed using one of these methods:- Using `nvm`(recommended)- [Installing nvm](https://github.com/nvm-sh/nvm#install--update-script)
-- [Install and change Node version with nvm](https://nodejs.org/en/download/package-manager/#nvm)
-- Node 22 or 24 are recommended, these can be installed using `nvm install 22`or`nvm install 24`
- 
-- [Binary Download](https://nodejs.org/en/download/)
-- [Package manager](https://nodejs.org/en/download/package-manager/)
-- [Using NodeSource packages](https://github.com/nodesource/distributions/blob/master/README.md)
- 
+- `curl` or`wget` installed
+- Node.js [Active LTS Release](/docs/overview/versioning-policy#nodejs-releases) installed using one of these
+methods:
+  - Using `nvm` (recommended)
+    - [Installing nvm](https://github.com/nvm-sh/nvm#install--update-script)
+    - [Install and change Node version with nvm](https://nodejs.org/en/download/package-manager/#nvm)
+    - Node 22 or 24 are recommended, these can be installed using `nvm install 22` or`nvm install 24`
+  - [Binary Download](https://nodejs.org/en/download/)
+  - [Package manager](https://nodejs.org/en/download/package-manager/)
+  - [Using NodeSource packages](https://github.com/nodesource/distributions/blob/master/README.md)
 - Using 
-- Install the `isolated-vm`module, following their[requirements section](https://github.com/laverdet/isolated-vm#requirements).
-- `yarn`- [Installation](https://yarnpkg.com/getting-started/install)- Backstage currently uses Yarn 4.4.1, once you've ran `corepack enable`you'll want to then run`yarn set version 4.4.1`
- 
+- Install the `isolated-vm` module, following their[requirements section](https://github.com/laverdet/isolated-vm#requirements) .
+- `yarn`[Installation](https://yarnpkg.com/getting-started/install)  - Backstage currently uses Yarn 4.4.1, once you've ran `corepack enable` you'll want to then run`yarn set version 4.4.1`
 - Backstage currently uses Yarn 4.4.1, once you've ran 
-- `docker`- [installation](https://docs.docker.com/engine/install/)
-- `git`- [installation](https://github.com/git-guides/install-git)
+- `docker`[installation](https://docs.docker.com/engine/install/)
+- `git`[installation](https://github.com/git-guides/install-git)
 - If the system is not directly accessible over your network the following ports need to be opened: 3000, 7007. This is quite uncommon, unless you're installing in a container, VM or remote system.
 
 ## Creating and running a Backstage application
@@ -79,39 +84,49 @@ This may take a few minutes to fully install everything. Don't stress if the loa
 
 To create the application:
 
-- 
-Type the following command to install the Backstage application. `npx @backstage/create-app@latest`
-- 
-If this is the first time that you are installing a Backstage application on this device, the following question is displayed. Enter `y`and select`Enter`to proceed with the installation.`Need to install the following packages:`
- @backstage/create-app@<version>
- ok to proceed? (y)
-- 
-Enter the name for your application and select `Enter`. This is the root directory of your application. In this example, the name is set to`my-backstage-app`.`? Enter a name for the app [required] my-backstage-app`
- Creating the app...
- Checking if the directory is available:
- checking my-backstage-app ✔
- Creating a temporary app directory:
- Preparing files:
- copying .dockerignore ✔
- copying .eslintignore ✔
- templating .eslintrc.js.hbs ✔
- ...
- Moving to final location:
- moving my-backstage-app ✔
- fetching yarn.lock seed ✔
- Installing dependencies:
- executing yarn install ✔
- executing yarn tsc ✔
- Successfully created my-backstage-app
+1. 
+Type the following command to install the Backstage application. ```
+npx @backstage/create-app@latest
+```
+2. 
+If this is the first time that you are installing a Backstage application on this device, the following question is displayed. Enter `y` and select`Enter` to proceed with the installation.```
+Need to install the following packages:
+@backstage/create-app@<version>
+ok to proceed? (y)
+```
+3. 
+Enter the name for your application and select `Enter` . This is the root directory of your application. In this example, the name is set to`my-backstage-app` .```
+? Enter a name for the app [required] my-backstage-app
+Creating the app...
+Checking if the directory is available:
+checking      my-backstage-app ✔
+Creating a temporary app directory:
+Preparing files:
+copying       .dockerignore ✔
+copying       .eslintignore ✔
+templating    .eslintrc.js.hbs ✔
+...
+Moving to final location:
+moving        my-backstage-app ✔
+fetching      yarn.lock seed ✔
+Installing dependencies:
+executing     yarn install ✔
+executing     yarn tsc ✔
+Successfully created my-backstage-app
+```
 
 Your Backstage app is fully installed and ready to be run! Now that the installation is complete, you can go to the application directory and start the app using the `yarn start` command. The `yarn start` command will run both the frontend and backend as separate processes (named `[0]` and `[1]`) in the same window.
 
 To run the application:
 
-- 
-Change to the root directory of your Backstage app. This is the same as the name of your application that you provided during the installation. In this example, it is `my-backstage-app`.`cd my-backstage-app`
-- 
-Start the Backstage application. `yarn start`
+1. 
+Change to the root directory of your Backstage app. This is the same as the name of your application that you provided during the installation. In this example, it is `my-backstage-app` .```
+cd my-backstage-app
+```
+2. 
+Start the Backstage application. ```
+yarn start
+```
 
 As the frontend and backend are starting, you will see output similar to the following. The output shows that the app and backend are starting up with the configuration coming from `app-config.yaml`. You will see the plugins being initialized, and authorization and permissions being setup. In addition you will see a series of REST API calls for those plugins that use a service backend, such as the service catalog.
 

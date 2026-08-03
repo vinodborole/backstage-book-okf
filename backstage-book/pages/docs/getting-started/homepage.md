@@ -4,7 +4,7 @@ title: Backstage homepage - Setup and Customization | Backstage Software Catalog
   Developer Platform
 description: Documentation on setting up and customizing Backstage homepage
 resource: https://backstage.io/docs/getting-started/homepage
-timestamp: '2026-07-20T08:58:01.906190+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Backstage homepage - Setup and Customization
@@ -29,7 +29,7 @@ At the end of this tutorial, you can expect:
 
 Before we begin, make sure
 
-- You have created your own standalone Backstage app using `@backstage/create-app`[backstage](https://github.com/backstage/backstage)repository.
+- You have created your own standalone Backstage app using [`@backstage/create-app`](/docs/getting-started/#creating-and-running-a-backstage-application) and not using a fork of the[backstage](https://github.com/backstage/backstage) repository.
 - You do not have an existing homepage, and by default you are redirected to Software Catalog when you open Backstage.
 
 Now, let's get started by installing the home plugin and creating a simple homepage for your Backstage app.
@@ -62,8 +62,8 @@ Visit tracking is an optional feature that allows users to see their recently vi
 
 Visit tracking requires a storage implementation to persist user data:
 
-- **With UserSettings storage**(recommended): If you have the- [UserSettings plugin](https://backstage.io/docs/features/software-catalog/external-integrations/#user-settings)configured with persistent storage, visit data will be stored there and synchronized across devices.
-- **Fallback to local storage**: If no persistent storage is available, the plugin will automatically fall back to browser local storage, which stores data locally per device.
+- **With UserSettings storage** (recommended): If you have the[UserSettings plugin](https://backstage.io/docs/features/software-catalog/external-integrations/#user-settings) configured with persistent storage, visit data will be stored there and synchronized across devices.
+- **Fallback to local storage** : If no persistent storage is available, the plugin will automatically fall back to browser local storage, which stores data locally per device.
 
 To enable visit tracking, add this configuration to your `app-config.yaml`:
 

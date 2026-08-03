@@ -4,7 +4,7 @@ title: TechDocs Documentation | Backstage Software Catalog and Developer Platfor
 description: TechDocs is Spotify’s homegrown docs-like-code solution built directly
   into Backstage
 resource: https://backstage.io/docs/features/techdocs
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # TechDocs Documentation
@@ -22,9 +22,9 @@ Today, it is one of the core products in Spotify’s developer experience offeri
 - Deploy TechDocs no matter how your software environment is set up.
 - Discover your Service's technical documentation from the Service's page in Backstage Catalog.
 - Create documentation-only sites for any purpose by just writing Markdown.
-- Take advantage of the [TechDocs Addon Framework](/docs/features/techdocs/addons)to add features on top of the base docs-like-code experience.
+- Take advantage of the [TechDocs Addon Framework](/docs/features/techdocs/addons) to add features on top of the base docs-like-code experience.
 - Explore and take advantage of the large ecosystem of
-[MkDocs plugins](https://www.mkdocs.org/user-guide/plugins/)to create a rich reading experience.
+[MkDocs plugins](https://www.mkdocs.org/user-guide/plugins/) to create a rich reading experience.
 - Search for and find docs.
 
 ## Project roadmap
@@ -44,7 +44,7 @@ No current plans.
 - Addon: MDX (allows you to use JSX in your Markdown content)
 - Can we go static site generator agnostic?
 - Better integration with
-[Scaffolder V2](https://github.com/backstage/backstage/issues/2771)(e.g. easy to choose and apply documentation template with Software Templates)
+[Scaffolder V2](https://github.com/backstage/backstage/issues/2771) (e.g. easy to choose and apply documentation template with Software Templates)
 - Possible to configure several aspects about TechDocs (e.g. URL, homepage, theme)
 
 ### Done

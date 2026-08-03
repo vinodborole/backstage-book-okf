@@ -3,7 +3,7 @@ type: Web Page
 title: Deploying Backstage | Backstage Software Catalog and Developer Platform
 description: Packaging Backstage and deploying to production
 resource: https://backstage.io/docs/deployment
-timestamp: '2026-07-20T08:58:01.906190+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Deploying Backstage
@@ -19,10 +19,10 @@ The *easiest* way to explore Backstage is to visit the
 
 At Spotify, we deploy software generally by:
 
-- Building a Docker image
-- Storing the Docker image on a container registry
-- Referencing the image in a Kubernetes Deployment YAML
-- Applying that Deployment to a Kubernetes cluster
+1. Building a Docker image
+2. Storing the Docker image on a container registry
+3. Referencing the image in a Kubernetes Deployment YAML
+4. Applying that Deployment to a Kubernetes cluster
 
 This method is covered in [Building a Docker image](/docs/deployment/docker) and
 [Deploying with Kubernetes](/docs/deployment/k8s).

@@ -4,7 +4,7 @@ title: Defining Configuration for your Plugin | Backstage Software Catalog and D
   Platform
 description: Documentation on Defining Configuration for your Plugin
 resource: https://backstage.io/docs/conf/defining
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Defining Configuration for your Plugin
@@ -39,8 +39,7 @@ formats are `.json` or `.d.ts`.
 }
 ```
 When defining a schema file, be sure to include the file in your
-
-`package.json`>`"files"`field as well!
+`package.json` > `"files"` field as well!
 
 TypeScript configuration schema files should export a single `Config` type, for
 example:
@@ -104,7 +103,7 @@ object will be available in the frontend. The full ancestry does not need to
 have correctly defined visibilities however, so it is enough to only for example
 declare the visibility of a leaf node of `type: "string"`.
 
-| `visibility` | |
+| `visibility` |  | 
 |---|---|
 | `frontend` | Visible in frontend and backend | 
 | `backend` | (Default) Only in backend | 

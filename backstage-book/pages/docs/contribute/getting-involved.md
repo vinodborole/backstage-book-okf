@@ -4,7 +4,7 @@ title: Getting Involved | Backstage Software Catalog and Developer Platform
 description: How can you help us build Backstage? We welcome contributions of all
   kinds, from documentation to code to design.
 resource: https://backstage.io/docs/contribute/getting-involved
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Getting Involved
@@ -25,7 +25,7 @@ The value of Backstage grows with every new plugin that gets added. Wouldn't it 
 
 A great reference example of a plugin can be found on [our blog](https://backstage.io/blog/2020/04/06/lighthouse-plugin) (thanks [@fastfrwrd](https://github.com/fastfrwrd)!)
 
-What kind of plugins should/could be created? Some inspiration from the 120+ plugins that we have developed inside Spotify can be found [here](https://backstage.io/demos), but we will keep a running list of suggestions labeled with [[plugin]](https://github.com/backstage/community-plugins/labels/plugin) in our [community plugins repo](https://github.com/backstage/community-plugins).
+What kind of plugins should/could be created? Some inspiration from the 120+ plugins that we have developed inside Spotify can be found [here](https://backstage.io/demos), but we will keep a running list of suggestions labeled with [\[plugin\]](https://github.com/backstage/community-plugins/labels/plugin) in our [community plugins repo](https://github.com/backstage/community-plugins).
 
 ### Suggesting a plugin
 
@@ -35,7 +35,7 @@ You can also use this process if you have an idea for a good plugin but you hope
 
 ### Adding non-code Contributions
 
-Since there is such a large landscape of possible development, build, and deployment environments, we welcome community contributions in these areas in the [ /contrib](https://github.com/backstage/backstage/tree/master/contrib) folder of the project. This is an excellent place to put things that help out the community at large, but which may not fit within the scope of the core product to support natively. Here, you will find Helm charts, alternative Docker images, and much more.
+Since there is such a large landscape of possible development, build, and deployment environments, we welcome community contributions in these areas in the [`/contrib`](https://github.com/backstage/backstage/tree/master/contrib) folder of the project. This is an excellent place to put things that help out the community at large, but which may not fit within the scope of the core product to support natively. Here, you will find Helm charts, alternative Docker images, and much more.
 
 ### Write documentation or improve the website
 

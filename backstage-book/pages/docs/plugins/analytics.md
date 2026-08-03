@@ -3,7 +3,7 @@ type: Web Page
 title: Plugin Analytics | Backstage Software Catalog and Developer Platform
 description: Measuring usage of your Backstage instance.
 resource: https://backstage.io/docs/plugins/analytics
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Plugin Analytics
@@ -14,9 +14,13 @@ Setting up, maintaining, and iterating on an instance of Backstage can be a larg
 
 ## Concepts
 
-- **Events**consist of, at a minimum, an- `action`(like- `click`) and a- `subject`(like- `thing that was clicked on`).
-- **Attributes**represent additional dimensional data (in the form of key/value pairs) that may be provided on an event-by-event basis. To continue the above example, the URL a user clicked to might look like- `{ "to": "/a/page" }`.
-- **Context**represents the broader context in which an event took place. By default, information like- `pluginId`,- `extension`, and- `routeRef`are provided.
+- **Events** consist of, at a minimum, an`action` (like`click` ) and a`subject` (like`thing that was clicked on` ).
+- **Attributes** represent additional dimensional data (in the form of key/value
+pairs) that may be provided on an event-by-event basis. To continue the above
+example, the URL a user clicked to might look like`{ "to": "/a/page" }` .
+- **Context** represents the broader context in which an event took place. By
+default, information like`pluginId` ,`extension` , and`routeRef` are
+provided.
 
 This composition of events aims to allow analysis at different levels of detail, enabling very granular questions (like "what is the most clicked on thing on a particular route") as well as very high-level questions (like "what is the most used plugin in my Backstage instance") to be answered.
 
@@ -46,10 +50,10 @@ The following table summarizes events that, depending on the plugins you have in
 | Action | Subject | Other Notes | 
 |---|---|---|
 | `navigate` | The URL of the page that was navigated to. | Fired immediately when route location changes (unless associated plugin/route data is ambiguous, in which case the event is fired after plugin/route data becomes known, immediately before the next event or document unload). The parameters of the current route will be included as attributes. | 
-| `click` | The text of the link that was clicked on. | The `to`attribute represents the URL clicked to. | 
-| `create` | The `name`of the software being created; if no`name`property is requested by the given Software Template, then the string`new {templateName}`is used instead. | The context holds an `entityRef`, set to the template's ref (e.g.`template:default/template-name`). The`value`represents the number of minutes saved by running the template (based on the template's`backstage.io/time-saved`annotation, if available). | 
-| `search` | The search term entered in any search bar component. | The context holds `searchTypes`, representing`types`constraining the search. The`value`represents the total number of search results for the query. This may not be visible if the permission framework is being used. | 
-| `discover` | The title of the search result that was clicked on | The `value`is the result rank. A`to`attribute is also provided. | 
+| `click` | The text of the link that was clicked on. | The `to` attribute represents the URL clicked to. | 
+| `create` | The `name` of the software being created; if no`name` property is requested by the given Software Template, then the string`new {templateName}` is used instead. | The context holds an `entityRef` , set to the template's ref (e.g.`template:default/template-name` ). The`value` represents the number of minutes saved by running the template (based on the template's`backstage.io/time-saved` annotation, if available). | 
+| `search` | The search term entered in any search bar component. | The context holds `searchTypes` , representing`types` constraining the search. The`value` represents the total number of search results for the query. This may not be visible if the permission framework is being used. | 
+| `discover` | The title of the search result that was clicked on | The `value` is the result rank. A`to` attribute is also provided. | 
 | `not-found` | The path of the resource that resulted in a not found page | Fired by at least TechDocs. | 
 
 If there is an event you'd like to see captured, please [open an issue](https://github.com/backstage/backstage/issues/new?assignees=&labels=enhancement&template=feature_template.md&title=%5BAnalytics%20Event%5D:%20THE+EVENT+TO+CAPTURE) describing the event you want to see and the questions it
@@ -151,8 +155,9 @@ under `app.analytics.[name]`.
 
 If the analytics platform you are integrating with has a first-class concept of user identity, you can (optionally) choose to support this by the following this convention:
 
-- Allow your implementation to be instantiated with the `identityApi`as one of its options in a`fromConfig`static method.
-- Use the `userEntityRef`resolved by`identityApi`'s`getBackstageIdentity()`method as the basis for the user ID you send to your analytics platform.
+- Allow your implementation to be instantiated with the `identityApi` as one of
+its options in a`fromConfig` static method.
+- Use the `userEntityRef` resolved by`identityApi` 's`getBackstageIdentity()` method as the basis for the user ID you send to your analytics platform.
 
 For example:
 
@@ -281,9 +286,15 @@ Analytics contexts can be nested; their values are merged down the react tree, a
 An event is split into its constituent parts to enable analysis at various levels of granularity. In order to maintain this flexibility at analysis-time, it's important to keep each of these levels of detail disaggregated.
 
 - 
-Avoid providing an overly specific `action`. For example, instead of`filterEntityTable`, consider just using`filter`as the action, and allowing`EntityTable`to be specified as part of the event's`context`(most likely automatically as part of the`extension`in which the`filter`event was captured).
+Avoid providing an overly specific `action` . For example, instead of`filterEntityTable` , consider just using`filter` as the action, and allowing`EntityTable` to be specified as part of the event's`context` (most likely
+automatically as part of the`extension` in which the`filter` event was
+captured).
 - 
-On the flip side, when adding `attributes`to or`context`around an event, look at existing events and see if the data you are capturing matches the intention, type, or even the content of*their*`attributes`or`context`. For instance, it's common for events that involve the Catalog to include an`entityRef`contextual key. Using the same keys and values in your event will ensure that events instrumented across plugins can easily be aggregated.
+On the flip side, when adding `attributes` to or`context` around an event,
+look at existing events and see if the data you are capturing matches the
+intention, type, or even the content of*their*`attributes` or`context` .
+For instance, it's common for events that involve the Catalog to include an`entityRef` contextual key. Using the same keys and values in your event will
+ensure that events instrumented across plugins can easily be aggregated.
 
 ### Unit Testing Event Capture
 

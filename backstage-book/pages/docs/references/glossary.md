@@ -4,7 +4,7 @@ title: Glossary | Backstage Software Catalog and Developer Platform
 description: List of terms, abbreviations, and phrases used in Backstage, together
   with their explanations.
 resource: https://backstage.io/docs/references/glossary
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Glossary
@@ -41,8 +41,10 @@ See [Code Grant](#code-grant).
 
 ## Backstage
 
-- 
-An open source framework for creating and deploying [developer portals](#developer-portal), originally created at Spotify. Backstage is an incubation-stage open source project of the[Cloud Native Computing Foundation](#cloud-native-computing-foundation-aka-cncf).
+1. 
+An open source framework for creating and deploying [developer portals](#developer-portal) , originally created at Spotify. Backstage is an incubation-stage open source project of the[Cloud Native Computing Foundation](#cloud-native-computing-foundation-aka-cncf) .
+2. 
+[The Backstage Framework](#backstage-framework) .
 
 ## Backstage Framework
 
@@ -50,10 +52,10 @@ The actual framework that Backstage [plugins](#plugin) sit on. The framework spa
 
 ## Bundle
 
-- 
-A collection of [deployment artifacts](#deployment-artifacts).
-- 
-The output of the bundling process, which brings a collection of [packages](#package)into a single collection of[deployment artifacts](#deployment-artifacts).
+1. 
+A collection of [deployment artifacts](#deployment-artifacts) .
+2. 
+The output of the bundling process, which brings a collection of [packages](#package) into a single collection of[deployment artifacts](#deployment-artifacts) .
 
 ## Catalog
 
@@ -81,10 +83,10 @@ Backstage includes "default" collators for Catalog and TechDocs that you can use
 
 ## Component (catalog plugin)
 
-- 
-A modular, independent, reusable software-based unit that encapsulates specific functionality. It has well-defined interfaces, explicitly specified dependencies, and is designed to be integrated with other components to build larger software systems. 
-- 
-A software product that Backstage manages in the [Software Catalog](#software-catalog). A component can be a service, website, library, data pipeline, or any other software artifact that's managed as a single entity.
+1. 
+A modular, independent, reusable software-based unit that encapsulates specific functionality. It has well-defined interfaces, explicitly specified dependencies, and is designed to be integrated with other components to build larger software systems.
+2. 
+A software product that Backstage manages in the [Software Catalog](#software-catalog) . A component can be a service, website, library, data pipeline, or any other software artifact that's managed as a single entity.
 
 A Backstage component can implement [API](#api)s for other components to consume. In turn, it might consume APIs implemented by other components, or directly depend on components or resources that are attached to it at runtime.
 
@@ -118,42 +120,42 @@ An executable or [package](#package) file with all of the necessary information 
 
 ## Developer
 
-- 
-A professional who designs, builds, tests, deploys, and maintains software applications and systems. Developers essentially turn ideas or requirements into functional digital products. 
-- 
-A [user role](#user-role)defined as someone who creates, modifies, or uses a Backstage[app](#app). Might or might not actually be a software developer.
+1. 
+A professional who designs, builds, tests, deploys, and maintains software applications and systems. Developers essentially turn ideas or requirements into functional digital products.
+2. 
+A [user role](#user-role) defined as someone who creates, modifies, or uses a Backstage[app](#app) . Might or might not actually be a software developer.
 
 ## Developer Portal
 
-- 
-A centralized, self-service interface providing developers with all the necessary resources, tools, documentation, and information to effectively build, integrate, deploy, and manage software products within an organization. 
-- 
-Backstage is a specific example of a developer portal, designed as a centralized system with a user interface and database to streamline development and maintenance of an organization's software projects. It features a robust [Software Catalog](#software-catalog)that centralizes and organizes access to the organization's services, websites, mobile features, libraries, and other software components. Backstage also includes[Software Templates](#software-templates)that simplify the creation of new projects and components.
+1. 
+A centralized, self-service interface providing developers with all the necessary resources, tools, documentation, and information to effectively build, integrate, deploy, and manage software products within an organization.
+2. 
+Backstage is a specific example of a developer portal, designed as a centralized system with a user interface and database to streamline development and maintenance of an organization's software projects. It features a robust [Software Catalog](#software-catalog) that centralizes and organizes access to the organization's services, websites, mobile features, libraries, and other software components. Backstage also includes[Software Templates](#software-templates) that simplify the creation of new projects and components.
 
 Backstage is both a developer portal and a plugin-based framework for creating new custom developer portals.
 
 ## Document (search plugin)
 
-- 
-A piece of information or data that is recorded on some medium for the purpose of retention and conveyance. 
-- 
-An abstract representation of information or data that can be discovered and retrieved. For search purposes, a document might represent a software entity, a TechDocs page, or any other type of data that is indexed. In Backstage, a document is structured with metadata fields that must include at least a title, a body (containing its core text content), and a location (such as a URL pointing to its source). 
+1. 
+A piece of information or data that is recorded on some medium for the purpose of retention and conveyance.
+2. 
+An abstract representation of information or data that can be discovered and retrieved. For search purposes, a document might represent a software entity, a TechDocs page, or any other type of data that is indexed. In Backstage, a document is structured with metadata fields that must include at least a title, a body (containing its core text content), and a location (such as a URL pointing to its source).
 
 ## Domain
 
-- 
-A collection of systems that share terminology, domain models, metrics, KPIs, business purpose, or documentation; that is, it forms a bounded context. 
-- 
-Typically the unique, human-readable address that is used to identify websites, email servers, and other resources on the internet, such as `google.com`or`example.store`. More narrowly, it can refer to the Top-Level Domain (TLD), which is the part of a web address after the last dot, such as`.com`or`.org`; the country code, such as`.us`or`.uk`; or the sponsored TLD such as`.gov`or`.edu`.
-- 
-An area that relates systems or entities to a business unit. See [Domain](https://backstage.io/docs/features/software-catalog/system-model/#domain)in the[System Model](https://backstage.io/docs/features/software-catalog/system-model/).
+1. 
+A collection of systems that share terminology, domain models, metrics, KPIs, business purpose, or documentation; that is, it forms a bounded context.
+2. 
+Typically the unique, human-readable address that is used to identify websites, email servers, and other resources on the internet, such as `google.com` or`example.store` . More narrowly, it can refer to the Top-Level Domain (TLD), which is the part of a web address after the last dot, such as`.com` or`.org` ; the country code, such as`.us` or`.uk` ; or the sponsored TLD such as`.gov` or`.edu` .
+3. 
+An area that relates systems or entities to a business unit. See [Domain](https://backstage.io/docs/features/software-catalog/system-model/#domain) in the[System Model](https://backstage.io/docs/features/software-catalog/system-model/) .
 
 ## Entity
 
-- 
-Something that exists as a separate and distinct unit. Its existence can be real or abstract, physical or conceptual, persistent or ephemeral. 
-- 
-What is cataloged in the Backstage [Software Catalog](#software-catalog). An entity is identified by a unique combination of[kind](#kind),[namespace](#namespace-catalog-plugin), and name. See[The Life of an Entity](https://backstage.io/docs/features/software-catalog/life-of-an-entity)for related key concepts and how it's handled.
+1. 
+Something that exists as a separate and distinct unit. Its existence can be real or abstract, physical or conceptual, persistent or ephemeral.
+2. 
+What is cataloged in the Backstage [Software Catalog](#software-catalog) . An entity is identified by a unique combination of[kind](#kind) ,[namespace](#namespace-catalog-plugin) , and name. See[The Life of an Entity](https://backstage.io/docs/features/software-catalog/life-of-an-entity) for related key concepts and how it's handled.
 
 ## Evaluator
 
@@ -173,21 +175,21 @@ In Backstage's Search Platform, the term *indexer* isn't a component or concept 
 
 To understand *indexer* in Backstage, it's helpful to understand the flow of data into the Search system:
 
-- 
-A [Collator](#collator-search-plugin)reads raw data from a specific source and transforms it into a stream of[documents](#document-search-plugin), where each document is formatted in a way the search platform understands (e.g., having title, text, location fields, and potentially other metadata).
-- 
-As the stream of documents flows from the collator, a [decorator](#decorator-search-plugin)can intercept them. The decorator optionally adds, removes, or modifies fields within the documents to enrich them with context that the original collator might not have (such as adding ownership information from the Catalog to TechDocs documents).
-- 
-After optional decoration, the stream of finalized search documents is then written to the search engine's index. This is what the term *indexer*implicitly refers to. It's the functionality that takes these structured documents and inserts them into the chosen search engine (like Lunr, PostgreSQL, or Elasticsearch) so they become searchable.
+1. 
+A [Collator](#collator-search-plugin) reads raw data from a specific source and transforms it into a stream of[documents](#document-search-plugin) , where each document is formatted in a way the search platform understands (e.g., having title, text, location fields, and potentially other metadata).
+2. 
+As the stream of documents flows from the collator, a [decorator](#decorator-search-plugin) can intercept them. The decorator optionally adds, removes, or modifies fields within the documents to enrich them with context that the original collator might not have (such as adding ownership information from the Catalog to TechDocs documents).
+3. 
+After optional decoration, the stream of finalized search documents is then written to the search engine's index. This is what the term *indexer* implicitly refers to. It's the functionality that takes these structured documents and inserts them into the chosen search engine (like Lunr, PostgreSQL, or Elasticsearch) so they become searchable.
 
 The `plugin-search-backend-node` package in Backstage is responsible for orchestrating this entire indexing process. It manages the collators, decorators, the connection to the specific search engine, and the scheduling of when these indexing tasks run.
 
 ## Integrator
 
-- 
-Someone who develops one or more plugins that enable Backstage to interoperate with another software system. A [user role](#user-role).
-- 
-May refer to someone who develops software that integrates with Backstage. 
+1. 
+Someone who develops one or more plugins that enable Backstage to interoperate with another software system. A [user role](#user-role) .
+2. 
+May refer to someone who develops software that integrates with Backstage.
 
 ## JSON Web Token (aka JWT)
 
@@ -219,10 +221,10 @@ One of the [packages](#package) within a [monorepo](#monorepo). A package may or
 
 ## Monorepo
 
-- 
-A single repository for a collection of related software projects, such as all projects belonging to an organization. 
-- 
-A project layout that consists of multiple [packages](#package)within a single project, where packages are able to have local dependencies on each other. Often enabled through tooling such as[yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/)
+1. 
+A single repository for a collection of related software projects, such as all projects belonging to an organization.
+2. 
+A project layout that consists of multiple [packages](#package) within a single project, where packages are able to have local dependencies on each other. Often enabled through tooling such as[yarn workspaces](https://classic.yarnpkg.com/en/docs/workspaces/)
 
 ## Name
 
@@ -256,10 +258,10 @@ Open source software.
 
 ## Package
 
-- 
-A bundled collection of executable files, libraries, configuration files, metadata, and other necessary components that allow a piece of software (or a group of related software) to be easily installed, managed, and used. It's a standardized format for distributing software that simplifies installation by ensuring all dependencies are included or easily resolvable, provides integrity checks, and enables easy upgrades or removal. 
-- 
-A package in the Node.js ecosystem, often published to a [package registry](#package-registry).
+1. 
+A bundled collection of executable files, libraries, configuration files, metadata, and other necessary components that allow a piece of software (or a group of related software) to be easily installed, managed, and used. It's a standardized format for distributing software that simplifies installation by ensuring all dependencies are included or easily resolvable, provides integrity checks, and enables easy upgrades or removal.
+2. 
+A package in the Node.js ecosystem, often published to a [package registry](#package-registry) .
 
 ## Package Registry
 
@@ -275,10 +277,10 @@ Specific rules or settings that define the level of access and types of actions 
 
 ## Permission (permission plugin)
 
-- 
-A core Backstage plugin and framework that allows actions to be limited to specific users. 
-- 
-A rule that determines whether a user is authorized to access a specific [resource](#resource-permission-plugin)or set of resources if a specified set of conditions exists.
+1. 
+A core Backstage plugin and framework that allows actions to be limited to specific users.
+2. 
+A rule that determines whether a user is authorized to access a specific [resource](#resource-permission-plugin) or set of resources if a specified set of conditions exists.
 
 By default, Backstage endpoints are unprotected; any user can perform any action on any resource. The Permission framework addresses this by enabling integrators to configure rules that specify precisely which users can access which resources and actions. Within this framework, a *permission* is a uniquely named set of rules (or *conditions*) and the results to return based on their evaluation.
 
@@ -303,13 +305,13 @@ A single logical plugin often consists of both a frontend (UI) component and a b
 
 There are different types of plugins (run `yarn new` to see them). The current list includes:
 
-- `plugin`- A new frontend plugin
-- `backend-plugin`- A new backend plugin
-- `backend-module`- A new backend module
-- `web-library`- A new web-library package
-- `plugin-common`- A new isomorphic common plugin package
-- `plugin-node`- A new- `Node.js`library plugin package
-- `plugin-react`- A new web library plugin package
+- `plugin` - A new frontend plugin
+- `backend-plugin` - A new backend plugin
+- `backend-module` - A new backend module
+- `web-library` - A new web-library package
+- `plugin-common` - A new isomorphic common plugin package
+- `plugin-node` - A new`Node.js` library plugin package
+- `plugin-react` - A new web library plugin package
 
 See [Introduction to Plugins](https://backstage.io/docs/plugins/) for how to create a plugin, suggest a plugin, and integrate a plugin into the Software Catalog. See [Create a Backstage Plugin](https://backstage.io/docs/plugins/create-a-plugin/) for how to create a frontend plugin.
 
@@ -389,19 +391,19 @@ Existing search technology that [Backstage Search](#search) can take advantage o
 
 ## Software Catalog
 
-- 
-A centralized system that keeps track of ownership and metadata for all software in your ecosystem (services, websites, libraries, data pipelines, etc.). The catalog is built around metadata YAML files that are stored with the code, and are harvested and visualized in Backstage. 
-- 
-The Backstage plugin that implements the Software Catalog feature. A core feature of Backstage. 
+1. 
+A centralized system that keeps track of ownership and metadata for all software in your ecosystem (services, websites, libraries, data pipelines, etc.). The catalog is built around metadata YAML files that are stored with the code, and are harvested and visualized in Backstage.
+2. 
+The Backstage plugin that implements the Software Catalog feature. A core feature of Backstage.
 
 The Software Catalog is a core feature of Backstage. See [Backstage Software Catalog](https://backstage.io/docs/next/features/software-catalog/) for an overview, the life of an entity in the catalog, how to configure the catalog, its architecture and high-level design, how to configure and customize it, and its API. The overview describes how the catalog works, how to add components to it, how to find software in it, and more.
 
 ## Software Templates (aka Scaffolder)
 
-- 
-A "skeleton" software project created and managed in the Backstage Software Templates tool. 
-- 
-A Backstage plugin for creating [components](#component-catalog-plugin)in Backstage. By default, it has the ability to load skeletons of code, template in some variables, and then publish the template to some locations like GitHub or GitLab.
+1. 
+A "skeleton" software project created and managed in the Backstage Software Templates tool.
+2. 
+A Backstage plugin for creating [components](#component-catalog-plugin) in Backstage. By default, it has the ability to load skeletons of code, template in some variables, and then publish the template to some locations like GitHub or GitLab.
 
 Software Templates is a core feature of Backstage. It's also known as the [Scaffolder](#scaffolder) for its utility in building new software components and projects. See [Backstage Software Templates](https://backstage.io/docs/features/software-templates/) for an overview, how to configure it, add your own templates, write a template, test it, and more. The overview describes such information as how to get started, choose a template, verify your inputs, run the template, and see a demo.
 

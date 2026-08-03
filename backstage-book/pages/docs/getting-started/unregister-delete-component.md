@@ -4,7 +4,7 @@ title: Unregistering and deleting a component | Backstage Software Catalog and D
   Platform
 description: Unregistering and deleting a component from the catalog
 resource: https://backstage.io/docs/getting-started/unregister-delete-component
-timestamp: '2026-07-20T08:58:01.906190+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Unregistering and deleting a component
@@ -25,14 +25,14 @@ You can unregister an entity so it will not be displayed in the Catalog but stil
 
 To unregister an entity:
 
-- 
-In the Catalog, select the entity you want to unregister. In this example, `mytutorial`is being unregistered.
-- 
-Select the three dots. 
-- 
-Select `Unregister entity`in the dropdown menu.
-- 
-Select `UNREGISTER LOCATION`. The entity is removed from the Catalog.
+1. 
+In the Catalog, select the entity you want to unregister. In this example, `mytutorial` is being unregistered.
+2. 
+Select the three dots.
+3. 
+Select `Unregister entity` in the dropdown menu.
+4. 
+Select `UNREGISTER LOCATION` . The entity is removed from the Catalog.
 
 ## Deleting an entity
 
@@ -40,21 +40,21 @@ You can also delete an entity from the Catalog. However, this requires that you 
 
 To delete an entity:
 
-- 
-Delete the following entity definition files for the entity in the repository: - catalog-info.yaml
-- index.js
-- package.json
- 
-- 
-In the Backstage App Catalog view, select the entity being deleted. In this example, `mytutorial`is being deleted.Since you have deleted the entity definition files, an error is displayed that states the `catalog-info.yaml`file cannot be found.
-- 
-Select the three dots. 
-- 
-Select `Unregister entity`in the dropdown menu.
-- 
-Select `ADVANCED OPTIONS`.
-- 
-Select `DELETE ENTITY`.
+1. 
+Delete the following entity definition files for the entity in the repository: 
+  - catalog-info.yaml
+  - index.js
+  - package.json
+2. 
+In the Backstage App Catalog view, select the entity being deleted. In this example, `mytutorial` is being deleted.Since you have deleted the entity definition files, an error is displayed that states the `catalog-info.yaml` file cannot be found.
+3. 
+Select the three dots.
+4. 
+Select `Unregister entity` in the dropdown menu.
+5. 
+Select `ADVANCED OPTIONS` .
+6. 
+Select `DELETE ENTITY` .
 
 A confirmation message that the entity has been successfully deleted is briefly displayed. The entity is no longer displayed in the Catalog.
 

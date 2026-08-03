@@ -4,6 +4,7 @@
 - [contribute/](/pages/docs/next/contribute/index.md)
 - [core-features/](/pages/docs/next/core-features/index.md)
 - [faq/](/pages/docs/next/faq/index.md)
+- [features/](/pages/docs/next/features/index.md)
 - [framework/](/pages/docs/next/framework/index.md)
 - [getting-started/](/pages/docs/next/getting-started/index.md)
 - [integrations/](/pages/docs/next/integrations/index.md)
@@ -13,3 +14,5 @@
 - [references/](/pages/docs/next/references/index.md)
 - [releases/](/pages/docs/next/releases/index.md)
 - [tutorials/](/pages/docs/next/tutorials/index.md)
+- [Authentication in Backstage | Backstage Software Catalog and Developer Platform](/pages/docs/next/auth.md)
+- [Introduction to Plugins (Legacy) | Backstage Software Catalog and Developer Platform](/pages/docs/next/plugins.md)

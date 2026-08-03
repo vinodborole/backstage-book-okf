@@ -3,7 +3,7 @@ type: Web Page
 title: Observability | Backstage Software Catalog and Developer Platform
 description: Adding Observability to Your Plugin
 resource: https://backstage.io/docs/plugins/observability
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-03T09:44:12.848210+00:00'
 ---
 
 # Observability
@@ -22,15 +22,13 @@ See how to install Datadog Events in your app
 ### New Backend
 
 The backend supplies a central logging service,
-[ rootLogger](/docs/backend-system/core-services/root-logger), as well as a plugin
-based logger, 
-
-[from](/docs/backend-system/core-services/logger)
-
-`logger``coreServices`.
+[`rootLogger`](/docs/backend-system/core-services/root-logger), as well as a plugin
+based logger, [`logger`](/docs/backend-system/core-services/logger) from `coreServices`.
 To add additional granularity to your logs, you can create children from the plugin
 based logger, using the `.child()` method and provide it with JSON data. For example,
-if you wanted to log items for a specific span in your plugin, you could do```
+if you wanted to log items for a specific span in your plugin, you could do
+
+```
 export function createRouter({ logger }) {
   const router = Router();
   router.post('/task/:taskId/queue', (req, res) => {
@@ -47,7 +45,7 @@ export function createRouter({ logger }) {
 ```
 You can also add additional metadata to all logs for your Backstage instance by
 overriding the `rootLogger` implementation, you can see an example in
-[the  rootLogger docs](/docs/backend-system/core-services/root-logger#configuring-the-service).
+[the `rootLogger` docs](/docs/backend-system/core-services/root-logger#configuring-the-service).
 
 ### Old Backend
 
