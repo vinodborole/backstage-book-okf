@@ -3,7 +3,7 @@ type: Web Page
 title: Authentication | Backstage Software Catalog and Developer Platform
 description: How to setup authentication for your Backstage app
 resource: https://backstage.io/docs/getting-started/config/authentication
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Authentication
@@ -18,7 +18,11 @@ We'll be walking you through how to setup authentication for your Backstage app 
 
 There are multiple authentication providers available for you to use with Backstage, feel free to follow [their instructions for adding authentication](/docs/auth/).
 
+:::note Note
+
 The default Backstage app comes with a guest Sign In Resolver. This resolver makes all users share a single "guest" identity and is only intended as a minimum requirement to quickly get up and running. You can read more about how [Sign In Resolvers](/docs/auth/identity-resolver#sign-in-resolvers) play a role in creating a [Backstage User Identity](/docs/auth/identity-resolver#backstage-user-identity) for logged in users.
+
+:::
 
 ## Setting up authentication
 
@@ -139,7 +143,11 @@ backend.add(import('@backstage/plugin-auth-backend-module-github-provider'));
 ```
 Restart Backstage from the terminal, by stopping it with `Ctrl+C`, and starting it with `yarn start`. You should be welcomed by a login prompt! If you try to login at this point you will get a "Failed to sign-in, unable to resolve user identity" message, read on as we'll fix that next.
 
+:::note Note
+
 Sometimes the frontend starts before the backend resulting in errors on the sign in page. Wait for the backend to start and then reload Backstage to proceed.
+
+:::
 
 ## Adding a User
 
@@ -150,16 +158,7 @@ For the sake of this guide we'll simply step you through adding a User to the `o
 1. 
 First open the `/examples/org.yaml` file in your text editor of choice
 2. 
-At the bottom we'll add the following YAML: ```
----
-apiVersion: backstage.io/v1alpha1
-kind: User
-metadata:
-  name: YOUR GITHUB USERNAME
-spec:
-  memberOf: [guests]
-```
-3. 
+At the bottom we'll add the following YAML: 3. 
 Now make sure to replace the text "YOUR GITHUB USERNAME" with your actual GitHub User name.
 
 Let's restart Backstage from the terminal once more, by stopping it with `Ctrl+C`, and starting it with `yarn start`. You should now be able to log into Backstage and see items in your Catalog.
@@ -194,7 +193,11 @@ integrations:
     - host: github.com
       token: ${GITHUB_TOKEN} # this will use the environment variable GITHUB_TOKEN
 ```
+:::note Note
+
 If you've updated the configuration for your integration, it's likely that the backend will need a restart to apply these changes. To do this, stop the running instance in your terminal with `Control-C`, then start it again with `yarn start`. Once the backend has restarted, retry the operation.
+
+:::
 
 Some helpful links, for if you want to learn more about:
 

@@ -4,16 +4,20 @@ title: Backstage Software Templates | Backstage Software Catalog and Developer P
 description: The Software Templates part of Backstage is a tool that can help you
   create Components inside Backstage
 resource: https://backstage.io/docs/features/software-templates
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Backstage Software Templates
 
 The Software Templates part of Backstage is a tool that can help you create Components inside Backstage. By default, it has the ability to load skeletons of code, template in some variables, and then publish the template to some locations like GitHub or GitLab.
 
+:::warning Important
+
 When creating custom scaffolder actions, **use camelCase for action IDs** instead of kebab-case. Action IDs with dashes (like `fetch-component-id`) will cause template expressions like `${{ steps.fetch-component-id.output.componentId }}` to return `NaN` because the dashes are evaluated as subtraction operators in JavaScript expressions.
 
 See the [Writing Custom Actions guide](/docs/features/software-templates/writing-custom-actions#naming-conventions) for more details.
+
+:::
 
 ## Prerequisites
 

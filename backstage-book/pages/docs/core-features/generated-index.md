@@ -5,42 +5,42 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/core-features/generated-index
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
-## 🗃️ AI
+## AI
 
 Features in Backstage you can leverage with your AI tools.
 
-## 🗃️ Auth and Identity
+## Auth and Identity
 
 Authentication and identity management features.
 
-## 🗃️ Kubernetes
+## Kubernetes
 
 Use Kubernetes right from Backstage.
 
-## 🗃️ Notifications
+## Notifications
 
 Know when important events happen in Backstage.
 
-## 🗃️ Permissions
+## Permissions
 
 Access control for your Backstage instance.
 
-## 🗃️ Search
+## Search
 
 Using Search within Backstage.
 
-## 🗃️ Software Catalog
+## Software Catalog
 
 Manage and explore your software components.
 
-## 🗃️ Software Templates
+## Software Templates
 
 Create and manage software templates.
 
-## 🗃️ TechDocs
+## TechDocs
 
 Documentation as code for your software.
 

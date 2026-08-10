@@ -5,74 +5,74 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/next/integrations/generated-index
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
-## 📄️ Overview
+## Overview
 
 Configuring Backstage to read or publish data with external providers using integrations
 
-## 🗃️ AWS S3
+## AWS S3
 
 2 items
 
-## 🗃️ Azure Blob Storage
+## Azure Blob Storage
 
 2 items
 
-## 🗃️ Azure DevOps
+## Azure DevOps
 
 2 items
 
-## 🗃️ Microsoft Entra ID
+## Microsoft Entra ID
 
 1 item
 
-## 🗃️ Bitbucket Cloud
+## Bitbucket Cloud
 
 2 items
 
-## 🗃️ Bitbucket Server
+## Bitbucket Server
 
 2 items
 
-## 🗃️ Datadog
+## Datadog
 
 1 item
 
-## 🗃️ Gerrit
+## Gerrit
 
 2 items
 
-## 🗃️ GitHub
+## GitHub
 
 4 items
 
-## 🗃️ GitLab
+## GitLab
 
 3 items
 
-## 🗃️ Gitea
+## Gitea
 
 2 items
 
-## 🗃️ Harness
+## Harness
 
 1 item
 
-## 🗃️ Google GCS
+## Google GCS
 
 1 item
 
-## 🗃️ Keycloak
+## Keycloak
 
 1 item
 
-## 🗃️ LDAP
+## LDAP
 
 1 item
 
-## 🗃️ Okta
+## Okta
 
 1 item
 

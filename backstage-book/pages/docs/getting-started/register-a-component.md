@@ -3,16 +3,18 @@ type: Web Page
 title: Registering a Component | Backstage Software Catalog and Developer Platform
 description: Start populating your Backstage app with your data.
 resource: https://backstage.io/docs/getting-started/register-a-component
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Registering a Component
 
 Audience: Developers
 
+:::note Note
 Entity files are stored in YAML format, if you are not familiar with YAML, you can learn more about it [here](https://yaml.org).
 
 [Descriptor Format of Catalog Entities](/docs/features/software-catalog/descriptor-format) provides additional information on the format of the YAML entity files.
+:::
 
 ## Overview
 
@@ -23,7 +25,7 @@ When registering a component, you can:
 - 
 Link to an existing entity file: The file is analyzed to determine which entities are defined, and the entities are added to the Scaffolded Backstage App Catalog. For example, `https://github.com/backstage/backstage/blob/master/catalog-info.yaml` .
 - 
-Link to a repository: All `catalog-info.yaml` files are discovered in the repository and their defined entities are added to the Scaffolded Backstage App Catalog. For example,`https://github.com/backstage/backstage` .NoteIf no entities are found, a Pull Request is created that adds an example `catalog-info.yaml` file to the repository. When the Pull Request is merged, the Scaffolded Backstage App Catalog loads all of the defined entities.
+Link to a repository: All `catalog-info.yaml` files are discovered in the repository and their defined entities are added to the Scaffolded Backstage App Catalog. For example,`https://github.com/backstage/backstage` .:::note Note If no entities are found, a Pull Request is created that adds an example `catalog-info.yaml` file to the repository. When the Pull Request is merged, the Scaffolded Backstage App Catalog loads all of the defined entities.:::
 
 ## Prerequisites
 

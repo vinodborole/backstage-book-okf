@@ -3,12 +3,16 @@ type: Web Page
 title: New Backend System | Backstage Software Catalog and Developer Platform
 description: Details of the new backend system
 resource: https://backstage.io/docs/plugins/new-backend-system
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # New Backend System
 
+:::caution Legacy Documentation
+
 This section is part of the legacy plugins documentation. The canonical documentation for the backend system has moved to the [Backend System](/docs/backend-system/) section, which includes more detailed and up-to-date guides for [building plugins and modules](/docs/backend-system/building-plugins-and-modules/index), [architecture](/docs/backend-system/architecture/index), and [core services](/docs/backend-system/core-services/index).
+
+:::
 
 ## Status
 

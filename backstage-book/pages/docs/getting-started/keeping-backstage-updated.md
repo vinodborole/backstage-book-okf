@@ -3,14 +3,16 @@ type: Web Page
 title: Keeping Backstage Updated | Backstage Software Catalog and Developer Platform
 description: How to keep your Backstage App updated
 resource: https://backstage.io/docs/getting-started/keeping-backstage-updated
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Keeping Backstage Updated
 
 Audience: Developers and Admins
 
+:::note Note
 To better understand the concepts in this section, it's recommended to have an understanding of [Monorepos](https://semaphoreci.com/blog/what-is-monorepo), [Semantic Versioning](https://semver.org) and [CHANGELOGs](https://keepachangelog.com).
+:::
 
 ## Summary
 

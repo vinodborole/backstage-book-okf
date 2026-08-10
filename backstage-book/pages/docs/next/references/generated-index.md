@@ -5,30 +5,30 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/next/references/generated-index
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
-## 🗃️ Designing for Backstage
+## Designing for Backstage
 
 Guidelines and resources for designing Backstage components.
 
-## 🗃️ Architecture Decision Records (ADRs)
+## Architecture Decision Records (ADRs)
 
 Documentation of architectural decisions made in Backstage.
 
-## 📄️ Deprecations
+## Deprecations
 
 A list of active and past deprecations
 
-## 📄️ Glossary
+## Glossary
 
 List of terms, abbreviations, and phrases used in Backstage, together with their explanations.
 
-## 📄️ Utility APIs
+## Utility APIs
 
 Backstage Utility APIs
 
-## 📄️ Package Index
+## Package Index
 
 Index of all Backstage Packages
 

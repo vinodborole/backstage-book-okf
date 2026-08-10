@@ -3,7 +3,7 @@ type: Web Page
 title: Adding your own Templates | Backstage Software Catalog and Developer Platform
 description: Documentation on Adding your own Templates
 resource: https://backstage.io/docs/features/software-templates/adding-templates
-timestamp: '2026-07-20T08:58:01.906190+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Adding your own Templates
@@ -84,6 +84,8 @@ contains more information about the required fields.
 Once we have a `template.yaml` ready, we can then add it to the software catalog
 for use by the scaffolder.
 
+:::note Note
+
 When you add or modify a template, you will need to refresh the location entity.
 Otherwise, Backstage won't display the template in the available templates,
 or it will keep showing the old template. You can refresh the location instance by
@@ -91,6 +93,8 @@ going into `Catalog` web page, choosing `Locations` instead of `Components`, and
 location entity.
 From there, you can click on the refresh icon representing "Scheduled entity refresh" action.
 Afterwards, you should see your template updated.
+
+:::
 
 You can add the template files to the catalog through
 [static location configuration](/docs/features/software-catalog/configuration#static-location-configuration),

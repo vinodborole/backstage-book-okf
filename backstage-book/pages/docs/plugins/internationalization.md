@@ -3,12 +3,16 @@ type: Web Page
 title: Internationalization | Backstage Software Catalog and Developer Platform
 description: Documentation on adding internationalization to plugins and apps
 resource: https://backstage.io/docs/plugins/internationalization
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Internationalization
 
+:::caution Legacy Documentation
+
 This section is part of the legacy plugins documentation. For the new frontend system version, see [Internationalization](/docs/frontend-system/building-plugins/internationalization). The i18n APIs (`createTranslationRef`, `useTranslationRef`) work the same way in both the old and new frontend systems.
+
+:::
 
 ## Overview
 

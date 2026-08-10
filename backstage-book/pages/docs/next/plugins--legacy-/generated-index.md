@@ -5,66 +5,66 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/next/plugins--legacy-/generated-index
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
-## 📄️ Introduction to Plugins (Legacy)
+## Introduction to Plugins (Legacy)
 
 Legacy documentation for integrating various infrastructure and software development tools into Backstage through plugins using the old frontend system.
 
-## 📄️ Create a Backstage Plugin
+## Create a Backstage Plugin
 
 Documentation on How to Create a Backstage Plugin
 
-## 📄️ Plugin Development
+## Plugin Development
 
 Documentation on Plugin Development
 
-## 📄️ Structure of a Plugin
+## Structure of a Plugin
 
 Details about structure of a plugin
 
-## 📄️ Integrate into the Software Catalog
+## Integrate into the Software Catalog
 
 How to integrate a plugin into software catalog
 
-## 📄️ Integrating Search into a plugin
+## Integrating Search into a plugin
 
 How to integrate Search into a Backstage plugin
 
-## 📄️ Composability System
+## Composability System
 
 Documentation for the Backstage plugin composability APIs.
 
-## 📄️ Internationalization
+## Internationalization
 
 Documentation on adding internationalization to plugins and apps
 
-## 📄️ Plugin Analytics
+## Plugin Analytics
 
 Measuring usage of your Backstage instance.
 
-## 📄️ Feature Flags
+## Feature Flags
 
 Details the process of defining setting and reading a feature flag.
 
-## 🗃️ Backends and APIs
+## Backends and APIs
 
 Build and manage backend services and APIs.
 
-## 🗃️ Testing
+## Testing
 
 Testing plugins and modules.
 
-## 🗃️ Publishing
+## Publishing
 
 Publishing your plugins.
 
-## 📄️ Observability
+## Observability
 
 Adding Observability to Your Plugin
 
-## 📄️ New Backend System
+## New Backend System
 
 Details of the new backend system
 

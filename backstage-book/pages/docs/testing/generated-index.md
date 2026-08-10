@@ -5,7 +5,7 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/testing/generated-index
-timestamp: '2026-07-20T08:58:01.906190+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 Skip to main content
@@ -25,7 +25,8 @@ Search
 Plugins (Legacy)
 Testing
 Testing
-📄️ Testing with Jest
+📄️
+Testing with Jest
 Documentation on How to do unit testing with Jest
 
 # Citations

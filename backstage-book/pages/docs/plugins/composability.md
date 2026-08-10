@@ -3,12 +3,16 @@ type: Web Page
 title: Composability System | Backstage Software Catalog and Developer Platform
 description: Documentation for the Backstage plugin composability APIs.
 resource: https://backstage.io/docs/plugins/composability
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Composability System
 
+:::caution Legacy Documentation
+
 This page describes the composability system for the **old frontend system**, including `createRoutableExtension`, `createComponentExtension`, `RouteRef`, `ExternalRouteRef`, and component data. For the new frontend system, see [Extensions](/docs/frontend-system/architecture/extensions), [Extension Blueprints](/docs/frontend-system/architecture/extension-blueprints), and [Routes](/docs/frontend-system/architecture/routes).
+
+:::
 
 ## Summary
 

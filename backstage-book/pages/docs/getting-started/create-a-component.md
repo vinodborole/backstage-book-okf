@@ -3,7 +3,7 @@ type: Web Page
 title: Create a Component | Backstage Software Catalog and Developer Platform
 description: Leverage the scaffolder to start creating components with best practices.
 resource: https://backstage.io/docs/getting-started/create-a-component
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Create a Component
@@ -60,10 +60,7 @@ Close the Backstage app.
 2. 
 Enter `CTRL-C` in the terminal window to stop the Backstage frontend and backend.
 3. 
-In the terminal window, enter: ```
-export NODE_OPTIONS=--no-node-snapshot
-```
-**NOTE:** The[no-node-snapshot](/docs/features/software-templates/#prerequisites)`NODE_OPTIONS` environment variable is required in order to use the templates.
+In the terminal window, enter: **NOTE:** The[no-node-snapshot](/docs/features/software-templates/#prerequisites)`NODE_OPTIONS` environment variable is required in order to use the templates.
 4. 
 Enter `yarn start` to restart the Backstage application.
 5. 

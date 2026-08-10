@@ -3,12 +3,16 @@ type: Web Page
 title: Create a Backstage Plugin | Backstage Software Catalog and Developer Platform
 description: Documentation on How to Create a Backstage Plugin
 resource: https://backstage.io/docs/plugins/create-a-plugin
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Create a Backstage Plugin
 
+:::caution Legacy Documentation
+
 This page describes creating plugins for the **old frontend system**. For creating plugins using the new frontend system, see [Building Frontend Plugins](/docs/frontend-system/building-plugins/index). For creating backend plugins, see [Building Backend Plugins and Modules](/docs/backend-system/building-plugins-and-modules/index).
+
+:::
 
 A Backstage Plugin adds functionality to Backstage.
 

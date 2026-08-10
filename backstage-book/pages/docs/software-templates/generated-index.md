@@ -5,74 +5,74 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/software-templates/generated-index
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
-## 📄️ Overview
+## Overview
 
 The Software Templates part of Backstage is a tool that can help you create Components inside Backstage
 
-## 📄️ Configuration
+## Configuration
 
 Configuration options for Backstage Software Templates
 
-## 📄️ Adding your own Templates
+## Adding your own Templates
 
 Documentation on Adding your own Templates
 
-## 📄️ Writing Templates
+## Writing Templates
 
 Details around creating your own custom Software Templates
 
-## 📄️ Input Examples
+## Input Examples
 
 Some examples to use in your template
 
-## 📄️ ui:options Examples
+## ui:options Examples
 
 The input props that can be specified under ui:options for different pickers
 
-## 📄️ Builtin actions
+## Builtin actions
 
 Documentation describing the built-in template actions.
 
-## 📄️ Writing Custom Actions
+## Writing Custom Actions
 
 How to write your own actions
 
-## 📄️ Writing Tests For Actions
+## Writing Tests For Actions
 
 How to write tests for actions
 
-## 📄️ Writing Custom Field Extensions
+## Writing Custom Field Extensions
 
 How to write your own field extensions
 
-## 📄️ Writing custom step layouts
+## Writing custom step layouts
 
 How to override the default step form layout
 
-## 📄️ Authorizing scaffolder tasks, parameters, steps, and actions
+## Authorizing scaffolder tasks, parameters, steps, and actions
 
 How to authorize parts of a template and authorize scaffolder task access
 
-## 📄️ Dry Run Testing
+## Dry Run Testing
 
 How to enable and implement dry run testing in actions
 
-## 📄️ Experimental Features
+## Experimental Features
 
 Information on Experimental Features that are currently available in the Scaffolder
 
-## 📄️ Templating Extensions
+## Templating Extensions
 
 Templating extensions system
 
-## 📄️ Audit Events
+## Audit Events
 
 Tracking access to your Scaffolder.
 
-## 🗃️ API
+## API
 
 2 items
 

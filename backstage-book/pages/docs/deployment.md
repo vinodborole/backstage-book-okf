@@ -3,7 +3,7 @@ type: Web Page
 title: Deploying Backstage | Backstage Software Catalog and Developer Platform
 description: Packaging Backstage and deploying to production
 resource: https://backstage.io/docs/deployment
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Deploying Backstage
@@ -14,8 +14,12 @@ Backstage is in *the same way* you deploy other software at your organization.
 
 This documentation shows common examples that may be useful when deploying Backstage for the first time, or for those without established deployment practices.
 
+:::note Note
+
 The *easiest* way to explore Backstage is to visit the
 [live demo site](https://demo.backstage.io).
+
+:::
 
 At Spotify, we deploy software generally by:
 

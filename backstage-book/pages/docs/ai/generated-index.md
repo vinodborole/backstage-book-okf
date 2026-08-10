@@ -5,18 +5,18 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/ai/generated-index
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
-## 📄️ AI Skills
+## AI Skills
 
 Reusable AI skills for common Backstage development tasks.
 
-## 📄️ MCP Actions Backend
+## MCP Actions Backend
 
 The MCP Actions Backend exposes actions registered with the Actions Registry as MCP tools.
 
-## 📄️ Well-known Actions
+## Well-known Actions
 
 This section lists a number of well-known actions that are part of the Actions Registry.
 

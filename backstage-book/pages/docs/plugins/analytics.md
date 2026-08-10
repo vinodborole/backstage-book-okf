@@ -3,12 +3,16 @@ type: Web Page
 title: Plugin Analytics | Backstage Software Catalog and Developer Platform
 description: Measuring usage of your Backstage instance.
 resource: https://backstage.io/docs/plugins/analytics
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Plugin Analytics
 
+:::caution Legacy Documentation
+
 This section is part of the legacy plugins documentation. For the new frontend system version, see [Plugin Analytics](/docs/frontend-system/building-plugins/analytics). The concepts and events described here apply to both the old and new frontend systems.
+
+:::
 
 Setting up, maintaining, and iterating on an instance of Backstage can be a large investment. To help measure return on this investment, Backstage comes with an event-based Analytics API that grants app integrators the flexibility to collect and analyze Backstage usage in the analytics tool of their choice, while providing plugin developers a standard interface for instrumenting key user interactions.
 

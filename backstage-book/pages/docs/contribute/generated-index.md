@@ -5,22 +5,22 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/contribute/generated-index
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
-## 📄️ Contributors
+## Contributors
 
 Documentation on how to get set up for doing development on the Backstage repository
 
-## 📄️ Getting Involved
+## Getting Involved
 
 How can you help us build Backstage? We welcome contributions of all kinds, from documentation to code to design.
 
-## 📄️ Backstage Project Structure
+## Backstage Project Structure
 
 Introduction to files and folders in the Backstage Project repository
 
-## 📄️ Documentation Style Guide
+## Documentation Style Guide
 
 Writing style guidelines for Backstage documentation
 

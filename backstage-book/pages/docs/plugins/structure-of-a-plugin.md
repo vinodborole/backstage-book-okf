@@ -3,12 +3,16 @@ type: Web Page
 title: Structure of a Plugin | Backstage Software Catalog and Developer Platform
 description: Details about structure of a plugin
 resource: https://backstage.io/docs/plugins/structure-of-a-plugin
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Structure of a Plugin
 
+:::caution Legacy Documentation
+
 This page describes the structure of a plugin for the **old frontend system**. For the new frontend system, see [Building Frontend Plugins](/docs/frontend-system/building-plugins/index). The general folder structure is similar, but the plugin wiring in `plugin.ts` differs significantly.
+
+:::
 
 Nice, you have a new plugin! We'll soon see how we can develop it into doing great things. But first off, let's look at what we get out of the box.
 

@@ -5,12 +5,16 @@ title: Introduction to Plugins (Legacy) | Backstage Software Catalog and Develop
 description: Legacy documentation for integrating various infrastructure and software
   development tools into Backstage through plugins using the old frontend system.
 resource: https://backstage.io/docs/plugins
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Introduction to Plugins (Legacy)
 
+:::caution Legacy Documentation
+
 This section covers plugin development using the **old frontend system**. For new development, please refer to the [new frontend system](/docs/frontend-system/) and [new backend system](/docs/backend-system/) documentation. The content here is kept for reference and for maintaining existing plugins that have not yet been migrated.
+
+:::
 
 Backstage orchestrates a cohesive single-page application by seamlessly integrating various plugins.
 

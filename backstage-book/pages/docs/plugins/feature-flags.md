@@ -3,12 +3,16 @@ type: Web Page
 title: Feature Flags | Backstage Software Catalog and Developer Platform
 description: Details the process of defining setting and reading a feature flag.
 resource: https://backstage.io/docs/plugins/feature-flags
-timestamp: '2026-07-09T12:16:50.465553+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Feature Flags
 
+:::caution Legacy Documentation
+
 This page describes feature flags using the **old frontend system** APIs (`createPlugin` from `@backstage/core-plugin-api` and `createApp` from `@backstage/app-defaults`). For the new frontend system version, see [Feature Flags](/docs/frontend-system/building-plugins/feature-flags). The `FeatureFlagged` component and `featureFlagsApiRef` work the same way in both systems.
+
+:::
 
 Backstage offers the ability to define feature flags inside a plugin or during application creation. This allows you to restrict parts of your plugin to those individual users who have toggled the feature flag to on.
 

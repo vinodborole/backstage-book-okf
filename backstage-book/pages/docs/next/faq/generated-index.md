@@ -5,10 +5,10 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/next/faq/generated-index
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
-📄️ OverviewFAQ Overview📄️ Non-technical FAQQuestions related to product and design.📄️ Technical FAQGeneral technical questions about Backstage.
+📄️OverviewFAQ Overview📄️Non-technical FAQQuestions related to product and design.📄️Technical FAQGeneral technical questions about Backstage.
 
 # Citations
 

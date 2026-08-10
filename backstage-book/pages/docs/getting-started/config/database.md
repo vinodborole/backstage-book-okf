@@ -3,7 +3,7 @@ type: Web Page
 title: Database | Backstage Software Catalog and Developer Platform
 description: How to set up PostgreSQL for your Backstage instance.
 resource: https://backstage.io/docs/getting-started/config/database
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Database
@@ -28,7 +28,11 @@ PostgreSQL port needs to be accessible (the default is `5432` or`5433` )
 
 ## 1. Install and Configure PostgreSQL
 
+:::tip Already configured your database?
+
 If you've already installed PostgreSQL and created a schema and user, you can skip to [Step 2](#2-configuring-backstage-pg-client).
+
+:::
 
 Let's install PostgreSQL and get it set up for our Backstage app. First, we'll need to actually install the SQL server.
 

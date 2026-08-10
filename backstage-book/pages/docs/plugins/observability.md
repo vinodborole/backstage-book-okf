@@ -3,12 +3,16 @@ type: Web Page
 title: Observability | Backstage Software Catalog and Developer Platform
 description: Adding Observability to Your Plugin
 resource: https://backstage.io/docs/plugins/observability
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Observability
 
+:::caution Legacy Documentation
+
 This section is part of the legacy plugins documentation. For new backend system logging, see the [Logger](/docs/backend-system/core-services/logger) and [Root Logger](/docs/backend-system/core-services/root-logger) core service documentation. For health checks, see [Root Health](/docs/backend-system/core-services/root-health).
+
+:::
 
 This article briefly describes the observability options that are available to a Backstage integrator.
 

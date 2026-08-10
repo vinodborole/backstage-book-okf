@@ -5,10 +5,10 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/notifications/generated-index
-timestamp: '2026-07-06T13:23:17.605783+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
-📄️ Getting StartedHow to get started with the notifications and signals📄️ ProcessorsHow to setup notification processors📄️ UsageHow to use the notifications and signals
+📄️Getting StartedHow to get started with the notifications and signals📄️ProcessorsHow to setup notification processors📄️UsageHow to use the notifications and signals
 
 # Citations
 

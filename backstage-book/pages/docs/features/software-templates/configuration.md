@@ -4,7 +4,7 @@ title: Software Template Configuration | Backstage Software Catalog and Develope
   Platform
 description: Configuration options for Backstage Software Templates
 resource: https://backstage.io/docs/features/software-templates/configuration
-timestamp: '2026-07-20T08:58:01.906190+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Software Template Configuration
@@ -15,7 +15,11 @@ This is done in your `app-config.yaml` by adding
 [Backstage integrations](https://backstage.io/docs/integrations/) for the
 appropriate source code repository for your organization.
 
+:::note Note
+
 Integrations may already be set up as part of your `app-config.yaml`.
+
+:::
 
 The next step is to [add templates](http://backstage.io/docs/features/software-templates/adding-templates)
 to your Backstage app.

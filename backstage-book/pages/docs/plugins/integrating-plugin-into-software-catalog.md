@@ -4,12 +4,16 @@ title: Integrate into the Software Catalog | Backstage Software Catalog and Deve
   Platform
 description: How to integrate a plugin into software catalog
 resource: https://backstage.io/docs/plugins/integrating-plugin-into-software-catalog
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Integrate into the Software Catalog
 
+:::caution Legacy Documentation
+
 This page describes integrating plugins into the Software Catalog using the **old frontend system** patterns (`EntitySwitch`, `EntityLayout`, `EntityLayout.Route`). For the new frontend system, entity page integrations are done using `EntityCardBlueprint` and `EntityContentBlueprint` — see [Common Extension Blueprints](/docs/frontend-system/building-plugins/common-extension-blueprints).
+
+:::
 
 This is an advanced use case and currently is an experimental feature. Expect API to change over time
 

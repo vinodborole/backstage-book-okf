@@ -3,12 +3,16 @@ type: Web Page
 title: Plugin Development | Backstage Software Catalog and Developer Platform
 description: Documentation on Plugin Development
 resource: https://backstage.io/docs/plugins/plugin-development
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Plugin Development
 
+:::caution Legacy Documentation
+
 This page covers plugin development patterns for the **old frontend system**, including `createPlugin`, `createRoutableExtension`, and `RouteRef` from `@backstage/core-plugin-api`. For the new frontend system equivalents, see [Building Frontend Plugins](/docs/frontend-system/building-plugins/index) and [Routes](/docs/frontend-system/architecture/routes).
+
+:::
 
 Backstage plugins provide features to a Backstage App.
 

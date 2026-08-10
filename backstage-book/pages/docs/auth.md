@@ -3,7 +3,7 @@ type: Web Page
 title: Authentication in Backstage | Backstage Software Catalog and Developer Platform
 description: Introduction to authentication in Backstage
 resource: https://backstage.io/docs/auth
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-10T07:40:46.882853+00:00'
 ---
 
 # Authentication in Backstage
@@ -12,7 +12,11 @@ This documentation is written for [the new frontend system](/docs/frontend-syste
 
 The authentication system in Backstage serves two distinct purposes: sign-in and identification of users, as well as delegating access to third-party resources. It is possible to configure Backstage to have any number of authentication providers, but only one of these will typically be used for sign-in, with the rest being used to provide access to external resources.
 
+:::note Note
+
 Identity management and the Sign-In page in Backstage will only block external access when using the new backend system, without setting `backend.auth.dangerouslyDisableDefaultAuthPolicy` in configuration. Even so, the frontend bundle is not protected from external access, protecting it requires the use of the [experimental public entry point](/docs/tutorials/enable-public-entry). You can learn more about this in the [Threat Model](/docs/overview/threat-model#operator-responsibilities).
+
+:::
 
 ## Built-in Authentication Providers
 
@@ -82,7 +86,11 @@ export default createApp({
   ],
 });
 ```
+:::note Note
+
 You can configure sign-in to use a redirect flow with no pop-up by adding `enableExperimentalRedirectFlow: true` to the root of your `app-config.yaml`
+
+:::
 
 ### Using Multiple Providers
 

@@ -1,17 +1,3 @@
 # /pages/docs/features/software-catalog — directory listing
 
-- [Audit Events | Backstage Software Catalog and Developer Platform](/pages/docs/features/software-catalog/audit-events.md)
-- [Catalog Customization | Backstage Software Catalog and Developer Platform](/pages/docs/features/software-catalog/catalog-customization.md)
-- [Catalog Configuration | Backstage Software Catalog and Developer Platform](/pages/docs/features/software-catalog/configuration.md)
-- [Creating the Catalog Graph | Backstage Software Catalog and Developer Platform](/pages/docs/features/software-catalog/creating-the-catalog-graph.md)
-- [Descriptor Format of Catalog Entities | Backstage Software Catalog and Developer Platform](/pages/docs/features/software-catalog/descriptor-format.md)
-- [Entity Presentation | Backstage Software Catalog and Developer Platform](/pages/docs/features/software-catalog/entity-presentation.md)
-- [Extending the model | Backstage Software Catalog and Developer Platform](/pages/docs/features/software-catalog/extending-the-model.md)
-- [External integrations | Backstage Software Catalog and Developer Platform](/pages/docs/features/software-catalog/external-integrations.md)
-- [Catalog FAQ | Backstage Software Catalog and Developer Platform](/pages/docs/features/software-catalog/faq.md)
-- [The Life of an Entity | Backstage Software Catalog and Developer Platform](/pages/docs/features/software-catalog/life-of-an-entity.md)
-- [Entity References | Backstage Software Catalog and Developer Platform](/pages/docs/features/software-catalog/references.md)
 - [System Model | Backstage Software Catalog and Developer Platform](/pages/docs/features/software-catalog/system-model.md)
-- [Well-known Annotations on Catalog Entities | Backstage Software Catalog and Developer Platform](/pages/docs/features/software-catalog/well-known-annotations.md)
-- [Well-known Relations between Catalog Entities | Backstage Software Catalog and Developer Platform](/pages/docs/features/software-catalog/well-known-relations.md)
-- [Well-known Status fields of Catalog Entities | Backstage Software Catalog and Developer Platform](/pages/docs/features/software-catalog/well-known-statuses.md)
