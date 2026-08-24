@@ -3,7 +3,7 @@ type: Web Page
 title: Overview | Backstage Software Catalog and Developer Platform
 description: Overview of the Backstage CLI
 resource: https://backstage.io/docs/tooling/cli/overview
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-24T06:57:24.152587+00:00'
 ---
 
 # Overview
@@ -33,6 +33,17 @@ page, and for a list of commands, see the [commands](/docs/tooling/cli/commands)
 While the Backstage tooling is opinionated in how it works, it is also possible to use your own tooling either partially or fully. For example, the CLI provides a command for building a plugin package for publishing, but the output is a quite standard combination of transpiled JavaScript and TypeScript type declarations. The usage of the command from the CLI can therefore be augmented or replaced with other tools if necessary.
 
 The Backstage CLI intentionally does not provide many hooks for overriding or customizing the build process. This is to allow for evolution of the CLI without having to take a wide API surface into account. This allows us to iterate and improve the tooling, as well as to more easily keep the system up to date.
+
+## Modular architecture
+
+The CLI is built from a set of independent **CLI modules**, each providing a
+group of related commands. The
+[CLI Modules](/docs/tooling/cli/modules) page lists the default modules and explains
+how module discovery works. You can also
+[customize the defaults](/docs/tooling/cli/modules#customizing-the-default-modules) by
+overriding or removing modules, or
+[build your own](/docs/tooling/cli/building-cli-modules) to add custom commands for your
+organization.
 
 # Citations
 

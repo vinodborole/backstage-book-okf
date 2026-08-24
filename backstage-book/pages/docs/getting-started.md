@@ -3,16 +3,12 @@ type: Web Page
 title: Standalone Installation | Backstage Software Catalog and Developer Platform
 description: How to create and run a Standalone Backstage.
 resource: https://backstage.io/docs/getting-started
-timestamp: '2026-08-10T07:40:46.882853+00:00'
+timestamp: '2026-08-24T06:57:24.152587+00:00'
 ---
 
 # Standalone Installation
 
 Audience: Developers and Admins
-
-:::note Note
-It is not required, although recommended to have a basic understanding of [Yarn](https://www.pluralsight.com/guides/yarn-a-package-manager-for-node-js) and [npm](https://docs.npmjs.com/about-npm) before starting this guide.
-:::
 
 ## Overview
 
@@ -20,11 +16,7 @@ This guide walks through how to create your own Backstage customizable app. This
 
 By the end of this guide, you will have a standalone Backstage installation running locally with an in-memory `SQLite` database and demo content. To be clear, this is not a production-ready installation, and it does not contain information specific to your organization until you set up integrations with your specific data sources!
 
-:::note Contributors
-
 If you are planning to contribute a new feature or bug fix to the Backstage project, we advise you to follow the [Contributors](https://github.com/backstage/backstage/blob/master/CONTRIBUTING.md#get-started) guide instead to do a repository-based installation.
-
-:::
 
 The instructions make use of `npx`. `npx` is a tool that comes preinstalled with Node.js and lets you run commands straight from `npm` or other registries.
 
@@ -79,7 +71,6 @@ methods:
   - [Package manager](https://nodejs.org/en/download/package-manager/)
   - [Using NodeSource packages](https://github.com/nodesource/distributions/blob/master/README.md)
 - Using 
-- Install the `isolated-vm` module, following their[requirements section](https://github.com/laverdet/isolated-vm#requirements) .
 - `yarn`[Installation](https://yarnpkg.com/getting-started/install)  - Backstage currently uses Yarn 4.4.1, once you've ran `corepack enable` you'll want to then run`yarn set version 4.4.1`
 - Backstage currently uses Yarn 4.4.1, once you've ran 
 - `docker`[installation](https://docs.docker.com/engine/install/)
@@ -127,11 +118,7 @@ Rspack compiled successfully
 ```
 Once the Backstage UI is displayed, you can start exploring the demo immediately.
 
-:::tip Browser window didn't open with yarn start
-
 When you see the message `Rspack compiled successfully`, you can navigate directly to `http://localhost:3000` to see your Backstage app.
-
-:::
 
 ## Next steps
 

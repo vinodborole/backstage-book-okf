@@ -5,7 +5,7 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/migrations/generated-index
-timestamp: '2026-08-10T07:40:46.882853+00:00'
+timestamp: '2026-08-24T06:57:24.152587+00:00'
 ---
 
 ## Migrating to Jest 30
@@ -23,10 +23,6 @@ A guide to migrating your project to React 18
 ## Package Role Migration
 
 Guide for how to migrate packages to use the new role utility
-
-## Migrating away from @backstage/core
-
-Guide on how to migrate to the new Backstage core libraries.
 
 ## Migration to Yarn 4
 

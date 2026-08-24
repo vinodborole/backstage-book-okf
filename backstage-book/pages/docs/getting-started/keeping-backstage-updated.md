@@ -3,16 +3,14 @@ type: Web Page
 title: Keeping Backstage Updated | Backstage Software Catalog and Developer Platform
 description: How to keep your Backstage App updated
 resource: https://backstage.io/docs/getting-started/keeping-backstage-updated
-timestamp: '2026-08-10T07:40:46.882853+00:00'
+timestamp: '2026-08-24T06:57:24.152587+00:00'
 ---
 
 # Keeping Backstage Updated
 
 Audience: Developers and Admins
 
-:::note Note
 To better understand the concepts in this section, it's recommended to have an understanding of [Monorepos](https://semaphoreci.com/blog/what-is-monorepo), [Semantic Versioning](https://semver.org) and [CHANGELOGs](https://keepachangelog.com).
-:::
 
 ## Summary
 
@@ -25,7 +23,7 @@ starting point that's meant to be evolved.
 
 The Backstage CLI has a command to bump all `@backstage` packages and
 dependencies you're using to the latest versions:
-[versions:bump](/docs/tooling/cli/commands#versionsbump).
+[versions:bump](/docs/tooling/cli/module-migrate#versionsbump).
 
 ```
 yarn backstage-cli versions:bump

@@ -3,16 +3,12 @@ type: Web Page
 title: Internationalization | Backstage Software Catalog and Developer Platform
 description: Documentation on adding internationalization to plugins and apps
 resource: https://backstage.io/docs/plugins/internationalization
-timestamp: '2026-08-10T07:40:46.882853+00:00'
+timestamp: '2026-08-24T06:57:24.152587+00:00'
 ---
 
 # Internationalization
 
-:::caution Legacy Documentation
-
 This section is part of the legacy plugins documentation. For the new frontend system version, see [Internationalization](/docs/frontend-system/building-plugins/internationalization). The i18n APIs (`createTranslationRef`, `useTranslationRef`) work the same way in both the old and new frontend systems.
-
-:::
 
 ## Overview
 
@@ -381,7 +377,7 @@ The exported JSON files are standard key-value pairs compatible with most extern
 3. Download the translated files back into the translations directory
 4. Run `translations import` to regenerate the wiring code
 
-For full command reference, see the [CLI commands documentation](/docs/tooling/cli/commands#translations-export).
+For full command reference, see the [CLI commands documentation](/docs/tooling/cli/module-translations#translations-export).
 
 # Citations
 

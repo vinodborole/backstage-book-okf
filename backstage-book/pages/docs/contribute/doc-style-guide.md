@@ -3,7 +3,7 @@ type: Web Page
 title: Documentation Style Guide | Backstage Software Catalog and Developer Platform
 description: Writing style guidelines for Backstage documentation
 resource: https://backstage.io/docs/contribute/doc-style-guide
-timestamp: '2026-08-10T07:40:46.882853+00:00'
+timestamp: '2026-08-24T06:57:24.152587+00:00'
 ---
 
 # Documentation Style Guide
@@ -116,8 +116,15 @@ The output is similar to this:
 ### Use appropriate language tags for code blocks
 
 Use the correct language identifier for fenced code blocks: `ts` or `typescript`
-for TypeScript, `yaml` for YAML configuration, `shell` for shell commands,
-`console` for command output, and `diff` for changesets.
+for TypeScript, `yaml` for YAML configuration, `shell` for shell commands, `log`
+for command output, `shell-session` for a transcript that mixes prompts and
+output, and `diff` for changesets. Use `text` when nothing else fits, such as a
+directory tree.
+
+Every identifier must be a language Prism recognizes, and anything outside the
+set Docusaurus bundles by default has to be listed in `additionalLanguages` in
+`microsite/docusaurus.config.ts`. An unrecognized identifier is not an error —
+the block simply loses its syntax highlighting, which is easy to miss.
 
 ## Admonitions
 
@@ -136,6 +143,16 @@ You can use *Markdown* inside admonitions.
 Use `:::note` for supplementary information, `:::tip` for helpful suggestions,
 `:::caution` for potential pitfalls, and `:::danger` for actions that could
 cause data loss or security issues.
+
+To give an admonition a custom title, put the title in square brackets. Writing the title after the type without brackets no longer works, and the admonition renders as plain text instead.
+
+```
+:::tip[Browser window didn't open]
+Navigate to `http://localhost:3000` yourself.
+:::
+```
+Only add a title when it says something the type doesn't. A `:::note` titled
+`Note` is noise, so leave it off.
 
 Keep admonitions short and focused. Each admonition should contain a single, clear point. If you find yourself writing multiple paragraphs inside an admonition, consider whether the content belongs in the main text instead.
 
@@ -193,6 +210,17 @@ Use a single newline to separate block-level content like headings, lists, image
 |---|---|
 | Write hyperlinks with descriptive text. For example: See [Getting Started](/docs/getting-started/) for details. | Use ambiguous link text. For example: See [here](/docs/getting-started/) for details. | 
 | Write Markdown-style links: `[link text](./index.md)` . | Write HTML-style links or create links that open in new tabs. | 
+| Give a plain address some markup: `<https://example.com>` . | Paste a bare address: `https://example.com` . | 
+
+A link with descriptive text is the better choice wherever you can write one.
+People using a screen reader often navigate a page by listing its links, so link
+text such as `the Kubernetes configuration` tells them where it goes while a raw
+address does not.
+
+When the address itself is what you want to show, the syntax depends on the file
+extension. In `.md` files, use either angle brackets or a Markdown link. In
+`.mdx` files, use a Markdown link: angle brackets are not valid there and the
+build fails.
 
 ### Lists
 

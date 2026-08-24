@@ -33,6 +33,7 @@
 - [google-gcs/](/pages/docs/google-gcs/index.md)
 - [harness/](/pages/docs/harness/index.md)
 - [integrations/](/pages/docs/integrations/index.md)
+- [keycloak/](/pages/docs/keycloak/index.md)
 - [kubernetes/](/pages/docs/kubernetes/index.md)
 - [landing-page/](/pages/docs/landing-page/index.md)
 - [ldap/](/pages/docs/ldap/index.md)

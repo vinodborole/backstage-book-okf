@@ -1,6 +1,7 @@
 # /pages/docs/getting-started — directory listing
 
 - [config/](/pages/docs/getting-started/config/index.md)
+- [Setting up CI | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/ci.md)
 - [Configuring App with plugins | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/configure-app-with-plugins.md)
 - [Create a Component | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/create-a-component.md)
 - [Filtering the Catalog | Backstage Software Catalog and Developer Platform](/pages/docs/getting-started/filter-catalog.md)

@@ -5,7 +5,7 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/getting-started/generated-index
-timestamp: '2026-08-10T07:40:46.882853+00:00'
+timestamp: '2026-08-24T06:57:24.152587+00:00'
 ---
 
 ## Standalone Installation
@@ -15,6 +15,10 @@ How to create and run a Standalone Backstage.
 ## Configuring Backstage
 
 4 items
+
+## Setting up CI
+
+Configure continuous integration checks for your Backstage instance.
 
 ## Deploying Backstage
 

@@ -3,7 +3,7 @@ type: Web Page
 title: Configuring App with plugins | Backstage Software Catalog and Developer Platform
 description: Documentation on How Configuring App with plugins
 resource: https://backstage.io/docs/getting-started/configure-app-with-plugins
-timestamp: '2026-08-10T07:40:46.882853+00:00'
+timestamp: '2026-08-24T06:57:24.152587+00:00'
 ---
 
 # Configuring App with plugins
@@ -15,9 +15,7 @@ instead.
 
 Audience: Developers
 
-:::note Note
 Backstage plugins are primarily written using [TypeScript](https://www.typescriptlang.org), [Node.js](https://nodejs.org) and [React](https://reactjs.org). Having an understanding of these technologies will be beneficial on your journey to customizing Backstage!
-:::
 
 ## Summary
 

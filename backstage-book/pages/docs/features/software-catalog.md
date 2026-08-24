@@ -3,7 +3,7 @@ type: Web Page
 title: Backstage Software Catalog | Backstage Software Catalog and Developer Platform
 description: The Backstage Software Catalog
 resource: https://backstage.io/docs/features/software-catalog
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-24T06:57:24.152587+00:00'
 ---
 
 # Backstage Software Catalog
@@ -42,7 +42,7 @@ There are 3 ways to add components to the catalog:
 
 1. Manually register components
 2. Creating new components through Backstage
-3. Integrating with an [external source](/docs/features/software-catalog/external-integrations)
+3. Integrating with an [external source](/docs/features/software-catalog/external-integrations/)
 
 ### Manually register components
 

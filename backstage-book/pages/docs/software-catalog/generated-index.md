@@ -5,7 +5,7 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/software-catalog/generated-index
-timestamp: '2026-08-10T07:40:46.882853+00:00'
+timestamp: '2026-08-24T06:57:24.152587+00:00'
 ---
 
 ## Overview
@@ -50,7 +50,7 @@ Documentation on extending the catalog model
 
 ## External integrations
 
-Documentation on External integrations to integrate systems with Backstage
+3 items
 
 ## Catalog Customization
 

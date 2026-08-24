@@ -3,7 +3,7 @@ type: Web Page
 title: Design | Backstage Software Catalog and Developer Platform
 description: Documentation on Design
 resource: https://backstage.io/docs/dls/design
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-08-24T06:57:24.152587+00:00'
 ---
 
 # Design
@@ -40,7 +40,7 @@ informed on the decisions we've made and why we've made them.
 ## 🛠 Our Practice
 
 The chart below details how we work. We have a
-[Figma workspace for Backstage Open Source](/docs/dls/figma), and we plan on
+[Figma UI kit](/docs/dls/figma), and we are
 referencing Figma documents to share specs and prototypes with the community.
 
 ### Creating a New Design Component
@@ -105,8 +105,8 @@ picked up by our team as something to be added to our design system.
 components. If you’d like to help build up our design system, you can also add
 components we’ve designed to the Storybook as well.
 
-**[Figma](https://www.figma.com/@backstage)** - we're stoked to be using Figma
-Community to share our design assets. You can duplicate our UI Kit and design
+**[Figma](/docs/dls/figma)** - we're excited to be using Figma
+Community to share our design assets. You can duplicate our UI kit and design
 your own plugin for Backstage.
 
 **[Discord](https://discord.gg/backstage-687207715902193673)** - all design questions should be

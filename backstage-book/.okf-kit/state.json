@@ -2,7 +2,7 @@
   "generator": "okf-kit",
   "okf_version": "0.1",
   "root_url": "https://backstage.io/docs",
-  "updated_at": "2026-08-17T06:54:17.121532+00:00",
+  "updated_at": "2026-08-24T06:57:24.319451+00:00",
   "config": {
     "max_depth": 3,
     "max_pages": 200,
@@ -16,7 +16,7 @@
       "path": "pages/docs/ai/generated-index.md",
       "url": "https://backstage.io/docs/ai/generated-index",
       "title": "AI | Backstage Software Catalog and Developer Platform",
-      "hash": "9e68c65d57197f88681db7d258492300f6993f3b388baeabb144f5b7c7287d85"
+      "hash": "84159b85fdf5a40d8ba48ed37a102ddce5065768341ecf13c95977ba67c0f24c"
     },
     {
       "path": "pages/docs/api/deprecations.md",
@@ -52,7 +52,7 @@
       "path": "pages/docs/auth.md",
       "url": "https://backstage.io/docs/auth",
       "title": "Authentication in Backstage | Backstage Software Catalog and Developer Platform",
-      "hash": "86c12594f55079d7defb0c2a85fddc64d10d73938896775ec54d9b0c5d724ee4"
+      "hash": "f02f5c1c61214b7c5fe79974f9a0e8dd213f269c4a119851d94b1a096da111bd"
     },
     {
       "path": "pages/docs/aws-s3/generated-index.md",
@@ -79,12 +79,6 @@
       "hash": "3bbfdf7ad40e7a9249016025891a09991cbbc1587ca9a1d8d8ce3d59a149fed9"
     },
     {
-      "path": "pages/docs/backend-system/architecture/backends.md",
-      "url": "https://backstage.io/docs/backend-system/architecture/backends",
-      "title": "Backend Instances | Backstage Software Catalog and Developer Platform",
-      "hash": "fe15575bd6cc28cf9c29a26576cc11a46f55f7610b85a2dedff2fbfaf6599bbb"
-    },
-    {
       "path": "pages/docs/backend-system/core-services/home.md",
       "url": "https://backstage.io/docs/backend-system/core-services/index",
       "title": "Core Backend Service APIs | Backstage Software Catalog and Developer Platform",
@@ -106,7 +100,7 @@
       "path": "pages/docs/backstage-cli/generated-index.md",
       "url": "https://backstage.io/docs/backstage-cli/generated-index",
       "title": "Backstage CLI | Backstage Software Catalog and Developer Platform",
-      "hash": "6a9c3b5bd95a291aa47dd786388ead118e8b2d4ce60b79def51962328dcad31c"
+      "hash": "87c5eabf20367475e1b42411296b8f6f2c0c43bc14cb20f75370fbd9a43e69a8"
     },
     {
       "path": "pages/docs/bitbucket-cloud/generated-index.md",
@@ -166,7 +160,7 @@
       "path": "pages/docs/contribute/doc-style-guide.md",
       "url": "https://backstage.io/docs/contribute/doc-style-guide",
       "title": "Documentation Style Guide | Backstage Software Catalog and Developer Platform",
-      "hash": "a589817bd4bb19707c75cf8d76882e4823860b81d765a122f0aa19f0a925a647"
+      "hash": "0f6ae99c7c71f766b3503c27fa8aa78b69e2ee289a6bbbe31954ac951f334a69"
     },
     {
       "path": "pages/docs/contribute/generated-index.md",
@@ -196,7 +190,7 @@
       "path": "pages/docs/datadog/generated-index.md",
       "url": "https://backstage.io/docs/datadog/generated-index",
       "title": "Datadog | Backstage Software Catalog and Developer Platform",
-      "hash": "8767a7bc19e07b90eeac22d8127bfed516ec022fb2f83b061281f53b849930d3"
+      "hash": "eb983e2ec02960650fec7c2f60853b8cc4d0a769f6bb6c07f48ffac0a53ee2b9"
     },
     {
       "path": "pages/docs/deploying-backstage/generated-index.md",
@@ -208,7 +202,7 @@
       "path": "pages/docs/deployment.md",
       "url": "https://backstage.io/docs/deployment",
       "title": "Deploying Backstage | Backstage Software Catalog and Developer Platform",
-      "hash": "b22735a701733fe192ee6801d52867dfa56733dd2b896f9e569036ac32053d3b"
+      "hash": "56f3a4df613f552e3028557680b00c29a65631235d234577ade513811d085044"
     },
     {
       "path": "pages/docs/designing-for-backstage/generated-index.md",
@@ -220,7 +214,7 @@
       "path": "pages/docs/dls/design.md",
       "url": "https://backstage.io/docs/dls/design",
       "title": "Design | Backstage Software Catalog and Developer Platform",
-      "hash": "5c877657c4f86a1ef93df10d91b5a4cf352b3b5073709d738fcc3b013678dd29"
+      "hash": "95bc1bffd25386fbe68c586d9237f6a7b7fee1fe68a9651cdda99ee7e2a908e3"
     },
     {
       "path": "pages/docs/faq.md",
@@ -262,7 +256,7 @@
       "path": "pages/docs/features/software-catalog.md",
       "url": "https://backstage.io/docs/features/software-catalog",
       "title": "Backstage Software Catalog | Backstage Software Catalog and Developer Platform",
-      "hash": "7d5c6bc2de56f99ec8bb53ac59057de36d8c798c2787cd099dd89787aa41030c"
+      "hash": "2f94f9d7996c1bcbd64473b5476bf8e18284f6ae1391677ffb0525266b2b80e9"
     },
     {
       "path": "pages/docs/features/software-catalog/system-model.md",
@@ -274,19 +268,19 @@
       "path": "pages/docs/features/software-templates.md",
       "url": "https://backstage.io/docs/features/software-templates",
       "title": "Backstage Software Templates | Backstage Software Catalog and Developer Platform",
-      "hash": "980e494c3ae12d01a7819f9aba5bddb4c5e196fb377c4b778e93afdb60827902"
+      "hash": "781bfcff6e41f8c33597dbac7ca761240205f4542d2bf38f344e51d3f3d14b9b"
     },
     {
       "path": "pages/docs/features/software-templates/adding-templates.md",
       "url": "https://backstage.io/docs/features/software-templates/adding-templates",
       "title": "Adding your own Templates | Backstage Software Catalog and Developer Platform",
-      "hash": "30bf4cc1f726d124c57b59844bf033142ff9c4b0ba1bd1091632b1c978f37a38"
+      "hash": "b201b87d009847b8f5d32f898760aa08cc266a06f0481e6d053b901f068e42bf"
     },
     {
       "path": "pages/docs/features/software-templates/configuration.md",
       "url": "https://backstage.io/docs/features/software-templates/configuration",
       "title": "Software Template Configuration | Backstage Software Catalog and Developer Platform",
-      "hash": "6429b06337b3a50ebfaeaf39c2c1d2363e86997e07fd9cead58c76b3712f2132"
+      "hash": "1693363786ef3f16c424ad532576ae22048b26db91a24b940e68599fd727709e"
     },
     {
       "path": "pages/docs/features/techdocs.md",
@@ -325,12 +319,6 @@
       "hash": "18f4cdc45c609276144009c2a152a572f9be63aecf1ecce3db90d116adca7c53"
     },
     {
-      "path": "pages/docs/frontend-system/architecture/routes.md",
-      "url": "https://backstage.io/docs/frontend-system/architecture/routes",
-      "title": "Frontend Routes | Backstage Software Catalog and Developer Platform",
-      "hash": "dbd3915a13fcd63e2d55e645491ba697a0906eb4f9745d72e5bd7742f7d9f5b8"
-    },
-    {
       "path": "pages/docs/frontend-system/generated-index.md",
       "url": "https://backstage.io/docs/frontend-system/generated-index",
       "title": "Frontend System | Backstage Software Catalog and Developer Platform",
@@ -346,31 +334,37 @@
       "path": "pages/docs/getting-started.md",
       "url": "https://backstage.io/docs/getting-started",
       "title": "Standalone Installation | Backstage Software Catalog and Developer Platform",
-      "hash": "a1686ddb30557b53538a4f5e01ca1514b3d7eab43f4f04adac66abf488186dfb"
+      "hash": "5e6994e921d84b9fdea3388330db00aedb5d2cd44b86dbba32ed8c3a6225db09"
+    },
+    {
+      "path": "pages/docs/getting-started/ci.md",
+      "url": "https://backstage.io/docs/getting-started/ci",
+      "title": "Setting up CI | Backstage Software Catalog and Developer Platform",
+      "hash": "3f104b578296e3a60664eb97588e39ad55e683f4199b997f8e80a4437fdd0de5"
     },
     {
       "path": "pages/docs/getting-started/config/authentication.md",
       "url": "https://backstage.io/docs/getting-started/config/authentication",
       "title": "Authentication | Backstage Software Catalog and Developer Platform",
-      "hash": "a8b715576733926f9da65d7dcfaeb7b057ca0632f825c35e8488783d2aa31754"
+      "hash": "523ead1208a6faf2cbadb10e298779f0bb9951a4f4581ee09959549e451d0346"
     },
     {
       "path": "pages/docs/getting-started/config/database.md",
       "url": "https://backstage.io/docs/getting-started/config/database",
       "title": "Database | Backstage Software Catalog and Developer Platform",
-      "hash": "c5858ee89bc941b19216755d3ec28719046d283ffbe255ba84a5900c9ee3d93d"
+      "hash": "938c73cfeea28ccdd5eb5b6fc7e06ffe2006b6abc4caf281cb444ce9fb8d1993"
     },
     {
       "path": "pages/docs/getting-started/configure-app-with-plugins.md",
       "url": "https://backstage.io/docs/getting-started/configure-app-with-plugins",
       "title": "Configuring App with plugins | Backstage Software Catalog and Developer Platform",
-      "hash": "117ad4fa7095c9c70bcb26a851e926cba57204ad800a5d2b853966f21f6b9490"
+      "hash": "031b06e4ae993341b828e56472842555ff1352e465ab8c50d25869e5b9bff471"
     },
     {
       "path": "pages/docs/getting-started/create-a-component.md",
       "url": "https://backstage.io/docs/getting-started/create-a-component",
       "title": "Create a Component | Backstage Software Catalog and Developer Platform",
-      "hash": "a5a0d7a5eaa5c57450c78f06e8ad4b1e167ed0bef9213baf696aeb2bdaa27658"
+      "hash": "9a2f0bea86c1258b841d8da57cc93a5df572242de6e667cd75786571d6128005"
     },
     {
       "path": "pages/docs/getting-started/filter-catalog.md",
@@ -382,19 +376,19 @@
       "path": "pages/docs/getting-started/generated-index.md",
       "url": "https://backstage.io/docs/getting-started/generated-index",
       "title": "Getting Started | Backstage Software Catalog and Developer Platform",
-      "hash": "46309c2db81ad607ae519e63984a7bcd934b5db6babaf645335c27d9e8bcb600"
+      "hash": "5a8e2f35e2bacd3f7cd5492e12d0ea85d14d376cb6cff7ea2748badd23e063f4"
     },
     {
       "path": "pages/docs/getting-started/homepage.md",
       "url": "https://backstage.io/docs/getting-started/homepage",
       "title": "Backstage homepage - Setup and Customization | Backstage Software Catalog and Developer Platform",
-      "hash": "4743ce2e14cdfdc9bf2e0a99f10cbcbc273b7b7da6107c4b3988ab371a37ec5e"
+      "hash": "cb794f1934a6153bd73f1ef118618e57a52d1dddbed895ef2324205dc05ae62f"
     },
     {
       "path": "pages/docs/getting-started/keeping-backstage-updated.md",
       "url": "https://backstage.io/docs/getting-started/keeping-backstage-updated",
       "title": "Keeping Backstage Updated | Backstage Software Catalog and Developer Platform",
-      "hash": "6c6f555aeee1b2b572eafe58d6acfdabd1816af45166c2ef46fe08429d816e89"
+      "hash": "df0942e44f328cd72055788551420541747da77b5d5adcf1976017af3734436e"
     },
     {
       "path": "pages/docs/getting-started/logging-in.md",
@@ -406,7 +400,7 @@
       "path": "pages/docs/getting-started/register-a-component.md",
       "url": "https://backstage.io/docs/getting-started/register-a-component",
       "title": "Registering a Component | Backstage Software Catalog and Developer Platform",
-      "hash": "10cf683509e65f8bb8f13aebd7771c0a3fed6a090abad560a86c082c0223e0ad"
+      "hash": "cb04eb96c4fab9779d5646fe58eb6abc8b06c900300fce0bb115be59cdf4c44f"
     },
     {
       "path": "pages/docs/getting-started/unregister-delete-component.md",
@@ -460,13 +454,13 @@
       "path": "pages/docs/google-gcs/generated-index.md",
       "url": "https://backstage.io/docs/google-gcs/generated-index",
       "title": "Google GCS | Backstage Software Catalog and Developer Platform",
-      "hash": "2ccd280e9318b6b70c5139effb0858a54e9a810e3563a3762a04cc4c77bc324f"
+      "hash": "653ff12b164dfde8402a5b8b055d0040b8909e9aa0e298f33daaa1ea4b6f8245"
     },
     {
       "path": "pages/docs/harness/generated-index.md",
       "url": "https://backstage.io/docs/harness/generated-index",
       "title": "Harness | Backstage Software Catalog and Developer Platform",
-      "hash": "2391449254dba6eebe4fda3f956f1e64fcf9a36b11ed27ff5a88d7a185f47398"
+      "hash": "c8908ec0c8cb937f3807c1c559c383c2e3f9861ffcb0db4b457ff0f993749eec"
     },
     {
       "path": "pages/docs/integrations.md",
@@ -478,7 +472,7 @@
       "path": "pages/docs/integrations/generated-index.md",
       "url": "https://backstage.io/docs/integrations/generated-index",
       "title": "Integrations | Backstage Software Catalog and Developer Platform",
-      "hash": "c709b90a83d5a7d368df712caa7fe2f3a97858e4d69b80660d44f41049089d14"
+      "hash": "275f067d1cbc10bd9606238536a489ce74933b644e268d2ea5edcce7d89a5ac6"
     },
     {
       "path": "pages/docs/integrations/okta/org.md",
@@ -487,10 +481,16 @@
       "hash": "b40794f9d9ef7eb8d793039cff89cfd1b19da534ed77e41a7f42c25c8bc93e78"
     },
     {
+      "path": "pages/docs/keycloak/generated-index.md",
+      "url": "https://backstage.io/docs/keycloak/generated-index",
+      "title": "Keycloak | Backstage Software Catalog and Developer Platform",
+      "hash": "4b0755749bc5212470dcce65887b25473a4c8c5a00aaa09c6e96bfd24af6556a"
+    },
+    {
       "path": "pages/docs/kubernetes/generated-index.md",
       "url": "https://backstage.io/docs/kubernetes/generated-index",
       "title": "Kubernetes | Backstage Software Catalog and Developer Platform",
-      "hash": "699e127b967c845c18aebb7ca468d25dcec7de3234699b9444352df1cd01ce58"
+      "hash": "cce1d2bb23f0b4acae1749d692a39da65ae05f1b46e806278958db431068029e"
     },
     {
       "path": "pages/docs/landing-page/doc-landing-page.md",
@@ -502,19 +502,19 @@
       "path": "pages/docs/ldap/generated-index.md",
       "url": "https://backstage.io/docs/ldap/generated-index",
       "title": "LDAP | Backstage Software Catalog and Developer Platform",
-      "hash": "104642921a0ad8a4be265cf6deca91be913f92af8a45e08a77bf0c570797456d"
+      "hash": "7e7e32ff716c6f3108aceba9f62872730e29e141c281ac5981763bc620fdbbd6"
     },
     {
       "path": "pages/docs/microsoft-entra-id/generated-index.md",
       "url": "https://backstage.io/docs/microsoft-entra-id/generated-index",
       "title": "Microsoft Entra ID | Backstage Software Catalog and Developer Platform",
-      "hash": "974c32f072849f178f43f6becb58d4adcc4aecbcd75faee59a4b8207559629f6"
+      "hash": "411b9aeac96bb3e7ccbca48919e52f3901f7169f656b8ca658ef1a24b2793081"
     },
     {
       "path": "pages/docs/migrations/generated-index.md",
       "url": "https://backstage.io/docs/migrations/generated-index",
       "title": "Migrations | Backstage Software Catalog and Developer Platform",
-      "hash": "43037edb21c1c469f84ae2c9095a034e19debaa2eea93a4220c379f663501838"
+      "hash": "0d2bd75b7a6d48a3031966e396a3fa17eeaf40437b941b1f8b7d72ed0e6a9e4d"
     },
     {
       "path": "pages/docs/next/configuration/generated-index.md",
@@ -601,10 +601,10 @@
       "hash": "f2f94adc71f52c58904dc41092b63e6c65f80f400090cb3f06d652eaa33de6c3"
     },
     {
-      "path": "pages/docs/next/releases/v1.53.md",
-      "url": "https://backstage.io/docs/next/releases/v1.53.0",
-      "title": "v1.53.0 | Backstage Software Catalog and Developer Platform",
-      "hash": "719c924ae5542ba80088076b386774b0be7217cada159d660d30b68df5137c1d"
+      "path": "pages/docs/next/releases/v1.54.md",
+      "url": "https://backstage.io/docs/next/releases/v1.54.0",
+      "title": "v1.54.0 | Backstage Software Catalog and Developer Platform",
+      "hash": "234c7adadd4e42c006e2225104cec89422814c601412edf03e04cf21aa9a6938"
     },
     {
       "path": "pages/docs/next/tutorials/generated-index.md",
@@ -634,7 +634,7 @@
       "path": "pages/docs/okta/generated-index.md",
       "url": "https://backstage.io/docs/okta/generated-index",
       "title": "Okta | Backstage Software Catalog and Developer Platform",
-      "hash": "ad6ba787729dce20fdad321448821ca9db8844a09df29ea87765723e507d98e8"
+      "hash": "573c1210dda7d55be4159cd4207027d9d9635f45223c7d874d0b196ca8d5c587"
     },
     {
       "path": "pages/docs/openapi/generated-index.md",
@@ -682,7 +682,7 @@
       "path": "pages/docs/overview/threat-model.md",
       "url": "https://backstage.io/docs/overview/threat-model",
       "title": "Backstage Threat Model | Backstage Software Catalog and Developer Platform",
-      "hash": "dc39cce497a3e0b81547120f5cdf4ca1dc4c7068fb83b0223af02f0f6d3f07f3"
+      "hash": "72ab18c7c927483f8711e7c441ce7e00fa4e5a1f144eefab2619c2f1e7f72fb6"
     },
     {
       "path": "pages/docs/overview/versioning-policy.md",
@@ -724,73 +724,73 @@
       "path": "pages/docs/plugins.md",
       "url": "https://backstage.io/docs/plugins",
       "title": "Introduction to Plugins (Legacy) | Backstage Software Catalog and Developer Platform",
-      "hash": "9f306efb4c16b7677447078da3d2594fc9b29b3d0d2003885465162911e62479"
+      "hash": "53be63cfd60321321ffb1b4c42f034b68270efc06af60dea3ffdda1d3f466e55"
     },
     {
       "path": "pages/docs/plugins/analytics.md",
       "url": "https://backstage.io/docs/plugins/analytics",
       "title": "Plugin Analytics | Backstage Software Catalog and Developer Platform",
-      "hash": "dd4bd0eea230ebf78770eb922d5a0c4e5bf11082da8632e21ec41c4e5e0fc371"
+      "hash": "ccb7cd68be0f18dd4a0363cb0c09624f01df7e48b264d01ded137fccd40799a0"
     },
     {
       "path": "pages/docs/plugins/composability.md",
       "url": "https://backstage.io/docs/plugins/composability",
       "title": "Composability System | Backstage Software Catalog and Developer Platform",
-      "hash": "8ec56eb5dac83291129737db59f501878a07985b518f19a64a48bccb566e3fee"
+      "hash": "d62c6f51b356c135f8eeccc328bfe9fd27872d0e84f1b2e7de0bc6626d515e51"
     },
     {
       "path": "pages/docs/plugins/create-a-plugin.md",
       "url": "https://backstage.io/docs/plugins/create-a-plugin",
       "title": "Create a Backstage Plugin | Backstage Software Catalog and Developer Platform",
-      "hash": "11db4899dbc0c7a0b525ec11f17a54b21e15bc1ed2a923487289fc68365f329a"
+      "hash": "74f01d0850d64365446930050fb50f89064ece9e44f77d0766344a7d8b91e61d"
     },
     {
       "path": "pages/docs/plugins/feature-flags.md",
       "url": "https://backstage.io/docs/plugins/feature-flags",
       "title": "Feature Flags | Backstage Software Catalog and Developer Platform",
-      "hash": "a6fe00606a5db973fe35d5ea123f72b79f897d753efbdbfd633283138afc76d1"
+      "hash": "d738e74dcaf57208adea9e33a518f45146b4124047739734a472e50eea5d314b"
     },
     {
       "path": "pages/docs/plugins/integrating-plugin-into-software-catalog.md",
       "url": "https://backstage.io/docs/plugins/integrating-plugin-into-software-catalog",
       "title": "Integrate into the Software Catalog | Backstage Software Catalog and Developer Platform",
-      "hash": "5a2c2a52e495b2b87685db6aa163aab7067391893cca44c5dec38fa90b813936"
+      "hash": "b813ff05e717e2853b8883b2c4fa7dbb4d3e385e75285e454fc636c57b480f9c"
     },
     {
       "path": "pages/docs/plugins/integrating-search-into-plugins.md",
       "url": "https://backstage.io/docs/plugins/integrating-search-into-plugins",
       "title": "Integrating Search into a plugin | Backstage Software Catalog and Developer Platform",
-      "hash": "cc875210754e47648c1fcabcc9f97b889df2c62a0a68925a4b74bcc5aa02eaf3"
+      "hash": "c5cddaf687650e2174d28d8c598069f8bbe98448831cb7badbf65799df4acfa8"
     },
     {
       "path": "pages/docs/plugins/internationalization.md",
       "url": "https://backstage.io/docs/plugins/internationalization",
       "title": "Internationalization | Backstage Software Catalog and Developer Platform",
-      "hash": "ebb922a8f61b4673d30fb6989a13d47c58cdb68300a17384cabfdbf9bc8447da"
+      "hash": "12337dced8c31e68aa1e467b1084314974afc11089bf815a5f0a649d882a719e"
     },
     {
       "path": "pages/docs/plugins/new-backend-system.md",
       "url": "https://backstage.io/docs/plugins/new-backend-system",
       "title": "New Backend System | Backstage Software Catalog and Developer Platform",
-      "hash": "5dffdd371768acc783f14078196dc9a2734f25f76891568f01cb46275ebba6ec"
+      "hash": "52bcd83bcccf9056d2dda1fcb014a9976722fdcfa218226abec681a41a5cef72"
     },
     {
       "path": "pages/docs/plugins/observability.md",
       "url": "https://backstage.io/docs/plugins/observability",
       "title": "Observability | Backstage Software Catalog and Developer Platform",
-      "hash": "2a4837c068936d8025d27bf9bd9b8c61c5959167326c295951a0b8a77dc46361"
+      "hash": "5ac750a256ca036a93db196141da42fbec45360ba5f7589885d52120a37deefb"
     },
     {
       "path": "pages/docs/plugins/plugin-development.md",
       "url": "https://backstage.io/docs/plugins/plugin-development",
       "title": "Plugin Development | Backstage Software Catalog and Developer Platform",
-      "hash": "09f24f98ed27a26cc1f51ec83c329da5f8ec26d5ebc3837306798c70a2dcdc03"
+      "hash": "acd2c8012ebdfaf0f0366e01fa5a5777d3885b87609c74d74f4ecde4a1d20c64"
     },
     {
       "path": "pages/docs/plugins/structure-of-a-plugin.md",
       "url": "https://backstage.io/docs/plugins/structure-of-a-plugin",
       "title": "Structure of a Plugin | Backstage Software Catalog and Developer Platform",
-      "hash": "3b5c79e10d11c2cfed2dabd5caf6688c47082f6f99fb89155b28889855d55865"
+      "hash": "89c28d4ad6fd5c49d833d8734dc46e41788f80a0ff29c697d17708cea39b8eb2"
     },
     {
       "path": "pages/docs/publishing/generated-index.md",
@@ -802,7 +802,7 @@
       "path": "pages/docs/references.md",
       "url": "https://backstage.io/docs/references",
       "title": "Package Index | Backstage Software Catalog and Developer Platform",
-      "hash": "2939ad79e583153add707b8cb01b937fec14063968f8ef938c14ae67a064f6bc"
+      "hash": "d8bc8a4a8d675600e9f6c0bdfe688b71971100ef41ed70c3383754db0b7c523d"
     },
     {
       "path": "pages/docs/references/generated-index.md",
@@ -1117,6 +1117,12 @@
       "hash": "719c924ae5542ba80088076b386774b0be7217cada159d660d30b68df5137c1d"
     },
     {
+      "path": "pages/docs/releases/v1.54.md",
+      "url": "https://backstage.io/docs/releases/v1.54.0",
+      "title": "v1.54.0 | Backstage Software Catalog and Developer Platform",
+      "hash": "234c7adadd4e42c006e2225104cec89422814c601412edf03e04cf21aa9a6938"
+    },
+    {
       "path": "pages/docs/releases/v1.6.md",
       "url": "https://backstage.io/docs/releases/v1.6.0",
       "title": "v1.6.0 | Backstage Software Catalog and Developer Platform",
@@ -1144,13 +1150,13 @@
       "path": "pages/docs/search/generated-index.md",
       "url": "https://backstage.io/docs/search/generated-index",
       "title": "Search | Backstage Software Catalog and Developer Platform",
-      "hash": "5a0a75c7221b883cc225287a73222115ace64af733a7e2b08358f2b142cb8f1b"
+      "hash": "24a039636de742c5a4a5b5441d32de03b98bb3ee5b04489d40620b1a257538b7"
     },
     {
       "path": "pages/docs/software-catalog/generated-index.md",
       "url": "https://backstage.io/docs/software-catalog/generated-index",
       "title": "Software Catalog | Backstage Software Catalog and Developer Platform",
-      "hash": "d599a0ebdc79531fcd69679219e68f4b72c3b20030aabc368fee6410b8134f99"
+      "hash": "b5e3bc6316b9875f2d8f6aafe98dd6808b93bcd7664c231a951356f8278a7c64"
     },
     {
       "path": "pages/docs/software-templates/generated-index.md",
@@ -1174,19 +1180,13 @@
       "path": "pages/docs/testing/generated-index.md",
       "url": "https://backstage.io/docs/testing/generated-index",
       "title": "Testing | Backstage Software Catalog and Developer Platform",
-      "hash": "5796d65ae2f765ed4ce5e4f9dcff741235a374bc7d875a93ff35a31550cf5ab2"
+      "hash": "0b1e632fc27bece753cbb95744e6180ca735cc6c9215f575b4cb4f5eeee9405f"
     },
     {
       "path": "pages/docs/tooling/cli/overview.md",
       "url": "https://backstage.io/docs/tooling/cli/overview",
       "title": "Overview | Backstage Software Catalog and Developer Platform",
-      "hash": "b26a70b0974a86ca542926ed5555fcd5e9fb56bada20a5906c2f5c731818e5c8"
-    },
-    {
-      "path": "pages/docs/tutorials/corporate-proxy.md",
-      "url": "https://backstage.io/docs/tutorials/corporate-proxy",
-      "title": "Running Backstage behind a Corporate Proxy | Backstage Software Catalog and Developer Platform",
-      "hash": "34137ba178296dfb546b0434ff69a824c79b016934ce7181934fc7401ae41925"
+      "hash": "c6574e06cf601001a9b597118b23f998d9c22571a0327035779a60588a13e004"
     },
     {
       "path": "pages/docs/tutorials/generated-index.md",
@@ -1232,10 +1232,6 @@
     ],
     [
       "pages/docs/backend-system.md",
-      "pages/docs/backend-system/core-services/home.md"
-    ],
-    [
-      "pages/docs/backend-system/architecture/backends.md",
       "pages/docs/backend-system/core-services/home.md"
     ],
     [
@@ -1353,10 +1349,6 @@
     [
       "pages/docs/deploying-backstage/generated-index.md",
       "pages/docs/deployment.md"
-    ],
-    [
-      "pages/docs/deployment.md",
-      "pages/docs/tutorials/corporate-proxy.md"
     ],
     [
       "pages/docs/designing-for-backstage/generated-index.md",
@@ -1479,10 +1471,6 @@
       "pages/docs/frontend-system/architecture/extension-overrides.md"
     ],
     [
-      "pages/docs/frontend-system/architecture/routes.md",
-      "pages/docs/frontend-system/architecture/extension-overrides.md"
-    ],
-    [
       "pages/docs/getting-started.md",
       "pages/docs/auth.md"
     ],
@@ -1588,10 +1576,6 @@
     ],
     [
       "pages/docs/getting-started/create-a-component.md",
-      "pages/docs/features/software-templates.md"
-    ],
-    [
-      "pages/docs/getting-started/create-a-component.md",
       "pages/docs/features/software-templates/adding-templates.md"
     ],
     [
@@ -1620,6 +1604,10 @@
     ],
     [
       "pages/docs/getting-started/generated-index.md",
+      "pages/docs/getting-started/ci.md"
+    ],
+    [
+      "pages/docs/getting-started/generated-index.md",
       "pages/docs/getting-started/keeping-backstage-updated.md"
     ],
     [
@@ -1633,10 +1621,6 @@
     [
       "pages/docs/getting-started/homepage.md",
       "pages/docs/getting-started.md"
-    ],
-    [
-      "pages/docs/getting-started/keeping-backstage-updated.md",
-      "pages/docs/tutorials/corporate-proxy.md"
     ],
     [
       "pages/docs/getting-started/logging-in.md",
@@ -1717,6 +1701,10 @@
     [
       "pages/docs/integrations/generated-index.md",
       "pages/docs/integrations.md"
+    ],
+    [
+      "pages/docs/integrations/generated-index.md",
+      "pages/docs/keycloak/generated-index.md"
     ],
     [
       "pages/docs/integrations/generated-index.md",
@@ -2255,28 +2243,24 @@
       "pages/docs/references/generated-index.md"
     ],
     [
-      "pages/docs/next/releases/v1.53.md",
+      "pages/docs/next/releases/v1.54.md",
       "pages/docs/getting-started.md"
     ],
     [
-      "pages/docs/next/releases/v1.53.md",
+      "pages/docs/next/releases/v1.54.md",
       "pages/docs/getting-started/keeping-backstage-updated.md"
     ],
     [
-      "pages/docs/next/releases/v1.53.md",
+      "pages/docs/next/releases/v1.54.md",
       "pages/docs/overview/roadmap.md"
     ],
     [
-      "pages/docs/next/releases/v1.53.md",
+      "pages/docs/next/releases/v1.54.md",
       "pages/docs/overview/versioning-policy.md"
     ],
     [
-      "pages/docs/next/releases/v1.53.md",
-      "pages/docs/releases/v1.53.md"
-    ],
-    [
-      "pages/docs/next/releases/v1.53.md",
-      "pages/docs/tutorials/corporate-proxy.md"
+      "pages/docs/next/releases/v1.54.md",
+      "pages/docs/releases/v1.54.md"
     ],
     [
       "pages/docs/next/tutorials/generated-index.md",
@@ -2297,10 +2281,6 @@
     [
       "pages/docs/overview/architecture-overview.md",
       "pages/docs/api/utility-apis.md"
-    ],
-    [
-      "pages/docs/overview/architecture-overview.md",
-      "pages/docs/backend-system/architecture/backends.md"
     ],
     [
       "pages/docs/overview/architecture-overview.md",
@@ -2333,10 +2313,6 @@
     [
       "pages/docs/overview/architecture-overview.md",
       "pages/docs/frontend-system/architecture/extensions.md"
-    ],
-    [
-      "pages/docs/overview/architecture-overview.md",
-      "pages/docs/frontend-system/architecture/routes.md"
     ],
     [
       "pages/docs/overview/architecture-overview.md",
@@ -2531,10 +2507,6 @@
       "pages/docs/frontend-system/architecture/extensions.md"
     ],
     [
-      "pages/docs/plugins/composability.md",
-      "pages/docs/frontend-system/architecture/routes.md"
-    ],
-    [
       "pages/docs/plugins/integrating-plugin-into-software-catalog.md",
       "pages/docs/plugins/create-a-plugin.md"
     ],
@@ -2557,10 +2529,6 @@
     [
       "pages/docs/plugins/new-backend-system.md",
       "pages/docs/overview/architecture-overview.md"
-    ],
-    [
-      "pages/docs/plugins/plugin-development.md",
-      "pages/docs/frontend-system/architecture/routes.md"
     ],
     [
       "pages/docs/plugins/structure-of-a-plugin.md",
@@ -3431,10 +3399,6 @@
       "pages/docs/overview/versioning-policy.md"
     ],
     [
-      "pages/docs/releases/v1.50.md",
-      "pages/docs/tutorials/corporate-proxy.md"
-    ],
-    [
       "pages/docs/releases/v1.51.md",
       "pages/docs/getting-started.md"
     ],
@@ -3483,8 +3447,20 @@
       "pages/docs/overview/versioning-policy.md"
     ],
     [
-      "pages/docs/releases/v1.53.md",
-      "pages/docs/tutorials/corporate-proxy.md"
+      "pages/docs/releases/v1.54.md",
+      "pages/docs/getting-started.md"
+    ],
+    [
+      "pages/docs/releases/v1.54.md",
+      "pages/docs/getting-started/keeping-backstage-updated.md"
+    ],
+    [
+      "pages/docs/releases/v1.54.md",
+      "pages/docs/overview/roadmap.md"
+    ],
+    [
+      "pages/docs/releases/v1.54.md",
+      "pages/docs/overview/versioning-policy.md"
     ],
     [
       "pages/docs/releases/v1.6.md",
@@ -3587,10 +3563,6 @@
       "pages/docs/features/techdocs/faqs.md"
     ],
     [
-      "pages/docs/technical/generated-index.md",
-      "pages/docs/tutorials/corporate-proxy.md"
-    ],
-    [
       "pages/docs/tooling/cli/overview.md",
       "pages/docs/references/glossary.md"
     ],
@@ -3628,10 +3600,10 @@
     ]
   ],
   "last_sync": {
-    "synced_at": "2026-08-17T06:54:16.993561+00:00",
-    "added": 0,
-    "changed": 0,
-    "removed": 0,
+    "synced_at": "2026-08-24T06:57:24.188976+00:00",
+    "added": 4,
+    "changed": 46,
+    "removed": 4,
     "pages": 200
   }
 }

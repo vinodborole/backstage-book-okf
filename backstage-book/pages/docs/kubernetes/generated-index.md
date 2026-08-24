@@ -5,7 +5,7 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/kubernetes/generated-index
-timestamp: '2026-08-10T07:40:46.882853+00:00'
+timestamp: '2026-08-24T06:57:24.152587+00:00'
 ---
 
 ## Overview
@@ -18,7 +18,7 @@ Installing Kubernetes plugin into Backstage
 
 ## Configuration
 
-Configuring the Kubernetes integration for Backstage expose your entity's objects
+Configuring the Kubernetes integration for Backstage to expose your entity's objects
 
 ## Kubernetes Authentication
 
@@ -35,6 +35,10 @@ Troubleshooting for Kubernetes
 ## Proxy
 
 Interacting with the Kubernetes API in Backstage plugins
+
+## Audit Events
+
+Tracking access to your Kubernetes clusters and resources.
 
 # Citations
 

@@ -5,7 +5,7 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/backstage-cli/generated-index
-timestamp: '2026-08-10T07:40:46.882853+00:00'
+timestamp: '2026-08-24T06:57:24.152587+00:00'
 ---
 
 ## Overview
@@ -18,11 +18,19 @@ A deep dive into the Backstage build system
 
 ## Commands
 
-Descriptions of all commands available in the CLI.
+Index of all commands available in the Backstage CLI.
 
 ## CLI Templates
 
 Overview of the new CLI Declarative Templates
+
+## CLI Modules
+
+Documentation for each CLI module and its commands.
+
+## Custom CLI Modules
+
+Guide to building custom CLI modules that extend the Backstage CLI.
 
 ## Local Development
 

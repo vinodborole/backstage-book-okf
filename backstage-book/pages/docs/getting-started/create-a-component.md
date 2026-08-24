@@ -3,7 +3,7 @@ type: Web Page
 title: Create a Component | Backstage Software Catalog and Developer Platform
 description: Leverage the scaffolder to start creating components with best practices.
 resource: https://backstage.io/docs/getting-started/create-a-component
-timestamp: '2026-08-10T07:40:46.882853+00:00'
+timestamp: '2026-08-24T06:57:24.152587+00:00'
 ---
 
 # Create a Component
@@ -48,39 +48,21 @@ Enter `tutorial` for the`Repository` and select`REVIEW` .
 8. 
 Review the information and select `CREATE` .
 
-If you see an error message, similar to the following,
-
-```
-![error creating new component](../assets/uiguide/error-creating-new-component.png)
-```
-Perform the following steps:
-
-1. 
-Close the Backstage app.
-2. 
-Enter `CTRL-C` in the terminal window to stop the Backstage frontend and backend.
-3. 
-In the terminal window, enter: **NOTE:** The[no-node-snapshot](/docs/features/software-templates/#prerequisites)`NODE_OPTIONS` environment variable is required in order to use the templates.
-4. 
-Enter `yarn start` to restart the Backstage application.
-5. 
-Repeat steps to create the component.
-
-Otherwise, you can follow along with the progress, and as soon as every step is finished, you can take a look at your new service in either the repository or the Catalog.
+You can follow along with the progress, and as soon as every step is finished, you can take a look at your new service in either the repository or the Catalog.
 
 Selecting `REPOSITORY` displays the `catalog-info.yaml`file and other project setup files that were created for the new component in the main branch of the `tutorial` repository.
 
 The `catalog-info.yaml` file describes the entity for the Software Catalog. [Descriptor Format of Catalog Entities](/docs/features/software-catalog/descriptor-format) provides additional information.
 
 ```
- apiVersion: backstage.io/v1alpha1
- kind: Component
- metadata:
-   name: "tutorial"
- spec:
-   type: service
-   owner: user:guest
-   lifecycle: experimental
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: 'tutorial'
+spec:
+  type: service
+  owner: user:guest
+  lifecycle: experimental
 ```
 Selecting `OPEN IN CATALOG` displays details of the new component, such as its relationships, links, and subcomponents.
 

@@ -5,7 +5,7 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/integrations/generated-index
-timestamp: '2026-08-10T07:40:46.882853+00:00'
+timestamp: '2026-08-24T06:57:24.152587+00:00'
 ---
 
 ## Overview
@@ -61,6 +61,10 @@ Configuring Backstage to read or publish data with external providers using inte
 1 item
 
 ## Google GCS
+
+1 item
+
+## Keycloak
 
 1 item
 

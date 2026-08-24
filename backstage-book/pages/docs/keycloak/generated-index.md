@@ -1,10 +1,10 @@
 ---
 type: Web Page
-title: Google GCS | Backstage Software Catalog and Developer Platform
+title: Keycloak | Backstage Software Catalog and Developer Platform
 description: Backstage is an open source developer portal framework that centralizes
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
-resource: https://backstage.io/docs/google-gcs/generated-index
+resource: https://backstage.io/docs/keycloak/generated-index
 timestamp: '2026-08-24T06:57:24.152587+00:00'
 ---
 
@@ -23,12 +23,12 @@ Next
 Stable
 Search
 Integrations
-Google GCS
-Google GCS
+Keycloak
+Keycloak
 📄️
-Locations
-Setting up an integration with Google Cloud Storage
+Org Data
+Ingesting organizational data from Keycloak into Backstage
 
 # Citations
 
-1. Source page: https://backstage.io/docs/google-gcs/generated-index
+1. Source page: https://backstage.io/docs/keycloak/generated-index
