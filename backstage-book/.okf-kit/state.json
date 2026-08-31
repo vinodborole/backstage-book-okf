@@ -2,7 +2,7 @@
   "generator": "okf-kit",
   "okf_version": "0.1",
   "root_url": "https://backstage.io/docs",
-  "updated_at": "2026-08-24T06:57:24.319451+00:00",
+  "updated_at": "2026-08-31T12:51:15.713769+00:00",
   "config": {
     "max_depth": 3,
     "max_pages": 200,
@@ -280,7 +280,7 @@
       "path": "pages/docs/features/software-templates/configuration.md",
       "url": "https://backstage.io/docs/features/software-templates/configuration",
       "title": "Software Template Configuration | Backstage Software Catalog and Developer Platform",
-      "hash": "1693363786ef3f16c424ad532576ae22048b26db91a24b940e68599fd727709e"
+      "hash": "9277930361999f7b294d3f0c0c97cf5d9f6218d8cfa4ccacf579acb55d5284cd"
     },
     {
       "path": "pages/docs/features/techdocs.md",
@@ -3600,10 +3600,10 @@
     ]
   ],
   "last_sync": {
-    "synced_at": "2026-08-24T06:57:24.188976+00:00",
-    "added": 4,
-    "changed": 46,
-    "removed": 4,
+    "synced_at": "2026-08-31T12:51:15.584032+00:00",
+    "added": 0,
+    "changed": 1,
+    "removed": 0,
     "pages": 200
   }
 }

@@ -4,7 +4,7 @@ title: Software Template Configuration | Backstage Software Catalog and Develope
   Platform
 description: Configuration options for Backstage Software Templates
 resource: https://backstage.io/docs/features/software-templates/configuration
-timestamp: '2026-08-24T06:57:24.152587+00:00'
+timestamp: '2026-08-31T12:51:15.575691+00:00'
 ---
 
 # Software Template Configuration
@@ -99,6 +99,25 @@ Default secrets are resolved from environment variables and accessible via `${{ 
     accessKey: ${{ environment.secrets.AWS_ACCESS_KEY }} # Resolves to defaultEnvironment.secrets.AWS_ACCESS_KEY
 ```
 **Security Note:** Secrets are automatically masked in logs and are only available to backend actions, never exposed to the frontend.
+
+## Requiring SCM user credentials
+
+You can require that supported SCM actions only operate with credentials explicitly provided by the signed-in user:
+
+```
+scaffolder:
+  requireScmUserCredentials: true
+```
+When enabled, supported built-in GitHub, GitLab, Bitbucket Cloud, Bitbucket
+Server, and Azure DevOps mutation actions reject requests that do not include a
+user-provided token. The `fetch:plain`, `fetch:plain:file`, `fetch:template`,
+and `fetch:template:file` actions enforce the same requirement for GitHub and
+GitLab reads. Custom actions and SCM readers that do not accept a user token
+input are not affected.
+
+The GitLab `publish:gitlab` action's `setUserAsOwner` and `ownerUsername`
+inputs cannot be used with this setting because they require privileged
+credentials from the GitLab integration.
 
 ## Customizing the ScaffolderPage with Grouping and Filtering
 
