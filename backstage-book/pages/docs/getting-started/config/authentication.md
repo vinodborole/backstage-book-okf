@@ -3,7 +3,7 @@ type: Web Page
 title: Authentication | Backstage Software Catalog and Developer Platform
 description: How to setup authentication for your Backstage app
 resource: https://backstage.io/docs/getting-started/config/authentication
-timestamp: '2026-08-24T06:57:24.152587+00:00'
+timestamp: '2026-09-21T12:08:19.376794+00:00'
 ---
 
 # Authentication
@@ -116,11 +116,14 @@ auth:
         clientSecret: YOUR CLIENT SECRET
         signIn:
           resolvers:
-            # Matches the GitHub username with the Backstage user entity name.
+            # Matches the immutable GitHub user ID with the Backstage user entity.
             # See https://backstage.io/docs/auth/github/provider#resolvers for more resolvers.
-            - resolver: usernameMatchingUserEntityName
+            - resolver: userIdMatchingUserEntityAnnotation
 ```
-What this will do is take the user details provided by the auth provider and match that against a User in the Catalog. In this case - `usernameMatchingUserEntityName` - will match the GitHub user name with the `metadata.name` value of a User in the Catalog, if none is found you will get a "Failed to sign-in, unable to resolve user identity" message. We'll cover this in the next few sections.
+This configuration matches the immutable GitHub user ID provided by the auth
+provider with the `github.com/user-id` annotation on a User in the Catalog. If
+no matching user is found, you get a "Failed to sign-in, unable to resolve user
+identity" message. We'll cover this in the next few sections.
 
 Learn more about this topic in the [Sign-in Resolvers](/docs/auth/identity-resolver#sign-in-resolvers) documentation.
 
@@ -151,7 +154,7 @@ For the sake of this guide we'll simply step you through adding a User to the `o
 First open the `/examples/org.yaml` file in your text editor of choice
 2. 
 At the bottom we'll add the following YAML: 3. 
-Now make sure to replace the text "YOUR GITHUB USERNAME" with your actual GitHub User name.
+Replace `YOUR GITHUB USERNAME` with your GitHub username and`YOUR GITHUB USER ID` with the`node_id` from your[GitHub user profile](https://docs.github.com/en/rest/users/users#get-the-authenticated-user) .
 
 Let's restart Backstage from the terminal once more, by stopping it with `Ctrl+C`, and starting it with `yarn start`. You should now be able to log into Backstage and see items in your Catalog.
 

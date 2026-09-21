@@ -4,7 +4,7 @@ title: Search Documentation | Backstage Software Catalog and Developer Platform
 description: Backstage Search lets you find the right information you are looking
   for in the Backstage ecosystem.
 resource: https://backstage.io/docs/features/search
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-09-21T12:08:19.376794+00:00'
 ---
 
 # Backstage Search
@@ -46,7 +46,7 @@ the search engines are used.
 
 | Search Engines | Support Status | 
 |---|---|
-| [Elasticsearch/OpenSearch](/docs/features/search/search-engines#elasticsearch) | ✅ | 
+| [Elasticsearch/OpenSearch](/docs/features/search/search-engines#elasticsearch-and-opensearch) | ✅ | 
 | [Lunr](/docs/features/search/search-engines#lunr) | ✅ | 
 | [Postgres](/docs/features/search/search-engines#postgres) | Community ✅ | 
 

@@ -4,7 +4,7 @@ title: Software Template Configuration | Backstage Software Catalog and Develope
   Platform
 description: Configuration options for Backstage Software Templates
 resource: https://backstage.io/docs/features/software-templates/configuration
-timestamp: '2026-08-31T12:51:15.575691+00:00'
+timestamp: '2026-09-21T12:08:19.376794+00:00'
 ---
 
 # Software Template Configuration
@@ -100,6 +100,73 @@ Default secrets are resolved from environment variables and accessible via `${{ 
 ```
 **Security Note:** Secrets are automatically masked in logs and are only available to backend actions, never exposed to the frontend.
 
+## Task Recovery
+
+The scaffolder supports automatic task recovery when workers restart or crash. When enabled, tasks that were in a `processing` state will be recovered and can be resumed from where they left off.
+
+```
+scaffolder:
+  taskRecovery:
+    enabled: true
+    staleTimeout: { seconds: 30 } # Optional, defaults to 30 seconds
+```
+When task recovery is enabled:
+
+- Tasks in `processing` state with stale heartbeats are automatically recovered to`open` state
+- Secrets are preserved until the task reaches a terminal state (completed/failed)
+- Completed steps are skipped on retry, resuming from the last incomplete step
+- Step outputs are restored so subsequent steps can access previous results
+
+An action can run more than once if a task is recovered or retried. This can happen when an action succeeds but workspace serialization fails, because the step is not recorded as completed until its workspace has been stored. Actions used in recoverable templates should therefore be idempotent. You can use [checkpoints](/docs/features/software-templates/writing-custom-actions#using-checkpoints-in-custom-actions) in custom actions to achieve this.
+
+### Workspace Serialization
+
+By default, task recovery does not persist the task workspace (filesystem). If your tasks work with files and you want workspaces to survive restarts, you need to install a workspace provider module and configure it separately.
+
+Workspace serialization is **not enabled by default** — you must explicitly opt in by setting `workspaceProvider`.
+
+```
+scaffolder:
+  taskRecovery:
+    enabled: true
+    workspaceProvider: database # or 'gcpBucket' for GCS
+```
+Available workspace providers:
+
+- **`database`** — Stores workspaces in the database via`@backstage/plugin-scaffolder-backend-module-workspace-database` . Has a 50MB limit and is not recommended for production use.
+- **`gcpBucket`** — Stores workspaces in a GCS bucket via`@backstage/plugin-scaffolder-backend-module-gcp` . Requires[workload identity](https://cloud.google.com/iam/docs/workload-identity-federation) to be configured. Bucket name is configured via`scaffolder.taskRecovery.gcsBucket.name` .
+
+To use a provider, install the corresponding module in your backend:
+
+```
+# For database storage (development only)
+yarn --cwd packages/backend add @backstage/plugin-scaffolder-backend-module-workspace-database
+# For GCS storage (production)
+yarn --cwd packages/backend add @backstage/plugin-scaffolder-backend-module-gcp
+```
+Then add the module to your backend in `packages/backend/src/index.ts`:
+
+```
+backend.add(
+  import('@backstage/plugin-scaffolder-backend-module-workspace-database'),
+);
+```
+### Migrating from Experimental Flags
+
+If you were using the previous experimental configuration, the new config replaces it:
+
+| Old (Experimental) | New | 
+|---|---|
+| `scaffolder.EXPERIMENTAL_recoverTasks` | `scaffolder.taskRecovery.enabled` | 
+| `scaffolder.EXPERIMENTAL_recoverTasksTimeout` | `scaffolder.taskRecovery.staleTimeout` | 
+| `scaffolder.EXPERIMENTAL_workspaceSerialization` | `scaffolder.taskRecovery.workspaceProvider` | 
+| `scaffolder.EXPERIMENTAL_workspaceSerializationProvider` | `scaffolder.taskRecovery.workspaceProvider` | 
+| `scaffolder.EXPERIMENTAL_workspaceSerializationGcpBucketName` | `scaffolder.taskRecovery.gcsBucket.name` | 
+
+The per-template `spec.EXPERIMENTAL_recovery` field is no longer required. When `taskRecovery.enabled` is set to `true`, all tasks are eligible for recovery.
+
+The old experimental flags are still supported as fallbacks but are deprecated and will be removed in a future release. If you use `EXPERIMENTAL_workspaceSerialization`, install and register the corresponding workspace provider module. The database provider module migrates existing database workspace snapshots from the legacy task storage when it starts for the first time. The `EXPERIMENTAL_workspaceSerializationProvider` setting continues to select a provider only when `EXPERIMENTAL_workspaceSerialization` is set to `true`.
+
 ## Requiring SCM user credentials
 
 You can require that supported SCM actions only operate with credentials explicitly provided by the signed-in user:
@@ -192,6 +259,23 @@ are also supported — see the
 [entity predicate queries reference](https://backstage.io/docs/features/software-catalog/catalog-customization#entity-predicate-queries)
 for the full grammar.
 
+### Filtering templates in `app-config.yaml`
+
+The `sub-page:scaffolder/templates` extension accepts a `templateFilter` config
+field. It is an [entity predicate query](https://backstage.io/docs/features/software-catalog/catalog-customization#entity-predicate-queries)
+applied to every template before it is displayed. For example, exclude templates
+tagged `wip`:
+
+```
+app:
+  extensions:
+    - sub-page:scaffolder/templates:
+        config:
+          templateFilter:
+            $not:
+              metadata.tags:
+                $contains: wip
+```
 ### Replacing the default `TemplateCard`
 
 The `TemplateCard` exported from `@backstage/plugin-scaffolder-react/alpha`

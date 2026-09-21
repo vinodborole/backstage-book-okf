@@ -3,7 +3,7 @@ type: Web Page
 title: Kubernetes | Backstage Software Catalog and Developer Platform
 description: Monitoring Kubernetes based services with the software catalog
 resource: https://backstage.io/docs/features/kubernetes
-timestamp: '2026-08-03T09:44:12.848210+00:00'
+timestamp: '2026-09-21T12:08:19.376794+00:00'
 ---
 
 # Kubernetes
@@ -17,7 +17,11 @@ The feature is made up of two plugins:
 and
 [`@backstage/plugin-kubernetes-backend`](https://github.com/backstage/backstage/tree/master/plugins/kubernetes-backend).
 
-The frontend plugin exposes information to the end user in a digestible way, while the backend wraps the mechanics to connect to Kubernetes clusters to collect the relevant information.
+The frontend plugin exposes information to the end user in a digestible way,
+while the backend wraps the mechanics to connect to Kubernetes clusters to
+collect the relevant information. The backend also supports
+[watching resources](/docs/features/kubernetes/watch) for real-time change notifications using async
+iterators.
 
 ## Let's use it!
 

@@ -2,7 +2,7 @@
   "generator": "okf-kit",
   "okf_version": "0.1",
   "root_url": "https://backstage.io/docs",
-  "updated_at": "2026-09-14T11:57:30.433624+00:00",
+  "updated_at": "2026-09-21T12:08:19.490943+00:00",
   "config": {
     "max_depth": 3,
     "max_pages": 200,
@@ -190,7 +190,7 @@
       "path": "pages/docs/datadog/generated-index.md",
       "url": "https://backstage.io/docs/datadog/generated-index",
       "title": "Datadog | Backstage Software Catalog and Developer Platform",
-      "hash": "eb983e2ec02960650fec7c2f60853b8cc4d0a769f6bb6c07f48ffac0a53ee2b9"
+      "hash": "30a6b74fd7a05f57bc4f404670368431b7034a144e33ef267e6ded6d4191b860"
     },
     {
       "path": "pages/docs/deploying-backstage/generated-index.md",
@@ -244,13 +244,13 @@
       "path": "pages/docs/features/kubernetes.md",
       "url": "https://backstage.io/docs/features/kubernetes",
       "title": "Kubernetes | Backstage Software Catalog and Developer Platform",
-      "hash": "b4476a99e94009f74a4d6b6f158a7b397f63ff4dd5f3617be18c28c6528dd5ee"
+      "hash": "00aa77b0c7d6c9acc07a5136b086dabdd4ffdec86326f393fe4159ed1076ffb8"
     },
     {
       "path": "pages/docs/features/search.md",
       "url": "https://backstage.io/docs/features/search",
       "title": "Search Documentation | Backstage Software Catalog and Developer Platform",
-      "hash": "f380814de38a1e4737669d590754f8d15d3e0ee44fba1a64197627f02aec07f8"
+      "hash": "6af4a04fcc99fe8ae8d26c8f322f9f9db0627ff11caee2ad0d6294db2e5f3e48"
     },
     {
       "path": "pages/docs/features/software-catalog.md",
@@ -280,7 +280,7 @@
       "path": "pages/docs/features/software-templates/configuration.md",
       "url": "https://backstage.io/docs/features/software-templates/configuration",
       "title": "Software Template Configuration | Backstage Software Catalog and Developer Platform",
-      "hash": "9277930361999f7b294d3f0c0c97cf5d9f6218d8cfa4ccacf579acb55d5284cd"
+      "hash": "c59f54f7f55c071479f4bd76de524ed628b831b18cd0092e0e720b0c0cbde941"
     },
     {
       "path": "pages/docs/features/techdocs.md",
@@ -299,12 +299,6 @@
       "url": "https://backstage.io/docs/framework/generated-index",
       "title": "Framework | Backstage Software Catalog and Developer Platform",
       "hash": "a67e1aa5d631913e927d97971da2e60e094070688880cb57712c72ae51bc9224"
-    },
-    {
-      "path": "pages/docs/frontend-system/architecture/extension-overrides.md",
-      "url": "https://backstage.io/docs/frontend-system/architecture/extension-overrides",
-      "title": "Frontend Extension Overrides | Backstage Software Catalog and Developer Platform",
-      "hash": "c0c9472821b7cfa07a01d0d561848229611cb3d4fe3be7cee908751169b1a902"
     },
     {
       "path": "pages/docs/frontend-system/architecture/extensions.md",
@@ -346,7 +340,7 @@
       "path": "pages/docs/getting-started/config/authentication.md",
       "url": "https://backstage.io/docs/getting-started/config/authentication",
       "title": "Authentication | Backstage Software Catalog and Developer Platform",
-      "hash": "523ead1208a6faf2cbadb10e298779f0bb9951a4f4581ee09959549e451d0346"
+      "hash": "61502cb679789cbbd03392a404466a0f8fa45726e604159969e5a92b18fd4b2d"
     },
     {
       "path": "pages/docs/getting-started/config/database.md",
@@ -454,13 +448,13 @@
       "path": "pages/docs/google-gcs/generated-index.md",
       "url": "https://backstage.io/docs/google-gcs/generated-index",
       "title": "Google GCS | Backstage Software Catalog and Developer Platform",
-      "hash": "653ff12b164dfde8402a5b8b055d0040b8909e9aa0e298f33daaa1ea4b6f8245"
+      "hash": "8c4b3a50d098f165b665ad1e12aa84d160a9b2fbe7f2813b2013a2d2f7c47263"
     },
     {
       "path": "pages/docs/harness/generated-index.md",
       "url": "https://backstage.io/docs/harness/generated-index",
       "title": "Harness | Backstage Software Catalog and Developer Platform",
-      "hash": "c8908ec0c8cb937f3807c1c559c383c2e3f9861ffcb0db4b457ff0f993749eec"
+      "hash": "259b906f72816ed510cefd890c9278ddc6c61bf681f8bb5f6eb83a41f78c3018"
     },
     {
       "path": "pages/docs/integrations.md",
@@ -484,7 +478,7 @@
       "path": "pages/docs/keycloak/generated-index.md",
       "url": "https://backstage.io/docs/keycloak/generated-index",
       "title": "Keycloak | Backstage Software Catalog and Developer Platform",
-      "hash": "4b0755749bc5212470dcce65887b25473a4c8c5a00aaa09c6e96bfd24af6556a"
+      "hash": "b49ab2def51ef5f794c9f0e4fbdb0904a617b9f480f2bb478e2abd48c31a7455"
     },
     {
       "path": "pages/docs/kubernetes/generated-index.md",
@@ -502,13 +496,13 @@
       "path": "pages/docs/ldap/generated-index.md",
       "url": "https://backstage.io/docs/ldap/generated-index",
       "title": "LDAP | Backstage Software Catalog and Developer Platform",
-      "hash": "7e7e32ff716c6f3108aceba9f62872730e29e141c281ac5981763bc620fdbbd6"
+      "hash": "1f8b9dcc6d9c1c8554b1bc742ea058b8b32983421329dc5e8a78b3deff9f6bf4"
     },
     {
       "path": "pages/docs/microsoft-entra-id/generated-index.md",
       "url": "https://backstage.io/docs/microsoft-entra-id/generated-index",
       "title": "Microsoft Entra ID | Backstage Software Catalog and Developer Platform",
-      "hash": "411b9aeac96bb3e7ccbca48919e52f3901f7169f656b8ca658ef1a24b2793081"
+      "hash": "6611510dac8d6083234fda7cc0c6da939d8f9106d272d4403806393c0a396ff2"
     },
     {
       "path": "pages/docs/migrations/generated-index.md",
@@ -601,10 +595,10 @@
       "hash": "f2f94adc71f52c58904dc41092b63e6c65f80f400090cb3f06d652eaa33de6c3"
     },
     {
-      "path": "pages/docs/next/releases/v1.54.md",
-      "url": "https://backstage.io/docs/next/releases/v1.54.0",
-      "title": "v1.54.0 | Backstage Software Catalog and Developer Platform",
-      "hash": "234c7adadd4e42c006e2225104cec89422814c601412edf03e04cf21aa9a6938"
+      "path": "pages/docs/next/releases/v1.55.md",
+      "url": "https://backstage.io/docs/next/releases/v1.55.0",
+      "title": "v1.55.0 | Backstage Software Catalog and Developer Platform",
+      "hash": "a4a96c85cc807a84653b3cfcdf13fdc3678413e99f5050c103b42dbed19f2976"
     },
     {
       "path": "pages/docs/next/tutorials/generated-index.md",
@@ -634,7 +628,7 @@
       "path": "pages/docs/okta/generated-index.md",
       "url": "https://backstage.io/docs/okta/generated-index",
       "title": "Okta | Backstage Software Catalog and Developer Platform",
-      "hash": "573c1210dda7d55be4159cd4207027d9d9635f45223c7d874d0b196ca8d5c587"
+      "hash": "7012ca33f1eb26270d21f2b4fc5a1e1935497708ace09fd6e83cc9ec77f379dd"
     },
     {
       "path": "pages/docs/openapi/generated-index.md",
@@ -802,7 +796,7 @@
       "path": "pages/docs/references.md",
       "url": "https://backstage.io/docs/references",
       "title": "Package Index | Backstage Software Catalog and Developer Platform",
-      "hash": "d8bc8a4a8d675600e9f6c0bdfe688b71971100ef41ed70c3383754db0b7c523d"
+      "hash": "34d931a2139bdcec5a0752e1ace8ec962193127041005f61823d76637ffcfb6c"
     },
     {
       "path": "pages/docs/references/generated-index.md",
@@ -1123,6 +1117,12 @@
       "hash": "234c7adadd4e42c006e2225104cec89422814c601412edf03e04cf21aa9a6938"
     },
     {
+      "path": "pages/docs/releases/v1.55.md",
+      "url": "https://backstage.io/docs/releases/v1.55.0",
+      "title": "v1.55.0 | Backstage Software Catalog and Developer Platform",
+      "hash": "a4a96c85cc807a84653b3cfcdf13fdc3678413e99f5050c103b42dbed19f2976"
+    },
+    {
       "path": "pages/docs/releases/v1.6.md",
       "url": "https://backstage.io/docs/releases/v1.6.0",
       "title": "v1.6.0 | Backstage Software Catalog and Developer Platform",
@@ -1180,7 +1180,7 @@
       "path": "pages/docs/testing/generated-index.md",
       "url": "https://backstage.io/docs/testing/generated-index",
       "title": "Testing | Backstage Software Catalog and Developer Platform",
-      "hash": "0b1e632fc27bece753cbb95744e6180ca735cc6c9215f575b4cb4f5eeee9405f"
+      "hash": "0cceb7244ce69c86dabc0e513492d193548ecdf8be3196c408eae5203fe960e8"
     },
     {
       "path": "pages/docs/tooling/cli/overview.md",
@@ -1457,18 +1457,6 @@
     [
       "pages/docs/framework/generated-index.md",
       "pages/docs/user-interface/generated-index.md"
-    ],
-    [
-      "pages/docs/frontend-system/architecture/extension-overrides.md",
-      "pages/docs/conf.md"
-    ],
-    [
-      "pages/docs/frontend-system/architecture/extension-overrides.md",
-      "pages/docs/frontend-system/architecture/extensions.md"
-    ],
-    [
-      "pages/docs/frontend-system/architecture/extensions.md",
-      "pages/docs/frontend-system/architecture/extension-overrides.md"
     ],
     [
       "pages/docs/getting-started.md",
@@ -2243,24 +2231,24 @@
       "pages/docs/references/generated-index.md"
     ],
     [
-      "pages/docs/next/releases/v1.54.md",
+      "pages/docs/next/releases/v1.55.md",
       "pages/docs/getting-started.md"
     ],
     [
-      "pages/docs/next/releases/v1.54.md",
+      "pages/docs/next/releases/v1.55.md",
       "pages/docs/getting-started/keeping-backstage-updated.md"
     ],
     [
-      "pages/docs/next/releases/v1.54.md",
+      "pages/docs/next/releases/v1.55.md",
       "pages/docs/overview/roadmap.md"
     ],
     [
-      "pages/docs/next/releases/v1.54.md",
+      "pages/docs/next/releases/v1.55.md",
       "pages/docs/overview/versioning-policy.md"
     ],
     [
-      "pages/docs/next/releases/v1.54.md",
-      "pages/docs/releases/v1.54.md"
+      "pages/docs/next/releases/v1.55.md",
+      "pages/docs/releases/v1.55.md"
     ],
     [
       "pages/docs/next/tutorials/generated-index.md",
@@ -2305,10 +2293,6 @@
     [
       "pages/docs/overview/architecture-overview.md",
       "pages/docs/features/techdocs.md"
-    ],
-    [
-      "pages/docs/overview/architecture-overview.md",
-      "pages/docs/frontend-system/architecture/extension-overrides.md"
     ],
     [
       "pages/docs/overview/architecture-overview.md",
@@ -3463,6 +3447,22 @@
       "pages/docs/overview/versioning-policy.md"
     ],
     [
+      "pages/docs/releases/v1.55.md",
+      "pages/docs/getting-started.md"
+    ],
+    [
+      "pages/docs/releases/v1.55.md",
+      "pages/docs/getting-started/keeping-backstage-updated.md"
+    ],
+    [
+      "pages/docs/releases/v1.55.md",
+      "pages/docs/overview/roadmap.md"
+    ],
+    [
+      "pages/docs/releases/v1.55.md",
+      "pages/docs/overview/versioning-policy.md"
+    ],
+    [
       "pages/docs/releases/v1.6.md",
       "pages/docs/getting-started.md"
     ],
@@ -3600,10 +3600,10 @@
     ]
   ],
   "last_sync": {
-    "synced_at": "2026-09-14T11:57:30.297110+00:00",
-    "added": 0,
-    "changed": 0,
-    "removed": 0,
+    "synced_at": "2026-09-21T12:08:19.389927+00:00",
+    "added": 2,
+    "changed": 13,
+    "removed": 2,
     "pages": 200
   }
 }

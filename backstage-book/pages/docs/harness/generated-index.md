@@ -5,14 +5,14 @@ description: Backstage is an open source developer portal framework that central
   your software catalog, unifies infrastructure tools, and helps teams ship high-quality
   code faster.
 resource: https://backstage.io/docs/harness/generated-index
-timestamp: '2026-08-24T06:57:24.152587+00:00'
+timestamp: '2026-09-21T12:08:19.376794+00:00'
 ---
 
 Skip to main content
 Docs
 Plugins
 Reference
-Stable (v1.54.0)
+Stable (v1.55.0)
 Next
 Releases
 Blog
